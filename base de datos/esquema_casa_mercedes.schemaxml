@@ -6,10 +6,10 @@
 <canvas zoom="100">
 <tables>
 <table name="users" view="colnames">
-<left>44</left>
-<top>35</top>
-<width>208</width>
-<height>220</height>
+<left>340</left>
+<top>101</top>
+<width>109</width>
+<height>209</height>
 <sql_create_table>CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `casa_id` int(11) DEFAULT NULL,
@@ -19,8 +19,331 @@
   `fecha_baja` date DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_users` (`casa_id`),
+  CONSTRAINT `FK_users` FOREIGN KEY (`casa_id`) REFERENCES `casas` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="casas" view="colnames">
+<left>193</left>
+<top>76</top>
+<width>117</width>
+<height>209</height>
+<sql_create_table>CREATE TABLE `casas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pais_id` int(11) DEFAULT NULL,
+  `estado_id` int(11) DEFAULT NULL,
+  `municipio_id` int(11) DEFAULT NULL,
+  `direccion` varchar(200) DEFAULT NULL,
+  `telefono` varchar(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_casas` (`pais_id`),
+  KEY `FK_casasEstados` (`estado_id`),
+  KEY `FK_casasMunicipios` (`municipio_id`),
+  CONSTRAINT `FK_casasMunicipios` FOREIGN KEY (`municipio_id`) REFERENCES `municipios` (`id`),
+  CONSTRAINT `FK_casas` FOREIGN KEY (`pais_id`) REFERENCES `paises` (`id`),
+  CONSTRAINT `FK_casasEstados` FOREIGN KEY (`estado_id`) REFERENCES `estados` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="paises" view="colnames">
+<left>16</left>
+<top>16</top>
+<width>95</width>
+<height>141</height>
+<sql_create_table>CREATE TABLE `paises` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="estados" view="colnames">
+<left>16</left>
+<top>159</top>
+<width>95</width>
+<height>141</height>
+<sql_create_table>CREATE TABLE `estados` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="municipios" view="colnames">
+<left>14</left>
+<top>303</top>
+<width>109</width>
+<height>124</height>
+<sql_create_table>CREATE TABLE `municipios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="instituciones" view="colnames">
+<left>455</left>
+<top>390</top>
+<width>126</width>
+<height>192</height>
+<sql_create_table>CREATE TABLE `instituciones` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `albergado_id` int(11) DEFAULT NULL,
+  `institucion` varchar(255) DEFAULT NULL,
+  `fecha_ingreso` date DEFAULT NULL,
+  `fecha_egreso` date DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_instituciones` (`albergado_id`),
+  CONSTRAINT `FK_instituciones` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="albergados" view="colnames">
+<left>682</left>
+<top>111</top>
+<width>187</width>
+<height>232</height>
+<sql_create_table>CREATE TABLE `albergados` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `persona_id` int(11) DEFAULT NULL,
+  `expediente` varchar(50) DEFAULT NULL,
+  `casa_id` int(11) DEFAULT NULL,
+  `fecha_ingreso` date DEFAULT NULL,
+  `embarazo_actual` varchar(50) DEFAULT NULL,
+  `cant_hijos` int(11) DEFAULT NULL,
+  `remitida_por` varchar(50) DEFAULT NULL,
+  `averiguacion_previa` varchar(25) DEFAULT NULL,
+  `familiograma_imagen_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_albergados` (`persona_id`),
+  KEY `FK_albergadosCasas` (`casa_id`),
+  KEY `FK_albergadosImagen` (`familiograma_imagen_id`),
+  CONSTRAINT `FK_albergadosImagen` FOREIGN KEY (`familiograma_imagen_id`) REFERENCES `images` (`id`),
+  CONSTRAINT `FK_albergados` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id`),
+  CONSTRAINT `FK_albergadosCasas` FOREIGN KEY (`casa_id`) REFERENCES `casas` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="nacimientos" view="colnames">
+<left>283</left>
+<top>340</top>
+<width>146</width>
+<height>209</height>
+<sql_create_table>CREATE TABLE `nacimientos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `persona_id` int(11) DEFAULT NULL,
+  `fecha_nacimiento` date DEFAULT NULL,
+  `pais_id` int(11) DEFAULT NULL,
+  `estado_id` int(11) DEFAULT NULL,
+  `municipio_id` int(11) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_nacimientos` (`persona_id`),
+  KEY `FK_nacimientosPaises` (`pais_id`),
+  KEY `FK_nacimientosEstados` (`estado_id`),
+  KEY `FK_nacimientosMunicipios` (`municipio_id`),
+  CONSTRAINT `FK_nacimientosMunicipios` FOREIGN KEY (`municipio_id`) REFERENCES `municipios` (`id`),
+  CONSTRAINT `FK_nacimientos` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id`),
+  CONSTRAINT `FK_nacimientosEstados` FOREIGN KEY (`estado_id`) REFERENCES `estados` (`id`),
+  CONSTRAINT `FK_nacimientosPaises` FOREIGN KEY (`pais_id`) REFERENCES `paises` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="datos_albergado" view="colnames">
+<left>614</left>
+<top>410</top>
+<width>163</width>
+<height>192</height>
+<sql_create_table>CREATE TABLE `datos_albergado` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `albergado_id` int(11) DEFAULT NULL,
+  `consumo_sustancias` varchar(150) DEFAULT NULL,
+  `perforaciones` tinyint(1) DEFAULT '0',
+  `tatuajes` tinyint(1) DEFAULT '0',
+  `delitos` varchar(150) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_datos_albergado` (`albergado_id`),
+  CONSTRAINT `FK_datos_albergado` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="dependientes" view="colnames">
+<left>499</left>
+<top>9</top>
+<width>145</width>
+<height>178</height>
+<sql_create_table>CREATE TABLE `dependientes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `persona_id` int(11) DEFAULT NULL,
+  `albergado_id` int(11) DEFAULT NULL,
+  `expediente` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_dependientes` (`persona_id`),
+  KEY `FK_dependientesAlbergados` (`albergado_id`),
+  CONSTRAINT `FK_dependientesAlbergados` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`),
+  CONSTRAINT `FK_dependientes` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="socio_economico" view="colnames">
+<left>903</left>
+<top>315</top>
+<width>253</width>
+<height>306</height>
+<sql_create_table>CREATE TABLE `socio_economico` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `albergado_id` int(11) DEFAULT NULL,
+  `poblacion_indigena` tinyint(1) DEFAULT '0',
+  `ha_trabajado` tinyint(1) DEFAULT '0',
+  `tiempo_de_trabajo` int(11) DEFAULT NULL,
+  `ultimo_trabajo` varchar(25) DEFAULT NULL,
+  `tiempo` varchar(25) DEFAULT NULL,
+  `sueldo` float DEFAULT NULL,
+  `nivel_economico` varchar(25) DEFAULT NULL,
+  `zona_id` int(11) DEFAULT NULL,
+  `vivienda_id` int(11) DEFAULT NULL,
+  `construccion_id` int(11) DEFAULT NULL,
+  `tenencia_id` int(11) DEFAULT NULL,
+  `distribucion_id` int(11) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_socio_economico` (`construccion_id`),
+  KEY `FK_socio_economicoVivienda` (`vivienda_id`),
+  KEY `FK_socio_economicoDistribucion` (`distribucion_id`),
+  KEY `FK_socio_economicoTenencia` (`tenencia_id`),
+  KEY `FK_socio_economicoZonas` (`zona_id`),
+  KEY `FK_socio_economicoAlbergado` (`albergado_id`),
+  CONSTRAINT `FK_socio_economicoAlbergado` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`),
+  CONSTRAINT `FK_socio_economico` FOREIGN KEY (`construccion_id`) REFERENCES `construcciones` (`id`),
+  CONSTRAINT `FK_socio_economicoDistribucion` FOREIGN KEY (`distribucion_id`) REFERENCES `distribucions` (`id`),
+  CONSTRAINT `FK_socio_economicoTenencia` FOREIGN KEY (`tenencia_id`) REFERENCES `tenencias` (`id`),
+  CONSTRAINT `FK_socio_economicoVivienda` FOREIGN KEY (`vivienda_id`) REFERENCES `viviendas` (`id`),
+  CONSTRAINT `FK_socio_economicoZonas` FOREIGN KEY (`zona_id`) REFERENCES `zonas` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="construcciones" view="colnames">
+<left>1201</left>
+<top>309</top>
+<width>117</width>
+<height>107</height>
+<sql_create_table>CREATE TABLE `construcciones` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="viviendas" view="colnames">
+<left>810</left>
+<top>518</top>
+<width>77</width>
+<height>107</height>
+<sql_create_table>CREATE TABLE `viviendas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="tenencias" view="colnames">
+<left>1200</left>
+<top>423</top>
+<width>67</width>
+<height>107</height>
+<sql_create_table>CREATE TABLE `tenencias` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="zonas" view="colnames">
+<left>805</left>
+<top>401</top>
+<width>79</width>
+<height>107</height>
+<sql_create_table>CREATE TABLE `zonas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="distribucions" view="colnames">
+<left>1200</left>
+<top>535</top>
+<width>153</width>
+<height>109</height>
+<sql_create_table>CREATE TABLE `distribucions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="personas" view="colnames">
+<left>906</left>
+<top>6</top>
+<width>145</width>
+<height>260</height>
+<sql_create_table>CREATE TABLE `personas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `primer_nombre` varchar(50) DEFAULT NULL,
+  `segundo_nombre` varchar(50) DEFAULT NULL,
+  `primer_apellido` varchar(50) DEFAULT NULL,
+  `segundo_apellido` varchar(50) DEFAULT NULL,
+  `sexo` char(1) DEFAULT NULL,
+  `status` varchar(4) DEFAULT NULL,
+  `fecha_ingreso` date DEFAULT NULL,
+  `foto_imagen_id` int(11) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modiefied` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_personas` (`foto_imagen_id`),
+  CONSTRAINT `FK_personas` FOREIGN KEY (`foto_imagen_id`) REFERENCES `images` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="images" view="colnames">
+<left>1126</left>
+<top>115</top>
+<width>119</width>
+<height>158</height>
+<sql_create_table>CREATE TABLE `images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `url` varchar(255) DEFAULT NULL,
+  `tipoimage_id` int(11) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_images` (`tipoimage_id`),
+  CONSTRAINT `FK_images` FOREIGN KEY (`tipoimage_id`) REFERENCES `tipoimages` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="tipoimages" view="colnames">
+<left>1305</left>
+<top>42</top>
+<width>95</width>
+<height>141</height>
+<sql_create_table>CREATE TABLE `tipoimages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 </tables>
 </canvas>

@@ -1,0 +1,4 @@
+* Tabla datos_albergado
+deberia estar en albergados
+
+* A un albergado le pertenecie una institucion no una insitucion un albergado
