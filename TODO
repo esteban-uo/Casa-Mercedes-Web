@@ -1,0 +1,32 @@
+Sistema web para Casa de las Mercedes I.A.P, Campus Party México 2011
+
+Acciones por hacer (+), Acciones concluidas (-), Comentarios (#)
+
++ Estructura de Base de Datos
+	+ Revisar Base de datos con David Rubio por modificaciones (Fijar fecha)
++ Incorporar CakePHP al espacio de trabajo
++ Modelos con sus respectivas relaciones
++ Controladores con scaffolding para el flujo de datos
+	+ MockUp gráfico
+	+ Revisar MockUp con David Rubio (Fijar fecha)
+	+ Añadir o eliminar metodos CRUD necesarios
+	+ Controladores con métodos apropiados CRUD, no scaffolding
++ Vistas de los controladores
++ HTML y CSS de layout del Panel de Control para Administración de Albergados y Usuarios
+	#Definir y enlistar actividades
++ HTML y CSS de vistas
+	#Definir y enlistar actividades
++ HTML y CSS página princial 
+	+ Maquetar HTML y CSS Layout
+	+ Maquetar HTML y CSSS de vista principal
+	+ Contenido multimedia (texto, videoimagenes etc)
++ Revision de contenido multimedia para todo el sitio
+	+ Agregar imagenes necesarias
+	+ Agregar texto necesario
+	+ Videos o animaciones
++ Controlador para CRUD de imagenes por carpeta (foto,familiografia etc)
+	#Definir y enlistar actividades
++ Controlador para CRUD de reportes
+	+ Layouts para reportes Ficha Identificación y Estudio Social
++ Mejoras Diseño UI con animaciones y detalles
+	#Definir y enlistar actividades

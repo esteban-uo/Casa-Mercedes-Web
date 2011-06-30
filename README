@@ -1,0 +1,30 @@
+Versión
+	0.1
+
+Proyecto
+	Sistema web para Casa de las Mercedes I.A.P, Campus Party México 2011
+
+Desarrolladores
+	Diego Alejandro Sanchez Jasso	-	diego.jasso@tekiotl.com
+	Raul Gonzalez Gutierrez	-	raulgonzalezgutierrez10@gmail.com
+	Oscar David Diaz Avalos	- belian.sephiros@gmail.com
+	Victor Manuel Valuenzuela Martinez	-	bensandsower@gmail.com
+	Carlos Bolaños	-	garrisonx@gmail.com
+	Esteban Alberto Uscanga Olea	- esteban.uscanga@tekiotl.com
+	
+Tecnologías
+	- LAMP (Framework: CakePHP) (Servidor, Lenguaje de Programacion, Base de Datos)
+	- JavaScript - Jquery (UI, Llamadas Ajax)
+	- GIT	(Controlador de Versiones)
+
+Módulos
+	Página principal
+	Panel de Control para Administración de Albergados y Usuarios (editores)
+	Reportes
+	
+	
+
+
+
+	
+	
