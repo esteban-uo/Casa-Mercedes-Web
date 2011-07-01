@@ -2,15 +2,22 @@ Sistema web para Casa de las Mercedes I.A.P, Campus Party México 2011
 
 Acciones por hacer (+), Acciones concluidas (-), Comentarios (#)
 
-+ Estructura de Base de Datos
-	+ Revisar Base de datos con David Rubio por modificaciones (Fijar fecha)
+- Estructura de Base de Datos
+	- Revisar Base de datos con David Rubio por modificaciones (Fijar fecha)
 		* Tabla datos_albergado deberia estar en la tabla albergados
+			Permanece para dividir tamaño 
 		* A un albergado le pertenece una institucion no una insitucion un albergado
+			Permanece para dividir tamaño 
 		* Tabla familia deberia estar en la tabla albergados
+			Permanece para dividir tamaño 
 		* Tabla problematica deberia estar en tabla albergados
+			Permanece para dividir tamaño 
 		* Datos de tipo Char(2) tienen que almacenar 0 ó 1? o Sí o No?
+			Cualquiera, usaremos 0 y 1 con tinyint
 		* Preguntar: En las tablas con llaves foraneas donde se esta el id del albergado, ¿Se desea editar dicha a partir de la id del albergado o del nombre del albergado?
+			Id y por nombre
 		* Significado de los "puntos" en cada columna de la tabla ER proporcionada, ¿significan campos necesarios?
+			Campos No nulos
 	+ Incorporar tabla de estados, municipios de Carlos a la base de datos real
 + Incorporar CakePHP al espacio de trabajo
 + Modelos con sus respectivas relaciones
