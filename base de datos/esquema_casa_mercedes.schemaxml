@@ -195,7 +195,7 @@
 <table name="socio_economico" view="colnames">
 <left>903</left>
 <top>315</top>
-<width>253</width>
+<width>180</width>
 <height>306</height>
 <sql_create_table>CREATE TABLE `socio_economico` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -340,6 +340,239 @@
 <sql_create_table>CREATE TABLE `tipoimages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="vestimentas" view="colnames">
+<left>74</left>
+<top>436</top>
+<width>109</width>
+<height>192</height>
+<sql_create_table>CREATE TABLE `vestimentas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `persona_id` int(11) DEFAULT NULL,
+  `talla` varchar(25) DEFAULT NULL,
+  `calzado` varchar(25) DEFAULT NULL,
+  `brazier` varchar(25) DEFAULT NULL,
+  `pantaleta` varchar(25) DEFAULT NULL,
+  `blusa` varchar(25) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_vestimentasPersonas` (`persona_id`),
+  CONSTRAINT `FK_vestimentasPersonas` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="familias" view="colnames">
+<left>234</left>
+<top>684</top>
+<width>185</width>
+<height>260</height>
+<sql_create_table>CREATE TABLE `familias` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `albergado_id` int(11) DEFAULT NULL,
+  `ambos_padres` tinyint(1) DEFAULT '0',
+  `padre_o_madre` tinyint(1) DEFAULT '0',
+  `hermanos` char(2) DEFAULT NULL,
+  `hermanos_en_hogar` char(2) DEFAULT NULL,
+  `hermanos_con_familia` char(2) DEFAULT NULL,
+  `contacto_con_hermanos` char(2) DEFAULT NULL,
+  `otros_familiares` char(2) DEFAULT NULL,
+  `contacto_con_familiares` char(2) DEFAULT NULL,
+  `observaciones` varchar(250) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_familias` (`albergado_id`),
+  CONSTRAINT `FK_familias` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="problematicas" view="colnames">
+<left>475</left>
+<top>655</top>
+<width>186</width>
+<height>226</height>
+<sql_create_table>CREATE TABLE `problematicas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `albergado_id` int(11) DEFAULT NULL,
+  `calle` char(2) DEFAULT NULL,
+  `abandono` char(2) DEFAULT NULL,
+  `situacion_socieconomica` char(2) DEFAULT NULL,
+  `omision_de_cuidados` char(2) DEFAULT NULL,
+  `violencia` char(2) DEFAULT NULL,
+  `abuso_sexual` char(2) DEFAULT NULL,
+  `otros_delitos` varchar(250) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_problematicasAlbergados` (`albergado_id`),
+  CONSTRAINT `FK_problematicasAlbergados` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="socials" view="colnames">
+<left>674</left>
+<top>626</top>
+<width>152</width>
+<height>226</height>
+<sql_create_table>CREATE TABLE `socials` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `albergado_id` int(11) DEFAULT NULL,
+  `comunicacion` varchar(50) DEFAULT NULL,
+  `roles` varchar(50) DEFAULT NULL,
+  `normas_y_valores` varchar(50) DEFAULT NULL,
+  `manejo_autoridad` varchar(50) DEFAULT NULL,
+  `observaciones` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_socialsAlbergado` (`albergado_id`),
+  CONSTRAINT `FK_socialsAlbergado` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="ingresos" view="colnames">
+<left>43</left>
+<top>659</top>
+<width>134</width>
+<height>192</height>
+<sql_create_table>CREATE TABLE `ingresos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `albergado_id` int(11) DEFAULT NULL,
+  `fecha` date DEFAULT NULL,
+  `motivo` varchar(250) DEFAULT NULL,
+  `ingreso_egreso` varchar(10) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_ingresos` (`albergado_id`),
+  CONSTRAINT `FK_ingresos` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="documentacions" view="colnames">
+<left>105</left>
+<top>960</top>
+<width>95</width>
+<height>141</height>
+<sql_create_table>CREATE TABLE `documentacions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="documentos" view="colnames">
+<left>440</left>
+<top>937</top>
+<width>160</width>
+<height>192</height>
+<sql_create_table>CREATE TABLE `documentos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `persona_id` int(11) DEFAULT NULL,
+  `documentacion_id` int(11) DEFAULT NULL,
+  `numero_documento` varchar(50) DEFAULT NULL,
+  `tramitada_por_cm` char(2) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_documentos` (`documentacion_id`),
+  KEY `FK_documentosPersonas` (`persona_id`),
+  CONSTRAINT `FK_documentosPersonas` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id`),
+  CONSTRAINT `FK_documentos` FOREIGN KEY (`documentacion_id`) REFERENCES `documentacions` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="datos" view="colnames">
+<left>931</left>
+<top>711</top>
+<width>140</width>
+<height>175</height>
+<sql_create_table>CREATE TABLE `datos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `albergado_id` int(11) DEFAULT NULL,
+  `plan_social` text,
+  `historia_de_vida` text,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_datos` (`albergado_id`),
+  CONSTRAINT `FK_datos` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="escolaridads" view="colnames">
+<left>1184</left>
+<top>721</top>
+<width>142</width>
+<height>306</height>
+<sql_create_table>CREATE TABLE `escolaridads` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `albergado_id` int(11) DEFAULT NULL,
+  `ciclo_escolar_id` int(11) DEFAULT NULL,
+  `escuela` varchar(50) DEFAULT NULL,
+  `escolaridad` varchar(50) DEFAULT NULL,
+  `grado` varchar(25) DEFAULT NULL,
+  `inscrito` varchar(25) DEFAULT NULL,
+  `statusfinal` varchar(50) DEFAULT NULL,
+  `fecha_baja` date DEFAULT NULL,
+  `motivo_baja` varchar(50) DEFAULT NULL,
+  `certificado` varchar(50) DEFAULT NULL,
+  `boleta` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_escolaridads` (`ciclo_escolar_id`),
+  KEY `FK_escolaridadesAlbergado` (`albergado_id`),
+  CONSTRAINT `FK_escolaridadesAlbergado` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`),
+  CONSTRAINT `FK_escolaridads` FOREIGN KEY (`ciclo_escolar_id`) REFERENCES `ciclos_escolar` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="ciclos_escolar" view="colnames">
+<left>871</left>
+<top>927</top>
+<width>95</width>
+<height>141</height>
+<sql_create_table>CREATE TABLE `ciclos_escolar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="estados_salud" view="colnames">
+<left>670</left>
+<top>1018</top>
+<width>182</width>
+<height>260</height>
+<sql_create_table>CREATE TABLE `estados_salud` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `persona_id` int(11) DEFAULT NULL,
+  `tipo_sangre` varchar(5) DEFAULT NULL,
+  `peso` float DEFAULT NULL,
+  `alergias` varchar(200) DEFAULT NULL,
+  `lesiones_fisicas` varchar(2) DEFAULT NULL,
+  `discapacidad` varchar(2) DEFAULT NULL,
+  `enfermedades_cronicas` varchar(2) DEFAULT NULL,
+  `otra_enfermedades_id` int(11) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_estados_salud` (`otra_enfermedades_id`),
+  KEY `FK_estados_saludPersonas` (`persona_id`),
+  CONSTRAINT `FK_estados_saludPersonas` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id`),
+  CONSTRAINT `FK_estados_salud` FOREIGN KEY (`otra_enfermedades_id`) REFERENCES `otras_enfermedades` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="otras_enfermedades" view="colnames">
+<left>243</left>
+<top>1135</top>
+<width>163</width>
+<height>175</height>
+<sql_create_table>CREATE TABLE `otras_enfermedades` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `enfermedad` varchar(200) DEFAULT NULL,
+  `observaciones` varchar(200) DEFAULT NULL,
+  `enfermedad_cronica` char(2) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
