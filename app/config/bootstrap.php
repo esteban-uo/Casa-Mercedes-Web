@@ -48,3 +48,29 @@
  * Inflector::rules('plural', array('rules' => array(), 'irregular' => array(), 'uninflected' => array()));
  *
  */
+
+	Inflector::rules('singular', array('rules' => array(),
+		'irregular' => array(
+			"pais"=>"paises",
+			"ciclo_escolar"=>"ciclos_escolares",
+			"construccion"=>"construcciones",
+			"distribucion"=>"distribuciones",
+			"documentacion"=>"documentaciones",
+			"escolaridad"=>"escolaridades",
+			"institucion"=>"instituciones",
+			"otra_enfermedad"=>"otras_enfermedades",
+			"social"=>"sociales"
+		), 'uninflected' => array()));
+		
+	Inflector::rules('plural', array('rules' => array(), 
+		'irregular' => array(
+			"pais"=>"paises",
+			"ciclo_escolar"=>"ciclos_escolares",
+			"construccion"=>"construcciones",
+			"distribucion"=>"distribuciones",
+			"documentacion"=>"documentaciones",
+			"escolaridad"=>"escolaridades",
+			"institucion"=>"instituciones",
+			"otra_enfermedad"=>"otras_enfermedades",
+			"social"=>"sociales"
+		), 'uninflected' => array()));
