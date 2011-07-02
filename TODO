@@ -1,37 +1,23 @@
-Sistema web para Casa de las Mercedes I.A.P, Campus Party México 2011
+ï»¿Sistema web para Casa de las Mercedes I.A.P, Campus Party MÃ©xico 2011
 
 Acciones por hacer (+), Acciones concluidas (-), Comentarios (#)
 
 - Estructura de Base de Datos
 	- Revisar Base de datos con David Rubio por modificaciones (Fijar fecha)
-		* Tabla datos_albergado deberia estar en la tabla albergados
-			Permanece para dividir tamaño 
-		* A un albergado le pertenece una institucion no una insitucion un albergado
-			Permanece para dividir tamaño 
-		* Tabla familia deberia estar en la tabla albergados
-			Permanece para dividir tamaño 
-		* Tabla problematica deberia estar en tabla albergados
-			Permanece para dividir tamaño 
-		* Datos de tipo Char(2) tienen que almacenar 0 ó 1? o Sí o No?
-			Cualquiera, usaremos 0 y 1 con tinyint
-		* Preguntar: En las tablas con llaves foraneas donde se esta el id del albergado, ¿Se desea editar dicha a partir de la id del albergado o del nombre del albergado?
-			Id y por nombre
-		* Significado de los "puntos" en cada columna de la tabla ER proporcionada, ¿significan campos necesarios?
-			Campos No nulos
 	+ Incorporar tabla de estados, municipios de Carlos a la base de datos real
 + Incorporar CakePHP al espacio de trabajo
 + Modelos con sus respectivas relaciones
 + Controladores con scaffolding para el flujo de datos
-	+ MockUp gráfico
+	+ MockUp grÃ¡fico
 	+ Revisar MockUp con David Rubio (Fijar fecha)
-	+ Añadir o eliminar metodos CRUD necesarios
-	+ Controladores con métodos apropiados CRUD, no scaffolding
+	+ AÃ±adir o eliminar metodos CRUD necesarios
+	+ Controladores con mÃ©todos apropiados CRUD, no scaffolding
 + Vistas de los controladores
-+ HTML y CSS de layout del Panel de Control para Administración de Albergados y Usuarios
++ HTML y CSS de layout del Panel de Control para AdministraciÃ³n de Albergados y Usuarios
 	#Definir y enlistar actividades
 + HTML y CSS de vistas
 	#Definir y enlistar actividades
-+ HTML y CSS página princial 
++ HTML y CSS pÃ¡gina princial 
 	+ Maquetar HTML y CSS Layout
 	+ Maquetar HTML y CSSS de vista principal
 	+ Contenido multimedia (texto, video, imagenes etc)
@@ -42,6 +28,6 @@ Acciones por hacer (+), Acciones concluidas (-), Comentarios (#)
 + Controlador para CRUD de imagenes por carpeta (foto,familiografia etc)
 	#Definir y enlistar actividades
 + Controlador para CRUD de reportes
-	+ Layouts para reportes Ficha Identificación y Estudio Social
-+ Mejoras Diseño UI con animaciones y detalles
+	+ Layouts para reportes Ficha IdentificaciÃ³n y Estudio Social
++ Mejoras DiseÃ±o UI con animaciones y detalles
 	#Definir y enlistar actividades
