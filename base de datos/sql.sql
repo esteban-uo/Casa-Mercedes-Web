@@ -1,11 +1,11 @@
--- phpMyAdmin SQL Dump
+ï»¿-- phpMyAdmin SQL Dump
 -- version 3.2.4
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 01-07-2011 a las 14:40:36
--- Versión del servidor: 5.1.41
--- Versión de PHP: 5.3.1
+-- Tiempo de generaciÃ³n: 02-07-2011 a las 18:56:22
+-- VersiÃ³n del servidor: 5.1.41
+-- VersiÃ³n de PHP: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -40,16 +40,6 @@ CREATE TABLE IF NOT EXISTS `albergados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `albergados`:
---   `persona_id`
---       `personas` -> `id`
---   `casa_id`
---       `casas` -> `id`
---   `familiograma_imagen_id`
---       `images` -> `id`
---
-
---
 -- Volcar la base de datos para la tabla `albergados`
 --
 
@@ -77,16 +67,6 @@ CREATE TABLE IF NOT EXISTS `casas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `casas`:
---   `pais_id`
---       `paises` -> `id`
---   `estado_id`
---       `estados` -> `id`
---   `municipio_id`
---       `municipios` -> `id`
---
-
---
 -- Volcar la base de datos para la tabla `casas`
 --
 
@@ -94,10 +74,10 @@ CREATE TABLE IF NOT EXISTS `casas` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ciclos_escolar`
+-- Estructura de tabla para la tabla `ciclos_escolares`
 --
 
-CREATE TABLE IF NOT EXISTS `ciclos_escolar` (
+CREATE TABLE IF NOT EXISTS `ciclos_escolares` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
@@ -107,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `ciclos_escolar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Volcar la base de datos para la tabla `ciclos_escolar`
+-- Volcar la base de datos para la tabla `ciclos_escolares`
 --
 
 
@@ -150,12 +130,6 @@ CREATE TABLE IF NOT EXISTS `datos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `datos`:
---   `albergado_id`
---       `albergados` -> `id`
---
-
---
 -- Volcar la base de datos para la tabla `datos`
 --
 
@@ -163,10 +137,10 @@ CREATE TABLE IF NOT EXISTS `datos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `datos_albergado`
+-- Estructura de tabla para la tabla `datos_albergados`
 --
 
-CREATE TABLE IF NOT EXISTS `datos_albergado` (
+CREATE TABLE IF NOT EXISTS `datos_albergados` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `albergado_id` int(11) DEFAULT NULL,
   `consumo_sustancias` varchar(150) DEFAULT NULL,
@@ -181,13 +155,7 @@ CREATE TABLE IF NOT EXISTS `datos_albergado` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `datos_albergado`:
---   `albergado_id`
---       `albergados` -> `id`
---
-
---
--- Volcar la base de datos para la tabla `datos_albergado`
+-- Volcar la base de datos para la tabla `datos_albergados`
 --
 
 
@@ -211,14 +179,6 @@ CREATE TABLE IF NOT EXISTS `dependientes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `dependientes`:
---   `persona_id`
---       `personas` -> `id`
---   `albergado_id`
---       `albergados` -> `id`
---
-
---
 -- Volcar la base de datos para la tabla `dependientes`
 --
 
@@ -226,10 +186,10 @@ CREATE TABLE IF NOT EXISTS `dependientes` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `distribucions`
+-- Estructura de tabla para la tabla `distribuciones`
 --
 
-CREATE TABLE IF NOT EXISTS `distribucions` (
+CREATE TABLE IF NOT EXISTS `distribuciones` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
@@ -239,17 +199,17 @@ CREATE TABLE IF NOT EXISTS `distribucions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Volcar la base de datos para la tabla `distribucions`
+-- Volcar la base de datos para la tabla `distribuciones`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `documentacions`
+-- Estructura de tabla para la tabla `documentaciones`
 --
 
-CREATE TABLE IF NOT EXISTS `documentacions` (
+CREATE TABLE IF NOT EXISTS `documentaciones` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
@@ -259,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `documentacions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Volcar la base de datos para la tabla `documentacions`
+-- Volcar la base de datos para la tabla `documentaciones`
 --
 
 
@@ -284,14 +244,6 @@ CREATE TABLE IF NOT EXISTS `documentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `documentos`:
---   `documentacion_id`
---       `documentacions` -> `id`
---   `persona_id`
---       `personas` -> `id`
---
-
---
 -- Volcar la base de datos para la tabla `documentos`
 --
 
@@ -299,10 +251,10 @@ CREATE TABLE IF NOT EXISTS `documentos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `escolaridads`
+-- Estructura de tabla para la tabla `escolaridades`
 --
 
-CREATE TABLE IF NOT EXISTS `escolaridads` (
+CREATE TABLE IF NOT EXISTS `escolaridades` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `albergado_id` int(11) DEFAULT NULL,
   `ciclo_escolar_id` int(11) DEFAULT NULL,
@@ -324,15 +276,7 @@ CREATE TABLE IF NOT EXISTS `escolaridads` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `escolaridads`:
---   `albergado_id`
---       `albergados` -> `id`
---   `ciclo_escolar_id`
---       `ciclos_escolar` -> `id`
---
-
---
--- Volcar la base de datos para la tabla `escolaridads`
+-- Volcar la base de datos para la tabla `escolaridades`
 --
 
 
@@ -371,22 +315,14 @@ CREATE TABLE IF NOT EXISTS `estados_salud` (
   `lesiones_fisicas` tinyint(1) DEFAULT NULL,
   `discapacidad` tinyint(1) DEFAULT NULL,
   `enfermedades_cronicas` tinyint(1) DEFAULT NULL,
-  `otra_enfermedades_id` int(11) DEFAULT NULL,
+  `otra_enfermedad_id` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_estados_salud` (`otra_enfermedades_id`),
+  KEY `FK_estados_salud` (`otra_enfermedad_id`),
   KEY `FK_estados_saludPersonas` (`persona_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- RELACIONES PARA LA TABLA `estados_salud`:
---   `otra_enfermedades_id`
---       `otras_enfermedades` -> `id`
---   `persona_id`
---       `personas` -> `id`
---
 
 --
 -- Volcar la base de datos para la tabla `estados_salud`
@@ -419,12 +355,6 @@ CREATE TABLE IF NOT EXISTS `familias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `familias`:
---   `albergado_id`
---       `albergados` -> `id`
---
-
---
 -- Volcar la base de datos para la tabla `familias`
 --
 
@@ -445,12 +375,6 @@ CREATE TABLE IF NOT EXISTS `images` (
   PRIMARY KEY (`id`),
   KEY `FK_images` (`tipoimage_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- RELACIONES PARA LA TABLA `images`:
---   `tipoimage_id`
---       `tipoimages` -> `id`
---
 
 --
 -- Volcar la base de datos para la tabla `images`
@@ -477,12 +401,6 @@ CREATE TABLE IF NOT EXISTS `ingresos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `ingresos`:
---   `albergado_id`
---       `albergados` -> `id`
---
-
---
 -- Volcar la base de datos para la tabla `ingresos`
 --
 
@@ -505,12 +423,6 @@ CREATE TABLE IF NOT EXISTS `instituciones` (
   PRIMARY KEY (`id`),
   KEY `FK_instituciones` (`albergado_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- RELACIONES PARA LA TABLA `instituciones`:
---   `albergado_id`
---       `albergados` -> `id`
---
 
 --
 -- Volcar la base de datos para la tabla `instituciones`
@@ -559,18 +471,6 @@ CREATE TABLE IF NOT EXISTS `nacimientos` (
   KEY `FK_nacimientosEstados` (`estado_id`),
   KEY `FK_nacimientosMunicipios` (`municipio_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- RELACIONES PARA LA TABLA `nacimientos`:
---   `persona_id`
---       `personas` -> `id`
---   `estado_id`
---       `estados` -> `id`
---   `municipio_id`
---       `municipios` -> `id`
---   `pais_id`
---       `paises` -> `id`
---
 
 --
 -- Volcar la base de datos para la tabla `nacimientos`
@@ -643,12 +543,6 @@ CREATE TABLE IF NOT EXISTS `personas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `personas`:
---   `foto_imagen_id`
---       `images` -> `id`
---
-
---
 -- Volcar la base de datos para la tabla `personas`
 --
 
@@ -677,12 +571,6 @@ CREATE TABLE IF NOT EXISTS `problematicas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `problematicas`:
---   `albergado_id`
---       `albergados` -> `id`
---
-
---
 -- Volcar la base de datos para la tabla `problematicas`
 --
 
@@ -690,10 +578,10 @@ CREATE TABLE IF NOT EXISTS `problematicas` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `socials`
+-- Estructura de tabla para la tabla `sociales`
 --
 
-CREATE TABLE IF NOT EXISTS `socials` (
+CREATE TABLE IF NOT EXISTS `sociales` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `albergado_id` int(11) DEFAULT NULL,
   `comunicacion` varchar(50) DEFAULT NULL,
@@ -709,23 +597,17 @@ CREATE TABLE IF NOT EXISTS `socials` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `socials`:
---   `albergado_id`
---       `albergados` -> `id`
---
-
---
--- Volcar la base de datos para la tabla `socials`
+-- Volcar la base de datos para la tabla `sociales`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `socio_economico`
+-- Estructura de tabla para la tabla `socio_economicos`
 --
 
-CREATE TABLE IF NOT EXISTS `socio_economico` (
+CREATE TABLE IF NOT EXISTS `socio_economicos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `albergado_id` int(11) DEFAULT NULL,
   `poblacion_indigena` tinyint(1) DEFAULT '0',
@@ -753,23 +635,7 @@ CREATE TABLE IF NOT EXISTS `socio_economico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `socio_economico`:
---   `construccion_id`
---       `construcciones` -> `id`
---   `albergado_id`
---       `albergados` -> `id`
---   `distribucion_id`
---       `distribucions` -> `id`
---   `tenencia_id`
---       `tenencias` -> `id`
---   `vivienda_id`
---       `viviendas` -> `id`
---   `zona_id`
---       `zonas` -> `id`
---
-
---
--- Volcar la base de datos para la tabla `socio_economico`
+-- Volcar la base de datos para la tabla `socio_economicos`
 --
 
 
@@ -834,12 +700,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- RELACIONES PARA LA TABLA `users`:
---   `casa_id`
---       `casas` -> `id`
---
-
---
 -- Volcar la base de datos para la tabla `users`
 --
 
@@ -864,12 +724,6 @@ CREATE TABLE IF NOT EXISTS `vestimentas` (
   PRIMARY KEY (`id`),
   KEY `FK_vestimentasPersonas` (`persona_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- RELACIONES PARA LA TABLA `vestimentas`:
---   `persona_id`
---       `personas` -> `id`
---
 
 --
 -- Volcar la base de datos para la tabla `vestimentas`
@@ -943,9 +797,9 @@ ALTER TABLE `datos`
   ADD CONSTRAINT `FK_datos` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`);
 
 --
--- Filtros para la tabla `datos_albergado`
+-- Filtros para la tabla `datos_albergados`
 --
-ALTER TABLE `datos_albergado`
+ALTER TABLE `datos_albergados`
   ADD CONSTRAINT `FK_datos_albergado` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`);
 
 --
@@ -959,21 +813,21 @@ ALTER TABLE `dependientes`
 -- Filtros para la tabla `documentos`
 --
 ALTER TABLE `documentos`
-  ADD CONSTRAINT `FK_documentos` FOREIGN KEY (`documentacion_id`) REFERENCES `documentacions` (`id`),
+  ADD CONSTRAINT `FK_documentos` FOREIGN KEY (`documentacion_id`) REFERENCES `documentaciones` (`id`),
   ADD CONSTRAINT `FK_documentosPersonas` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id`);
 
 --
--- Filtros para la tabla `escolaridads`
+-- Filtros para la tabla `escolaridades`
 --
-ALTER TABLE `escolaridads`
+ALTER TABLE `escolaridades`
   ADD CONSTRAINT `FK_escolaridadesAlbergado` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`),
-  ADD CONSTRAINT `FK_escolaridads` FOREIGN KEY (`ciclo_escolar_id`) REFERENCES `ciclos_escolar` (`id`);
+  ADD CONSTRAINT `FK_escolaridads` FOREIGN KEY (`ciclo_escolar_id`) REFERENCES `ciclos_escolares` (`id`);
 
 --
 -- Filtros para la tabla `estados_salud`
 --
 ALTER TABLE `estados_salud`
-  ADD CONSTRAINT `FK_estados_salud` FOREIGN KEY (`otra_enfermedades_id`) REFERENCES `otras_enfermedades` (`id`),
+  ADD CONSTRAINT `FK_estados_salud` FOREIGN KEY (`otra_enfermedad_id`) REFERENCES `otras_enfermedades` (`id`),
   ADD CONSTRAINT `FK_estados_saludPersonas` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id`);
 
 --
@@ -1022,18 +876,19 @@ ALTER TABLE `problematicas`
   ADD CONSTRAINT `FK_problematicasAlbergados` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`);
 
 --
--- Filtros para la tabla `socials`
+-- Filtros para la tabla `sociales`
 --
-ALTER TABLE `socials`
+ALTER TABLE `sociales`
   ADD CONSTRAINT `FK_socialsAlbergado` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`);
 
 --
--- Filtros para la tabla `socio_economico`
+-- Filtros para la tabla `socio_economicos`
 --
-ALTER TABLE `socio_economico`
+ALTER TABLE `socio_economicos`
   ADD CONSTRAINT `FK_socio_economico` FOREIGN KEY (`construccion_id`) REFERENCES `construcciones` (`id`),
   ADD CONSTRAINT `FK_socio_economicoAlbergado` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`),
-  ADD CONSTRAINT `FK_socio_economicoDistribucion` FOREIGN KEY (`distribucion_id`) REFERENCES `distribucions` (`id`),
+  ADD CONSTRAINT `FK_socio_economicoConstruc` FOREIGN KEY (`construccion_id`) REFERENCES `construcciones` (`id`),
+  ADD CONSTRAINT `FK_socio_economicoDistribucion` FOREIGN KEY (`distribucion_id`) REFERENCES `distribuciones` (`id`),
   ADD CONSTRAINT `FK_socio_economicoTenencia` FOREIGN KEY (`tenencia_id`) REFERENCES `tenencias` (`id`),
   ADD CONSTRAINT `FK_socio_economicoVivienda` FOREIGN KEY (`vivienda_id`) REFERENCES `viviendas` (`id`),
   ADD CONSTRAINT `FK_socio_economicoZonas` FOREIGN KEY (`zona_id`) REFERENCES `zonas` (`id`);
