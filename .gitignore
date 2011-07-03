@@ -1,2 +1,21 @@
-/app/tmp/
-/cake/test/
+###
+# Configuraciones de Eclipse
+##
+.project
+.cache
+.cache/*
+.settings
+.settings/*
+
+###
+# NetBeans
+###
+nbproject/
+
+###
+# CakePHP temporales
+###
+*/tmp/cache/*
+*/tmp/logs/*
+*/tmp/sessions/*
+*/tmp/tests/*
