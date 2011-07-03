@@ -1,0 +1,81 @@
+<mockup version="1.0" skin="sketch" measuredW="1161" measuredH="612">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="92" y="9" w="800" h="591" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Casa%20de%20Las%20Mercedes%20I.A.P%0Ahttp%3A//www.casadelasmercedes.org.mx</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::HCurly" x="658" y="477" w="-1" h="-1" measuredW="200" measuredH="80" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Acceso%20al%20Panel%20de%20Control%20para%20Administraci%F3n%20de%20Albergados%20y%20Usuarios</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Title" x="82" y="125" w="594" h="-1" measuredW="472" measuredH="51" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Casa%20de%20las%20Mercedes%20I.%20A.%20P</text>
+        <size>32</size>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Paragraph" x="146" y="199" w="455" h="308" measuredW="200" measuredH="140" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipisicing%20elit%2C%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%2C%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.%20Duis%20aute%20irure%20dolor%20in%20reprehenderit%20in%20voluptate%20velit%20esse%20cillum%20dolore%20eu%20fugiat%20nulla%20pariatur.%20Excepteur%20sint%20occaecat%20cupidatat%20non%20proident%2C%20sunt%20in%20culpa%20qui%20officia%20deserunt%20mollit%20anim%20id%20est%20laborum.%0A%20%0Alorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipisicing%20elit%2C%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%2C%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.%20Duis%20aute%20irure%20dolor%20in%20reprehenderit%20in%20voluptate%20velit%20esse%20cillum%20dolore%20eu%20fugiat%20nulla%20pariatur.%20Excepteur%20sint%20occaecat%20cupidatat%20non%20proident%2C%20sunt%20in%20culpa%20qui%20officia%20deserunt%20mollit%20anim%20id%20est%20laborum.</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="__group__" x="658" y="293" w="-1" h="-1" measuredW="188" measuredH="184" zOrder="3" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::FieldSet" x="0" y="0" w="188" h="184" measuredW="200" measuredH="170" zOrder="0" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>Login</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="64" y="134" w="109" h="-1" measuredW="109" measuredH="28" zOrder="1" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>Iniciar%20Sesi%F3n</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::TextInput" x="92" y="35" w="79" h="-1" measuredW="79" measuredH="29" zOrder="2" locked="false" isInGroup="13">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::TextInput" x="92" y="86" w="79" h="-1" measuredW="79" measuredH="29" zOrder="3" locked="false" isInGroup="13">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="14" controlTypeID="__group__" x="670" y="329" w="-1" h="-1" measuredW="74" measuredH="76" zOrder="5" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="17" y="0" w="52" h="25" measuredW="52" measuredH="25" zOrder="0" locked="false" isInGroup="14">
+          <controlProperties>
+            <text>Usuario</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="0" y="51" w="74" h="25" measuredW="74" measuredH="25" zOrder="1" locked="false" isInGroup="14">
+          <controlProperties>
+            <text>Contrase%F1a</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Image" x="658" y="125" w="179" h="153" measuredW="141" measuredH="144" zOrder="6" locked="false" isInGroup="-1"/>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::HCurly" x="146" y="522" w="448" h="80" measuredW="200" measuredH="80" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Contenido%20est%E1tico%20dedicado%20a%20informaci%F3n%20de%20la%20organizaci%F3n</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::StickyNote" x="961" y="85" w="190" h="335" measuredW="109" measuredH="123" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Este%20dise%F1o%20es%20solo%20prueba%2C%20solo%20remarcamos%20que%20contendr%E1%20una%20p%E1gina%20est%E1tica%20y%20un%20formulario%20de%20acceso%0A%20%0AAcciones%3A%0A1.%20El%20usuario%20se%20logea%20y%20es%20redireccionado%20al%20panel%20de%20control</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Arrow" x="851" y="445" w="110" h="32" measuredW="150" measuredH="100" zOrder="9" locked="false" isInGroup="-1"/>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::CallOut" x="976" y="482" w="-1" h="-1" measuredW="38" measuredH="40" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1</text>
+      </controlProperties>
+    </control>
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::ScratchOut" x="656" y="124" w="181" h="154" measuredW="205" measuredH="107" zOrder="11" locked="false" isInGroup="-1"/>
+  </controls>
+</mockup>
