@@ -11,11 +11,3 @@
 # NetBeans
 ###
 nbproject/
-
-###
-# CakePHP temporales
-###
-*/tmp/cache/*
-*/tmp/logs/*
-*/tmp/sessions/*
-*/tmp/tests/*
