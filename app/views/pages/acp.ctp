@@ -1,0 +1,1 @@
+﻿<p>Contenido para el panel de control de administración</p>
