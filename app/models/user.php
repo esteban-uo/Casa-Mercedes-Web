@@ -47,6 +47,13 @@ class User extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 	var $belongsTo = array(
+		'Grupo' => array(
+			'className' => 'Grupo',
+			'foreignKey' => 'grupo_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
 		'Casa' => array(
 			'className' => 'Casa',
 			'foreignKey' => 'casa_id',
