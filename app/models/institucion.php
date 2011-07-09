@@ -5,7 +5,7 @@ class Institucion extends AppModel {
 	var $validate = array(
 		'institucion' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -15,7 +15,7 @@ class Institucion extends AppModel {
 		),
 		'fecha_ingreso' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -33,7 +33,7 @@ class Institucion extends AppModel {
 		),
 		'fecha_egreso' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

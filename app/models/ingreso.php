@@ -4,7 +4,7 @@ class Ingreso extends AppModel {
 	var $validate = array(
 		'fecha' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -22,7 +22,7 @@ class Ingreso extends AppModel {
 		),
 		'motivo' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

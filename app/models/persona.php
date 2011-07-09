@@ -1,21 +1,13 @@
-<?php
+﻿<?php
 class Persona extends AppModel {
 	var $name = 'Persona';
-	var $displayField = 'primer_nombre';
+	var $virtualFields = array(
+				'nombre_completo' => 'CONCAT(Persona.primer_nombre, " ", Persona.segundo_nombre, " ", Persona.primer_apellido, " ", Persona.segundo_apellido)');
+	var $displayField = 'nombre_completo';
 	var $validate = array(
 		'primer_nombre' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'segundo_nombre' => array(
-			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -25,7 +17,7 @@ class Persona extends AppModel {
 		),
 		'primer_apellido' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -35,7 +27,7 @@ class Persona extends AppModel {
 		),
 		'segundo_apellido' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -45,7 +37,7 @@ class Persona extends AppModel {
 		),
 		'sexo' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -55,7 +47,7 @@ class Persona extends AppModel {
 		),
 		'fecha_ingreso' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -64,8 +56,8 @@ class Persona extends AppModel {
 			),
 		),
 		'foto_imagen_id' => array(
-			'date' => array(
-				'rule' => array('date'),
+			'minlength' => array(
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -78,7 +70,7 @@ class Persona extends AppModel {
 
 	var $belongsTo = array(
 		'FotoImagen' => array(
-			'className' => 'FotoImagen',
+			'className' => 'Image',
 			'foreignKey' => 'foto_imagen_id',
 			'conditions' => '',
 			'fields' => '',

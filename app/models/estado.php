@@ -3,7 +3,7 @@ class Estado extends AppModel {
 	var $name = 'Estado';
 	var $displayField = 'title';
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
+	
 	var $hasMany = array(
 		'Casa' => array(
 			'className' => 'Casa',
@@ -32,24 +32,4 @@ class Estado extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-
-
-	var $hasAndBelongsToMany = array(
-		'Salud' => array(
-			'className' => 'Salud',
-			'joinTable' => 'estados_salud',
-			'foreignKey' => 'estado_id',
-			'associationForeignKey' => 'salud_id',
-			'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
-		)
-	);
-
 }

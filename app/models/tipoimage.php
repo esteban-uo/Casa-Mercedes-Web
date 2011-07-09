@@ -5,7 +5,7 @@ class Tipoimage extends AppModel {
 	var $validate = array(
 		'title' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

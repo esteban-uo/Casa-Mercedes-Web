@@ -5,7 +5,7 @@ class OtraEnfermedad extends AppModel {
 	var $validate = array(
 		'enfermedad' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

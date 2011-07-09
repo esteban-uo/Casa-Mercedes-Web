@@ -1,10 +1,11 @@
 <?php
 class Casa extends AppModel {
 	var $name = 'Casa';
+	var $displayField = 'direccion';
 	var $validate = array(
 		'direccion' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -14,7 +15,7 @@ class Casa extends AppModel {
 		),
 		'telefono' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -26,7 +27,7 @@ class Casa extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 	var $belongsTo = array(
-		'Pais' => array(
+		'Paises' => array(
 			'className' => 'Pais',
 			'foreignKey' => 'pais_id',
 			'conditions' => '',

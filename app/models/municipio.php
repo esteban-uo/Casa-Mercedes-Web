@@ -32,5 +32,5 @@ class Municipio extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-
 }
+?>

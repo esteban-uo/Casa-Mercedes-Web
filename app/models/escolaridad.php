@@ -5,7 +5,7 @@ class Escolaridad extends AppModel {
 	var $validate = array(
 		'escuela' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

@@ -5,7 +5,7 @@ class EstadosSalud extends AppModel {
 	var $validate = array(
 		'tipo_sangre' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -15,7 +15,7 @@ class EstadosSalud extends AppModel {
 		),
 		'peso' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -33,7 +33,7 @@ class EstadosSalud extends AppModel {
 		),
 		'discapacidad' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -43,7 +43,7 @@ class EstadosSalud extends AppModel {
 		),
 		'enfermedades_cronicas' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -53,7 +53,7 @@ class EstadosSalud extends AppModel {
 		),
 		'otra_enfermedad_id' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

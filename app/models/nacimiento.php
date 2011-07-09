@@ -4,7 +4,7 @@ class Nacimiento extends AppModel {
 	var $validate = array(
 		'fecha_nacimiento' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

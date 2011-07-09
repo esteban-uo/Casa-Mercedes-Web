@@ -1,11 +1,11 @@
-<?php
+﻿<?php
 class Albergado extends AppModel {
 	var $name = 'Albergado';
 	var $displayField = 'persona_id';
 	var $validate = array(
 		'expediente' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -25,7 +25,7 @@ class Albergado extends AppModel {
 		),
 		'embarazo_actual' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -35,7 +35,7 @@ class Albergado extends AppModel {
 		),
 		'cant_hijos' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -53,7 +53,7 @@ class Albergado extends AppModel {
 		),
 		'remitida_por' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

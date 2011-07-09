@@ -4,7 +4,7 @@ class Image extends AppModel {
 	var $validate = array(
 		'url' => array(
 			'minlength' => array(
-				'rule' => array('minlength'),
+				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -22,13 +22,22 @@ class Image extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		),
-		'AlbergadosImages' => array(
-			'className' => 'AlbergadosImages',
-			'foreignKey' => 'id',
+		)
+	);
+	
+	var $hasMany = array(
+		'PersonaImagen' => array(
+			'className' => 'Persona',
+			'foreignKey' => 'image_id',
+			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
 		)
 	);
 }
