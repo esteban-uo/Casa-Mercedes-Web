@@ -1,11 +1,11 @@
--- phpMyAdmin SQL Dump
+ï»¿-- phpMyAdmin SQL Dump
 -- version 3.2.4
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 01-07-2011 a las 17:43:21
--- Versión del servidor: 5.1.41
--- Versión de PHP: 5.3.1
+-- Tiempo de generaciÃ³n: 09-07-2011 a las 07:59:05
+-- VersiÃ³n del servidor: 5.1.41
+-- VersiÃ³n de PHP: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `albergados` (
   KEY `FK_albergados` (`persona_id`),
   KEY `FK_albergadosCasas` (`casa_id`),
   KEY `FK_albergadosImagen` (`familiograma_imagen_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Volcar la base de datos para la tabla `albergados`
@@ -356,6 +356,26 @@ CREATE TABLE IF NOT EXISTS `familias` (
 
 --
 -- Volcar la base de datos para la tabla `familias`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `grupos`
+--
+
+CREATE TABLE IF NOT EXISTS `grupos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modified_user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `grupos`
 --
 
 
@@ -687,6 +707,7 @@ CREATE TABLE IF NOT EXISTS `tipoimages` (
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `grupo_id` int(11) DEFAULT NULL,
   `casa_id` int(11) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
@@ -696,7 +717,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_users` (`casa_id`)
+  KEY `FK_users` (`casa_id`),
+  KEY `FK_usersGrupo` (`grupo_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -885,9 +907,9 @@ ALTER TABLE `sociales`
 -- Filtros para la tabla `socio_economicos`
 --
 ALTER TABLE `socio_economicos`
-  ADD CONSTRAINT `FK_socio_economicoConstruc` FOREIGN KEY (`construccion_id`) REFERENCES `construcciones` (`id`),
   ADD CONSTRAINT `FK_socio_economico` FOREIGN KEY (`construccion_id`) REFERENCES `construcciones` (`id`),
   ADD CONSTRAINT `FK_socio_economicoAlbergado` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`),
+  ADD CONSTRAINT `FK_socio_economicoConstruc` FOREIGN KEY (`construccion_id`) REFERENCES `construcciones` (`id`),
   ADD CONSTRAINT `FK_socio_economicoDistribucion` FOREIGN KEY (`distribucion_id`) REFERENCES `distribuciones` (`id`),
   ADD CONSTRAINT `FK_socio_economicoTenencia` FOREIGN KEY (`tenencia_id`) REFERENCES `tenencias` (`id`),
   ADD CONSTRAINT `FK_socio_economicoVivienda` FOREIGN KEY (`vivienda_id`) REFERENCES `viviendas` (`id`),
@@ -897,6 +919,7 @@ ALTER TABLE `socio_economicos`
 -- Filtros para la tabla `users`
 --
 ALTER TABLE `users`
+  ADD CONSTRAINT `FK_usersGrupo` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`),
   ADD CONSTRAINT `FK_users` FOREIGN KEY (`casa_id`) REFERENCES `casas` (`id`);
 
 --
