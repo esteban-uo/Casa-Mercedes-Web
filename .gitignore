@@ -11,3 +11,8 @@
 # NetBeans
 ###
 nbproject/
+
+###
+# Carpeta de test
+###
+/cake/test
