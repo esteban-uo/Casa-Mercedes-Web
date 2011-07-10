@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 02-07-2011 a las 18:56:22
+-- Tiempo de generación: 09-07-2011 a las 07:59:05
 -- Versión del servidor: 5.1.41
 -- Versión de PHP: 5.3.1
 
@@ -362,6 +362,26 @@ CREATE TABLE IF NOT EXISTS `familias` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `grupos`
+--
+
+CREATE TABLE IF NOT EXISTS `grupos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modified_user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `grupos`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `images`
 --
 
@@ -687,6 +707,7 @@ CREATE TABLE IF NOT EXISTS `tipoimages` (
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `grupo_id` int(11) DEFAULT NULL,
   `casa_id` int(11) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
@@ -696,7 +717,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_users` (`casa_id`)
+  KEY `FK_users` (`casa_id`),
+  KEY `FK_usersGrupo` (`grupo_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -897,6 +919,7 @@ ALTER TABLE `socio_economicos`
 -- Filtros para la tabla `users`
 --
 ALTER TABLE `users`
+  ADD CONSTRAINT `FK_usersGrupo` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`),
   ADD CONSTRAINT `FK_users` FOREIGN KEY (`casa_id`) REFERENCES `casas` (`id`);
 
 --

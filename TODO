@@ -5,7 +5,7 @@ Acciones por hacer (+), Acciones concluidas (-), Comentarios (#)
 - Estructura de Base de Datos
 	- Revisar Base de datos con David Rubio por modificaciones (Fijar fecha)
 	+ Incorporar tabla de estados, municipios de Carlos a la base de datos real
-+ Incorporar CakePHP al espacio de trabajo
+- Incorporar CakePHP al espacio de trabajo
 + Modelos con sus respectivas relaciones
 + Controladores con scaffolding para el flujo de datos
 	+ MockUp gráfico
