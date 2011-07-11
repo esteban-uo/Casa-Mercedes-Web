@@ -9,7 +9,7 @@
 		echo $this->Form->input('password');
 		echo $this->Form->input('fecha_alta');
 		echo $this->Form->input('fecha_baja');
-		echo $this->Form->input('modified_user_id');
+		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
