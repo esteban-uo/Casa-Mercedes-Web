@@ -7,7 +7,7 @@
 		echo $this->Form->input('albergado_id');
 		echo $this->Form->input('plan_social');
 		echo $this->Form->input('historia_de_vida');
-		echo $this->Form->input('modified_user_id');
+		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

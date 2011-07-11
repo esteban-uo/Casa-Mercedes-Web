@@ -8,7 +8,7 @@
 		echo $this->Form->input('perforaciones');
 		echo $this->Form->input('tatuajes');
 		echo $this->Form->input('delitos');
-		echo $this->Form->input('modified_user_id');
+		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

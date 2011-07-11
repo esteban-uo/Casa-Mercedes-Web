@@ -12,7 +12,7 @@
 		echo $this->Form->input('status');
 		echo $this->Form->input('fecha_ingreso');
 		echo $this->Form->input('foto_imagen_id');
-		echo $this->Form->input('modified_user_id');
+		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

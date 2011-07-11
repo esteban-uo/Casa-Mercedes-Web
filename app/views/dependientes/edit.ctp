@@ -7,7 +7,7 @@
 		echo $this->Form->input('persona_id');
 		echo $this->Form->input('albergado_id');
 		echo $this->Form->input('expediente');
-		echo $this->Form->input('modified_user_id');
+		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

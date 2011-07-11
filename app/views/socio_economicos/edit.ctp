@@ -17,7 +17,7 @@
 		echo $this->Form->input('construccion_id');
 		echo $this->Form->input('tenencia_id');
 		echo $this->Form->input('distribucion_id');
-		echo $this->Form->input('modified_user_id');
+		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

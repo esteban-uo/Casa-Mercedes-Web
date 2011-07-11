@@ -8,7 +8,7 @@
 		echo $this->Form->input('fecha');
 		echo $this->Form->input('motivo');
 		echo $this->Form->input('ingreso_egreso');
-		echo $this->Form->input('modified_user_id');
+		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
