@@ -43,9 +43,6 @@ CREATE TABLE IF NOT EXISTS `albergados` (
 -- Volcar la base de datos para la tabla `albergados`
 --
 
-INSERT INTO `albergados` (`id`, `persona_id`, `expediente`, `casa_id`, `fecha_ingreso`, `embarazo_actual`, `cant_hijos`, `remitida_por`, `averiguacion_previa`, `familiograma_imagen_id`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 2, 'Algo', 1, '2011-07-09', 'Algo', 2, 'Alguiens', 'Algo', 1, '2011-07-09 10:18:52', '2011-07-12 00:04:08', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -72,9 +69,6 @@ CREATE TABLE IF NOT EXISTS `casas` (
 -- Volcar la base de datos para la tabla `casas`
 --
 
-INSERT INTO `casas` (`id`, `pais_id`, `estado_id`, `municipio_id`, `direccion`, `telefono`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 1, 1, 1, 'Casa 1', '400100201', '2011-07-09 10:09:51', '2011-07-11 20:35:41', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -94,9 +88,6 @@ CREATE TABLE IF NOT EXISTS `ciclos_escolares` (
 -- Volcar la base de datos para la tabla `ciclos_escolares`
 --
 
-INSERT INTO `ciclos_escolares` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, '2008', '2011-07-11 17:08:38', '2011-07-11 17:08:38', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -115,9 +106,6 @@ CREATE TABLE IF NOT EXISTS `construcciones` (
 --
 -- Volcar la base de datos para la tabla `construcciones`
 --
-
-INSERT INTO `construcciones` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'ConstrucciÃ³n 1 ', '2011-07-10 22:56:39', '2011-07-10 23:40:43', 1);
 
 -- --------------------------------------------------------
 
@@ -210,10 +198,6 @@ CREATE TABLE IF NOT EXISTS `distribuciones` (
 -- Volcar la base de datos para la tabla `distribuciones`
 --
 
-INSERT INTO `distribuciones` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'Distribuccion', '2011-07-11 18:55:58', '2011-07-11 18:55:58', 1),
-(2, 'Distribuccion 1', '2011-07-11 18:58:01', '2011-07-11 18:58:01', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -232,9 +216,6 @@ CREATE TABLE IF NOT EXISTS `documentaciones` (
 --
 -- Volcar la base de datos para la tabla `documentaciones`
 --
-
-INSERT INTO `documentaciones` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'Documentacion 1', '2011-07-11 17:48:05', '2011-07-11 17:48:05', 1);
 
 -- --------------------------------------------------------
 
@@ -311,9 +292,6 @@ CREATE TABLE IF NOT EXISTS `estados` (
 --
 -- Volcar la base de datos para la tabla `estados`
 --
-
-INSERT INTO `estados` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'Aguascalientes', '2011-07-09 09:38:09', '2011-07-11 17:00:30', 1);
 
 -- --------------------------------------------------------
 
@@ -393,9 +371,6 @@ CREATE TABLE IF NOT EXISTS `grupos` (
 -- Volcar la base de datos para la tabla `grupos`
 --
 
-INSERT INTO `grupos` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'Administrador', '2011-07-10 20:55:05', '2011-07-10 20:55:05', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -416,9 +391,6 @@ CREATE TABLE IF NOT EXISTS `images` (
 --
 -- Volcar la base de datos para la tabla `images`
 --
-
-INSERT INTO `images` (`id`, `url`, `tipoimage_id`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'aasdasdsa.jpg', 1, '2011-07-09 09:21:58', '2011-07-09 09:21:58', 1);
 
 -- --------------------------------------------------------
 
@@ -487,9 +459,6 @@ CREATE TABLE IF NOT EXISTS `municipios` (
 -- Volcar la base de datos para la tabla `municipios`
 --
 
-INSERT INTO `municipios` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'Aguascalientes ', '2011-07-09 09:42:11', '2011-07-09 10:06:53', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -539,9 +508,6 @@ CREATE TABLE IF NOT EXISTS `otras_enfermedades` (
 -- Volcar la base de datos para la tabla `otras_enfermedades`
 --
 
-INSERT INTO `otras_enfermedades` (`id`, `enfermedad`, `observaciones`, `enfermedad_cronica`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'Enfermedad Grave 1', '', 1, '2011-07-11 18:36:55', '2011-07-11 18:36:55', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -560,9 +526,6 @@ CREATE TABLE IF NOT EXISTS `paises` (
 --
 -- Volcar la base de datos para la tabla `paises`
 --
-
-INSERT INTO `paises` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'MÃ©xico', '2011-07-09 09:35:13', '2011-07-11 18:31:56', 1);
 
 -- --------------------------------------------------------
 
@@ -590,9 +553,6 @@ CREATE TABLE IF NOT EXISTS `personas` (
 --
 -- Volcar la base de datos para la tabla `personas`
 --
-
-INSERT INTO `personas` (`id`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `sexo`, `status`, `fecha_ingreso`, `foto_imagen_id`, `created`, `modified`, `modified_user_id`) VALUES
-(2, 'Lorem', 'Ipsum', 'Dolor', 'Sit', 'm', 'Algo', '2011-07-09', 1, '2011-07-09 09:22:35', '2011-07-09 09:22:35', 1);
 
 -- --------------------------------------------------------
 
@@ -705,8 +665,7 @@ CREATE TABLE IF NOT EXISTS `tenencias` (
 -- Volcar la base de datos para la tabla `tenencias`
 --
 
-INSERT INTO `tenencias` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'Tenencia 1', '2011-07-11 18:53:55', '2011-07-11 18:53:55', 1);
+
 
 -- --------------------------------------------------------
 
@@ -727,8 +686,7 @@ CREATE TABLE IF NOT EXISTS `tipoimages` (
 -- Volcar la base de datos para la tabla `tipoimages`
 --
 
-INSERT INTO `tipoimages` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'Fotografia de Usuario', '2011-07-09 09:16:27', '2011-07-09 09:16:27', 1);
+
 
 -- --------------------------------------------------------
 
@@ -756,8 +714,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Volcar la base de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `grupo_id`, `casa_id`, `username`, `password`, `fecha_alta`, `fecha_baja`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 1, 1, 'admin', 'admin', '2011-07-11', '2011-07-11', '2011-07-11 07:50:17', '2011-07-11 07:50:17', 1);
+
 
 -- --------------------------------------------------------
 
@@ -804,8 +761,7 @@ CREATE TABLE IF NOT EXISTS `viviendas` (
 -- Volcar la base de datos para la tabla `viviendas`
 --
 
-INSERT INTO `viviendas` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'Vivienda 1', '2011-07-11 18:53:12', '2011-07-11 18:53:12', 1);
+
 
 -- --------------------------------------------------------
 
@@ -826,8 +782,6 @@ CREATE TABLE IF NOT EXISTS `zonas` (
 -- Volcar la base de datos para la tabla `zonas`
 --
 
-INSERT INTO `zonas` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'Zona   ', '2011-07-10 22:54:50', '2011-07-11 10:16:33', 1);
 
 --
 -- Filtros para las tablas descargadas (dump)
