@@ -11,7 +11,7 @@ Acciones por hacer (+), Acciones concluidas (-), Comentarios (#)
 	- MockUp gráfico
 	+ Revisar MockUp con David Rubio (Fijar fecha)
 	- Añadir o eliminar metodos CRUD necesarios
-	+ Controladores con métodos apropiados CRUD, no scaffolding (aun no completo)
+	- Controladores con métodos apropiados CRUD, no scaffolding (aun no completo)
 + Plugin Jquery que convierta un optionbox (con sus valores y opciones) en un input de autocompletado para la busqueda de un valor (que sera la opcion en el optionbox guarde el id (valor del selectbox) y el valor seleccionado dado que este en el select, al seleccionar
 + Plugin Jquery que llame a un método como "add" y renderize en la pantalla la vista "add" de cakephp a través de ajax para agregar algun registro de un modelo y que regrese unicamente el id si fue insertado adecuadamente. ie: Se usara para subir imagenes desde algun otro modelo que lo requiera y asi solo registrar una id foranea.
 + Vistas de los controladores
