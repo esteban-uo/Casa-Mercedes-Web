@@ -12,7 +12,7 @@
 		echo $this->Form->input('cant_hijos');
 		echo $this->Form->input('remitida_por');
 		echo $this->Form->input('averiguacion_previa');
-		echo $this->Form->input('familiograma_imagen_id');
+		echo $this->Form->input('familiograma_imagen_id', array("type"=>"text"));
 		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>

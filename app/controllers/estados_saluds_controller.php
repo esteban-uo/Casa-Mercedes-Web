@@ -27,8 +27,8 @@ class EstadosSaludsController extends AppController {
 			}
 		}
 		$personas = $this->EstadosSalud->Persona->find('list');
-		$otraEnfermedads = $this->EstadosSalud->OtraEnfermedad->find('list');
-		$this->set(compact('personas', 'otraEnfermedads'));
+		$otrasEnfermedades = $this->EstadosSalud->OtraEnfermedad->find('list');
+		$this->set(compact('personas', 'otrasEnfermedades'));
 	}
 
 	function edit($id = null) {

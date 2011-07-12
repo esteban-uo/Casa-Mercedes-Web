@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class Construccion extends AppModel {
 	var $name = 'Construccion';
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -18,5 +18,5 @@ class Construccion extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-
 }
+?>

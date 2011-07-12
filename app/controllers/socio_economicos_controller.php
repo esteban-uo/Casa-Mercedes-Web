@@ -29,9 +29,9 @@ class SocioEconomicosController extends AppController {
 		$albergados = $this->SocioEconomico->Albergado->find('list');
 		$zonas = $this->SocioEconomico->Zona->find('list');
 		$viviendas = $this->SocioEconomico->Vivienda->find('list');
-		$construcciones = $this->SocioEconomico->Construcciones->find('list');
-		$tenencias = $this->SocioEconomico->Tenencium->find('list');
-		$distribuciones = $this->SocioEconomico->Distribuciones->find('list');
+		$construcciones = $this->SocioEconomico->Construccion->find('list');
+		$tenencias = $this->SocioEconomico->Tenencia->find('list');
+		$distribuciones = $this->SocioEconomico->Distribucion->find('list');
 		$this->set(compact('albergados', 'zonas', 'viviendas', 'construcciones', 'tenencias', 'distribuciones'));
 	}
 

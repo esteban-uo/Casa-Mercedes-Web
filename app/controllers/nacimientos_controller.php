@@ -27,7 +27,7 @@ class NacimientosController extends AppController {
 			}
 		}
 		$personas = $this->Nacimiento->Persona->find('list');
-		$paises = $this->Nacimiento->Paises->find('list');
+		$paises = $this->Nacimiento->Pais->find('list');
 		$estados = $this->Nacimiento->Estado->find('list');
 		$municipios = $this->Nacimiento->Municipio->find('list');
 		$this->set(compact('personas', 'paises', 'estados', 'municipios'));

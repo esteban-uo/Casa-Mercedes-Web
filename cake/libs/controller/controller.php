@@ -1317,4 +1317,4 @@ class Controller extends Object {
 	function _scaffoldError($method) {
 		return false;
 	}
-}
+} ?>

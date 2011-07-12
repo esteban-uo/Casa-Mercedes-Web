@@ -48,14 +48,14 @@ class User extends AppModel {
 
 	var $belongsTo = array(
 		'Grupo' => array(
-			'className' => 'Grupo',
+			'className' => 'Grupos',
 			'foreignKey' => 'grupo_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
 		'Casa' => array(
-			'className' => 'Casa',
+			'className' => 'Casas',
 			'foreignKey' => 'casa_id',
 			'conditions' => '',
 			'fields' => '',

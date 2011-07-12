@@ -4,9 +4,9 @@ class Estado extends AppModel {
 	var $displayField = 'title';
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 	
-	var $hasMany = array(
+		var $hasMany = array(
 		'Casa' => array(
-			'className' => 'Casa',
+			'className' => 'Casas',
 			'foreignKey' => 'estado_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -19,7 +19,7 @@ class Estado extends AppModel {
 			'counterQuery' => ''
 		),
 		'Nacimiento' => array(
-			'className' => 'Nacimiento',
+			'className' => 'Nacimientos',
 			'foreignKey' => 'estado_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -32,4 +32,6 @@ class Estado extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+
 }
+?>

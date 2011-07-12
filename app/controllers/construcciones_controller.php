@@ -1,4 +1,4 @@
-<?php
+﻿<?php 
 class ConstruccionesController extends AppController {
 
 	var $name = 'Construcciones';
@@ -36,7 +36,7 @@ class ConstruccionesController extends AppController {
 		if (!empty($this->data)) {
 			if ($this->Construccion->save($this->data)) {
 				$this->Session->setFlash(__('The construccion has been saved', true));
-				$this->redirect(array('action' => 'index'));
+				//$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The construccion could not be saved. Please, try again.', true));
 			}
@@ -59,3 +59,4 @@ class ConstruccionesController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 }
+?>

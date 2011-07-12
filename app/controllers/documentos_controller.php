@@ -27,7 +27,7 @@ class DocumentosController extends AppController {
 			}
 		}
 		$personas = $this->Documento->Persona->find('list');
-		$documentaciones = $this->Documento->Documentaciones->find('list');
+		$documentaciones = $this->Documento->Documentacion->find('list');
 		$this->set(compact('personas', 'documentaciones'));
 	}
 
