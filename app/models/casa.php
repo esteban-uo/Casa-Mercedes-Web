@@ -28,21 +28,21 @@ class Casa extends AppModel {
 
 	var $belongsTo = array(
 		'Paises' => array(
-			'className' => 'Pais',
+			'className' => 'Paises',
 			'foreignKey' => 'pais_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
 		'Estado' => array(
-			'className' => 'Estado',
+			'className' => 'Estados',
 			'foreignKey' => 'estado_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
 		'Municipio' => array(
-			'className' => 'Municipio',
+			'className' => 'Municipios',
 			'foreignKey' => 'municipio_id',
 			'conditions' => '',
 			'fields' => '',
@@ -52,7 +52,7 @@ class Casa extends AppModel {
 
 	var $hasMany = array(
 		'Albergado' => array(
-			'className' => 'Albergado',
+			'className' => 'Albergados',
 			'foreignKey' => 'casa_id',
 			'dependent' => false,
 			'conditions' => '',

@@ -302,3 +302,8 @@
  *
  */
 	Cache::config('default', array('engine' => 'File'));
+
+	/**
+	*
+	*/
+	Configure::write('id.usuario.prueba', '1');
