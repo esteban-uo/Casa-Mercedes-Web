@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-07-2011 a las 07:59:05
+-- Tiempo de generación: 12-07-2011 a las 00:08:22
 -- Versión del servidor: 5.1.41
 -- Versión de PHP: 5.3.1
 
@@ -37,12 +37,14 @@ CREATE TABLE IF NOT EXISTS `albergados` (
   KEY `FK_albergados` (`persona_id`),
   KEY `FK_albergadosCasas` (`casa_id`),
   KEY `FK_albergadosImagen` (`familiograma_imagen_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `albergados`
 --
 
+INSERT INTO `albergados` (`id`, `persona_id`, `expediente`, `casa_id`, `fecha_ingreso`, `embarazo_actual`, `cant_hijos`, `remitida_por`, `averiguacion_previa`, `familiograma_imagen_id`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 2, 'Algo', 1, '2011-07-09', 'Algo', 2, 'Alguiens', 'Algo', 1, '2011-07-09 10:18:52', '2011-07-12 00:04:08', 1);
 
 -- --------------------------------------------------------
 
@@ -64,12 +66,14 @@ CREATE TABLE IF NOT EXISTS `casas` (
   KEY `FK_casas` (`pais_id`),
   KEY `FK_casasEstados` (`estado_id`),
   KEY `FK_casasMunicipios` (`municipio_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Volcar la base de datos para la tabla `casas`
 --
 
+INSERT INTO `casas` (`id`, `pais_id`, `estado_id`, `municipio_id`, `direccion`, `telefono`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 1, 1, 1, 'Casa 1', '400100201', '2011-07-09 10:09:51', '2011-07-11 20:35:41', 1);
 
 -- --------------------------------------------------------
 
@@ -84,12 +88,14 @@ CREATE TABLE IF NOT EXISTS `ciclos_escolares` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `ciclos_escolares`
 --
 
+INSERT INTO `ciclos_escolares` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
+(1, '2008', '2011-07-11 17:08:38', '2011-07-11 17:08:38', 1);
 
 -- --------------------------------------------------------
 
@@ -104,12 +110,14 @@ CREATE TABLE IF NOT EXISTS `construcciones` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `construcciones`
 --
 
+INSERT INTO `construcciones` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 'ConstrucciÃ³n 1 ', '2011-07-10 22:56:39', '2011-07-10 23:40:43', 1);
 
 -- --------------------------------------------------------
 
@@ -196,12 +204,15 @@ CREATE TABLE IF NOT EXISTS `distribuciones` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Volcar la base de datos para la tabla `distribuciones`
 --
 
+INSERT INTO `distribuciones` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 'Distribuccion', '2011-07-11 18:55:58', '2011-07-11 18:55:58', 1),
+(2, 'Distribuccion 1', '2011-07-11 18:58:01', '2011-07-11 18:58:01', 1);
 
 -- --------------------------------------------------------
 
@@ -216,12 +227,14 @@ CREATE TABLE IF NOT EXISTS `documentaciones` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `documentaciones`
 --
 
+INSERT INTO `documentaciones` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 'Documentacion 1', '2011-07-11 17:48:05', '2011-07-11 17:48:05', 1);
 
 -- --------------------------------------------------------
 
@@ -293,12 +306,14 @@ CREATE TABLE IF NOT EXISTS `estados` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `estados`
 --
 
+INSERT INTO `estados` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 'Aguascalientes', '2011-07-09 09:38:09', '2011-07-11 17:00:30', 1);
 
 -- --------------------------------------------------------
 
@@ -372,12 +387,14 @@ CREATE TABLE IF NOT EXISTS `grupos` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `grupos`
 --
 
+INSERT INTO `grupos` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 'Administrador', '2011-07-10 20:55:05', '2011-07-10 20:55:05', 1);
 
 -- --------------------------------------------------------
 
@@ -394,12 +411,14 @@ CREATE TABLE IF NOT EXISTS `images` (
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_images` (`tipoimage_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `images`
 --
 
+INSERT INTO `images` (`id`, `url`, `tipoimage_id`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 'aasdasdsa.jpg', 1, '2011-07-09 09:21:58', '2011-07-09 09:21:58', 1);
 
 -- --------------------------------------------------------
 
@@ -462,12 +481,14 @@ CREATE TABLE IF NOT EXISTS `municipios` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `municipios`
 --
 
+INSERT INTO `municipios` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 'Aguascalientes ', '2011-07-09 09:42:11', '2011-07-09 10:06:53', 1);
 
 -- --------------------------------------------------------
 
@@ -512,12 +533,14 @@ CREATE TABLE IF NOT EXISTS `otras_enfermedades` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `otras_enfermedades`
 --
 
+INSERT INTO `otras_enfermedades` (`id`, `enfermedad`, `observaciones`, `enfermedad_cronica`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 'Enfermedad Grave 1', '', 1, '2011-07-11 18:36:55', '2011-07-11 18:36:55', 1);
 
 -- --------------------------------------------------------
 
@@ -532,12 +555,14 @@ CREATE TABLE IF NOT EXISTS `paises` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `paises`
 --
 
+INSERT INTO `paises` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 'MÃ©xico', '2011-07-09 09:35:13', '2011-07-11 18:31:56', 1);
 
 -- --------------------------------------------------------
 
@@ -556,16 +581,18 @@ CREATE TABLE IF NOT EXISTS `personas` (
   `fecha_ingreso` date DEFAULT NULL,
   `foto_imagen_id` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
-  `modiefied` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_personas` (`foto_imagen_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Volcar la base de datos para la tabla `personas`
 --
 
+INSERT INTO `personas` (`id`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `sexo`, `status`, `fecha_ingreso`, `foto_imagen_id`, `created`, `modified`, `modified_user_id`) VALUES
+(2, 'Lorem', 'Ipsum', 'Dolor', 'Sit', 'm', 'Algo', '2011-07-09', 1, '2011-07-09 09:22:35', '2011-07-09 09:22:35', 1);
 
 -- --------------------------------------------------------
 
@@ -672,12 +699,14 @@ CREATE TABLE IF NOT EXISTS `tenencias` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `tenencias`
 --
 
+INSERT INTO `tenencias` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 'Tenencia 1', '2011-07-11 18:53:55', '2011-07-11 18:53:55', 1);
 
 -- --------------------------------------------------------
 
@@ -692,12 +721,14 @@ CREATE TABLE IF NOT EXISTS `tipoimages` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `tipoimages`
 --
 
+INSERT INTO `tipoimages` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 'Fotografia de Usuario', '2011-07-09 09:16:27', '2011-07-09 09:16:27', 1);
 
 -- --------------------------------------------------------
 
@@ -719,12 +750,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   KEY `FK_users` (`casa_id`),
   KEY `FK_usersGrupo` (`grupo_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Volcar la base de datos para la tabla `users`
 --
 
+INSERT INTO `users` (`id`, `grupo_id`, `casa_id`, `username`, `password`, `fecha_alta`, `fecha_baja`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 1, 1, 'admin', 'admin', '2011-07-11', '2011-07-11', '2011-07-11 07:50:17', '2011-07-11 07:50:17', 1);
 
 -- --------------------------------------------------------
 
@@ -765,12 +798,14 @@ CREATE TABLE IF NOT EXISTS `viviendas` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `viviendas`
 --
 
+INSERT INTO `viviendas` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 'Vivienda 1', '2011-07-11 18:53:12', '2011-07-11 18:53:12', 1);
 
 -- --------------------------------------------------------
 
@@ -785,12 +820,14 @@ CREATE TABLE IF NOT EXISTS `zonas` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Volcar la base de datos para la tabla `zonas`
 --
 
+INSERT INTO `zonas` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 'Zona   ', '2011-07-10 22:54:50', '2011-07-11 10:16:33', 1);
 
 --
 -- Filtros para las tablas descargadas (dump)
@@ -919,8 +956,8 @@ ALTER TABLE `socio_economicos`
 -- Filtros para la tabla `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `FK_usersGrupo` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`),
-  ADD CONSTRAINT `FK_users` FOREIGN KEY (`casa_id`) REFERENCES `casas` (`id`);
+  ADD CONSTRAINT `FK_users` FOREIGN KEY (`casa_id`) REFERENCES `casas` (`id`),
+  ADD CONSTRAINT `FK_usersGrupo` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`);
 
 --
 -- Filtros para la tabla `vestimentas`
