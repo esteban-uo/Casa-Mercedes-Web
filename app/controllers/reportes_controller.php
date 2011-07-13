@@ -8,6 +8,7 @@ class ReportesController extends AppController {
 	*/
 	function index() {
 		$this->layout = "panel_control";
+		Debug($this->data);
 		//TODO ejecuta método para la generación de reporte segun el tipo selecionado
 	}
 

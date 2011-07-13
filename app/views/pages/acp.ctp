@@ -1,5 +1,12 @@
-﻿<p>Contenido para el panel de control de administración</p>
-<div class="actions">
+﻿<style>
+.fl{
+	float:left;
+}
+cl{
+	clear:left;
+}
+</style>
+<div class="actions fl">
 	<h2>Acciones</h2>
 	<ul>
 		<li><?php echo $this->Html->link(__('Albergados', true), array('controller'=>'albergados','action' => 'index')); ?></li>
@@ -15,6 +22,12 @@
 		<li><?php echo $this->Html->link(__('Reportes', true), array('controller'=>'reportes','action' => 'index')); ?></li>
 	</ul>
 </div>
-<div>
-	<p>Algo de contenido...</p>
+<div class="fl">
+	<p>Contenido para el panel de control de administración</p>
+	<?php
+	echo $this->Form->create(array('action' => 'acp'));
+	echo $this->Form->input('persona', array("label"=>"Albergado a Buscar"));
+    echo $this->Form->end('Buscar');
+	?>
 </div>
+<div class="cl"></div>

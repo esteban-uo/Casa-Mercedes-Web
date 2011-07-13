@@ -10,6 +10,9 @@ class PagesController extends AppController {
 	}
 	
 	function acp() {
+		if (!empty($this->data)) {
+			Debug($this->data);
+		}
 		$title_for_layout = "Panel de control del Administrador";
 		$this->layout = 'panel_control';
 		$this->set(compact('title_for_layout'));
