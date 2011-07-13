@@ -1,69 +1,38 @@
--- phpMyAdmin SQL Dump
--- version 3.1.3.1
--- http://www.phpmyadmin.net
---
--- Servidor: 192.168.3.8
--- Tiempo de generación: 05-03-2010 a las 13:56:58
--- Versión del servidor: 5.1.25
--- Versión de PHP: 5.2.9-2
-
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Base de datos: `asistente`
---
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `estados`
---
-
-
-
---
--- Volcar la base de datos para la tabla `estados`
---
-
-INSERT INTO `estados` (`id`, `title`) VALUES
-(1, 'Aguascalientes'),
-(2, 'Baja California'),
-(3, 'Baja California Sur'),
-(4, 'Campeche'),
-(5, 'Chiapas'),
-(6, 'Chihuahua'),
-(7, 'Coahuila'),
-(8, 'Colima'),
-(9, 'Distrito Federal'),
-(10, 'Durango'),
-(11, 'Estado de México'),
-(12, 'Guanajuato'),
-(13, 'Guerrero'),
-(14, 'Hidalgo'),
-(15, 'Jalisco'),
-(16, 'Michoacán'),
-(17, 'Morelos'),
-(18, 'Nayarit'),
-(19, 'Nuevo León'),
-(20, 'Oaxaca'),
-(21, 'Puebla'),
-(22, 'Querétaro'),
-(23, 'Quintana Roo'),
-(24, 'San Luis Potosí'),
-(25, 'Sinaloa'),
-(26, 'Sonora'),
-(27, 'Tabasco'),
-(28, 'Tamaulipas'),
-(29, 'Tlaxcala'),
-(30, 'Veracruz'),
-(31, 'Yucatán'),
-(32, 'Zacatecas');
+INSERT INTO `estados` (`id`, `title`,`pais_id`) VALUES
+(1, 'Aguascalientes',1),
+(2, 'Baja California',1),
+(3, 'Baja California Sur',1),
+(4, 'Campeche',1),
+(5, 'Chiapas',1),
+(6, 'Chihuahua',1),
+(7, 'Coahuila',1),
+(8, 'Colima',1),
+(9, 'Distrito Federal',1),
+(10, 'Durango',1),
+(11, 'Estado de México',1),
+(12, 'Guanajuato',1),
+(13, 'Guerrero',1),
+(14, 'Hidalgo',1),
+(15, 'Jalisco',1),
+(16, 'Michoacán',1),
+(17, 'Morelos',1),
+(18, 'Nayarit',1),
+(19, 'Nuevo León',1),
+(20, 'Oaxaca',1),
+(21, 'Puebla',1),
+(22, 'Querétaro',1),
+(23, 'Quintana Roo',1),
+(24, 'San Luis Potosí',1),
+(25, 'Sinaloa',1),
+(26, 'Sonora',1),
+(27, 'Tabasco',1),
+(28, 'Tamaulipas',1),
+(29, 'Tlaxcala',1),
+(30, 'Veracruz',1),
+(31, 'Yucatán',1),
+(32, 'Zacatecas',1);
 
 -- --------------------------------------------------------
 
@@ -77,7 +46,7 @@ INSERT INTO `estados` (`id`, `title`) VALUES
 -- Volcar la base de datos para la tabla `municipios`
 --
 
-INSERT INTO `municipios` (`id`, `title`, `estado`) VALUES
+INSERT INTO `municipios` (`id`, `title`, `estado_id`) VALUES
 (1, 'Aguascalientes', 1),
 (2, 'Asientos', 1),
 (3, 'Calvillo', 1),
@@ -1853,8 +1822,7 @@ INSERT INTO `municipios` (`id`, `title`, `estado`) VALUES
 (1781, 'YEHUALTEPEC', 21),
 (1782, 'ZACAPALA', 21),
 (1783, 'ZACAPOAXTLA', 21),
-(1784, 'ZACATLÁN', 21);
-INSERT INTO `municipios` (`id`, `title`, `estado`) VALUES
+(1784, 'ZACATLÁN', 21),
 (1785, 'ZAPOTITLÁN', 21),
 (1786, 'ZAPOTITLÁN DE MÉNDEZ', 21),
 (1787, 'ZARAGOZA', 21),
