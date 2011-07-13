@@ -10,8 +10,7 @@ class EstadosController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid estado', true));
-			$this->redirect(array('action' => 'index'));
+			$this->flash(__('Invalid estado', true), array('action' => 'index'));
 		}
 		$this->set('estado', $this->Estado->read(null, $id));
 	}
@@ -20,42 +19,39 @@ class EstadosController extends AppController {
 		if (!empty($this->data)) {
 			$this->Estado->create();
 			if ($this->Estado->save($this->data)) {
-				$this->Session->setFlash(__('The estado has been saved', true));
-				$this->redirect(array('action' => 'index'));
+				$this->flash(__('Estado saved.', true), array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The estado could not be saved. Please, try again.', true));
 			}
 		}
+		$paises = $this->Estado->Pais->find('list');
+		$this->set(compact('paises'));
 	}
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid estado', true));
-			$this->redirect(array('action' => 'index'));
+			$this->flash(sprintf(__('Invalid estado', true)), array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->Estado->save($this->data)) {
-				$this->Session->setFlash(__('The estado has been saved', true));
-				$this->redirect(array('action' => 'index'));
+				$this->flash(__('The estado has been saved.', true), array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The estado could not be saved. Please, try again.', true));
 			}
 		}
 		if (empty($this->data)) {
 			$this->data = $this->Estado->read(null, $id);
 		}
+		$paises = $this->Estado->Pais->find('list');
+		$this->set(compact('paises'));
 	}
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for estado', true));
-			$this->redirect(array('action'=>'index'));
+			$this->flash(sprintf(__('Invalid estado', true)), array('action' => 'index'));
 		}
 		if ($this->Estado->delete($id)) {
-			$this->Session->setFlash(__('Estado deleted', true));
-			$this->redirect(array('action'=>'index'));
+			$this->flash(__('Estado deleted', true), array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Estado was not deleted', true));
+		$this->flash(__('Estado was not deleted', true), array('action' => 'index'));
 		$this->redirect(array('action' => 'index'));
 	}
 }

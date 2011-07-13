@@ -4,6 +4,7 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('title');?></th>
+			<th><?php echo $this->Paginator->sort('estado_id');?></th>
 			<th><?php echo $this->Paginator->sort('created');?></th>
 			<th><?php echo $this->Paginator->sort('modified');?></th>
 			<th><?php echo $this->Paginator->sort('modified_user_id');?></th>
@@ -20,6 +21,9 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $municipio['Municipio']['id']; ?>&nbsp;</td>
 		<td><?php echo $municipio['Municipio']['title']; ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($municipio['Estado']['title'], array('controller' => 'estados', 'action' => 'view', $municipio['Estado']['id'])); ?>
+		</td>
 		<td><?php echo $municipio['Municipio']['created']; ?>&nbsp;</td>
 		<td><?php echo $municipio['Municipio']['modified']; ?>&nbsp;</td>
 		<td><?php echo $municipio['Municipio']['modified_user_id']; ?>&nbsp;</td>
@@ -49,6 +53,8 @@
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Municipio', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Estados', true), array('controller' => 'estados', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Estado', true), array('controller' => 'estados', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Casas', true), array('controller' => 'casas', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Casa', true), array('controller' => 'casas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Nacimientos', true), array('controller' => 'nacimientos', 'action' => 'index')); ?> </li>

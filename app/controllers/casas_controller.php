@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class CasasController extends AppController {
 
 	var $name = 'Casas';
@@ -28,7 +28,6 @@ class CasasController extends AppController {
 		}
 		$paises = $this->Casa->Paises->find('list');
 		$estados = $this->Casa->Estado->find('list');
-		Debug($estados);
 		$municipios = $this->Casa->Municipio->find('list');
 		$this->set(compact('paises', 'estados', 'municipios'));
 	}
