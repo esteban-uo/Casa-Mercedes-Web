@@ -77,7 +77,7 @@ class DATABASE_CONFIG {
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'root',
+		'login' => 'admin',
 		'password' => '',
 		'database' => 'casa_mercedes',
 		'prefix' => '',
