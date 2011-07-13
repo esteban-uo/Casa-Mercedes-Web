@@ -2,6 +2,7 @@
 class TipoimagesController extends AppController {
 
 	var $name = 'Tipoimages';
+	var $uses = array('Tipoimage','Image');
 
 	function index() {
 		$this->Tipoimage->recursive = 0;
@@ -74,19 +75,38 @@ class TipoimagesController extends AppController {
 		
 		
 		$image = $this->Tipoimage->read(null,$id);
+		$images =  $this->Image->find('list', array('conditions'=>array('Image.tipoimage_id'=>$id)));
+		
+		foreach($images as $image_id)
+		{
+			if($this->Image->delete($image_id))
+			{
+				
+			}else
+			{
+				$this->Session->setFlash(__('Tipoimage was not deleted  '.$this->data, true));
+				$this->redirect(array('action' => 'index'));
+			}
+		}
+		
+		if ($this->Tipoimage->delete($id)) {
 			
+		}else
+		{
+			$this->Session->setFlash(__('Tipoimage was not deleted  '.$this->data, true));
+			$this->redirect(array('action' => 'index'));
+		}
 		if($image['Tipoimage']['title'])
 		{
 			
 			$Folder = new Folder;
 			$Folder->delete('img/'.$image['Tipoimage']['title']);
-			
-		}
-			
-		if ($this->Tipoimage->delete($id)) {
 			$this->Session->setFlash(__('Tipoimage deleted', true));
 			$this->redirect(array('action'=>'index'));
+			
 		}
+			
+		
 		$this->Session->setFlash(__('Tipoimage was not deleted  '.$this->data, true));
 		$this->redirect(array('action' => 'index'));
 	}
