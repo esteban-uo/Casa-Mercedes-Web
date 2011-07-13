@@ -16,7 +16,7 @@
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
-</div>
+</div><!--
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
@@ -45,4 +45,4 @@
 		<li><?php echo $this->Html->link(__('List Socio Economicos', true), array('controller' => 'socio_economicos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Socio Economico', true), array('controller' => 'socio_economicos', 'action' => 'add')); ?> </li>
 	</ul>
-</div>
+</div>-->

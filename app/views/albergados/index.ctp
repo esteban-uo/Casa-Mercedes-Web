@@ -44,7 +44,7 @@
 		<td><?php echo $albergado['Albergado']['modified']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $albergado['Albergado']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $albergado['Albergado']['id'],'onclick' => 'Modalbox.show(this.href, {title: this.title, width: 400}); return false;')); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $albergado['Albergado']['id'])); ?>
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $albergado['Albergado']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $albergado['Albergado']['id'])); ?>
 		</td>
@@ -68,7 +68,7 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Albergado', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('New Albergado', true), array('action' => 'add'), array('onclick' => 'Modalbox.show(this.href, {title: this.title, width: 400}); return false;')); ?></li>
 		<li><?php echo $this->Html->link(__('List Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Casas', true), array('controller' => 'casas', 'action' => 'index')); ?> </li>
