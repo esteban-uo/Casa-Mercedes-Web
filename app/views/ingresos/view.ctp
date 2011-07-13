@@ -26,17 +26,17 @@
 			<?php echo $ingreso['Ingreso']['ingreso_egreso']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $ingreso['Ingreso']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $ingreso['Ingreso']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $ingreso['Ingreso']['modified_user_id']; ?>
 			&nbsp;
@@ -44,13 +44,13 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Ingreso', true), array('action' => 'edit', $ingreso['Ingreso']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Ingreso', true), array('action' => 'delete', $ingreso['Ingreso']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $ingreso['Ingreso']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Ingresos', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Ingreso', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Albergado', true), array('controller' => 'albergados', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Ingreso', true), array('action' => 'edit', $ingreso['Ingreso']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar Ingreso', true), array('action' => 'delete', $ingreso['Ingreso']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $ingreso['Ingreso']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Ingresos', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Ingreso', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Albergado', true), array('controller' => 'albergados', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

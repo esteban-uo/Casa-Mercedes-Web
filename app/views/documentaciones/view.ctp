@@ -1,27 +1,27 @@
 <div class="documentaciones view">
 <h2><?php  __('Documentacion');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Numero'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $documentacion['Documentacion']['id']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Title'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Descripcion'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $documentacion['Documentacion']['title']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $documentacion['Documentacion']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $documentacion['Documentacion']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $documentacion['Documentacion']['modified_user_id']; ?>
 			&nbsp;
@@ -29,14 +29,14 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Documentacion', true), array('action' => 'edit', $documentacion['Documentacion']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Documentacion', true), array('action' => 'delete', $documentacion['Documentacion']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $documentacion['Documentacion']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Documentaciones', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Documentacion', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Documentos', true), array('controller' => 'documentos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Documento', true), array('controller' => 'documentos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Documentacion', true), array('action' => 'edit', $documentacion['Documentacion']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar Documentacion', true), array('action' => 'delete', $documentacion['Documentacion']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $documentacion['Documentacion']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Documentaciones', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Documentacion', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Documentos', true), array('controller' => 'documentos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Documento', true), array('controller' => 'documentos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">
@@ -83,7 +83,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Documento', true), array('controller' => 'documentos', 'action' => 'add'));?> </li>
+			<li><?php echo $this->Html->link(__('Agregar Documento', true), array('controller' => 'documentos', 'action' => 'add'));?> </li>
 		</ul>
 	</div>
 </div>
