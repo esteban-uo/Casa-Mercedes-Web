@@ -1,9 +1,9 @@
 <div class="images form">
-<?php echo $this->Form->create('Image');?>
+<?php echo $this->Form->create('Image',array('type'=>'file'));?>
 	<fieldset>
 		<legend><?php __('Add Image'); ?></legend>
 	<?php
-		echo $this->Form->input('url');
+		echo $this->Form->input('url',array('type'=>'file'));
 		echo $this->Form->input('tipoimage_id');
 		echo $this->Form->input('modified_user_id', array("type"=>"text"));
 	?>

@@ -1,4 +1,5 @@
 <div class="images form">
+
 <?php echo $this->Form->create('Image');?>
 	<fieldset>
 		<legend><?php __('Edit Image'); ?></legend>

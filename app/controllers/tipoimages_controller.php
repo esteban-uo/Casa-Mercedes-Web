@@ -26,7 +26,7 @@ class TipoimagesController extends AppController {
 				
 				$this->Session->setFlash(__('The tipoimage has been saved ', true));
 					
-				$Folder->create('img/'.$this->data['Tipoimage']['title'],true);
+				$Folder->create('img/'.$this->data['Tipoimage']['title'],true,777);
 				$this->redirect(array('action' => 'index'));
 			
 			} else {
