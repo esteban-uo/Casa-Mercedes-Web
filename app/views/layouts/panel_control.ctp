@@ -9,15 +9,19 @@
 <?php
            echo $this->Html->meta('icon');
 
-           echo $this->Html->css('cake.diego');
+          echo $this->Html->css('cake.generic');
 
            echo $scripts_for_layout;
        ?>
 </head>
        <body>
- <h1>Panel de Control</h1>
-               <?php echo $this->Session->flash(); ?>
-               <?php echo $content_for_layout; ?>
-			<img src="img/test-error-icon.png" />
+	   <h1>Panel de Control</h1>
+	<div id="content">
+			
+			<?php echo $this->Session->flash(); ?>
+
+			<?php echo $content_for_layout; ?>
+
+		</div>
    </body>
 </html>

@@ -1,12 +1,13 @@
 <div class="images form">
-<?php echo $this->Form->create('Image');?>
+
+<?php echo $this->Form->create('Image',array('type'=>'file'));?>
 	<fieldset>
 		<legend><?php __('Edit Image'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('url');
+		echo $this->Form->input('url',array('type'=>'file'));
 		echo $this->Form->input('tipoimage_id');
-		echo $this->Form->input('modified_user_id');
+		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
