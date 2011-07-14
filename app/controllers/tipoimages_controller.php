@@ -17,6 +17,13 @@ class TipoimagesController extends AppController {
 		$this->set('tipoimage', $this->Tipoimage->read(null, $id));
 	}
 
+	/*
+		@Autor: Seinh  
+		@Name:  add
+		@Type: Function
+		@Description: Esta Funcion  agrega un registro a la tabla tipoimages de la base de datos, ademas de
+		agregar su respectiva carpeta en la base de datos.
+	*/
 	function add() {
 		if (!empty($this->data)) {
 		$Folder = new Folder;
@@ -35,7 +42,14 @@ class TipoimagesController extends AppController {
 			}
 		}
 	}
-
+	/*
+		@Autor: Seinh  
+		@Name:  edit
+		@Type: Function
+		@Parameters: $id
+		@Description: Esta Funcion modifica el registro de la tabla tipoimages en la base de datos cuyo 
+		id se envie como parametro asi como el nombre de la carpeta fisica que este representa en el servidor.
+	*/
 	function edit($id = null) {
 		$Folder = new Folder;
 		if (!$id && empty($this->data)) {
@@ -67,6 +81,17 @@ class TipoimagesController extends AppController {
 		}
 	}
 
+		
+		
+	/*
+		@Autor: Seinh  
+		@Name:  edit
+		@Type: Function
+		@Params: $id
+		@Description: Esta funcion borra el registro de la tabla tipoimages de la base de datos cuyo id es pasado por
+		 parametro borrando los registros de la tabla images relacionadas con este tipo, borrando ademas la carpeta fisica 
+		 que representa este registro en el servidor.
+	*/
 	function delete($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid id for tipoimage', true));

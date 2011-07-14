@@ -16,7 +16,14 @@ class ImagesController extends AppController {
 		}
 		$this->set('image', $this->Image->read(null, $id));
 	}
-
+	
+	/*
+		@Autor: Seinh  
+		@Name:  add
+		@Type: Function
+		@Description: Esta Funcion  agrega un registro a la tabla images de la base de datos, 
+		ademas de subir la imagen respectiva al servidor.
+	*/
 	function add() {
 	
 		$tipoimages = $this->Image->Tipoimage->find('list');
@@ -48,6 +55,14 @@ class ImagesController extends AppController {
 		}
 	}
 
+	/*
+		@Autor: Seinh  
+		@Name:  edit
+		@Type: Function
+		@Parameter: $id
+		@Description: Esta Funcion  modifica el registro de la tabla images de la base de datos cuyo id es enviado como parametro, 
+		ademas de eliminar la imagen  antigua del registro modificado y subir una nueva imagen al servidor.
+	*/
 	function edit($id = null) {
 		$tipoimages = $this->Image->Tipoimage->find('list');
 		$this->set(compact('tipoimages'));
@@ -81,7 +96,15 @@ class ImagesController extends AppController {
 			$this->data = $this->Image->read(null, $id);
 		}
 	}
-
+	
+	/*
+		@Autor: Seinh  
+		@Name:  delete
+		@Type: Function
+		@Parameter: $id
+		@Description: Esta Funcion  elimina el registro de la tabla images de la base de datos cuyo id es enviado como parametro, 
+		ademas de eliminar la imagen  antigua del registro modificado y subir una nueva imagen al servidor.
+	*/
 	function delete($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid id for image', true));
@@ -98,6 +121,13 @@ class ImagesController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 
+	/*
+		@Autor: Seinh  
+		@Name:  upload
+		@Type: Function
+		@Parameter: $file
+		@Description: Esta Funcion  se encarga de subir al servidor el archivo cuya informacion es enviada a traves del parametro.
+	*/
 	function  upload($file = null)
 	{
 		$image = $file['Image']['url']['name'];
@@ -130,6 +160,13 @@ class ImagesController extends AppController {
 
 	}
 	
+	/*
+		@Autor: Seinh  
+		@Name:  deleteImage
+		@Type: Function
+		@Parameter: $id
+		@Description: Esta Funcion  se encarga de eliminar la imagen en el guardada en el servidor mediante el id enviado como parametro
+	*/
 	function  deleteImage($id = null)
 	{
 			$image = $this->Image->read(null,$id);
