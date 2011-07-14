@@ -91,21 +91,6 @@ class Persona extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		));
-
-	var $hasMany = array(
-		'Dependiente' => array(
-			'className' => 'Dependiente',
-			'foreignKey' => 'persona_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
 		),
 		'Documento' => array(
 			'className' => 'Documento',
@@ -148,6 +133,21 @@ class Persona extends AppModel {
 		),
 		'Vestimenta' => array(
 			'className' => 'Vestimenta',
+			'foreignKey' => 'persona_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		));
+
+	var $hasMany = array(
+		'Dependiente' => array(
+			'className' => 'Dependiente',
 			'foreignKey' => 'persona_id',
 			'dependent' => false,
 			'conditions' => '',
