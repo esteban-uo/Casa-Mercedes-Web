@@ -28,7 +28,7 @@
 <?php
            echo $this->Html->meta('icon');
            echo $this->Html->css('cake.generic');
-           echo $html->script(array('prototype','scriptaculous.js?load=effects','modalbox'));
+           echo $html->script(array('prototype','scriptaculous.js?load=effects','modalbox','cakemodalbox'));
            echo $scripts_for_layout;
            echo $this->Html->css('modalbox');
        ?>

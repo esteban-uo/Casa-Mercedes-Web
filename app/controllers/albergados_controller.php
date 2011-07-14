@@ -2,6 +2,7 @@
 class AlbergadosController extends AppController {
 
 	var $name = 'Albergados';
+        var $helpers = array('Html','Javascript', 'Ajax');
 
 	function index() {
 		$this->Albergado->recursive = 0;

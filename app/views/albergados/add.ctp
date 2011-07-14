@@ -2,7 +2,8 @@
 <?php echo $ajax->form('edit', 'post', array(
         'model'    => 'Albergados',
         'url'      => array( 'controller' => 'albergados', 'action' => 'edit'),
-        'update'   => 'MB_content'
+        'update'   => 'MB_content',
+        'complete' => 'closeModalBox()'
         ));?>
 	<fieldset>
 		<legend><?php __('Add Albergado'); ?></legend>
@@ -20,7 +21,8 @@
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
-</div><!--
+</div>
+<!--
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>

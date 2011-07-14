@@ -1,3 +1,4 @@
+<?php if (isset($closeModalBox) && $closeModalBox) echo "<div id='closeModalbox'></div>";?>
 <div class="albergados index">
 	<h2><?php __('Albergados');?></h2>
 	<table cellpadding="0" cellspacing="0">
