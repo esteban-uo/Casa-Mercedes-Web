@@ -14,6 +14,7 @@ class ReportesController extends AppController {
 
 	function ficha_identificacion() {
 		$this->layout = "reportes";
+		Debug($this->params["named"]);
 		//TODO genera reporte ficha de identificación
 		
 	}
