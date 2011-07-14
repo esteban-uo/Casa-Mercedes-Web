@@ -1,5 +1,5 @@
-<div class="socioEconomicos index">
-	<h2><?php __('Socio Economicos');?></h2>
+﻿<div class="socioEconomicos index">
+	<h2><?php __('Socio Económicos');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
@@ -16,10 +16,10 @@
 			<th><?php echo $this->Paginator->sort('construccion_id');?></th>
 			<th><?php echo $this->Paginator->sort('tenencia_id');?></th>
 			<th><?php echo $this->Paginator->sort('distribucion_id');?></th>
-			<th><?php echo $this->Paginator->sort('modified');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
-			<th><?php echo $this->Paginator->sort('modified_user_id');?></th>
-			<th class="actions"><?php __('Actions');?></th>
+			<th><?php echo $this->Paginator->sort('modificado');?></th>
+			<th><?php echo $this->Paginator->sort('registrado');?></th>
+			<th><?php echo $this->Paginator->sort('modificado_por');?></th>
+			<th class="actions"><?php __('Acciones');?></th>
 	</tr>
 	<?php
 	$i = 0;
@@ -60,9 +60,9 @@
 		<td><?php echo $socioEconomico['SocioEconomico']['created']; ?>&nbsp;</td>
 		<td><?php echo $socioEconomico['SocioEconomico']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $socioEconomico['SocioEconomico']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $socioEconomico['SocioEconomico']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $socioEconomico['SocioEconomico']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $socioEconomico['SocioEconomico']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $socioEconomico['SocioEconomico']['id'])); ?>
+			<?php echo $this->Html->link(__('Modificar', true), array('action' => 'edit', $socioEconomico['SocioEconomico']['id'])); ?>
+			<?php echo $this->Html->link(__('Eliminar', true), array('action' => 'delete', $socioEconomico['SocioEconomico']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $socioEconomico['SocioEconomico']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -75,27 +75,27 @@
 	?>	</p>
 
 	<div class="paging">
-		<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
+		<?php echo $this->Paginator->prev('<< ' . __('Anterior', true), array(), null, array('class'=>'disabled'));?>
 	 | 	<?php echo $this->Paginator->numbers();?>
  |
-		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+		<?php echo $this->Paginator->next(__('Siguiente', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Socio Economico', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Albergado', true), array('controller' => 'albergados', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Zonas', true), array('controller' => 'zonas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Zona', true), array('controller' => 'zonas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Viviendas', true), array('controller' => 'viviendas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Vivienda', true), array('controller' => 'viviendas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Construcciones', true), array('controller' => 'construcciones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Construccion', true), array('controller' => 'construcciones', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Tenencias', true), array('controller' => 'tenencias', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Tenencia', true), array('controller' => 'tenencias', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Distribuciones', true), array('controller' => 'distribuciones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Distribucion', true), array('controller' => 'distribuciones', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Socio Economico', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Ver Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Albergado', true), array('controller' => 'albergados', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Zonas', true), array('controller' => 'zonas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Zona', true), array('controller' => 'zonas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Viviendas', true), array('controller' => 'viviendas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Vivienda', true), array('controller' => 'viviendas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Construcciones', true), array('controller' => 'construcciones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Construcción', true), array('controller' => 'construcciones', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Tenencias', true), array('controller' => 'tenencias', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Tenencia', true), array('controller' => 'tenencias', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Distribuciones', true), array('controller' => 'distribuciones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Distribución', true), array('controller' => 'distribuciones', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

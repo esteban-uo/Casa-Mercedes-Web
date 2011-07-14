@@ -31,7 +31,7 @@
 			<?php echo $albergado['Albergado']['embarazo_actual']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Cant Hijos'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Cantidad de Hijos'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $albergado['Albergado']['cant_hijos']; ?>
 			&nbsp;
@@ -46,22 +46,22 @@
 			<?php echo $albergado['Albergado']['averiguacion_previa']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Familiograma Imagen Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Familiograma Imagen'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $albergado['Albergado']['familiograma_imagen_id']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrada'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $albergado['Albergado']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificada'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $albergado['Albergado']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificada Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $albergado['Albergado']['modified_user_id']; ?>
 			&nbsp;
@@ -69,34 +69,34 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Albergado', true), array('action' => 'edit', $albergado['Albergado']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Albergado', true), array('action' => 'delete', $albergado['Albergado']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $albergado['Albergado']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Albergados', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Albergado', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Casas', true), array('controller' => 'casas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Casa', true), array('controller' => 'casas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Datos', true), array('controller' => 'datos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Dato', true), array('controller' => 'datos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Dependientes', true), array('controller' => 'dependientes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Dependiente', true), array('controller' => 'dependientes', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Escolaridades', true), array('controller' => 'escolaridades', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Escolaridad', true), array('controller' => 'escolaridades', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Familias', true), array('controller' => 'familias', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Familia', true), array('controller' => 'familias', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Ingresos', true), array('controller' => 'ingresos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Ingreso', true), array('controller' => 'ingresos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Instituciones', true), array('controller' => 'instituciones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Institucion', true), array('controller' => 'instituciones', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Problematicas', true), array('controller' => 'problematicas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Problematica', true), array('controller' => 'problematicas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Sociales', true), array('controller' => 'sociales', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Social', true), array('controller' => 'sociales', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Socio Economicos', true), array('controller' => 'socio_economicos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Socio Economico', true), array('controller' => 'socio_economicos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Albergado', true), array('action' => 'edit', $albergado['Albergado']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('EliminarAlbergado', true), array('action' => 'delete', $albergado['Albergado']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $albergado['Albergado']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Albergados', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Albergado', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Casas', true), array('controller' => 'casas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Casa', true), array('controller' => 'casas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Datos', true), array('controller' => 'datos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Dato', true), array('controller' => 'datos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Dependientes', true), array('controller' => 'dependientes', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Dependiente', true), array('controller' => 'dependientes', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Escolaridades', true), array('controller' => 'escolaridades', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Escolaridad', true), array('controller' => 'escolaridades', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Familias', true), array('controller' => 'familias', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Familia', true), array('controller' => 'familias', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Ingresos', true), array('controller' => 'ingresos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Ingreso', true), array('controller' => 'ingresos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Instituciones', true), array('controller' => 'instituciones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Institucion', true), array('controller' => 'instituciones', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Problematicas', true), array('controller' => 'problematicas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Problematica', true), array('controller' => 'problematicas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Sociales', true), array('controller' => 'sociales', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Social', true), array('controller' => 'sociales', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Socio Economicos', true), array('controller' => 'socio_economicos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Socio Economico', true), array('controller' => 'socio_economicos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">
