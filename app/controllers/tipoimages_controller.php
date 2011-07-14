@@ -2,6 +2,7 @@
 class TipoimagesController extends AppController {
 
 	var $name = 'Tipoimages';
+	var $uses = array('Tipoimage','Image');
 
 	function index() {
 		$this->Tipoimage->recursive = 0;
@@ -18,10 +19,17 @@ class TipoimagesController extends AppController {
 
 	function add() {
 		if (!empty($this->data)) {
+		$Folder = new Folder;
+		
 			$this->Tipoimage->create();
 			if ($this->Tipoimage->save($this->data)) {
-				$this->Session->setFlash(__('The tipoimage has been saved', true));
+
+				
+				$this->Session->setFlash(__('The tipoimage has been saved ', true));
+					
+				$Folder->create('img/'.$this->data['Tipoimage']['title'],true,777);
 				$this->redirect(array('action' => 'index'));
+			
 			} else {
 				$this->Session->setFlash(__('The tipoimage could not be saved. Please, try again.', true));
 			}
@@ -29,18 +37,31 @@ class TipoimagesController extends AppController {
 	}
 
 	function edit($id = null) {
+		$Folder = new Folder;
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Invalid tipoimage', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
+				$image = $this->Tipoimage->read(null,$id);
+				$old= $image['Tipoimage']['title'];
+				$new = $this->data['Tipoimage']['title'];
+				
+				
+			if($old != $new){
+				Debug(rename(getcwd().'\\img\\'.$old,getcwd().'\\img\\'.$new));
+			}
+			
 			if ($this->Tipoimage->save($this->data)) {
+			
+				
 				$this->Session->setFlash(__('The tipoimage has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The tipoimage could not be saved. Please, try again.', true));
 			}
 		}
+		
 		if (empty($this->data)) {
 			$this->data = $this->Tipoimage->read(null, $id);
 		}
@@ -51,11 +72,42 @@ class TipoimagesController extends AppController {
 			$this->Session->setFlash(__('Invalid id for tipoimage', true));
 			$this->redirect(array('action'=>'index'));
 		}
+		
+		
+		$image = $this->Tipoimage->read(null,$id);
+		$images =  $this->Image->find('list', array('conditions'=>array('Image.tipoimage_id'=>$id)));
+		
+		foreach($images as $image_id)
+		{
+			if($this->Image->delete($image_id))
+			{
+				
+			}else
+			{
+				$this->Session->setFlash(__('Tipoimage was not deleted  '.$this->data, true));
+				$this->redirect(array('action' => 'index'));
+			}
+		}
+		
 		if ($this->Tipoimage->delete($id)) {
+			
+		}else
+		{
+			$this->Session->setFlash(__('Tipoimage was not deleted  '.$this->data, true));
+			$this->redirect(array('action' => 'index'));
+		}
+		if($image['Tipoimage']['title'])
+		{
+			
+			$Folder = new Folder;
+			$Folder->delete('img/'.$image['Tipoimage']['title']);
 			$this->Session->setFlash(__('Tipoimage deleted', true));
 			$this->redirect(array('action'=>'index'));
+			
 		}
-		$this->Session->setFlash(__('Tipoimage was not deleted', true));
+			
+		
+		$this->Session->setFlash(__('Tipoimage was not deleted  '.$this->data, true));
 		$this->redirect(array('action' => 'index'));
 	}
 }
