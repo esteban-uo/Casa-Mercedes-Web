@@ -27,7 +27,7 @@ class TipoimagesController extends AppController {
 				
 				$this->Session->setFlash(__('The tipoimage has been saved ', true));
 					
-				$Folder->create('img/'.$this->data['Tipoimage']['title'],true,777);
+				$Folder->create('img/'.Inflector::slug($this->data['Tipoimage']['title'],'_'),true,777);
 				$this->redirect(array('action' => 'index'));
 			
 			} else {
@@ -44,12 +44,12 @@ class TipoimagesController extends AppController {
 		}
 		if (!empty($this->data)) {
 				$image = $this->Tipoimage->read(null,$id);
-				$old= $image['Tipoimage']['title'];
-				$new = $this->data['Tipoimage']['title'];
+				$old= Inflector::slug($image['Tipoimage']['title'],'_');
+				$new = Inflector::slug($this->data['Tipoimage']['title'],'_');
 				
 				
 			if($old != $new){
-				Debug(rename(getcwd().'\\img\\'.$old,getcwd().'\\img\\'.$new));
+				rename(getcwd().'\\img\\'.$old,getcwd().'\\img\\'.$new);
 			}
 			
 			if ($this->Tipoimage->save($this->data)) {
@@ -100,7 +100,7 @@ class TipoimagesController extends AppController {
 		{
 			
 			$Folder = new Folder;
-			$Folder->delete('img/'.$image['Tipoimage']['title']);
+			$Folder->delete('img/'.Inflector::slug($image['Tipoimage']['title'],'_'));
 			$this->Session->setFlash(__('Tipoimage deleted', true));
 			$this->redirect(array('action'=>'index'));
 			

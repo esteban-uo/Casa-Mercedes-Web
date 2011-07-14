@@ -105,7 +105,7 @@ class ImagesController extends AppController {
 		$type= strtolower($file['Image']['url']['type']);
 		$type = str_split($type,strrpos($type, '/'));
 		$folder = $this->Image->Tipoimage->read(null,$this->data['Image']['tipoimage_id']);
-		$folder = $folder['Tipoimage']['title'];
+		$folder = Inflector::slug($folder['Tipoimage']['title'],'_');
 		
 		if(!empty($image) && $type[0] == 'image'&& $file['Image']['url']['size'] <= 1000000)
 		{
@@ -135,7 +135,7 @@ class ImagesController extends AppController {
 			$image = $this->Image->read(null,$id);
 			$tipoImage = $tipoimages = $this->Image->Tipoimage->read(null,$image['Image']['tipoimage_id']);
 			$image= $image ['Image']['url'];
-			$tipoImage = $tipoImage['Tipoimage']['title'];
+			$tipoImage = Inflector::slug($tipoImage['Tipoimage']['title'],'_');
 			if(unlink(getcwd().'\\img\\'.$tipoImage.'\\'.$image))
 			{
 				return 1;
