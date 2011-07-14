@@ -1,4 +1,4 @@
-<div class="tenencias view">
+﻿<div class="tenencias view">
 <h2><?php  __('Tenencia');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
@@ -6,22 +6,22 @@
 			<?php echo $tenencia['Tenencia']['id']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Title'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Descripción'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $tenencia['Tenencia']['title']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $tenencia['Tenencia']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $tenencia['Tenencia']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $tenencia['Tenencia']['modified_user_id']; ?>
 			&nbsp;
@@ -29,14 +29,14 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Tenencia', true), array('action' => 'edit', $tenencia['Tenencia']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Tenencia', true), array('action' => 'delete', $tenencia['Tenencia']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $tenencia['Tenencia']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Tenencias', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Tenencia', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Socio Economicos', true), array('controller' => 'socio_economicos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Socio Economico', true), array('controller' => 'socio_economicos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Tenencia', true), array('action' => 'edit', $tenencia['Tenencia']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar Tenencia', true), array('action' => 'delete', $tenencia['Tenencia']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $tenencia['Tenencia']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Tenencias', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Tenencia', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Socio Economicos', true), array('controller' => 'socio_economicos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Socio Economico', true), array('controller' => 'socio_economicos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">
@@ -101,7 +101,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Socio Economico', true), array('controller' => 'socio_economicos', 'action' => 'add'));?> </li>
+			<li><?php echo $this->Html->link(__('Agregar Nuevo Socio Economico', true), array('controller' => 'socio_economicos', 'action' => 'add'));?> </li>
 		</ul>
 	</div>
 </div>

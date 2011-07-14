@@ -1,27 +1,27 @@
 <div class="distribuciones view">
 <h2><?php  __('Distribucion');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Numero'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $distribucion['Distribucion']['id']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Title'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Descripcion'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $distribucion['Distribucion']['title']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $distribucion['Distribucion']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $distribucion['Distribucion']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $distribucion['Distribucion']['modified_user_id']; ?>
 			&nbsp;
@@ -29,14 +29,14 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Distribucion', true), array('action' => 'edit', $distribucion['Distribucion']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Distribucion', true), array('action' => 'delete', $distribucion['Distribucion']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $distribucion['Distribucion']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Distribuciones', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Distribucion', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Socio Economicos', true), array('controller' => 'socio_economicos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Socio Economico', true), array('controller' => 'socio_economicos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Distribucion', true), array('action' => 'edit', $distribucion['Distribucion']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar Distribucion', true), array('action' => 'delete', $distribucion['Distribucion']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $distribucion['Distribucion']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Distribuciones', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Distribucion', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Socio Economicos', true), array('controller' => 'socio_economicos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Socio Economico', true), array('controller' => 'socio_economicos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">

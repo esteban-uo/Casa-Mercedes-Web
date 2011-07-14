@@ -1,7 +1,7 @@
-<div class="socioEconomicos view">
+﻿<div class="socioEconomicos view">
 <h2><?php  __('Socio Economico');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Número'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $socioEconomico['SocioEconomico']['id']; ?>
 			&nbsp;
@@ -11,7 +11,7 @@
 			<?php echo $this->Html->link($socioEconomico['Albergado']['persona_id'], array('controller' => 'albergados', 'action' => 'view', $socioEconomico['Albergado']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Poblacion Indigena'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Población Indigena'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $socioEconomico['SocioEconomico']['poblacion_indigena']; ?>
 			&nbsp;
@@ -26,7 +26,7 @@
 			<?php echo $socioEconomico['SocioEconomico']['tiempo_de_trabajo']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Ultimo Trabajo'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Último Trabajo'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $socioEconomico['SocioEconomico']['ultimo_trabajo']; ?>
 			&nbsp;
@@ -66,17 +66,17 @@
 			<?php echo $this->Html->link($socioEconomico['Tenencia']['title'], array('controller' => 'tenencias', 'action' => 'view', $socioEconomico['Tenencia']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Distribucion'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Distribución'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $this->Html->link($socioEconomico['Distribucion']['title'], array('controller' => 'distribuciones', 'action' => 'view', $socioEconomico['Distribucion']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $socioEconomico['SocioEconomico']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $socioEconomico['SocioEconomico']['created']; ?>
 			&nbsp;
