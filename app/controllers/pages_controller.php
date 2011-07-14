@@ -11,14 +11,15 @@ class PagesController extends AppController {
 	
 	function acp() {
 		if (!empty($this->data)) {
-			$this->loadModel('Personas');
-			if($persona = $this->Personas->find('first', array(
-												'conditions' => array(
-												'CONCAT(Personas.primer_nombre, " ", Personas.segundo_nombre, " ", Personas.primer_apellido, " ", Personas.segundo_apellido)' => $this->data["Persona"]["search"]),
-												'Albergado.persona_id' => 'Personas.id'
-												))){
-				$this->loadModel('Albergados');
-				$albergado = $this->Albergados->findByPersonaId($persona["Personas"]["id"]);
+			if($persona = $this->requestAction(
+							array(
+								'controller' => 'personas',
+								'action' => 'buscarPersonaPorNombreCompleto',
+								'named' => array('nombre_completo' => $this->data["Persona"]["search"])
+							)
+				)){	
+				Debug($persona);
+				/*$albergado = $this->Albergados->findByPersonaId($persona["Personas"]["id"]);
 			    $tmp = $this->Albergados->query('SELECT username FROM users WHERE id = '.($albergado['Albergados']['modified_user_id']));
 				$usuario_ultimo_modificador = $tmp[0]['users']['username'];
 				
@@ -37,7 +38,7 @@ class PagesController extends AppController {
 							"busqueda" => true,
 							);
 				$this->set($persona["Personas"]);
-				$this->set($parametros);
+				$this->set($parametros);*/
 			}else{
 				$this->set('busqueda', false);
 			}

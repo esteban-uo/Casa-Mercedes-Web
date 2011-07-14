@@ -77,8 +77,8 @@ class Persona extends AppModel {
 			'order' => ''
 		)
 	);
-
-	var $hasMany = array(
+	
+	var $hasOne = array(
 		'Albergado' => array(
 			'className' => 'Albergado',
 			'foreignKey' => 'persona_id',
@@ -91,7 +91,9 @@ class Persona extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		),
+		));
+
+	var $hasMany = array(
 		'Dependiente' => array(
 			'className' => 'Dependiente',
 			'foreignKey' => 'persona_id',

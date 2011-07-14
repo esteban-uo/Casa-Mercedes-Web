@@ -58,4 +58,11 @@ class PersonasController extends AppController {
 		$this->Session->setFlash(__('Persona was not deleted', true));
 		$this->redirect(array('action' => 'index'));
 	}
+	
+	function buscarPersonaPorNombreCompleto(){
+		 return $this->Persona->find('first', array(
+												'conditions' => array(
+												$this->Persona->getVirtualField('nombre_completo') => $this->params["named"]["nombre_completo"]
+												)));
+	}
 }
