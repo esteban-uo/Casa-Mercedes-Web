@@ -1,5 +1,9 @@
-<div class="albergados form">
-<?php echo $this->Form->create('Albergado');?>
+<div>
+<?php echo $ajax->form('edit', 'post', array(
+        'model'    => 'Albergados',
+        'url'      => array( 'controller' => 'albergados', 'action' => 'edit'),
+        'update'   => 'MB_content'
+        ));?>
 	<fieldset>
 		<legend><?php __('Add Albergado'); ?></legend>
 	<?php
