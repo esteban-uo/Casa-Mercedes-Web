@@ -5,7 +5,7 @@ class Albergado extends AppModel {
 		'expediente' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				//'message' => 'El campo Expediente esta vacío',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -25,7 +25,7 @@ class Albergado extends AppModel {
 		'embarazo_actual' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				//'message' => 'El campo de Emparazo esta vacío',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -33,17 +33,17 @@ class Albergado extends AppModel {
 			),
 		),
 		'cant_hijos' => array(
-			'minlength' => array(
-				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'El campo debe de ser entero',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-			'alphanumeric' => array(
-				'rule' => array('alphanumeric'),
-				//'message' => 'Your custom message here',
+			'minlength' => array(
+				'rule' => array('minlength', 1),
+				//'message' => 'El campo Cantidad de hijos esta vacío',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

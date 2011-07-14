@@ -31,17 +31,17 @@
 			<?php echo $this->Html->link($nacimiento['Municipio']['title'], array('controller' => 'municipios', 'action' => 'view', $nacimiento['Municipio']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $nacimiento['Nacimiento']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $nacimiento['Nacimiento']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $nacimiento['Nacimiento']['modified_user_id']; ?>
 			&nbsp;
@@ -49,19 +49,19 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Nacimiento', true), array('action' => 'edit', $nacimiento['Nacimiento']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Nacimiento', true), array('action' => 'delete', $nacimiento['Nacimiento']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $nacimiento['Nacimiento']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Nacimientos', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Nacimiento', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Paises', true), array('controller' => 'paises', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Pais', true), array('controller' => 'paises', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Estados', true), array('controller' => 'estados', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Estado', true), array('controller' => 'estados', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Municipios', true), array('controller' => 'municipios', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Municipio', true), array('controller' => 'municipios', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Nacimiento', true), array('action' => 'edit', $nacimiento['Nacimiento']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar Nacimiento', true), array('action' => 'delete', $nacimiento['Nacimiento']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $nacimiento['Nacimiento']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Nacimientos', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Nacimiento', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Paises', true), array('controller' => 'paises', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Pais', true), array('controller' => 'paises', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Estados', true), array('controller' => 'estados', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Estado', true), array('controller' => 'estados', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Municipios', true), array('controller' => 'municipios', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Municipio', true), array('controller' => 'municipios', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

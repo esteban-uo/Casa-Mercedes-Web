@@ -1,5 +1,5 @@
 <div class="personas index">
-	<h2><?php __('Personas');?></h2>
+	<h2><?php __('Personas Registradas');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
@@ -38,9 +38,9 @@
 		<td><?php echo $persona['Persona']['modified']; ?>&nbsp;</td>
 		<td><?php echo $persona['Persona']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $persona['Persona']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $persona['Persona']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $persona['Persona']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $persona['Persona']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $persona['Persona']['id'])); ?>
+			<?php echo $this->Html->link(__('Modificar', true), array('action' => 'edit', $persona['Persona']['id'])); ?>
+			<?php echo $this->Html->link(__('Eliminar', true), array('action' => 'delete', $persona['Persona']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $persona['Persona']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -53,15 +53,15 @@
 	?>	</p>
 
 	<div class="paging">
-		<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
+		<?php echo $this->Paginator->prev('<< ' . __('Anterior', true), array(), null, array('class'=>'disabled'));?>
 	 | 	<?php echo $this->Paginator->numbers();?>
  |
-		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+		<?php echo $this->Paginator->next(__('Siguiente', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Persona', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Registrar Nueva Persona', true), array('action' => 'add')); ?></li>
 	</ul>
 </div>
