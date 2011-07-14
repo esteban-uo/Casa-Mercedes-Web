@@ -60,7 +60,7 @@ class PersonasController extends AppController {
 	}
 	
 	function buscarPersonaPorNombreCompleto(){
-		 $this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices'=>true));
+		 $this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
 		 return $this->Persona->find('first', array(
 												'conditions' => array(
 												$this->Persona->getVirtualField('nombre_completo') => $this->params["named"]["nombre_completo"]
@@ -68,18 +68,21 @@ class PersonasController extends AppController {
 												'contain' => array(
 																'FotoImagen' => array(
 																				'Tipoimage' => array ('title'),
-																			),
+																				'url' => array()
+																				),
 																'Albergado' => array(
-																				'FotoImagen' => array ('Tipoimage' => array ('title')),
-																			),
-																'Dependiente' => array(
-																				'Persona' => array('fields' => array('id'))
-																			),
-																'Documento' => array(),
-																'EstadosSalud' => array(),
-																'Nacimiento' => array(),
-																'Vestimenta' => array(),
-															)
+																				'FotoImagen' => array (
+																								'Tipoimage' => array ('title'),
+																								'url' => array()
+																								),
+																				),
+																'Dependiente' => array('id'),
+																'Documento' => array('id'),
+																'EstadosSalud' => array('id'),
+																'Nacimiento' => array('id'),
+																'Vestimenta' => array('id'),
+															),
+															'autoFields' => false
 												));
 	}
 }
