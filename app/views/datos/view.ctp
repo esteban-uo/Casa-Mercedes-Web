@@ -6,7 +6,7 @@
 			<?php echo $dato['Dato']['id']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Albergado'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Albergado Numero'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $this->Html->link($dato['Albergado']['persona_id'], array('controller' => 'albergados', 'action' => 'view', $dato['Albergado']['id'])); ?>
 			&nbsp;
@@ -21,17 +21,17 @@
 			<?php echo $dato['Dato']['historia_de_vida']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $dato['Dato']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $dato['Dato']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $dato['Dato']['modified_user_id']; ?>
 			&nbsp;
@@ -39,13 +39,13 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Dato', true), array('action' => 'edit', $dato['Dato']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Dato', true), array('action' => 'delete', $dato['Dato']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $dato['Dato']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Datos', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Dato', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Albergado', true), array('controller' => 'albergados', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Dato', true), array('action' => 'edit', $dato['Dato']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar Dato', true), array('action' => 'delete', $dato['Dato']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $dato['Dato']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Datos', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Dato', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Albergado', true), array('controller' => 'albergados', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

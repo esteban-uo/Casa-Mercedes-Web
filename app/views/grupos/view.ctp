@@ -1,4 +1,4 @@
-<div class="grupos view">
+﻿<div class="grupos view">
 <h2><?php  __('Grupo');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
@@ -6,22 +6,22 @@
 			<?php echo $grupo['Grupo']['id']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Title'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Descripción'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $grupo['Grupo']['title']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $grupo['Grupo']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $grupo['Grupo']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $grupo['Grupo']['modified_user_id']; ?>
 			&nbsp;
@@ -29,14 +29,14 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Grupo', true), array('action' => 'edit', $grupo['Grupo']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Grupo', true), array('action' => 'delete', $grupo['Grupo']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $grupo['Grupo']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Grupos', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Grupo', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Users', true), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User', true), array('controller' => 'users', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Grupo', true), array('action' => 'edit', $grupo['Grupo']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar Grupo', true), array('action' => 'delete', $grupo['Grupo']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $grupo['Grupo']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Grupos', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Grupo', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Usuarios', true), array('controller' => 'users', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Usuarios', true), array('controller' => 'users', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">

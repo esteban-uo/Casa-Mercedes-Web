@@ -1,7 +1,7 @@
-<div class="vestimentas view">
+﻿<div class="vestimentas view">
 <h2><?php  __('Vestimenta');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Número'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $vestimenta['Vestimenta']['id']; ?>
 			&nbsp;
@@ -36,17 +36,17 @@
 			<?php echo $vestimenta['Vestimenta']['blusa']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $vestimenta['Vestimenta']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $vestimenta['Vestimenta']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $vestimenta['Vestimenta']['modified_user_id']; ?>
 			&nbsp;

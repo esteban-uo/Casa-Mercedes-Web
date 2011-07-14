@@ -6,22 +6,22 @@
 			<?php echo $cicloEscolar['CicloEscolar']['id']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Title'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Descripcion'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $cicloEscolar['CicloEscolar']['title']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $cicloEscolar['CicloEscolar']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $cicloEscolar['CicloEscolar']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $cicloEscolar['CicloEscolar']['modified_user_id']; ?>
 			&nbsp;
@@ -29,14 +29,14 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Ciclo Escolar', true), array('action' => 'edit', $cicloEscolar['CicloEscolar']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Ciclo Escolar', true), array('action' => 'delete', $cicloEscolar['CicloEscolar']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $cicloEscolar['CicloEscolar']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Ciclo Escolars', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Ciclo Escolar', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Escolaridades', true), array('controller' => 'escolaridades', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Escolaridad', true), array('controller' => 'escolaridades', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Ciclo Escolar', true), array('action' => 'edit', $cicloEscolar['CicloEscolar']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar Ciclo Escolar', true), array('action' => 'delete', $cicloEscolar['CicloEscolar']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $cicloEscolar['CicloEscolar']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Ciclo Escolars', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Ciclo Escolar', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Escolaridades', true), array('controller' => 'escolaridades', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Escolaridad', true), array('controller' => 'escolaridades', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">
@@ -97,7 +97,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Escolaridad', true), array('controller' => 'escolaridades', 'action' => 'add'));?> </li>
+			<li><?php echo $this->Html->link(__('Agregar Escolaridad', true), array('controller' => 'escolaridades', 'action' => 'add'));?> </li>
 		</ul>
 	</div>
 </div>
