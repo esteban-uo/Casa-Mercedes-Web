@@ -29,16 +29,16 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Pais', true), array('action' => 'edit', $pais['Pais']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Pais', true), array('action' => 'delete', $pais['Pais']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $pais['Pais']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Paises', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Pais', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Casas', true), array('controller' => 'casas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Casa', true), array('controller' => 'casas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Nacimientos', true), array('controller' => 'nacimientos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Nacimiento', true), array('controller' => 'nacimientos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Pais', true), array('action' => 'edit', $pais['Pais']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar Pais', true), array('action' => 'delete', $pais['Pais']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $pais['Pais']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Paises', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Pais', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Casas', true), array('controller' => 'casas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Casa', true), array('controller' => 'casas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Nacimientos', true), array('controller' => 'nacimientos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Nacimiento', true), array('controller' => 'nacimientos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">

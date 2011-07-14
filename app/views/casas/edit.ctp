@@ -1,4 +1,4 @@
-<div class="casas form">
+﻿<div class="casas form">
 <?php echo $this->Form->create('Casa');?>
 	<fieldset>
 		<legend><?php __('Modificar Casa'); ?></legend>
@@ -7,8 +7,8 @@
 		echo $this->Form->input('pais_id');
 		echo $this->Form->input('estado_id');
 		echo $this->Form->input('municipio_id');
-		echo $this->Form->input('direccion');
-		echo $this->Form->input('telefono');
+		echo $this->Form->input('direccion', array("label"=>"Dirección"));
+		echo $this->Form->input('telefono', array("label"=>"Teléfono"));
 		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>

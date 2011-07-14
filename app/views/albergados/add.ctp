@@ -1,4 +1,4 @@
-<div class="albergados form">
+﻿<div class="albergados form">
 <?php echo $this->Form->create('Albergado');?>
 	<fieldset>
 		<legend><?php __('Agregar Albergado'); ?></legend>
@@ -10,7 +10,7 @@
 		echo $this->Form->input('embarazo_actual');
 		echo $this->Form->input('cant_hijos', array("label"=>"Cantidad de hijos"));
 		echo $this->Form->input('remitida_por', array("label"=>"Registrada por"));
-		echo $this->Form->input('averiguacion_previa');
+		echo $this->Form->input('averiguacion_previa', array("label"=>"Averiguación previa"));
 		echo $this->Form->input('familiograma_imagen_id', array("type"=>"text"));
 		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>

@@ -1,4 +1,4 @@
-<div class="albergados index">
+﻿<div class="albergados index">
 	<h2><?php __('Albergados');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
@@ -85,11 +85,11 @@
 		<li><?php echo $this->Html->link(__('Agregar Ingreso', true), array('controller' => 'ingresos', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('Ver Instituciones', true), array('controller' => 'instituciones', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Agregar Institucion', true), array('controller' => 'instituciones', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('Ver Problematicas', true), array('controller' => 'problematicas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Agregar Problematica', true), array('controller' => 'problematicas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Problemáticas', true), array('controller' => 'problematicas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Problemática', true), array('controller' => 'problematicas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('Ver Sociales', true), array('controller' => 'sociales', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Agregar Social', true), array('controller' => 'sociales', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('Ver Socio Economicos', true), array('controller' => 'socio_economicos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Agregar Socio Economico', true), array('controller' => 'socio_economicos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Socio Económicos', true), array('controller' => 'socio_economicos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Socio Económico', true), array('controller' => 'socio_economicos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

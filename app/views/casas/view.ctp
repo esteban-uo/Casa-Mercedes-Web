@@ -1,4 +1,4 @@
-<div class="casas view">
+﻿<div class="casas view">
 <h2><?php  __('Casa');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
@@ -21,12 +21,12 @@
 			<?php echo $this->Html->link($casa['Municipio']['title'], array('controller' => 'municipios', 'action' => 'view', $casa['Municipio']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Direccion'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Dirección'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $casa['Casa']['direccion']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Telefono'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Teléfono'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $casa['Casa']['telefono']; ?>
 			&nbsp;

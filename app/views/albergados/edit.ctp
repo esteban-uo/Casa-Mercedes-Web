@@ -1,4 +1,4 @@
-<div class="albergados form">
+﻿<div class="albergados form">
 <?php echo $this->Form->create('Albergado');?>
 	<fieldset>
 		<legend><?php __('Modificar Albergado'); ?></legend>
@@ -39,12 +39,12 @@
 		<li><?php echo $this->Html->link(__('Ver Ingresos', true), array('controller' => 'ingresos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Agregar Ingreso', true), array('controller' => 'ingresos', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('Ver Instituciones', true), array('controller' => 'instituciones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Agregar Institucion', true), array('controller' => 'instituciones', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('ver Problematicas', true), array('controller' => 'problematicas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Agregar Problematica', true), array('controller' => 'problematicas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Institución', true), array('controller' => 'instituciones', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('ver Problemáticas', true), array('controller' => 'problematicas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Problemática', true), array('controller' => 'problematicas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('Ver Sociales', true), array('controller' => 'sociales', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Agregar Social', true), array('controller' => 'sociales', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('Ver Socio Economicos', true), array('controller' => 'socio_economicos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Agregar Socio Economico', true), array('controller' => 'socio_economicos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Socio Económicos', true), array('controller' => 'socio_economicos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Socio Económico', true), array('controller' => 'socio_economicos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

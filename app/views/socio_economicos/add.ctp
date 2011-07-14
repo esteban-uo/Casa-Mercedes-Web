@@ -1,7 +1,7 @@
 ﻿<div class="socioEconomicos form">
 <?php echo $this->Form->create('SocioEconomico');?>
 	<fieldset>
-		<legend><?php __('Agregar Socio Economico'); ?></legend>
+		<legend><?php __('Agregar Socio Económico'); ?></legend>
 	<?php
 		echo $this->Form->input('albergado_id');
 		echo $this->Form->input('poblacion_indigena', array("label"=>"Población Indigena"));
@@ -10,7 +10,7 @@
 		echo $this->Form->input('ultimo_trabajo', array("label"=>"Último Trabajo"));
 		echo $this->Form->input('tiempo');
 		echo $this->Form->input('sueldo');
-		echo $this->Form->input('nivel_economico');
+		echo $this->Form->input('nivel_economico', array("label"=>"Nivel económico"));
 		echo $this->Form->input('zona_id');
 		echo $this->Form->input('vivienda_id');
 		echo $this->Form->input('construccion_id', array("label"=>"Construcción"));

@@ -28,9 +28,9 @@
 		<td><?php echo $ingreso['Ingreso']['fecha']; ?>&nbsp;</td>
 		<td><?php echo $ingreso['Ingreso']['motivo']; ?>&nbsp;</td>
 		<td><?php echo $ingreso['Ingreso']['ingreso_egreso']; ?>&nbsp;</td>
-		<td><?php echo $ingreso['Ingreso']['creado']; ?>&nbsp;</td>
-		<td><?php echo $ingreso['Ingreso']['modificado']; ?>&nbsp;</td>
-		<td><?php echo $ingreso['Ingreso']['modificado_por']; ?>&nbsp;</td>
+		<td><?php echo $ingreso['Ingreso']['created']; ?>&nbsp;</td>
+		<td><?php echo $ingreso['Ingreso']['modified']; ?>&nbsp;</td>
+		<td><?php echo $ingreso['Ingreso']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $ingreso['Ingreso']['id'])); ?>
 			<?php echo $this->Html->link(__('Modificar', true), array('action' => 'edit', $ingreso['Ingreso']['id'])); ?>
