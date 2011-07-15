@@ -8,7 +8,7 @@ class Persona extends AppModel {
 		'primer_nombre' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Nombre está vacío, por favor ingresa el NOMBRE',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -18,7 +18,7 @@ class Persona extends AppModel {
 		'primer_apellido' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Apellido Paterno está vacío, ingresa el primer apellido',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -28,7 +28,7 @@ class Persona extends AppModel {
 		'segundo_apellido' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Apellido Materno está vacío, ingresa el segundo apellido',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -38,7 +38,7 @@ class Persona extends AppModel {
 		'sexo' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Sexo está vacío, Debe contener una M (si es mujer) o una H (si es hombre)',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -58,7 +58,7 @@ class Persona extends AppModel {
 		'foto_imagen_id' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Foto Imagen está vacío, llenalo por favor',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

@@ -5,7 +5,7 @@ class Albergado extends AppModel {
 		'expediente' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				'message' => 'El campo Expediente esta vacío',
+				'message' => 'El campo Expediente está vacío',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -25,7 +25,7 @@ class Albergado extends AppModel {
 		'embarazo_actual' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				'message' => 'El campo de Emparazo esta vacío',
+				'message' => 'El campo de Emparazo está vacío',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -43,7 +43,7 @@ class Albergado extends AppModel {
 			),
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				'message' => 'El campo Cantidad de hijos esta vacío',
+				'message' => 'El campo Cantidad de hijos está vacío',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
