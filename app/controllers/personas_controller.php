@@ -6,6 +6,7 @@ class PersonasController extends AppController {
 	function index() {
 		$this->Persona->recursive = 0;
 		$this->set('personas', $this->paginate());
+		Debug($this->Persona->find('first'));
 	}
 
 	function view($id = null) {
@@ -59,30 +60,49 @@ class PersonasController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 	
+	function buscarPersonaPorid(){
+		return $this->Persona->findById($this->params["named"]["persona_id"]); 
+	}
+	
 	function buscarPersonaPorNombreCompleto(){
+		 $parametrosContain = array(
+									'FotoImagen' => array(
+													'Tipoimage' => array ('title'),
+													'url' => array()
+													),
+									'Albergado' => array(
+													'FotoImagen' => array (
+																	'Tipoimage' => array ('title'),
+																	'url' => array()
+																	),
+													),
+									'Dependiente' => array('id'),
+									'Documento' => array('id'),
+									'EstadosSalud' => array('id'),
+									'Nacimiento' => array('id'),
+									'Vestimenta' => array('id')
+								);
 		 $this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
-		 return $this->Persona->find('first', array(
-												'conditions' => array(
-												$this->Persona->getVirtualField('nombre_completo') => $this->params["named"]["nombre_completo"]
+		 if($resultado_nombre_completo = $this->Persona->find('first', array(
+												'conditions' => 
+												array(
+													'CONCAT(Persona.primer_nombre," ",Persona.segundo_nombre," ",Persona.primer_apellido," ",Persona.segundo_apellido)' => $this->params["named"]["nombre_completo"]
 												),
-												'contain' => array(
-																'FotoImagen' => array(
-																				'Tipoimage' => array ('title'),
-																				'url' => array()
-																				),
-																'Albergado' => array(
-																				'FotoImagen' => array (
-																								'Tipoimage' => array ('title'),
-																								'url' => array()
-																								),
-																				),
-																'Dependiente' => array('id'),
-																'Documento' => array('id'),
-																'EstadosSalud' => array('id'),
-																'Nacimiento' => array('id'),
-																'Vestimenta' => array('id'),
-															),
-															'autoFields' => false
-												));
+													'contain' => $parametrosContain
+											)
+			
+									)){
+				return $resultado_nombre_completo;
+		}else{
+			return $this->Persona->find('first', array(
+												'conditions' => 
+												array(
+													'CONCAT(Persona.primer_nombre," ",Persona.primer_apellido," ",Persona.segundo_apellido)' => $this->params["named"]["nombre_completo"]
+												),
+													'contain' => $parametrosContain
+											)
+			
+									);
+		}
 	}
 }

@@ -31,4 +31,21 @@ class Dependiente extends AppModel {
 			'order' => ''
 		)
 	);
+	
+	function afterFind($results) {
+		foreach ($results as $key => $val) {
+			$persona = $this->requestAction(
+							array(
+								'controller' => 'personas',
+								'action' => 'buscarPersonaPorid',
+								'named' => array('persona_id' => $results[$key]['Dependiente']['persona_id'])
+							)
+				);
+				
+				App::import('model','Attribute');
+			//Debug($persona);
+			//$results[$key]['Dependiente']['nombre_completo_persona'] = $results[$key]['Persona']['primer_nombre'].' '. $results[$key]['Persona']['segundo_nombre'].' '.$results[$key]['Persona']['primer_apellido'].' '.$results[$key]['Persona']['segundo_apellido']; 
+        }
+		return $results;
+	}
 }
