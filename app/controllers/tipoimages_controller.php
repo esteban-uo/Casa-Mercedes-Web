@@ -11,7 +11,7 @@ class TipoimagesController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid tipoimage', true));
+			$this->Session->setFlash(__('Tipo de Imagen Invalido', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('tipoimage', $this->Tipoimage->read(null, $id));
@@ -32,13 +32,13 @@ class TipoimagesController extends AppController {
 			if ($this->Tipoimage->save($this->data)) {
 
 				
-				$this->Session->setFlash(__('The tipoimage has been saved ', true));
+				$this->Session->setFlash(__('El tipo de imagen ha sido guardado', true));
 					
 				$Folder->create('img/'.Inflector::slug($this->data['Tipoimage']['title'],'_'),true,777);
 				$this->redirect(array('action' => 'index'));
 			
 			} else {
-				$this->Session->setFlash(__('The tipoimage could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('El tipo de imagen no pudo ser guardado. Porfavor, Intente de nuevo.', true));
 			}
 		}
 	}
@@ -69,10 +69,10 @@ class TipoimagesController extends AppController {
 			if ($this->Tipoimage->save($this->data)) {
 			
 				
-				$this->Session->setFlash(__('The tipoimage has been saved', true));
+				$this->Session->setFlash(__('El tipo de imagen ha sido guardado', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The tipoimage could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('El tipo de imagen no pudo ser guardado. Porfavor, Intente de nuevo.', true));
 			}
 		}
 		
@@ -94,7 +94,7 @@ class TipoimagesController extends AppController {
 	*/
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for tipoimage', true));
+			$this->Session->setFlash(__('Id invalido para el tipo de Imagen', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		
@@ -109,7 +109,7 @@ class TipoimagesController extends AppController {
 				
 			}else
 			{
-				$this->Session->setFlash(__('Tipoimage was not deleted  '.$this->data, true));
+				$this->Session->setFlash(__('El tipo de imagen no pudo borrarse'.$this->data, true));
 				$this->redirect(array('action' => 'index'));
 			}
 		}
@@ -118,7 +118,7 @@ class TipoimagesController extends AppController {
 			
 		}else
 		{
-			$this->Session->setFlash(__('Tipoimage was not deleted  '.$this->data, true));
+			$this->Session->setFlash(__('El tipo de imagen no pudo borrarse'.$this->data, true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if($image['Tipoimage']['title'])
@@ -126,13 +126,13 @@ class TipoimagesController extends AppController {
 			
 			$Folder = new Folder;
 			$Folder->delete('img/'.Inflector::slug($image['Tipoimage']['title'],'_'));
-			$this->Session->setFlash(__('Tipoimage deleted', true));
+			$this->Session->setFlash(__('Tipo de Imagen Guardado', true));
 			$this->redirect(array('action'=>'index'));
 			
 		}
 			
 		
-		$this->Session->setFlash(__('Tipoimage was not deleted  '.$this->data, true));
+		$this->Session->setFlash(__('El tipo de imagen no pudo borrarse'.$this->data, true));
 		$this->redirect(array('action' => 'index'));
 	}
 }

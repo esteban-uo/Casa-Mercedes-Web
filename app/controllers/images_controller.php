@@ -11,7 +11,7 @@ class ImagesController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid image', true));
+			$this->Session->setFlash(__('Imagen Invalida', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('image', $this->Image->read(null, $id));
@@ -43,10 +43,10 @@ class ImagesController extends AppController {
 								));
 				
 				 if ($this->Image->save($data2)) {
-					$this->Session->setFlash(__('The image has been saved', true));
+					$this->Session->setFlash(__('La imagen Guardada Exitosamente', true));
 					$this->redirect(array('action' => 'index'));
 				} else {
-					$this->Session->setFlash(__('The image could not be saved. Please, try again.', true));
+					$this->Session->setFlash(__('La imagen no pudo Guardarse. Porfavor, intente de nuevo.', true));
 				}
 			}
 		} else
@@ -68,7 +68,7 @@ class ImagesController extends AppController {
 		$this->set(compact('tipoimages'));
 		
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid image', true));
+			$this->Session->setFlash(__('Imagen Invalida', true));
 			$this->redirect(array('action' => 'index'));
 		}
 			
@@ -84,10 +84,10 @@ class ImagesController extends AppController {
 				$this->deleteImage($id);
 				if($this->upload($this->data)== 1){
 					if ($this->Image->save($data2)) {
-						$this->Session->setFlash(__('The image has been saved', true));
+						$this->Session->setFlash(__('La imagen Guardada Exitosamente', true));
 						$this->redirect(array('action' => 'index'));
 					} else {
-						$this->Session->setFlash(__('The image could not be saved. Please, try again.', true));
+						$this->Session->setFlash(__('La imagen no pudo Guardarse. Porfavor, intente de nuevo.', true));
 					}
 				}
 			}
@@ -107,17 +107,17 @@ class ImagesController extends AppController {
 	*/
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for image', true));
+			$this->Session->setFlash(__('Id de imagen invalido', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		
 		if($this->deleteImage($id) == 1){
 			if ($this->Image->delete($id)) {
-				$this->Session->setFlash(__('Image deleted', true));
+				$this->Session->setFlash(__('Imagen Borrada', true));
 				$this->redirect(array('action'=>'index'));
 			}
 		}
-		$this->Session->setFlash(__('Image was not deleted', true));
+		$this->Session->setFlash(__('La imagen no pudo ser Borrada', true));
 		$this->redirect(array('action' => 'index'));
 	}
 
@@ -148,14 +148,14 @@ class ImagesController extends AppController {
 					return 1;
 				}else
 				{
-				$this->Session->setFlash(__('The Image could not be loaded', true));
+				$this->Session->setFlash(__('La imagen no pudo ser cargada', true));
 				return 0;}
 			}else
 			{
-				$this->Session->setFlash(__('The Image alredy Exist', true));
+				$this->Session->setFlash(__('Esta imagen ya existe en la carpeta', true));
 				return 0;}
 		}else{
-			$this->Session->setFlash(__('The file exceeds the maximum size allowed  (1 MB) or is not an Image, try Again', true));
+			$this->Session->setFlash(__('El archivo subido excede el tamaño permitido (1 MB) o no es una Imagen, intente de nuevo', true));
 			return 0;}
 
 	}
