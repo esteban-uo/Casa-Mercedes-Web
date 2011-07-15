@@ -16,8 +16,8 @@
 </head>
        <body>
 	   <h1 class="title">Panel de Control</h1>
-	   <span class="button_login"> <?php echo $this->Html->link(__('Login', true), array('action' => 'login'));?></span>
-	   
+	   <span class="button_login teal"> <?php echo $this->Html->link(__('Inicio', true), array('action' => 'index'));?></span>
+	   <span class="button_login alt"> <?php echo $this->Html->link(__('Panel', true), array('action' => 'acp'));?></span>
 	   
 	<div id="content">
 			
