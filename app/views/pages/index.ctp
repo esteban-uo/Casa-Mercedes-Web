@@ -59,4 +59,9 @@ infantil, proporcionando cuidado y protección integral a las niñas y adolesc
 </div>
 
 </div>
+<div id="patrocinadores">
+<h4>Patrocinadores</h4>
+<a href="http://www.extend.com.mx" class="extend"></a>
+</div>
+
 </div>

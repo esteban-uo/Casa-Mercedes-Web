@@ -100,6 +100,26 @@ body{
 
 }
 
+#patrocinadores{
+	position: absolute;
+	left: 625px;
+	bottom: 30px;
+}
+#patrocinadores h4{
+	color: #fff;
+	font-size: 20px;
+	text-shadow: #000 0.1em 0.1em 0.2em;
+	
+}
+
+.extend{
+	background: url('../img/extend_small.png') no-repeat;
+	display: block;
+	width: 190px;
+	height:70px;
+
+}
+
 .title{
 	margin: 40px 0px;
 	padding: 5px;
@@ -161,7 +181,7 @@ h1.title{
 .casa{
 	position: fixed;
 	top: 195px;
-	left: 630px;
+	left: 625px;
 	font-family:"QuicksandBold";
 	font-size: 20px;
 	color: #fff;
@@ -268,7 +288,7 @@ ul li a:hover{
 
 }
 #programas{
-	width: 900px;
+	width: 800px;
 	margin: 0% 5%;
 	-moz-column-width: 200px; 
 	-webkit-column-width: 300px; 
@@ -287,7 +307,8 @@ ul li a:hover{
 	
 }
 #footer {
-
+	font-size: 10px;
+	color: #aaa;
 	clear: both;
 	padding: 6px 10px;
 	text-align: left;
@@ -300,7 +321,7 @@ ul li a:hover{
 }
 
 #footer a{
-	font-size: 10px;
+
 	text-decoration: none;
 	color: #fff;
 }

@@ -53,7 +53,7 @@
 
 		</div>
 		<div id="footer">
-<p><?php echo $this->Html->link(__('Campus party 2011', true), 'www.campus-party.com.mx'); ?></p>
+<p><?php echo $this->Html->link(__('Casa Mercedes', true), 'http://www.casamercedes.com'); ?> 2011 todos los derechos | <?php echo $this->Html->link(__('Campus party Mexico', true), 'http://www.campus-party.com.mx'); ?> | <?php echo $this->Html->link(__('Html', true), '#'); ?> & <?php echo $this->Html->link(__('Css', true), '#'); ?> validado</p>
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
