@@ -1,7 +1,7 @@
 
 <script type="text/javascript">
 $(function() {
-	$('ul.nav a, .button_section1').bind('click',function(event){
+	$('#nav a, .button_section1').bind('click',function(event){
 		var $anchor = $(this);
 		
 		/*if you want to use one of the easing effects:
@@ -20,12 +20,12 @@ $(function() {
 
 <div id="scroll">
 <div class="section pink" id="section1">
-	<h1 class="title">Nuestra<br />casa</h1>
+	<h1 class="title main">Nuestra<br />casa</h1>
 	<p id="tagline">
 Somos una Institución de Asistencia Privada, con más de 16 años trabajando por niñas y adolescentes, sus hijas e hijos, en situación de pobreza, vulnerabilidad y riesgo.	</p>
 <p class="especial"> Creemos firmemente que nuestras niñas y adolescentes tienen el derecho de transformar sus vidas proporcionando Atención Integral, Desarrollando Capacidades y Fomentando Oportunidades.</p>
 <span class="casa">Casa de las Mercedes I.A.P.</span>
-	<ul class="nav">
+	<ul id="nav">
 		<li><a href="#section1">Inicio</a></li>
 		<li><a href="#section2">Valores</a></li>
 		<li><a href="#section3">Programas</a></li>
@@ -33,7 +33,7 @@ Somos una Institución de Asistencia Privada, con más de 16 años trabajando
 <span class="button_login"> <?php echo $this->Html->link(__('Login', true), array('action' => 'login'));?></span>
 </div>
 <div class="section purple" id="section2">
-	<h1 class="title">Nuestros<br />Valores</h1>
+	<h1 class="title main">Nuestros<br />Valores</h1>
 <div id="valores">	
 <h2 class="subtitle">Misión.</h2>
 <p class="parag">Contribuir a un desarrollo social, coadyuvando a la reducción de los índices de niñas de la calle, explotación sexual y explotación
@@ -44,7 +44,7 @@ infantil, proporcionando cuidado y protección integral a las niñas y adolesc
 
 </div>
 <div class="section blue" id="section3">
-	<h1 class="title">Nuestros<br />Programas</h1>
+	<h1 class="title main">Nuestros<br />Programas</h1>
 <div id="programas">
 <h2 class="subtitle">Albergue.</h2>
 <p class="parag">Proporcionamos a niñas y jóvenes, en su caso, sus hijas e hijos de toda la república, un hogar seguro y estable en el que encuentran una asistencia integral que les permite iniciar una vida independiente y productiva.</p>

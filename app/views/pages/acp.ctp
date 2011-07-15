@@ -1,7 +1,7 @@
-﻿<p>Contenido para el panel de control de administración</p>
+<div id="contenido">
 <div class="actions">
 	<h2>Acciones</h2>
-	<ul>
+	<ul id="cp_style">
 		<li><?php echo $this->Html->link(__('Albergados', true), array('controller'=>'albergados','action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('Casas', true), array('controller'=>'casas','action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('Ciclos Escolares', true), array('controller'=>'ciclo_escolars','action' => 'index')); ?></li>
@@ -17,4 +17,5 @@
 </div>
 <div>
 	<p>Algo de contenido...</p>
+</div>
 </div>
