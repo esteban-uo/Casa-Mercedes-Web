@@ -46,6 +46,18 @@
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
+			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/Elnekodesu/Sites/casaMercedes/app/views/pages/acp.ctp</string>
+				<key>StateType</key>
+				<string>DefaultTab</string>
+			</dict>
+			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/Elnekodesu/Sites/casaMercedes/app/views/layouts/panel_control.ctp</string>
+				<key>StateType</key>
+				<string>DefaultTab</string>
+			</dict>
 		</array>
 	</dict>
 	<key>com.macrabbit.Espresso.WorkspaceTabs.DisclosureCollapsed</key>

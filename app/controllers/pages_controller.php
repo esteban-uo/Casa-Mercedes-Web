@@ -17,7 +17,6 @@ class PagesController extends AppController {
 	
 	function login() {
 		$title_for_layout = "Login";
-		$this->layout = 'login';
 		$this->set(compact('title_for_layout'));
 	}
 	
