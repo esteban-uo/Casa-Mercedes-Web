@@ -2,6 +2,7 @@
 class PersonasController extends AppController {
 
 	var $name = 'Personas';
+        var $helpers = array('Html','Javascript', 'Ajax');
 
 	function index() {
 		$this->Persona->recursive = 0;

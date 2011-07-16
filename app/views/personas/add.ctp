@@ -1,5 +1,10 @@
 ﻿<div class="personas form">
-<?php echo $this->Form->create('Persona');?>
+<?php echo $ajax->form('edit', 'post', array(
+        'model'    => 'Personas',
+        'url'      => array( 'controller' => 'personas', 'action' => 'edit'),
+        'update'   => 'MB_content',
+        'complete' => 'closeModalbox()'
+        ));?>
 	<fieldset>
 		<legend><?php __('Agregar Persona: Datos de la Persona'); ?></legend>
 	<?php
