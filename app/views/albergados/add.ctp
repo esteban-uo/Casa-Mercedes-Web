@@ -1,10 +1,19 @@
 <div>
-<?php echo $ajax->form('edit', 'post', array(
+<?php 
+
+if (isset($closeModalbox) && $closeModalbox) echo "<div id='closeModalbox'></div>";
+
+if( $ajax->isAjax()){
+    echo $ajax->form('edit', 'post', array(
         'model'    => 'Albergados',
         'url'      => array( 'controller' => 'albergados', 'action' => 'edit'),
         'update'   => 'MB_content',
-        'complete' => 'closeModalbox()'
-        ));?>
+        'complete' => 'closeModalbox();'
+        ));
+}else{
+    echo $form->create('Albergado');
+}
+?>
 	<fieldset>
 		<legend><?php __('Agregar Albergado'); ?></legend>
 	<?php

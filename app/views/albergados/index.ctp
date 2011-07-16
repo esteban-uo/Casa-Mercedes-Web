@@ -1,9 +1,4 @@
 <div class="albergados index">
-    <script type="javascript">
-    if($('MB_content') != undefined){
-          location.reload();
-    }
-    </script>
 	<h2><?php __('Albergados');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
@@ -49,7 +44,7 @@
 		<td><?php echo $albergado['Albergado']['modified']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $albergado['Albergado']['id']), array('onclick' => 'Modalbox.show(this.href, {title: this.title, width: 400}); return false;')); ?>
+			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $albergado['Albergado']['id'], 'onclick' => 'Modalbox.show(this.href, {title: this.title, width: 400}); return false;')); ?>
 			<?php echo $this->Html->link(__('Modificar', true), array('action' => 'edit', $albergado['Albergado']['id'])); ?>
 			<?php echo $this->Html->link(__('Eliminar', true), array('action' => 'delete', $albergado['Albergado']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $albergado['Albergado']['id'])); ?>
 		</td>

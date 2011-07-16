@@ -2,7 +2,7 @@
 class AlbergadosController extends AppController {
 
 	var $name = 'Albergados';
-        var $helpers = array('Html','Javascript', 'Ajax');
+        var $helpers = array('Html','Form');
 
 	function index() {
 		$this->Albergado->recursive = 0;
@@ -18,14 +18,23 @@ class AlbergadosController extends AppController {
 	}
 
 	function add() {
+            $this->set('closeModalbox', false);
 		if (!empty($this->data)) {
 			$this->Albergado->create();
-			if ($this->Albergado->save($this->data)) {
-				$this->Session->setFlash(__('The albergado has been saved', true));
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The albergado could not be saved. Please, try again.', true));
-			}
+                        if($this->Albergado->validates()){
+                            if ($this->Albergado->save($this->data)) {
+                            	$this->Session->setFlash(__('The albergado has been saved', true));
+                                    if (! $this->RequestHandler->isAjax()) {
+                                            $this->redirect(array('action' => 'index'));
+                                    }
+                                    $this->set('closeModalbox', true);
+                            } else {
+                                    $Albergado = $this->Albergado->invalidFields;
+                                    $data = compact('Albergado');
+                                    $this->Session->setFlash(__('The albergado could not be saved. Please, try again.', true));
+                                    $this->set('errors', compact('message','data'));
+                            }
+                        }
 		}
 		$personas = $this->Albergado->Persona->find('list');
 		$casas = $this->Albergado->Casa->find('list');
