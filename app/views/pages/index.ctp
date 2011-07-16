@@ -1,4 +1,4 @@
-<script type="text/javascript">
+﻿<script type="text/javascript">
 $(function() {
 	$('#nav a, .button_section1').bind('click',function(event){
 		var $anchor = $(this);
@@ -21,8 +21,8 @@ $(function() {
 <div class="section pink" id="section1">
 	<h1 class="title main">Nuestra<br />casa</h1>
 	<p id="tagline">
-Somos una Institucio´n de Asistencia Privada, con ma´s de 16 an~os trabajando por nin~as y adolescentes, sus hijas e hijos, en situacio´n de pobreza, vulnerabilidad y riesgo.	</p>
-<p class="especial"> Creemos firmemente que nuestras nin~as y adolescentes tienen el derecho de transformar sus vidas proporcionando Atencio´n Integral, Desarrollando Capacidades y Fomentando Oportunidades.</p>
+Somos una Institución de Asistencia Privada, con más de 16 años trabajando por niñas y adolescentes, sus hijas e hijos, en situación de pobreza, vulnerabilidad y riesgo.	</p>
+<p class="especial"> Creemos firmemente que nuestras niñas y adolescentes tienen el derecho de transformar sus vidas proporcionando Atención Integral, Desarrollando Capacidades y Fomentando Oportunidades.</p>
 <span class="casa">Casa de las Mercedes I.A.P.</span>
 	<ul id="nav">
 		<li><a href="#section1">Inicio</a></li>
@@ -35,10 +35,10 @@ Somos una Institucio´n de Asistencia Privada, con ma´s de 16 an~os trabajando 
 	<h1 class="title main">Nuestros<br />Valores</h1>
 <div id="valores">	
 <h2 class="subtitle">Misión.</h2>
-<p class="parag">Contribuir a un desarrollo social, coadyuvando a la reduccio´n de los i´ndices de nin~as de la calle, explotacio´n sexual y explotacio´n
-infantil, proporcionando cuidado y proteccio´n integral a las nin~as y adolescentes embarazadas y/o con bebe´, expuestas a situacio´n de calle y explotacio´n.</p>
+<p class="parag">Contribuir a un desarrollo social, coadyuvando a la reducción de los índices de niñas de la calle, explotación sexual y explotación
+infantil, proporcionando cuidado y protección integral a las niñas y adolescentes embarazadas y/o con bebé, expuestas a situación de calle y explotación.</p>
 <h2 class="subtitle">Visión</h2>
-<p class="parag">Ofrecer a nin~as y adolescentes en condiciones de riesgo social el mejor lugar para su desarrollo personal y el sano crecimiento de sus hijas e hijos (en su caso), a trave´s de un servicio profesional y con altos valores trascendentes	</p>
+<p class="parag">Ofrecer a niñas y adolescentes en condiciones de riesgo social el mejor lugar para su desarrollo personal y el sano crecimiento de sus hijas e hijos (en su caso), a través de un servicio profesional y con altos valores trascendentes	</p>
 </div>
 
 </div>
@@ -46,15 +46,15 @@ infantil, proporcionando cuidado y proteccio´n integral a las nin~as y adolesce
 	<h1 class="title main">Nuestros<br />Programas</h1>
 <div id="programas">
 <h2 class="subtitle">Albergue.</h2>
-<p class="parag">Proporcionamos a nin~as y jo´venes, en su caso, sus hijas e hijos de toda la repu´blica, un hogar seguro y estable en el que encuentran una asistencia integral que les permite iniciar una vida independiente y productiva.</p>
+<p class="parag">Proporcionamos a niñas y jóvenes, en su caso, sus hijas e hijos de toda la república, un hogar seguro y estable en el que encuentran una asistencia integral que les permite iniciar una vida independiente y productiva.</p>
 <h2 class="subtitle">Salud</h2>
-<p class="parag">Nuestro programa de salud incluye: Medicina General y preventiva, ginecologi´a-obstetricia, Neonatologi´a y pediatri´a, Psicologi´a y Psiquiatri´a, Prevencio´n y tratamiento de adicciones, y Medicina alternativa.</p>
+<p class="parag">Nuestro programa de salud incluye: Medicina General y preventiva, ginecología-obstetricia, Neonatología y pediatría, Psicología y Psiquiatría, Prevención y tratamiento de adicciones, y Medicina alternativa.</p>
 <h2 class="subtitle">Estancia Infantil.</h2>
-<p class="parag">Para la atencio´n de las hijas e hijos de las adolescentes contamos con un centro de educacio´n inicial que promueve su desarrollo personal, ampliar y consolidar su estructura mental, lenguaje, psicomotricidad, afectividad, desarrollando sus habilidades y actitudes.</p>
+<p class="parag">Para la atención de las hijas e hijos de las adolescentes contamos con un centro de educación inicial que promueve su desarrollo personal, ampliar y consolidar su estructura mental, lenguaje, psicomotricidad, afectividad, desarrollando sus habilidades y actitudes.</p>
 <h2 class="subtitle">Educación.</h2>
-<p class="parag">Promover el desarrollo educativo nin~as y adolescentes a trave´s de la canalizacio´n a instancias educativas, seguimiento permanente del proceso escolar.</p>
-<h2 class="subtitle">Capacitacio´n Laboral.</h2>
-<p class="parag">Para una correcta reinsercio´n en la vida productiva y autosuficiente contamos con capacitacio´n te´cnica mediante talleres permanentes: Computacio´n, Costura, Manualidades, entre otros.</p>
+<p class="parag">Promover el desarrollo educativo niñas y adolescentes a través de la canalización a instancias educativas, seguimiento permanente del proceso escolar.</p>
+<h2 class="subtitle">Capacitación Laboral.</h2>
+<p class="parag">Para una correcta reinserción en la vida productiva y autosuficiente contamos con capacitación técnica mediante talleres permanentes: Computación, Costura, Manualidades, entre otros.</p>
 </div>
 
 </div>
@@ -62,5 +62,4 @@ infantil, proporcionando cuidado y proteccio´n integral a las nin~as y adolesce
 <h4>Gracias a:</h4>
 <a href="http://www.extend.com.mx" class="extend"></a>
 </div>
-
 </div>
