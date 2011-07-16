@@ -18,27 +18,19 @@ class PagesController extends AppController {
 								'named' => array('nombre_completo' => $this->data["Persona"]["search"])
 							)
 				)){	
-				Debug($persona);
-				/*$albergado = $this->Albergados->findByPersonaId($persona["Personas"]["id"]);
-			    $tmp = $this->Albergados->query('SELECT username FROM users WHERE id = '.($albergado['Albergados']['modified_user_id']));
-				$usuario_ultimo_modificador = $tmp[0]['users']['username'];
-				
-				$this->loadModel('Images');
-	
-				Debug($this->Images->find('first', array(
-									'conditions'=> array(
-													"Images.id" => $persona["Personas"]["foto_imagen_id"]
-														),
-									'contain' => 'Tipoimages.title'
-								)));
-				
-				$parametros = array(
-							"albergado_id" => $albergado['Albergados']['id'],
-							"usuario_ultimo_modificador" => $tmp[0]['users']['username'],
-							"busqueda" => true,
+				//$user = $this->Personas->findById($persona["Persona"]["modified_user_id"]);
+				foreach($persona["Dependiente"] as $key => $value){
+					$persona["Dependiente"][$key]["nombre_completo"] = $this->requestAction(
+							array(
+								'controller' => 'personas',
+								'action' => 'buscarNombreCompletoPersonaPorid',
+								'named' => array('persona_id' => $persona["Dependiente"][$key]["persona_id"]))
 							);
-				$this->set($persona["Personas"]);
-				$this->set($parametros);*/
+				}
+				Debug($persona);
+				$this->set($persona);
+				$this->set('busqueda', true);
+				
 			}else{
 				$this->set('busqueda', false);
 			}

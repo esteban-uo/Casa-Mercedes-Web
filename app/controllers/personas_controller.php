@@ -60,8 +60,10 @@ class PersonasController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 	
-	function buscarPersonaPorid(){
-		return $this->Persona->findById($this->params["named"]["persona_id"]); 
+	function buscarNombreCompletoPersonaPorid(){
+		$this->Persona->recursive = -1;
+		$persona = $this->Persona->findById($this->params["named"]["persona_id"]);
+		return $persona["Persona"]["nombre_completo"];
 	}
 	
 	function buscarPersonaPorNombreCompleto(){
