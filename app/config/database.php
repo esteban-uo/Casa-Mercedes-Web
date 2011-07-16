@@ -81,6 +81,7 @@ class DATABASE_CONFIG {
 		'password' => '',
 		'database' => 'casa_mercedes',
 		'prefix' => '',
+		'encoding' => 'utf8' 
 	);
 
 	var $test = array(

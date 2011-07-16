@@ -9,10 +9,10 @@
 			<th><?php echo $this->Paginator->sort('brazier');?></th>
 			<th><?php echo $this->Paginator->sort('pantaleta');?></th>
 			<th><?php echo $this->Paginator->sort('blusa');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
-			<th><?php echo $this->Paginator->sort('modified');?></th>
-			<th><?php echo $this->Paginator->sort('modified_user_id');?></th>
-			<th class="actions"><?php __('Actions');?></th>
+			<th><?php echo $this->Paginator->sort('registrado');?></th>
+			<th><?php echo $this->Paginator->sort('modificado');?></th>
+			<th><?php echo $this->Paginator->sort('modificado_por');?></th>
+			<th class="actions"><?php __('Acciones');?></th>
 	</tr>
 	<?php
 	$i = 0;
@@ -36,9 +36,9 @@
 		<td><?php echo $vestimenta['Vestimenta']['modified']; ?>&nbsp;</td>
 		<td><?php echo $vestimenta['Vestimenta']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $vestimenta['Vestimenta']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $vestimenta['Vestimenta']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $vestimenta['Vestimenta']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $vestimenta['Vestimenta']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $vestimenta['Vestimenta']['id'])); ?>
+			<?php echo $this->Html->link(__('Modificar', true), array('action' => 'edit', $vestimenta['Vestimenta']['id'])); ?>
+			<?php echo $this->Html->link(__('Eliminar', true), array('action' => 'delete', $vestimenta['Vestimenta']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $vestimenta['Vestimenta']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -58,10 +58,10 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Vestimenta', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Vestimenta', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Ver Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

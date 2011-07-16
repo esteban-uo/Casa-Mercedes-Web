@@ -306,4 +306,4 @@
 	/**
 	*
 	*/
-	Configure::write('id.usuario.prueba', '1');
+	Configure::write('id.usuario.prueba', '4');

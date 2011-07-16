@@ -1,4 +1,4 @@
-<div class="familias view">
+﻿<div class="familias view">
 <h2><?php  __('Familia');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
@@ -56,17 +56,17 @@
 			<?php echo $familia['Familia']['observaciones']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $familia['Familia']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $familia['Familia']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $familia['Familia']['modified_user_id']; ?>
 			&nbsp;
@@ -74,13 +74,13 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Actciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Familia', true), array('action' => 'edit', $familia['Familia']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Familia', true), array('action' => 'delete', $familia['Familia']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $familia['Familia']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Familias', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Familia', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Albergado', true), array('controller' => 'albergados', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Familia', true), array('action' => 'edit', $familia['Familia']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar Familia', true), array('action' => 'delete', $familia['Familia']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $familia['Familia']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Familias', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Familia', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Albergado', true), array('controller' => 'albergados', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

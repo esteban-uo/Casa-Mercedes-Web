@@ -8,11 +8,13 @@ class ReportesController extends AppController {
 	*/
 	function index() {
 		$this->layout = "panel_control";
+		Debug($this->data);
 		//TODO ejecuta método para la generación de reporte segun el tipo selecionado
 	}
 
 	function ficha_identificacion() {
 		$this->layout = "reportes";
+		Debug($this->params["named"]);
 		//TODO genera reporte ficha de identificación
 		
 	}

@@ -1,4 +1,4 @@
-<div class="estadosSaluds index">
+﻿<div class="estadosSaluds index">
 	<h2><?php __('Estados Saluds');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
@@ -11,10 +11,10 @@
 			<th><?php echo $this->Paginator->sort('discapacidad');?></th>
 			<th><?php echo $this->Paginator->sort('enfermedades_cronicas');?></th>
 			<th><?php echo $this->Paginator->sort('otra_enfermedad_id');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
-			<th><?php echo $this->Paginator->sort('modified');?></th>
-			<th><?php echo $this->Paginator->sort('modified_user_id');?></th>
-			<th class="actions"><?php __('Actions');?></th>
+			<th><?php echo $this->Paginator->sort('creado');?></th>
+			<th><?php echo $this->Paginator->sort('modificado');?></th>
+			<th><?php echo $this->Paginator->sort('modificado_por');?></th>
+			<th class="actions"><?php __('Acciones');?></th>
 	</tr>
 	<?php
 	$i = 0;
@@ -42,9 +42,9 @@
 		<td><?php echo $estadosSalud['EstadosSalud']['modified']; ?>&nbsp;</td>
 		<td><?php echo $estadosSalud['EstadosSalud']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $estadosSalud['EstadosSalud']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $estadosSalud['EstadosSalud']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $estadosSalud['EstadosSalud']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $estadosSalud['EstadosSalud']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $estadosSalud['EstadosSalud']['id'])); ?>
+			<?php echo $this->Html->link(__('Modificar', true), array('action' => 'edit', $estadosSalud['EstadosSalud']['id'])); ?>
+			<?php echo $this->Html->link(__('Eliminar', true), array('action' => 'delete', $estadosSalud['EstadosSalud']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $estadosSalud['EstadosSalud']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -57,19 +57,19 @@
 	?>	</p>
 
 	<div class="paging">
-		<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
+		<?php echo $this->Paginator->prev('<< ' . __('Anterior', true), array(), null, array('class'=>'disabled'));?>
 	 | 	<?php echo $this->Paginator->numbers();?>
  |
-		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+		<?php echo $this->Paginator->next(__('Siguiente', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
 </div>
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Estados Salud', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Otras Enfermedades', true), array('controller' => 'otras_enfermedades', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Otra Enfermedad', true), array('controller' => 'otras_enfermedades', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Estados Salud', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Ver Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Otras Enfermedades', true), array('controller' => 'otras_enfermedades', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Otra Enfermedad', true), array('controller' => 'otras_enfermedades', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

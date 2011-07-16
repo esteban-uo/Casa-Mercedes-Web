@@ -6,10 +6,10 @@
 			<th><?php echo $this->Paginator->sort('enfermedad');?></th>
 			<th><?php echo $this->Paginator->sort('observaciones');?></th>
 			<th><?php echo $this->Paginator->sort('enfermedad_cronica');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
-			<th><?php echo $this->Paginator->sort('modified');?></th>
-			<th><?php echo $this->Paginator->sort('modified_user_id');?></th>
-			<th class="actions"><?php __('Actions');?></th>
+			<th><?php echo $this->Paginator->sort('registrado');?></th>
+			<th><?php echo $this->Paginator->sort('modificado');?></th>
+			<th><?php echo $this->Paginator->sort('modificado_por');?></th>
+			<th class="actions"><?php __('Acciones');?></th>
 	</tr>
 	<?php
 	$i = 0;
@@ -28,9 +28,9 @@
 		<td><?php echo $otraEnfermedad['OtraEnfermedad']['modified']; ?>&nbsp;</td>
 		<td><?php echo $otraEnfermedad['OtraEnfermedad']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $otraEnfermedad['OtraEnfermedad']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $otraEnfermedad['OtraEnfermedad']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $otraEnfermedad['OtraEnfermedad']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $otraEnfermedad['OtraEnfermedad']['id'])); ?>
+			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $otraEnfermedad['OtraEnfermedad']['id'])); ?>
+			<?php echo $this->Html->link(__('Modificar', true), array('action' => 'edit', $otraEnfermedad['OtraEnfermedad']['id'])); ?>
+			<?php echo $this->Html->link(__('Eliminar', true), array('action' => 'delete', $otraEnfermedad['OtraEnfermedad']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $otraEnfermedad['OtraEnfermedad']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -43,17 +43,17 @@
 	?>	</p>
 
 	<div class="paging">
-		<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
+		<?php echo $this->Paginator->prev('<< ' . __('Anterior', true), array(), null, array('class'=>'disabled'));?>
 	 | 	<?php echo $this->Paginator->numbers();?>
  |
-		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+		<?php echo $this->Paginator->next(__('Siguiente', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
 </div>
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Otra Enfermedad', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Estados Saluds', true), array('controller' => 'estados_saluds', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Estados Salud', true), array('controller' => 'estados_saluds', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Otra Enfermedad', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Ver Estados Saluds', true), array('controller' => 'estados_saluds', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Estados Salud', true), array('controller' => 'estados_saluds', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
