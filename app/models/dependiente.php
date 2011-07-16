@@ -1,6 +1,6 @@
 <?php
-class Dependiente extends AppModel {
-	var $name = 'Dependiente';
+class dependiente extends AppModel {
+	var $name = 'dependiente';
 	var $validate = array(
 		'expediente' => array(
 			'minlength' => array(
