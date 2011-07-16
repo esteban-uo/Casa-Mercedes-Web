@@ -28,7 +28,8 @@ class AlbergadosController extends AppController {
 		}
 		$personas = $this->Albergado->Persona->find('list');
 		$casas = $this->Albergado->Casa->find('list');
-		$this->set(compact('personas', 'casas'));
+		$fotoImagens = $this->Albergado->FotoImagen->find('list');
+		$this->set(compact('personas', 'casas', 'fotoImagens'));
 	}
 
 	function edit($id = null) {
@@ -49,7 +50,8 @@ class AlbergadosController extends AppController {
 		}
 		$personas = $this->Albergado->Persona->find('list');
 		$casas = $this->Albergado->Casa->find('list');
-		$this->set(compact('personas', 'casas'));
+		$fotoImagens = $this->Albergado->FotoImagen->find('list');
+		$this->set(compact('personas', 'casas', 'fotoImagens'));
 	}
 
 	function delete($id = null) {

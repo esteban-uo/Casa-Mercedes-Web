@@ -27,7 +27,7 @@ class DependientesController extends AppController {
 			}
 		}
 		$personas = $this->Dependiente->Persona->find('list');
-		$albergados = $this->Dependiente->Albergado->find('list', array('fields' => array('Albergado.persona_id')));
+		$albergados = $this->Dependiente->Albergado->find('list');
 		$this->set(compact('personas', 'albergados'));
 	}
 
