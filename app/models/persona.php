@@ -162,10 +162,10 @@ class Persona extends AppModel {
 	function afterFind($results) {
 		foreach ($results as $key => $val) {
             if (isset($val['Persona']['segundo_nombre'])) {
-                $results[$key]['Persona']['nombre_completo'] = $results[$key]['Persona']['primer_nombre'].' '.$results[$key]['Persona']['primer_apellido'].' '.$results[$key]['Persona']['segundo_apellido']; 
+				$results[$key]['Persona']['nombre_completo'] = $results[$key]['Persona']['primer_nombre'].' '. $results[$key]['Persona']['segundo_nombre'].' '.$results[$key]['Persona']['primer_apellido'].' '.$results[$key]['Persona']['segundo_apellido'];
             }else{
-				$results[$key]['Persona']['nombre_completo'] = $results[$key]['Persona']['primer_nombre'].' '. $results[$key]['Persona']['segundo_nombre'].' '.$results[$key]['Persona']['primer_apellido'].' '.$results[$key]['Persona']['segundo_apellido']; 
-			}
+				$results[$key]['Persona']['nombre_completo'] = $results[$key]['Persona']['primer_nombre'].' '.$results[$key]['Persona']['primer_apellido'].' '.$results[$key]['Persona']['segundo_apellido']; 
+            }
         }
 		return $results;
 	}

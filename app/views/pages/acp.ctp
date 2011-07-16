@@ -37,22 +37,25 @@
 		<div>
 			<div class="posiciones_fl">
 				<ul>
-					<li>Nombre: <span class="formateotxt_strong"><?php echo $primer_nombre; ?></span></li>
-					<?php if($segundo_nombre): ?>
-					<li>Segundo Nombre: <span class="formateotxt_strong"><?php echo $segundo_nombre; ?></span></li>
+					<li>Nombre: <span class="formateotxt_strong"><?php echo $Persona['primer_nombre']; ?></span></li>
+					<?php if($Persona['segundo_nombre']): ?>
+					<li>Segundo Nombre: <span class="formateotxt_strong"><?php echo $Persona['segundo_nombre']; ?></span></li>
 					<?php endif; ?>
-					<li>Primer Apellido: <span class="formateotxt_strong"><?php echo $primer_apellido; ?></span></li>
-					<li>Segundo Apellido: <span class="formateotxt_strong"><?php echo $segundo_apellido; ?></span></li>
-					<li>Ultimo usuario en modificar: <span class="formateotxt_strong"><?php echo $usuario_ultimo_modificador; ?></span></li>
+					<li>Primer Apellido: <span class="formateotxt_strong"><?php echo $Persona['primer_apellido']; ?></span></li>
+					<li>Segundo Apellido: <span class="formateotxt_strong"><?php echo $Persona['segundo_apellido']; ?></span></li>
 				</ul>
 			</div>
 			<div class="posiciones_fl">
-				<img src="" title="" />
+				<img src="./img/<?php echo $FotoImagen["Tipoimage"]["title"].'/'.$FotoImagen["url"]; ?>" title="" />
 			</div>
 		</div>
 		<div class="posiciones_cl"></div>
 		<div>
-			<?php echo $this->Html->link(__('Generar Reporte de Ficha de Identificación', true), array('controller'=>'reportes','action' => 'ficha_identificacion', 'id'=> $albergado_id)); ?>
+			<ul>
+				<li><?php echo $this->Html->link(__('Generar Reporte de Ficha de Identificación', true), array('controller'=>'reportes','action' => 'ficha_identificacion', 'id'=> $Persona['id'])); ?></li>
+				<li><?php echo $this->Html->link(__('Generar Reporte de Estudio Social', true), array('controller'=>'reportes','action' => 'estudio_social', 'id'=> $Persona['id'])); ?></li>
+				<li><?php echo $this->Html->link(__('Ver último Usuario editor', true), array('controller'=>'users','action' => 'view'.'/'.$Persona['modified_user_id'])); ?></li>
+			</ul>
 		</div>
 	<?php endif; ?>
 	</div>
