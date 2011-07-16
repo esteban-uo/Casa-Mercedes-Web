@@ -1,5 +1,9 @@
-<?php if (isset($closeModalBox) && $closeModalBox) echo "<div id='closeModalbox'></div>";?>
 <div class="albergados index">
+    <script type="javascript">
+    if($('MB_content') != undefined){
+          location.reload();
+    }
+    </script>
 	<h2><?php __('Albergados');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
@@ -45,7 +49,7 @@
 		<td><?php echo $albergado['Albergado']['modified']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $albergado['Albergado']['id'],'onclick' => 'Modalbox.show(this.href, {title: this.title, width: 400}); return false;')); ?>
+			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $albergado['Albergado']['id']), array('onclick' => 'Modalbox.show(this.href, {title: this.title, width: 400}); return false;')); ?>
 			<?php echo $this->Html->link(__('Modificar', true), array('action' => 'edit', $albergado['Albergado']['id'])); ?>
 			<?php echo $this->Html->link(__('Eliminar', true), array('action' => 'delete', $albergado['Albergado']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $albergado['Albergado']['id'])); ?>
 		</td>
@@ -71,7 +75,7 @@
 	<ul>
 		<li><?php echo $this->Html->link(__('Agregar Albergado', true), array('action' => 'add'), array('onclick' => 'Modalbox.show(this.href, {title: this.title, width: 400}); return false;')); ?></li>
 		<li><?php echo $this->Html->link(__('Ver Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Agregar Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Persona', true), array('controller' => 'personas', 'action' => 'add'),array('onclick' => 'Modalbox.show(this.href, {title: this.title, width: 400}); return false;')); ?> </li>
 		<li><?php echo $this->Html->link(__('Ver Casas', true), array('controller' => 'casas', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Agregar Casa', true), array('controller' => 'casas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('Ver Datos', true), array('controller' => 'datos', 'action' => 'index')); ?> </li>

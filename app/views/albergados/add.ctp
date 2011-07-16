@@ -3,7 +3,7 @@
         'model'    => 'Albergados',
         'url'      => array( 'controller' => 'albergados', 'action' => 'edit'),
         'update'   => 'MB_content',
-        'complete' => 'closeModalBox()'
+        'complete' => 'closeModalbox()'
         ));?>
 	<fieldset>
 		<legend><?php __('Agregar Albergado'); ?></legend>
