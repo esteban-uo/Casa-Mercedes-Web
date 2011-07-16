@@ -77,6 +77,13 @@ class Albergado extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'FotoImagen' => array(
+			'className' => 'Image',
+			'foreignKey' => 'familiograma_imagen_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
 }

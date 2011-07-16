@@ -1,9 +1,7 @@
 ﻿<?php
 class Persona extends AppModel {
 	var $name = 'Persona';
-	var $virtualFields = array(
-				'nombre_completo' => 'CONCAT(Persona.primer_nombre, " ", Persona.segundo_nombre, " ", Persona.primer_apellido, " ", Persona.segundo_apellido)');
-	var $displayField = 'nombre_completo';
+	var $displayField = 'primer_nombre';
 	var $validate = array(
 		'primer_nombre' => array(
 			'minlength' => array(
@@ -77,23 +75,10 @@ class Persona extends AppModel {
 			'order' => ''
 		)
 	);
-
-	var $hasMany = array(
+	
+	var $hasOne = array(
 		'Albergado' => array(
 			'className' => 'Albergado',
-			'foreignKey' => 'persona_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Dependiente' => array(
-			'className' => 'Dependiente',
 			'foreignKey' => 'persona_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -156,7 +141,33 @@ class Persona extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+		));
+
+	var $hasMany = array(
+		'Dependiente' => array(
+			'className' => 'Dependiente',
+			'foreignKey' => 'persona_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
 		)
 	);
+	
+	function afterFind($results) {
+		foreach ($results as $key => $val) {
+            if (isset($val['Persona']['segundo_nombre'])) {
+				$results[$key]['Persona']['nombre_completo'] = $results[$key]['Persona']['primer_nombre'].' '. $results[$key]['Persona']['segundo_nombre'].' '.$results[$key]['Persona']['primer_apellido'].' '.$results[$key]['Persona']['segundo_apellido'];
+            }else{
+				$results[$key]['Persona']['nombre_completo'] = $results[$key]['Persona']['primer_nombre'].' '.$results[$key]['Persona']['primer_apellido'].' '.$results[$key]['Persona']['segundo_apellido']; 
+            }
+        }
+		return $results;
+	}
 
 }

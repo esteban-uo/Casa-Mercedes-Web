@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class UsersController extends AppController {
 
 	var $name = 'Users';
@@ -7,6 +7,14 @@ class UsersController extends AppController {
 		$this->User->recursive = 0;
 		$this->set('users', $this->paginate());
 	}
+	
+	function login() {
+		$this->Session->setFlash('Ya has iniciado sesión anteriormente');
+            if ($this->Session->read('Auth.User')) {
+                    $this->Session->setFlash('Ya has iniciado sesión anteriormente');
+                    $this->redirect(array('controller' => 'pages', 'action' => 'index'), null, false);
+            }
+    }  
 
 	function view($id = null) {
 		if (!$id) {
