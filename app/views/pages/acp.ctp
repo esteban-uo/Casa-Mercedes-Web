@@ -46,7 +46,11 @@
 				</ul>
 			</div>
 			<div class="posiciones_fl">
-				<img src="./img/<?php echo $FotoImagen["Tipoimage"]["title"].'/'.$FotoImagen["url"]; ?>" title="" />
+				    <?php 
+						echo $this->Html->image($FotoImagen["Tipoimage"]["title"].'/'.$FotoImagen["url"], array(
+							"alt" => $Persona['nombre_completo']
+						)); 
+					?>
 			</div>
 		</div>
 		<div class="posiciones_cl"></div>
