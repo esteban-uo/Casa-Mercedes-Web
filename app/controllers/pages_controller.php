@@ -1,7 +1,7 @@
 <?php
 class PagesController extends AppController {
 	var $name = 'Pages';
-	var $helpers = array('Html', 'Session');
+	var $helpers = array('Html', 'Session', 'ImagenesGaleria');
 	var $uses = array();
 	
 	function index() {
@@ -27,7 +27,7 @@ class PagesController extends AppController {
 								'named' => array('persona_id' => $persona["Dependiente"][$key]["persona_id"]))
 							);
 				}
-				Debug($persona);
+				//Debug($persona);
 				$this->set($persona);
 				$this->set('busqueda', true);
 				
