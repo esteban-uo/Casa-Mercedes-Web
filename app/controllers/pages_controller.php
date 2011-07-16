@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class PagesController extends AppController {
 	var $name = 'Pages';
 	var $helpers = array('Html', 'Session');
@@ -14,4 +14,10 @@ class PagesController extends AppController {
 		$this->layout = 'panel_control';
 		$this->set(compact('title_for_layout'));
 	}
+	
+	function login() {
+		$title_for_layout = "Login";
+		$this->set(compact('title_for_layout'));
+	}
+	
 }
