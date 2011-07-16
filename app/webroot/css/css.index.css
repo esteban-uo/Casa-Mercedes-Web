@@ -486,11 +486,26 @@ img.imagen_perfil_box{
 	padding: 5px;
 	background:#ccc;
 }
+img.imagen_infograma_box{
+	margin:0 20px 0 0;
+	padding: 5px;
+	background:#ccc;
+}
+
 div.box_info_acp {
 	background:#000;
-	padding:0 0 40px 0;
+	padding:5px 5px 46px 5px;
 	margin:20px 0 0 0;
 }
+div.box_info_extra_acp{
+	background:#000;
+	padding:5px;
+	margin:20px 0 0 0;
+}
+div.box_info_acp h2{
+	margin-bottom:10px;
+}
+
 .action_info_acp{
     position:absolute;
     right:0;
