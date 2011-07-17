@@ -29,7 +29,9 @@ Somos una Institución de Asistencia Privada, con más de 16 años trabajando
 		<li><a href="#section2">Valores</a></li>
 		<li><a href="#section3">Programas</a></li>
 	</ul>
-<span class="button_login teal"> <?php echo $this->Html->link(__('Login', true), array('controller'=>'users','action' => 'login'));?></span>
+
+<span class="button_generic teal"> <?php echo $this->Html->link(__('Login', true), array('controller'=>'users','action' => 'login'));?></span>
+
 </div>
 <div class="section purple" id="section2">
 	<h1 class="title main">Nuestros<br />Valores</h1>
