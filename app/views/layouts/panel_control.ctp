@@ -14,8 +14,8 @@
     </head>
     <body>
         <h1 class="title">Panel de Control</h1>
-        <span class="button_login teal"> <?php echo $this->Html->link(__('Inicio', true), array('action' => 'index')); ?></span>
-        <span class="button_login alt"> <?php echo $this->Html->link(__('Panel', true), array('action' => 'acp')); ?></span>
+        <span class="button_login teal"> <?php echo $this->Html->link(__('Inicio', true), array('controller'=>'pages','action' => 'index')); ?></span>
+        <span class="button_login alt"> <?php echo $this->Html->link(__('Panel', true), array('controller'=>'pages', 'action' => 'acp')); ?></span>
         <div id="content">
             <div id="contenido">
                 <div class="actions">
@@ -23,7 +23,7 @@
                     <ul id="act_style">
                         <li><?php echo $this->Html->link(__('Crear Persona', true), array('controller' => 'personas', 'action' => 'add')); ?></li>
                         <li><?php echo $this->Html->link(__('Enlistar Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?></li>
-                        <li><?php echo $this->Html->link(__('Enlistar Dependientes', true), array('controller' => 'albergados', 'action' => 'index')); ?></li>
+                        <li><?php echo $this->Html->link(__('Enlistar Dependientes', true), array('controller' => 'dependientes', 'action' => 'index')); ?></li>
                     </ul>
                     <h2 class="subtitle">Usuarios</h2>
                     <ul id="rep_style">

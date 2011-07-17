@@ -3,6 +3,11 @@ class AlbergadosController extends AppController {
 
 	var $name = 'Albergados';
 
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
+	
 	function index() {
 		$this->Albergado->recursive = 0;
 		$this->set('albergados', $this->paginate());

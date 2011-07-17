@@ -2,7 +2,12 @@
 class DatosAlbergadosController extends AppController {
 
 	var $name = 'DatosAlbergados';
-
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
+	
 	function index() {
 		$this->DatosAlbergado->recursive = 0;
 		$this->set('datosAlbergados', $this->paginate());

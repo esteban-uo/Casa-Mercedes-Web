@@ -2,6 +2,11 @@
 class UsersController extends AppController {
 
 	var $name = 'Users';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->User->recursive = 0;

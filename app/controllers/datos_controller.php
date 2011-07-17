@@ -2,7 +2,12 @@
 class DatosController extends AppController {
 
 	var $name = 'Datos';
-
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
+	
 	function index() {
 		$this->Dato->recursive = 0;
 		$this->set('datos', $this->paginate());

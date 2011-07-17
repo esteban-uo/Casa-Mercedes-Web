@@ -1,4 +1,15 @@
-﻿<p class="parag">Búsqueda de personas por Nombre Completo</p>
+﻿<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("div.action_info_acp a").hide();
+	$("div.box_info_acp").mouseenter(function(){
+		$(this).find("div.action_info_acp a").show();
+	}).mouseleave(function(){
+		$(this).find("div.action_info_acp a").hide();
+    });
+});
+</script>
+<p class="parag">Búsqueda de personas por Nombre Completo</p>
 <?php
 	echo $this->Form->create(array('action' => 'acp'));
 ?>
@@ -74,15 +85,22 @@
 			</ul>
 		</div>
 	</div>
-	<?php Debug($Dependiente); ?>
 	<div id="acp_info_dependientes" class="box_info_acp posiciones_r">
 	<h2>Dependientes de <?php echo $Persona['nombre_completo'] ?></h2>
 		<?php if($Dependiente): // Si hay Dependientes ?>
 		<?php foreach($Dependiente as $llave => $valor): ?>
-		<div>
+		<div class="posiciones_r">
 			<ul>
-				<li>Nombre: <span class="formateotxt_strong"><?php echo $Dependiente[$llave]['nombre_completo']; ?></span></li>
+				<li><span class="formateotxt_strong"><?php echo $Dependiente[$llave]['Persona']['nombre_completo']; ?></span></li>
 			</ul>
+			<div class="action_info_acp">
+				<ul>
+					<li><?php echo $this->Html->link("Modificar", array('controller'=>'dependientes','action' => 'edit', $Dependiente[$llave]['Dependiente']['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+					<li><?php echo $this->Html->link("Eliminar", array('controller'=>'dependientes','action' => 'delete', $Dependiente[$llave]['Dependiente']['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el registro como albergado de %s?', true),$Persona['nombre_completo'])); ?></li>
+					<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'dependientes','action' => 'view', $Dependiente[$llave]['Dependiente']['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+					<li><?php echo $this->Html->link('Ult. Editor', array('controller'=>'users','action' => 'view', $Dependiente[$llave]['Dependiente']['modified_user_id']), array('class' => 'action_acp_info boton_acp_ultimousuario')); ?></li>
+				</ul>
+			</div>
 		</div>
 		<?php endforeach; ?>
 		<?php else: // Si hay Dependientes ?>
@@ -157,6 +175,13 @@
 		</ul>
 	</div>
 <?php else: // Si buscó persona ?>
-	<div>Estadísticas</div>
+	 <?php echo
+    $this->element('estadisticas',
+		array(
+		"cache" => "+1 hour",
+		'key'=>'estadisticas_key'
+		)
+    );
+	?>
 <?php endif; // Si buscó persona ?>
 </div>

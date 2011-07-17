@@ -2,6 +2,11 @@
 class InstitucionesController extends AppController {
 
 	var $name = 'Instituciones';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Institucion->recursive = 0;

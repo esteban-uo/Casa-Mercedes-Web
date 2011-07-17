@@ -3,6 +3,11 @@ class ReportesController extends AppController {
 	var $name = 'Reportes';
 	var $uses = array();
 	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
+	
 	/**
 	* Genera reportes segun la selección de tipo de reporte y la persona buscada
 	*/

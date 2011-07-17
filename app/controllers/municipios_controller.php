@@ -2,6 +2,11 @@
 class MunicipiosController extends AppController {
 
 	var $name = 'Municipios';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Municipio->recursive = 0;
