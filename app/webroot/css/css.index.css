@@ -91,22 +91,25 @@
 
 html {
 	height:100%; 
+	background: #7f0155;    	
 	background:-moz-radial-gradient(center, #a80067, #7f0155) no-repeat #7f0155;
 	background:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#a80067), to(#7f0155)) no-repeat #7f0155;
+	behavior: url(../css/PIE.htc);
+	
 	}
 
 
 body{
     font-family:QuicksandLight, sans-serif;
-
+	height: 100%;
 }
 
 
 /*patrocinadores*/
 #patrocinadores{
 	position: absolute;
-	left: 625px;
-	bottom: 30px;
+	left: 800px;
+	bottom: 20px;
 }
 #patrocinadores h4{
 	color: #fff;
@@ -116,21 +119,24 @@ body{
 }
 
 .extend{
-	background: url('../img/extend_small.png') no-repeat;
+	background: url('../img/extend_logo.png') no-repeat;
 	display: block;
 	width: 190px;
 	height:70px;
-
+	behavior: url(../css/PIE.htc);
+	
 }
 /*index*/
 
 .title{
-	margin: 40px 0px;
+	margin: 40px 0px 20px 0px;
 	padding: 5px;
 	background: url('../img/trans1.png');
 	-moz-box-shadow: 0 0 5px #000;
 	-webkit-box-shadow: 0 0 5px #000;
 	box-shadow: 0 0 5px #000;
+	behavior: url(../css/PIE.htc);
+	
 }
 
 .main{
@@ -153,7 +159,6 @@ h1.title{
 	    left:0px;
 	    bottom:0px;
 		height: 100%;
-		overflow: hidden;
 }
 .section{
     margin:0px;
@@ -170,7 +175,7 @@ h1.title{
 }**/
 
 #tagline{
-	margin:20px 20px 0px 50px;
+	margin:10px 20px 0px 50px;
  	width:550px;
 	color: #fff;
 	line-height: 50px;
@@ -183,7 +188,7 @@ h1.title{
 .especial{
 	color: #fff;
 	display: block;
-	padding: 40px 1990px 0px 20px;
+	padding: 20px 1990px 0px 20px;
 	line-height: 30px;
 	text-shadow: black 0.1em 0.1em 0.2em
 	}
@@ -255,7 +260,9 @@ h1.title{
 		background:#222;
 		-moz-border-radius: 10px 10px 10px 10px;
 		-webkit-border-radius: 10px 10px 10px 0px;
-		border-radius: 10px 10px 10px 0px;
+		border-radius: 10px 10px 10px 0px;	
+		behavior: url(../css/PIE.htc);
+		
 }
 .alt{
 	position: fixed;
@@ -271,11 +278,11 @@ top: 3px;
 right: 15px;
 }
 
-.button_login a{
+.button_generic a{
 	text-decoration: none;	
 	color: #fff;
 }
-.button_login {
+.button_generic {
 
 	padding: 10px;
 	font-family: QuicksandBold;
@@ -285,9 +292,10 @@ right: 15px;
 	-moz-box-shadow: 0 0 8px #000;
 	-webkit-box-shadow: 0 0 8px #000;
 	box-shadow: 0 0 8px #000;
+	behavior: url(../css/PIE.htc);
 
 }
-.button_login:hover{
+.button_generic:hover{
 		text-shadow: #000 0.1em 0.1em 0.2em;
 	-moz-box-shadow: inset 0 0 5px #000;
 	-webkit-box-shadow: inset 0 0 5px#000;
@@ -306,9 +314,10 @@ right: 15px;
 
 }
 #programas{
+	font-size: 13px;
 	width: 800px;
 	margin: 0% 5%;
-	-moz-column-width: 200px; 
+	-moz-column-width: 300px; 
 	-webkit-column-width: 300px; 
 	-moz-column-gap: 1em; 
 	-webkit-column-gap: 1em;
@@ -348,7 +357,7 @@ right: 15px;
 /*Formularios*/
 
 #ingresar form{
-width: 900px;
+width: 300px;
 margin: 0 auto;
 }
 
@@ -362,7 +371,7 @@ margin: 0 auto;
 font-size: 15px;
 	border: none;
 	background: rgba(255,255,255,0.8);
-	width: 250px;
+	width: 300px;
 	margin: 10px 0px;
 	padding: 8px 0px;
 	display: block;
