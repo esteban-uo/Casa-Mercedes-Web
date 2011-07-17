@@ -14,6 +14,7 @@ class UsersController extends AppController {
 	}
 	
 	function login() {
+		$this->layout = "default";
 		$this->Session->setFlash('Ya has iniciado sesión anteriormente');
             if ($this->Session->read('Auth.User')) {
                     $this->Session->setFlash('Ya has iniciado sesión anteriormente');
