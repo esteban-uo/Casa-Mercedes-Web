@@ -28,3 +28,5 @@
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'index'));
 	Router::connect('/acp', array('controller' => 'pages', 'action' => 'acp'));
+        
+   Route::parseExtensions();

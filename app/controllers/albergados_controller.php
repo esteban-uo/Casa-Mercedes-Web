@@ -40,6 +40,39 @@ class AlbergadosController extends AppController {
 		$casas = $this->Albergado->Casa->find('list');
 		$this->set(compact('personas', 'casas'));
 	}
+        
+        function ajax_add(){
+             // Ajax validation of single fields, check if xml is asked
+            if ($this->RequestHandler->ext =='xml') {
+                // If we have data, process it. If not send back an error.
+                if(!empty($this->data['Albergado'])){
+                    $this->cleanUpFields();
+                    // Validate the albergado, if it's ok, show no errors. If not ok, show errors
+                    if ($this->Albergado->create($this->data['Albergado']) && $this->Albergado->validates()) {
+                        $this->set('error', '0');
+                        $this->set('message', '');
+                    } else {
+                        $errorMessages = $this->validateErrors($this->Albergado);
+                        $this->set('error', '1');
+                        $this->set('message', array_shift($errorMessages));
+                    }
+                } else {
+                    $this->set('error', '1');
+                    $this->set('message', 'No data sent');
+                }
+            } else {
+                // Normal validation and save
+                if(!empty($this->data)) {
+                    $this->cleanUpFields();
+                    $this->Customer->create($this->data);
+                    if($this->Customer->save($this->data)) {
+                        $this->redirect(array('action'=>'index'));
+                    } else {
+                        $this->Session->setFlash('Favor de checar la información en los campos...');
+                    }
+                }
+            }
+        }
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
