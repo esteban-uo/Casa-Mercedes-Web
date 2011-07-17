@@ -15,7 +15,7 @@
        ?>
 </head>
        <body>
-	   <h1 class="title">Panel de Control</h1>
+	   <h1 class="title">Casa Mercedes</h1>
 	   <span class="button_generic teal"> <?php echo $this->Html->link(__('Inicio', true), array('action' => 'index'));?></span>
 	   <span class="button_generic alt"> <?php echo $this->Html->link(__('Panel', true), array('action' => 'acp'));?></span>
 	   
