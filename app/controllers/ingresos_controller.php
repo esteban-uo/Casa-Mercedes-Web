@@ -2,6 +2,11 @@
 class IngresosController extends AppController {
 
 	var $name = 'Ingresos';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Ingreso->recursive = 0;

@@ -2,6 +2,11 @@
 class ViviendasController extends AppController {
 
 	var $name = 'Viviendas';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Vivienda->recursive = 0;

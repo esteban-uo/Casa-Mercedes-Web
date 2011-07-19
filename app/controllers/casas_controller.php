@@ -1,8 +1,13 @@
-<?php
+﻿<?php
 class CasasController extends AppController {
 
 	var $name = 'Casas';
-
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
+	
 	function index() {
 		$this->Casa->recursive = 0;
 		$this->set('casas', $this->paginate());

@@ -2,6 +2,11 @@
 class SocioEconomicosController extends AppController {
 
 	var $name = 'SocioEconomicos';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->SocioEconomico->recursive = 0;

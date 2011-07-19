@@ -3,6 +3,11 @@ class AlbergadosController extends AppController {
 
 	var $name = 'Albergados';
 
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
+	
 	function index() {
 		$this->Albergado->recursive = 0;
 		$this->set('albergados', $this->paginate());
@@ -28,7 +33,8 @@ class AlbergadosController extends AppController {
 		}
 		$personas = $this->Albergado->Persona->find('list');
 		$casas = $this->Albergado->Casa->find('list');
-		$this->set(compact('personas', 'casas'));
+		$fotoImagens = $this->Albergado->FotoImagen->find('list');
+		$this->set(compact('personas', 'casas', 'fotoImagens'));
 	}
 
 	function edit($id = null) {
@@ -49,7 +55,8 @@ class AlbergadosController extends AppController {
 		}
 		$personas = $this->Albergado->Persona->find('list');
 		$casas = $this->Albergado->Casa->find('list');
-		$this->set(compact('personas', 'casas'));
+		$fotoImagens = $this->Albergado->FotoImagen->find('list');
+		$this->set(compact('personas', 'casas', 'fotoImagens'));
 	}
 
 	function delete($id = null) {

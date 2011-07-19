@@ -11,6 +11,11 @@
 			<?php echo $municipio['Municipio']['title']; ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Estado'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $this->Html->link($municipio['Estado']['title'], array('controller' => 'estados', 'action' => 'view', $municipio['Estado']['id'])); ?>
+			&nbsp;
+		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Creado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $municipio['Municipio']['created']; ?>

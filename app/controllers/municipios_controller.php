@@ -1,6 +1,12 @@
 <?php
 class MunicipiosController extends AppController {
+
 	var $name = 'Municipios';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Municipio->recursive = 0;
@@ -25,6 +31,8 @@ class MunicipiosController extends AppController {
 				$this->Session->setFlash(__('The municipio could not be saved. Please, try again.', true));
 			}
 		}
+		$estados = $this->Municipio->Estado->find('list');
+		$this->set(compact('estados'));
 	}
 
 	function edit($id = null) {
@@ -43,6 +51,8 @@ class MunicipiosController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Municipio->read(null, $id);
 		}
+		$estados = $this->Municipio->Estado->find('list');
+		$this->set(compact('estados'));
 	}
 
 	function delete($id = null) {
@@ -58,4 +68,3 @@ class MunicipiosController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 }
-?>

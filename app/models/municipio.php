@@ -4,6 +4,16 @@ class Municipio extends AppModel {
 	var $displayField = 'title';
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
+	var $belongsTo = array(
+		'Estado' => array(
+			'className' => 'Estado',
+			'foreignKey' => 'estado_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
+
 	var $hasMany = array(
 		'Casa' => array(
 			'className' => 'Casa',
@@ -32,5 +42,5 @@ class Municipio extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+
 }
-?>

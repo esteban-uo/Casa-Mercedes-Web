@@ -2,6 +2,11 @@
 class NacimientosController extends AppController {
 
 	var $name = 'Nacimientos';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Nacimiento->recursive = 0;

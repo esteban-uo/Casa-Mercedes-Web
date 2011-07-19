@@ -2,7 +2,12 @@
 class ZonasController extends AppController {
 
 	var $name = 'Zonas';
-
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
+	
 	function index() {
 		$this->Zona->recursive = 0;
 		$this->set('zonas', $this->paginate());

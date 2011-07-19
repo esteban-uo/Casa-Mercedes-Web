@@ -15,10 +15,14 @@
        ?>
 </head>
        <body>
- <h1>Layout de reportes</h1>
-               <?php echo $this->Session->flash(); ?>
-               <?php echo $content_for_layout; ?>
-			<img src="img/test-error-icon.png" />
-			<?php echo $this->element('sql_dump'); ?>
+	   <h1>Reportes</h1>
+	<div id="content">
+			
+			<?php echo $this->Session->flash(); ?>
+
+			<?php echo $content_for_layout; ?>
+
+		</div>
+		<?php echo $this->element('sql_dump'); ?>
    </body>
 </html>

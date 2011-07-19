@@ -2,11 +2,12 @@
 	<h2><?php __('Estados');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('número');?></th>
-			<th><?php echo $this->Paginator->sort('descripción');?></th>
-			<th><?php echo $this->Paginator->sort('registrado');?></th>
-			<th><?php echo $this->Paginator->sort('modificado');?></th>
-			<th><?php echo $this->Paginator->sort('modificado_por');?></th>
+			<th><?php echo $this->Paginator->sort('id');?></th>
+			<th><?php echo $this->Paginator->sort('title');?></th>
+			<th><?php echo $this->Paginator->sort('pais_id');?></th>
+			<th><?php echo $this->Paginator->sort('created');?></th>
+			<th><?php echo $this->Paginator->sort('modified');?></th>
+			<th><?php echo $this->Paginator->sort('modified_user_id');?></th>
 			<th class="actions"><?php __('Acciones');?></th>
 	</tr>
 	<?php
@@ -20,6 +21,9 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $estado['Estado']['id']; ?>&nbsp;</td>
 		<td><?php echo $estado['Estado']['title']; ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($estado['Pais']['title'], array('controller' => 'paises', 'action' => 'view', $estado['Pais']['id'])); ?>
+		</td>
 		<td><?php echo $estado['Estado']['created']; ?>&nbsp;</td>
 		<td><?php echo $estado['Estado']['modified']; ?>&nbsp;</td>
 		<td><?php echo $estado['Estado']['modified_user_id']; ?>&nbsp;</td>
