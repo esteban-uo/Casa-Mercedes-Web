@@ -5,7 +5,7 @@
 	<?php
 		echo $this->Form->input('url', array('type'=>'file', "label"=>"Dirección"));
 		echo $this->Form->input('tipoimage_id', array("label"=>"Tipo de Imagen"));
-		echo $this->Form->input('modified_user_id', array("type"=>"text"));
+		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Guardar', true));?>
