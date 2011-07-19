@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class User extends AppModel {
 	var $name = 'User';
 	var $displayField = 'username';
@@ -6,7 +6,7 @@ class User extends AppModel {
 		'username' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Usuario está vacío, agrega el nombre del usuario.',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -16,7 +16,7 @@ class User extends AppModel {
 		'password' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Contraseña está vacío, puede contener números y letras.',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
