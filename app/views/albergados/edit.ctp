@@ -1,5 +1,19 @@
 ﻿<div class="albergados form">
-<?php echo $this->Form->create('Albergado');?>
+<?php 
+
+if (isset($closeModalbox) && $closeModalbox) echo "<div id='closeModalbox'></div>";
+
+if( $ajax->isAjax()){
+    echo $ajax->form('edit', 'post', array(
+        'model'    => 'Albergados',
+        'url'      => array( 'controller' => 'albergados', 'action' => 'edit'),
+        'update'   => 'MB_content',
+        'complete' => 'closeModalbox();'
+        ));
+}else{
+    echo $form->create('Albergado');
+}
+?>
 	<fieldset>
 		<legend><?php __('Modificar Albergado'); ?></legend>
 	<?php
@@ -18,6 +32,7 @@
 	</fieldset>
 <?php echo $this->Form->end(__('Guardar Cambios', true));?>
 </div>
+<!--
 <div class="actions">
 	<h3><?php __('Acciones'); ?></h3>
 	<ul>
@@ -47,4 +62,4 @@
 		<li><?php echo $this->Html->link(__('Ver Socio Económicos', true), array('controller' => 'socio_economicos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Agregar Socio Económico', true), array('controller' => 'socio_economicos', 'action' => 'add')); ?> </li>
 	</ul>
-</div>
+</div>-->
