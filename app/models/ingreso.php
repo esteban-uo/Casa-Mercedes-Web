@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class Ingreso extends AppModel {
 	var $name = 'Ingreso';
 	var $validate = array(
@@ -23,7 +23,7 @@ class Ingreso extends AppModel {
 		'motivo' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Motivo está vacío, ingresa los datos correspondientes.',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

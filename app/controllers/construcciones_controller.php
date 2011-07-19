@@ -2,7 +2,12 @@
 class ConstruccionesController extends AppController {
 
 	var $name = 'Construcciones';
-
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
+	
 	function index() {
 		$this->Construccion->recursive = 0;
 		$this->set('construcciones', $this->paginate());

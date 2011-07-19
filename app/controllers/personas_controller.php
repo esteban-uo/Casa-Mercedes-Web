@@ -3,6 +3,11 @@ class PersonasController extends AppController {
 
 	var $name = 'Personas';
         var $helpers = array('Html','Javascript', 'Ajax');
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Persona->recursive = 0;
@@ -79,7 +84,6 @@ class PersonasController extends AppController {
 																	'url' => array()
 																	),
 													),
-									'Dependiente' => array('id'),
 									'Documento' => array('id'),
 									'EstadosSalud' => array('id'),
 									'Nacimiento' => array('id'),

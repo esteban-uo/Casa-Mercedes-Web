@@ -2,6 +2,11 @@
 class UsersController extends AppController {
 
 	var $name = 'Users';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->User->recursive = 0;
@@ -9,6 +14,7 @@ class UsersController extends AppController {
 	}
 	
 	function login() {
+		$this->layout = "default";
 		$this->Session->setFlash('Ya has iniciado sesión anteriormente');
             if ($this->Session->read('Auth.User')) {
                     $this->Session->setFlash('Ya has iniciado sesión anteriormente');

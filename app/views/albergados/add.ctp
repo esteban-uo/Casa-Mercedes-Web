@@ -1,4 +1,4 @@
-<div>
+<div class="albergados form">
 <?php 
 
 if (isset($closeModalbox) && $closeModalbox) echo "<div id='closeModalbox'></div>";
@@ -15,7 +15,7 @@ if( $ajax->isAjax()){
 }
 ?>
 	<fieldset>
-		<legend><?php __('Agregar Albergado'); ?></legend>
+		<legend><?php __('Add Albergado'); ?></legend>
 	<?php
 		echo $this->Form->input('persona_id', array("label"=>"Nombre de la persona registrada", 'class' => 'req'));
 		echo $this->Form->input('expediente', array('class' => 'req'));
@@ -29,6 +29,5 @@ if( $ajax->isAjax()){
 		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Registrar', true));?>
+<?php echo $this->Form->end(__('Submit', true));?>
 </div>
-

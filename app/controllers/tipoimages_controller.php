@@ -3,6 +3,11 @@ class TipoimagesController extends AppController {
 
 	var $name = 'Tipoimages';
 	var $uses = array('Tipoimage','Image');
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Tipoimage->recursive = 0;

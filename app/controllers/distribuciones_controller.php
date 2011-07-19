@@ -2,6 +2,11 @@
 class DistribucionesController extends AppController {
 
 	var $name = 'Distribuciones';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Distribucion->recursive = 0;

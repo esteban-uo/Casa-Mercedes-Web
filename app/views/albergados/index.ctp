@@ -32,14 +32,16 @@
 		</td>
 		<td><?php echo $albergado['Albergado']['expediente']; ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($albergado['Casa']['id'], array('controller' => 'casas', 'action' => 'view', $albergado['Casa']['id'])); ?>
+			<?php echo $this->Html->link($albergado['Casa']['direccion'], array('controller' => 'casas', 'action' => 'view', $albergado['Casa']['id'])); ?>
 		</td>
 		<td><?php echo $albergado['Albergado']['fecha_ingreso']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['embarazo_actual']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['cant_hijos']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['remitida_por']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['averiguacion_previa']; ?>&nbsp;</td>
-		<td><?php echo $albergado['Albergado']['familiograma_imagen_id']; ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($albergado['FotoImagen']['id'], array('controller' => 'images', 'action' => 'view', $albergado['FotoImagen']['id'])); ?>
+		</td>
 		<td><?php echo $albergado['Albergado']['created']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['modified']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['modified_user_id']; ?>&nbsp;</td>
@@ -59,14 +61,14 @@
 	?>	</p>
 
 	<div class="paging">
-		<?php echo $this->Paginator->prev('<< ' . __('Anterior', true), array(), null, array('class'=>'disabled'));?>
+		<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
 	 | 	<?php echo $this->Paginator->numbers();?>
  |
-		<?php echo $this->Paginator->next(__('Siguiente', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
 </div>
 <div class="actions">
-	<h3><?php __('Acciones'); ?></h3>
+	<h3><?php __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Agregar Albergado', true), array('action' => 'add'), array('onclick' => 'Modalbox.show(this.href, {title: this.title, width: 400}); return false;')); ?></li>
                 <!--<li><?php echo $this->Html->link(__('Agregar Albergado (Prueba ajax)', true), array('action' => 'ajax_add'), array('onclick' => 'Modalbox.show(this.href, {title: this.title, width: 400}); return false;')); ?></li>-->

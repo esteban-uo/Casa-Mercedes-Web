@@ -2,7 +2,12 @@
 class EscolaridadesController extends AppController {
 
 	var $name = 'Escolaridades';
-
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
+	
 	function index() {
 		$this->Escolaridad->recursive = 0;
 		$this->set('escolaridades', $this->paginate());

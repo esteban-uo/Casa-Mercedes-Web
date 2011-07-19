@@ -2,6 +2,11 @@
 class SocialesController extends AppController {
 
 	var $name = 'Sociales';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Social->recursive = 0;

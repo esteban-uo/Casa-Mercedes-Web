@@ -3,6 +3,10 @@ class ImagesController extends AppController {
 
 	var $name = 'Images';
 	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Image->recursive = 0;
