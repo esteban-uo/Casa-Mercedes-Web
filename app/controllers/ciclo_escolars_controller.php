@@ -23,6 +23,7 @@ class CicloEscolarsController extends AppController {
 
 	function add() {
 		if (!empty($this->data)) {
+			debug($this->data);
 			$this->CicloEscolar->create();
 			if ($this->CicloEscolar->save($this->data)) {
 				$this->Session->setFlash(__('The ciclo escolar has been saved', true));
