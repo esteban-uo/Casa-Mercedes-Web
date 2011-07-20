@@ -1,4 +1,4 @@
-<div class="cicloEscolars form">
+﻿<div class="cicloEscolars form">
 <?php echo $this->Form->create('CicloEscolar');?>
 	<fieldset>
 		<legend><?php __('Registrar Ciclo Escolar'); ?></legend>
