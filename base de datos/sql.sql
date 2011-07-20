@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-07-2011 a las 20:35:22
+-- Tiempo de generación: 20-07-2011 a las 14:04:44
 -- Versión del servidor: 5.1.41
 -- Versión de PHP: 5.3.1
 
@@ -22,6 +22,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 CREATE TABLE IF NOT EXISTS `albergados` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `persona_id` int(11) DEFAULT NULL,
+  `numero_embarazos` varchar(50) NOT NULL,
   `expediente` varchar(50) DEFAULT NULL,
   `casa_id` int(11) DEFAULT NULL,
   `fecha_ingreso` date DEFAULT NULL,
@@ -43,8 +44,8 @@ CREATE TABLE IF NOT EXISTS `albergados` (
 -- Volcar la base de datos para la tabla `albergados`
 --
 
-INSERT INTO `albergados` (`id`, `persona_id`, `expediente`, `casa_id`, `fecha_ingreso`, `embarazo_actual`, `cant_hijos`, `remitida_por`, `averiguacion_previa`, `familiograma_imagen_id`, `created`, `modified`, `modified_user_id`) VALUES
-(3, 3, 'Expediente de ejemplo', 3, '2011-07-13', 'No', 0, 'Alguien', 'Nada', 5, '2011-07-13 16:04:04', '2011-07-16 11:57:50', 4);
+INSERT INTO `albergados` (`id`, `persona_id`, `numero_embarazos`, `expediente`, `casa_id`, `fecha_ingreso`, `embarazo_actual`, `cant_hijos`, `remitida_por`, `averiguacion_previa`, `familiograma_imagen_id`, `created`, `modified`, `modified_user_id`) VALUES
+(3, 3, '', 'Expediente de ejemplo', 3, '2011-07-13', 'No', 0, 'Alguien', 'Nada', 5, '2011-07-13 16:04:04', '2011-07-16 11:57:50', 4);
 
 -- --------------------------------------------------------
 
@@ -88,12 +89,14 @@ CREATE TABLE IF NOT EXISTS `ciclos_escolares` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `ciclos_escolares`
 --
 
+INSERT INTO `ciclos_escolares` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
+(1, NULL, '2011-07-18 22:05:15', '2011-07-18 22:05:15', 4);
 
 -- --------------------------------------------------------
 
@@ -180,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `dependientes` (
   PRIMARY KEY (`id`),
   KEY `FK_dependientes` (`persona_id`),
   KEY `FK_dependientesAlbergados` (`albergado_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `dependientes`
@@ -304,7 +307,7 @@ CREATE TABLE IF NOT EXISTS `estados` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=33 ;
 
 --
 -- Volcar la base de datos para la tabla `estados`
@@ -355,6 +358,7 @@ CREATE TABLE IF NOT EXISTS `estados_salud` (
   `persona_id` int(11) DEFAULT NULL,
   `tipo_sangre` varchar(5) DEFAULT NULL,
   `peso` float DEFAULT NULL,
+  `altura` varchar(20) NOT NULL,
   `alergias` varchar(200) DEFAULT NULL,
   `lesiones_fisicas` tinyint(1) DEFAULT NULL,
   `discapacidad` tinyint(1) DEFAULT NULL,

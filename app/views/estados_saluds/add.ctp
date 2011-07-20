@@ -6,6 +6,7 @@
 		echo $this->Form->input('persona_id');
 		echo $this->Form->input('tipo_sangre');
 		echo $this->Form->input('peso');
+		echo $this->Form->input('altura');
 		echo $this->Form->input('alergias');
 		echo $this->Form->input('lesiones_fisicas');
 		echo $this->Form->input('discapacidad');
