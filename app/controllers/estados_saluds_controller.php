@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class EstadosSaludsController extends AppController {
 
 	var $name = 'EstadosSaluds';
@@ -15,7 +15,7 @@ class EstadosSaludsController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid estados salud', true));
+			$this->Session->setFlash(__('El estado de salud no existe o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('estadosSalud', $this->EstadosSalud->read(null, $id));
@@ -25,10 +25,10 @@ class EstadosSaludsController extends AppController {
 		if (!empty($this->data)) {
 			$this->EstadosSalud->create();
 			if ($this->EstadosSalud->save($this->data)) {
-				$this->Session->setFlash(__('The estados salud has been saved', true));
+				$this->Session->setFlash(__('El estado de salud se ha guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The estados salud could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('El estado de salud no se pudo guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 		$personas = $this->EstadosSalud->Persona->find('list');
@@ -38,15 +38,15 @@ class EstadosSaludsController extends AppController {
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid estados salud', true));
+			$this->Session->setFlash(__('El estado de salud no existe o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->EstadosSalud->save($this->data)) {
-				$this->Session->setFlash(__('The estados salud has been saved', true));
+				$this->Session->setFlash(__('El estado de salud se ha guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The estados salud could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('El estado de salud no se pudo guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 		if (empty($this->data)) {
@@ -59,14 +59,14 @@ class EstadosSaludsController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for estados salud', true));
+			$this->Session->setFlash(__('El número del estado de salud es inválido.', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->EstadosSalud->delete($id)) {
-			$this->Session->setFlash(__('Estados salud deleted', true));
+			$this->Session->setFlash(__('Los datos del estado de salud se eliminaron satisfactoriamente.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Estados salud was not deleted', true));
+		$this->Session->setFlash(__('Los datos del estado de salud no se pudieron eliminar. Por favor, intenta nuevamente.', true));
 		$this->redirect(array('action' => 'index'));
 	}
 }

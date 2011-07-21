@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class EstadosController extends AppController {
 
 	var $name = 'Estados';
@@ -15,7 +15,7 @@ class EstadosController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->flash(__('Invalid estado', true), array('action' => 'index'));
+			$this->flash(__('El estado no existe.', true), array('action' => 'index'));
 		}
 		$this->set('estado', $this->Estado->read(null, $id));
 	}
@@ -24,7 +24,7 @@ class EstadosController extends AppController {
 		if (!empty($this->data)) {
 			$this->Estado->create();
 			if ($this->Estado->save($this->data)) {
-				$this->flash(__('Estado saved.', true), array('action' => 'index'));
+				$this->flash(__('El estado se ha guardado satisfactoriamente.', true), array('action' => 'index'));
 			} else {
 			}
 		}
@@ -34,11 +34,11 @@ class EstadosController extends AppController {
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->flash(sprintf(__('Invalid estado', true)), array('action' => 'index'));
+			$this->flash(sprintf(__('El estado es inválido.', true)), array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->Estado->save($this->data)) {
-				$this->flash(__('The estado has been saved.', true), array('action' => 'index'));
+				$this->flash(__('El estado se ha guardado satisfactoriamente.', true), array('action' => 'index'));
 			} else {
 			}
 		}
@@ -51,12 +51,12 @@ class EstadosController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->flash(sprintf(__('Invalid estado', true)), array('action' => 'index'));
+			$this->flash(sprintf(__('El estado es inválido.', true)), array('action' => 'index'));
 		}
 		if ($this->Estado->delete($id)) {
-			$this->flash(__('Estado deleted', true), array('action' => 'index'));
+			$this->flash(__('Los datos del estado se eliminaron satisfactoriamente.', true), array('action' => 'index'));
 		}
-		$this->flash(__('Estado was not deleted', true), array('action' => 'index'));
+		$this->flash(__('Los datos del estado no se pudieron eliminar. Por favor, intenta nuevamente.', true), array('action' => 'index'));
 		$this->redirect(array('action' => 'index'));
 	}
 }

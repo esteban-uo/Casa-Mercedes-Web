@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class ImagesController extends AppController {
 
 	var $name = 'Images';
@@ -15,7 +15,7 @@ class ImagesController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Imagen Invalida', true));
+			$this->Session->setFlash(__('Los datos de la imagen no existen o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('image', $this->Image->read(null, $id));
