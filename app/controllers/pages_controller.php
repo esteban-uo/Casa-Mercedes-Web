@@ -14,4 +14,8 @@ class PagesController extends AppController {
 		$this->layout = 'panel_control';
 		$this->set(compact('title_for_layout'));
 	}
+	
+	function filtros(){
+		
+	}
 }
