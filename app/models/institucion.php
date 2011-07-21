@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class Institucion extends AppModel {
 	var $name = 'Institucion';
 	var $displayField = 'institucion';
@@ -6,7 +6,7 @@ class Institucion extends AppModel {
 		'institucion' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Institución está vacío, ingresa los datos correspondientes.',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

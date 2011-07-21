@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class Familia extends AppModel {
 	var $name = 'Familia';
 	var $validate = array(
