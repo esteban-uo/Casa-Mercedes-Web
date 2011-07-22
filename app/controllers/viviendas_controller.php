@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class ViviendasController extends AppController {
 
 	var $name = 'Viviendas';
@@ -15,7 +15,7 @@ class ViviendasController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid vivienda', true));
+			$this->Session->setFlash(__('Los datos de la vivienda no existen o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('vivienda', $this->Vivienda->read(null, $id));
@@ -25,25 +25,25 @@ class ViviendasController extends AppController {
 		if (!empty($this->data)) {
 			$this->Vivienda->create();
 			if ($this->Vivienda->save($this->data)) {
-				$this->Session->setFlash(__('The vivienda has been saved', true));
+				$this->Session->setFlash(__('Los datos de la vivienda se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The vivienda could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la vivienda no se pudieron guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 	}
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid vivienda', true));
+			$this->Session->setFlash(__('Los datos de la vivienda no existen o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->Vivienda->save($this->data)) {
-				$this->Session->setFlash(__('The vivienda has been saved', true));
+				$this->Session->setFlash(__('Los datos de la vivienda se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The vivienda could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la vivienda no se pudieron guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 		if (empty($this->data)) {
@@ -53,14 +53,14 @@ class ViviendasController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for vivienda', true));
+			$this->Session->setFlash(__('El número (clave) de la vivienda es inválido.', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Vivienda->delete($id)) {
-			$this->Session->setFlash(__('Vivienda deleted', true));
+			$this->Session->setFlash(__('Los datos de la vivienda se eliminaron satisfactoriamente.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Vivienda was not deleted', true));
+		$this->Session->setFlash(__('Los datos de la vivienda no se pudieron eliminar. Por favor, intenta nuevamente.', true));
 		$this->redirect(array('action' => 'index'));
 	}
 }

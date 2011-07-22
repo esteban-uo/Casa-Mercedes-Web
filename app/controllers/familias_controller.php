@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class FamiliasController extends AppController {
 
 	var $name = 'Familias';
@@ -15,7 +15,7 @@ class FamiliasController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid familia', true));
+			$this->Session->setFlash(__('Los datos de la familia no existen o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('familia', $this->Familia->read(null, $id));
@@ -25,10 +25,10 @@ class FamiliasController extends AppController {
 		if (!empty($this->data)) {
 			$this->Familia->create();
 			if ($this->Familia->save($this->data)) {
-				$this->Session->setFlash(__('The familia has been saved', true));
+				$this->Session->setFlash(__('Los datos de la familia se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The familia could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la familia no se pudieron guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 		$albergados = $this->Familia->Albergado->find('list');
@@ -37,15 +37,15 @@ class FamiliasController extends AppController {
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid familia', true));
+			$this->Session->setFlash(__('Los datos de la familia no existen o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->Familia->save($this->data)) {
-				$this->Session->setFlash(__('The familia has been saved', true));
+				$this->Session->setFlash(__('Los datos de la familia se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The familia could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la familia no se pudieron guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 		if (empty($this->data)) {
@@ -57,14 +57,14 @@ class FamiliasController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for familia', true));
+			$this->Session->setFlash(__('El número (clave) de la familia es inválido.', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Familia->delete($id)) {
-			$this->Session->setFlash(__('Familia deleted', true));
+			$this->Session->setFlash(__('Los datos de la familia se eliminaron satisfactoriamente.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Familia was not deleted', true));
+		$this->Session->setFlash(__('Los datos de la familia no se pudieron eliminar. Por favor, intenta nuevamente.', true));
 		$this->redirect(array('action' => 'index'));
 	}
 }
