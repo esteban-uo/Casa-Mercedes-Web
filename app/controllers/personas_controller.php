@@ -3,15 +3,33 @@ class PersonasController extends AppController {
 
 	var $name = 'Personas';
 	
+	public $components = array('Search.Prg');
+	
+	public $presetVars = array(
+		array('field' => 'range_from', 'type' => 'lookup', 'formField' => 'range', 'modelField' => 'edad', 'model' => 'Persona'),
+		array('field' => 'range_to', 'type' => 'lookup', 'formField' => 'range', 'modelField' => 'edad', 'model' => 'Persona'),
+		/*array('field' => 'nombre', 'type' => 'subquery'),*/
+		array('field' => 'casa_id', 'type'=> 'lookup', 'formField' => 'casa_id', 'modelField' => 'direccion', 'model' => 'Casa')
+	);
+	
 	function beforeFilter() {
         parent::beforeFilter(); 
         $this->layout = "panel_control";
     }
-
+	
+	function find(){
+		$this->loadModel('Casa');
+		$this->Prg->commonProcess();
+		$this->Persona->recursive = -1;
+		$this->paginate['conditions'] = $this->Persona->parseCriteria($this->passedArgs);
+		$this->set('personas',$this->paginate());
+		$this->Casa->recursive = -1;
+		$this->set('casas', $this->Casa->find('list'));
+	}
+	
 	function index() {
 		$this->Persona->recursive = 0;
 		$this->set('personas', $this->paginate());
-		Debug($this->Persona->find('first'));
 	}
 
 	function view($id = null) {

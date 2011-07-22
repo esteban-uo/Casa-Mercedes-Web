@@ -2,7 +2,8 @@
 class AlbergadosController extends AppController {
 
 	var $name = 'Albergados';
-        var $helpers = array('Html','Javascript', 'Ajax');
+    var $helpers = array('Html','Javascript', 'Ajax');
+	
 
 	function beforeFilter() {
         parent::beforeFilter(); 

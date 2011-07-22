@@ -1,6 +1,7 @@
 <?php
 class albergado extends AppModel {
 	var $name = 'albergado';
+	
 	var $validate = array(
 		'expediente' => array(
 			'minlength' => array(
