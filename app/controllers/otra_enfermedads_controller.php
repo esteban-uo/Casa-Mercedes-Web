@@ -2,6 +2,11 @@
 class OtraEnfermedadsController extends AppController {
 
 	var $name = 'OtraEnfermedads';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->OtraEnfermedad->recursive = 0;

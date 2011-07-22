@@ -21,17 +21,17 @@
 			<?php echo $otraEnfermedad['OtraEnfermedad']['enfermedad_cronica']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $otraEnfermedad['OtraEnfermedad']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $otraEnfermedad['OtraEnfermedad']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $otraEnfermedad['OtraEnfermedad']['modified_user_id']; ?>
 			&nbsp;
@@ -39,14 +39,14 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Otra Enfermedad', true), array('action' => 'edit', $otraEnfermedad['OtraEnfermedad']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Otra Enfermedad', true), array('action' => 'delete', $otraEnfermedad['OtraEnfermedad']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $otraEnfermedad['OtraEnfermedad']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Otra Enfermedads', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Otra Enfermedad', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Estados Saluds', true), array('controller' => 'estados_saluds', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Estados Salud', true), array('controller' => 'estados_saluds', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Otra Enfermedad', true), array('action' => 'edit', $otraEnfermedad['OtraEnfermedad']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar Otra Enfermedad', true), array('action' => 'delete', $otraEnfermedad['OtraEnfermedad']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $otraEnfermedad['OtraEnfermedad']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Otra Enfermedades', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Otra Enfermedad', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Estados Salud', true), array('controller' => 'estados_saluds', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Estados Salud', true), array('controller' => 'estados_saluds', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">

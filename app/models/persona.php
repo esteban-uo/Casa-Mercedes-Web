@@ -1,14 +1,12 @@
 ﻿<?php
 class Persona extends AppModel {
 	var $name = 'Persona';
-	var $virtualFields = array(
-				'nombre_completo' => 'CONCAT(Persona.primer_nombre, " ", Persona.segundo_nombre, " ", Persona.primer_apellido, " ", Persona.segundo_apellido)');
-	var $displayField = 'nombre_completo';
+	var $displayField = 'primer_nombre';
 	var $validate = array(
 		'primer_nombre' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Nombre está vacío, por favor ingresa el NOMBRE',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -18,7 +16,7 @@ class Persona extends AppModel {
 		'primer_apellido' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Apellido Paterno está vacío, ingresa el primer apellido',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -28,7 +26,7 @@ class Persona extends AppModel {
 		'segundo_apellido' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Apellido Materno está vacío, ingresa el segundo apellido',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -38,7 +36,7 @@ class Persona extends AppModel {
 		'sexo' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Sexo está vacío, Debe contener una M (si es mujer) o una H (si es hombre)',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -58,7 +56,7 @@ class Persona extends AppModel {
 		'foto_imagen_id' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Foto Imagen está vacío, llenalo por favor',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -77,23 +75,10 @@ class Persona extends AppModel {
 			'order' => ''
 		)
 	);
-
-	var $hasMany = array(
+	
+	var $hasOne = array(
 		'Albergado' => array(
 			'className' => 'Albergado',
-			'foreignKey' => 'persona_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Dependiente' => array(
-			'className' => 'Dependiente',
 			'foreignKey' => 'persona_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -156,7 +141,33 @@ class Persona extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+		));
+
+	var $hasMany = array(
+		'Dependiente' => array(
+			'className' => 'Dependiente',
+			'foreignKey' => 'persona_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
 		)
 	);
+	
+	function afterFind($results) {
+		foreach ($results as $key => $val) {
+            if (isset($val['Persona']['segundo_nombre']) && isset($val['Persona']['segundo_apellido'])) {
+				$results[$key]['Persona']['nombre_completo'] = $results[$key]['Persona']['primer_nombre'].' '. $results[$key]['Persona']['segundo_nombre'].' '.$results[$key]['Persona']['primer_apellido'].' '.$results[$key]['Persona']['segundo_apellido'];
+            }elseif(isset($val['Persona']['segundo_apellido'])){
+				$results[$key]['Persona']['nombre_completo'] = $results[$key]['Persona']['primer_nombre'].' '.$results[$key]['Persona']['primer_apellido'].' '.$results[$key]['Persona']['segundo_apellido']; 
+            }
+        }
+		return $results;
+	}
 
 }

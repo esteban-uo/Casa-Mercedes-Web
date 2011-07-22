@@ -2,6 +2,11 @@
 class TenenciasController extends AppController {
 
 	var $name = 'Tenencias';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Tenencia->recursive = 0;

@@ -2,6 +2,11 @@
 class DependientesController extends AppController {
 
 	var $name = 'Dependientes';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Dependiente->recursive = 0;
@@ -27,8 +32,7 @@ class DependientesController extends AppController {
 			}
 		}
 		$personas = $this->Dependiente->Persona->find('list');
-		//$albergados = $this->Dependiente->Albergado->find('list', array('fields' => array('Albergado.persona_id')));
-		Debug($this->Dependiente->Albergado->find('list'));
+		$albergados = $this->Dependiente->Albergado->find('list');
 		$this->set(compact('personas', 'albergados'));
 	}
 
@@ -64,5 +68,13 @@ class DependientesController extends AppController {
 		}
 		$this->Session->setFlash(__('Dependiente was not deleted', true));
 		$this->redirect(array('action' => 'index'));
+	}
+	
+	function obtenerDependientesPorAlbergadoId(){
+		return $this->Dependiente->find('all', 
+											array('conditions' => 
+												array(
+													'Dependiente.albergado_id' => $this->params["named"]["albergado_id"]
+												)));
 	}
 }

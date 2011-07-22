@@ -2,6 +2,11 @@
 class EstadosSaludsController extends AppController {
 
 	var $name = 'EstadosSaluds';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->EstadosSalud->recursive = 0;

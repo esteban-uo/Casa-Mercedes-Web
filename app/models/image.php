@@ -28,7 +28,20 @@ class Image extends AppModel {
 	var $hasMany = array(
 		'PersonaImagen' => array(
 			'className' => 'Persona',
-			'foreignKey' => 'image_id',
+			'foreignKey' => 'foto_imagen_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'AlbergadoImagen' => array(
+			'className' => 'Albergado',
+			'foreignKey' => 'familiograma_imagen_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',

@@ -22,10 +22,10 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $dependiente['Dependiente']['id']; ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($dependiente['Persona']['nombre_completo'], array('controller' => 'personas', 'action' => 'view', $dependiente['Persona']['id'])); ?>
+			<?php echo $this->Html->link($dependiente['Persona']['primer_nombre'], array('controller' => 'personas', 'action' => 'view', $dependiente['Persona']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($dependiente['Albergado']['persona_id'], array('controller' => 'albergados', 'action' => 'view', $dependiente['Albergado']['id'])); ?>
+			<?php echo $this->Html->link($dependiente['Albergado']['id'], array('controller' => 'albergados', 'action' => 'view', $dependiente['Albergado']['id'])); ?>
 		</td>
 		<td><?php echo $dependiente['Dependiente']['expediente']; ?>&nbsp;</td>
 		<td><?php echo $dependiente['Dependiente']['created']; ?>&nbsp;</td>

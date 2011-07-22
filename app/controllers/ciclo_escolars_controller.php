@@ -2,7 +2,12 @@
 class CicloEscolarsController extends AppController {
 
 	var $name = 'CicloEscolars';
-
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
+	
 	function index() {
 		$this->CicloEscolar->recursive = 0;
 		$this->set('cicloEscolars', $this->paginate());

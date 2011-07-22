@@ -1,8 +1,13 @@
-<?php
+﻿<?php
 class DocumentosController extends AppController {
 
 	var $name = 'Documentos';
-
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
+	
 	function index() {
 		$this->Documento->recursive = 0;
 		$this->set('documentos', $this->paginate());
@@ -48,7 +53,7 @@ class DocumentosController extends AppController {
 			$this->data = $this->Documento->read(null, $id);
 		}
 		$personas = $this->Documento->Persona->find('list');
-		$documentaciones = $this->Documento->Documentaciones->find('list');
+		$documentaciones = $this->Documento->Documentacion->find('list');
 		$this->set(compact('personas', 'documentaciones'));
 	}
 

@@ -2,6 +2,11 @@
 class PaisesController extends AppController {
 
 	var $name = 'Paises';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Pais->recursive = 0;

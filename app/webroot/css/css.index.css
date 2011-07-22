@@ -1,0 +1,573 @@
+/*fuentes utilizadas*/
+@font-face {
+    font-family: 'QuicksandLight';
+    src: url('../fonts/Quicksand_Light-webfont.eot');
+    src: url('../fonts/Quicksand_Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Quicksand_Light-webfont.woff') format('woff'),
+         url('../fonts/Quicksand_Light-webfont.ttf') format('truetype'),
+         url('../fonts/Quicksand_Light-webfont.svg#QuicksandLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'QuicksandLightOblique';
+    src: url('../fonts/Quicksand_Light_Oblique-webfont.eot');
+    src: url('../fonts/Quicksand_Light_Oblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Quicksand_Light_Oblique-webfont.woff') format('woff'),
+         url('../fonts/Quicksand_Light_Oblique-webfont.ttf') format('truetype'),
+         url('../fonts/Quicksand_Light_Oblique-webfont.svg#QuicksandLightOblique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'QuicksandBook';
+    src: url('../fonts/Quicksand_Book-webfont.eot');
+    src: url('../fonts/Quicksand_Book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Quicksand_Book-webfont.woff') format('woff'),
+         url('../fonts/Quicksand_Book-webfont.ttf') format('truetype'),
+         url('../fonts/Quicksand_Book-webfont.svg#QuicksandBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'QuicksandBookOblique';
+    src: url('../fonts/Quicksand_Book_Oblique-webfont.eot');
+    src: url('../fonts/Quicksand_Book_Oblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Quicksand_Book_Oblique-webfont.woff') format('woff'),
+         url('../fonts/Quicksand_Book_Oblique-webfont.ttf') format('truetype'),
+         url('../fonts/Quicksand_Book_Oblique-webfont.svg#QuicksandBookOblique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'QuicksandBold';
+    src: url('../fonts/Quicksand_Bold-webfont.eot');
+    src: url('../fonts/Quicksand_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Quicksand_Bold-webfont.woff') format('woff'),
+         url('../fonts/Quicksand_Bold-webfont.ttf') format('truetype'),
+         url('../fonts/Quicksand_Bold-webfont.svg#QuicksandBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'QuicksandBoldOblique';
+    src: url('../fonts/Quicksand_Bold_Oblique-webfont.eot');
+    src: url('../fonts/Quicksand_Bold_Oblique-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Quicksand_Bold_Oblique-webfont.woff') format('woff'),
+         url('../fonts/Quicksand_Bold_Oblique-webfont.ttf') format('truetype'),
+         url('../fonts/Quicksand_Bold_Oblique-webfont.svg#QuicksandBoldOblique') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'QuicksandDash';
+    src: url('../fonts/Quicksand_Dash-webfont.eot');
+    src: url('../fonts/Quicksand_Dash-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Quicksand_Dash-webfont.woff') format('woff'),
+         url('../fonts/Quicksand_Dash-webfont.ttf') format('truetype'),
+         url('../fonts/Quicksand_Dash-webfont.svg#QuicksandDash') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*estilos generas*/
+*{
+    margin:0;
+    padding:0;
+}
+
+html {
+	height:100%; 
+	background:-moz-radial-gradient(center, #a80067, #7f0155) no-repeat #7f0155;
+	background:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#a80067), to(#7f0155)) no-repeat #7f0155;
+	}
+
+
+body{
+    font-family:QuicksandLight, sans-serif;
+
+}
+
+
+/*patrocinadores*/
+#patrocinadores{
+	position: absolute;
+	left: 625px;
+	bottom: 30px;
+}
+#patrocinadores h4{
+	color: #fff;
+	font-size: 20px;
+	text-shadow: #000 0.1em 0.1em 0.2em;
+	
+}
+
+.extend{
+	background: url('../img/extend_small.png') no-repeat;
+	display: block;
+	width: 190px;
+	height:70px;
+
+}
+/*index*/
+
+.title{
+	margin: 40px 0px;
+	padding: 5px;
+	background: url('../img/trans1.png');
+	-moz-box-shadow: 0 0 5px #000;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+}
+
+.main{
+	padding-right: 2400px;
+	text-align: right;
+		
+}
+h1.title{
+	padding-left: 40px;
+	font-size: 100px;
+	color: #fff;
+	
+}
+
+
+#scroll{
+	    width:9000px;
+	    position:absolute;
+	    top:0px;
+	    left:0px;
+	    bottom:0px;
+		height: 100%;
+		overflow: hidden;
+}
+.section{
+    margin:0px;
+    bottom:0px;
+    width:3000px;
+    float:left;
+    height:100%;
+}
+
+/**.section p{
+    margin:20px 0px 0px 50px;
+    width:600px;
+   
+}**/
+
+#tagline{
+	margin:20px 20px 0px 50px;
+ 	width:550px;
+	color: #fff;
+	line-height: 50px;
+	text-align: right;
+	display:block;
+	float: left;
+	font-size: 25px;
+	text-shadow: black 0.1em 0.1em 0.2em
+}
+.especial{
+	color: #fff;
+	display: block;
+	padding: 40px 1990px 0px 20px;
+	line-height: 30px;
+	text-shadow: black 0.1em 0.1em 0.2em
+	}
+.casa{
+	position: fixed;
+	top: 195px;
+	left: 625px;
+	font-family:"QuicksandBold";
+	font-size: 20px;
+	color: #fff;
+}
+.invisible{
+	text-indent: 20000px;
+}
+.button_section1{
+	position: absolute;
+	display: block;
+	right: 0px;
+	width: 75px;
+	height: 75px;
+	background: url('../img/button_next.png') 0px 0px no-repeat;
+}
+.button_section1:hover{
+		background: url('../img/button_next.png') 0px -75px no-repeat;
+}
+
+.pink{
+    background:url(../img/rosamorado.jpg) repeat-y top right ;
+}
+.purple{
+    background:#4f2468 url(../img/azulmorado.jpg) repeat-y top right;
+}
+
+.blue{
+    background:#006d81;
+}
+
+#nav{
+	position: fixed;
+	right: 10px;
+	top: 40px;
+	
+}
+
+.section ul{
+    list-style:none;
+    margin:20px 0px 0px 550px;
+}
+
+#nav li{
+    font-size: 15px;
+    color: #000;
+    padding:5px;
+    margin:5px;
+    	   text-align: right;
+}
+
+#nav li a{
+	    color:#fff;
+	    text-decoration: none;
+
+	
+}
+
+#nav li a:hover{
+	    color:#fff;
+	    text-decoration: none;
+		padding: 10px;
+		background:#222;
+		-moz-border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 0px;
+		border-radius: 10px 10px 10px 0px;
+}
+.alt{
+	position: fixed;
+	top: 3px;
+	right: 80px;
+	background:#4f2468;
+}
+
+.teal{
+background:#00cdde;
+position: fixed;
+top: 3px;
+right: 15px;
+}
+
+.button_login a{
+	text-decoration: none;	
+	color: #fff;
+}
+.button_login {
+
+	padding: 10px;
+	font-family: QuicksandBold;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 0px;
+	border-radius: 10px 10px 10px 0px;
+	-moz-box-shadow: 0 0 8px #000;
+	-webkit-box-shadow: 0 0 8px #000;
+	box-shadow: 0 0 8px #000;
+
+}
+.button_login:hover{
+		text-shadow: #000 0.1em 0.1em 0.2em;
+	-moz-box-shadow: inset 0 0 5px #000;
+	-webkit-box-shadow: inset 0 0 5px#000;
+	box-shadow: inner 0 0 5px #000;
+
+}
+
+#valores{
+	width: 800px;
+	height: 210px;
+	margin:0% 5%;
+	-moz-column-width: 300px; 
+	-webkit-column-width: 300px; 
+	-moz-column-gap: 1em; 
+	-webkit-column-gap: 1em;
+
+}
+#programas{
+	width: 800px;
+	margin: 0% 5%;
+	-moz-column-width: 200px; 
+	-webkit-column-width: 300px; 
+	-moz-column-gap: 1em; 
+	-webkit-column-gap: 1em;
+	
+}
+
+.subtitle{
+	color: #fff;
+}
+.parag{
+	color: #fff;
+	line-height: 25px;
+	text-shadow: black 0.1em 0.1em 0.2em
+	
+}
+#footer {
+	font-size: 10px;
+	color: #aaa;
+	clear: both;
+	padding: 6px 10px;
+	text-align: left;
+	bottom: 10px;
+	position: fixed;
+	width: 100%;
+	height: 10px;
+	padding-left: 5%;
+	background: url('../img/trans1.png');
+}
+
+#footer a{
+
+	text-decoration: none;
+	color: #fff;
+}
+
+
+/*Formularios*/
+
+#ingresar form{
+width: 900px;
+margin: 0 auto;
+}
+
+#ingresar label{
+	text-shadow: #000 0.1em 0.1em 0.2em;	
+	color: #fff;
+	font-size: 20px;
+}
+
+.button_form{
+	border: none;
+	color: #fff;
+	text-decoration: none;	
+	padding: 10px;
+	background:#4f2468;
+	font-family: QuicksandBold;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 0px;
+	border-radius: 10px 10px 10px 0px;
+	-moz-box-shadow: 0 0 8px #000;
+	-webkit-box-shadow: 0 0 8px #000;
+	box-shadow: 0 0 8px #000;
+}
+
+.button_form:hover{
+
+	text-shadow: #000 0.1em 0.1em 0.2em;
+	-moz-box-shadow: inset 0 0 5px #000;
+	-webkit-box-shadow: inset 0 0 5px #000;
+	box-shadow: inner 0 0 5px #000;
+
+}
+
+/*Panel de control*/
+#contenido{
+	width: 900px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.actions{
+	width: 200px;
+	display: block;
+	height: 100%;
+	float: left;
+	margin-right: 30px;
+	
+}
+
+#act_style li{
+	list-style: none;
+	text-align: center;
+	margin-bottom: 20px;
+
+}
+
+#act_style li a{
+	display: block;
+	width: 200px;
+	background: rgba(255,255,255,0.8);
+	padding: 5px;
+	border-radius: 5px 5px 5px 0px;	
+	color: #333;
+	text-decoration: none;
+	-moz-box-shadow: 0 0 8px #000;
+	-webkit-box-shadow: 0 0 8px #000;
+	box-shadow: 0 0 8px #000;
+	
+}
+#act_style li a:hover{
+	color: #fff;
+	background:#4f2468;
+	-moz-box-shadow: inset 0 0 5px #000;
+	-webkit-box-shadow: inset 0 0 5px #000;
+	box-shadow: inner 0 0 5px #000;
+}
+
+#rep_style li{
+	list-style: none;
+	text-align: center;
+	margin-bottom: 20px;
+
+}
+
+#rep_style li a{
+	display: block;
+	width: 200px;
+	background: rgba(255,255,255,0.8);
+	padding: 5px;
+	border-radius: 5px 5px 5px 0px;	
+	color: #333;
+	text-decoration: none;
+	-moz-box-shadow: 0 0 8px #000;
+	-webkit-box-shadow: 0 0 8px #000;
+	box-shadow: 0 0 8px #000;
+	
+}
+#rep_style li a:hover{
+	color: #fff;
+    background:#006d81;
+	-moz-box-shadow: inset 0 0 5px #000;
+	-webkit-box-shadow: inset 0 0 5px #000;
+	box-shadow: inner 0 0 5px #000;
+}
+
+/* 
+* Añadidos en desarrollo 
+*/
+input.input_style{
+	font-size: 15px;
+	border: none;
+	background: rgba(255,255,255,0.8);
+	width: 250px;
+	margin: 10px 0px;
+	padding: 8px 0px;
+	display: block;
+	border-radius: 10px 10px 10px 0px;
+	border: solid 1px #333;
+}
+
+input.input_style:focus {
+	border: solid 1px #333;
+	background: #fff;
+}
+
+input.input_buscar{
+	width: 500px;
+}
+/* ACP */
+#contenido_acp_index ul{
+	margin-left:30px;
+}
+img.imagen_perfil_box{
+	margin:20px 20px 0 0;
+	padding: 5px;
+	background:#ccc;
+}
+img.imagen_infograma_box{
+	margin:0 20px 0 0;
+	padding: 5px;
+	background:#ccc;
+}
+
+div.box_info_acp {
+	background:#000;
+	padding:5px 5px 28px 5px;
+	margin:20px 0 0 0;
+}
+div.box_info_extra_acp{
+	background:#000;
+	padding:5px;
+	margin:20px 0 0 0;
+}
+div.box_info_acp h2{
+	margin-bottom:10px;
+}
+
+.action_info_acp{
+    position:absolute;
+    right:0;
+    bottom:0;
+}
+.action_info_acp ul li{
+    	list-style:none;
+        float:left;
+}
+.action_info_acp ul li a{
+        display:block;
+        padding:3px;
+}
+
+/* Formateo de Texto */
+.formateotxt_strong{
+	font-weight:bold;
+}
+.error-message{
+	background:red;
+	padding:5px;
+}
+
+/* Login rápido */
+#formulario_rapido {
+	width: 169px;
+    background: none repeat scroll 0 0 black;
+    color: #FFFFFF;
+    position: fixed;
+     right: 15px;
+    top: 0;
+}
+#boton_formulario_rapido {
+    background: url("../img/flecha_abajo.png") no-repeat scroll 144px 12px #00CDDE;
+	border-radius: 10px 10px 10px 0;
+	box-shadow: 0 0 8px #000000;
+    font-family: QuicksandBold;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 28px;
+	padding: 10px 0 0 16px;
+}
+#form_login{
+	padding:5px;
+	font-size:14px;
+}
+#form_login div{
+	 padding: 0 0 12px 7px;
+}
+/* Posiciones */
+.posiciones_fl{
+	float:left;
+}
+.posiciones_fr{
+	float:right;
+}
+.posiciones_r{
+	position:relative;
+}
+.posiciones_cl{
+	clear:left;
+}
+.boton_buscar{
+	margin:8px 0 0 10px;
+}

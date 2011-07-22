@@ -2,6 +2,11 @@
 class VestimentasController extends AppController {
 
 	var $name = 'Vestimentas';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Vestimenta->recursive = 0;

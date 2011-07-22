@@ -46,17 +46,17 @@
 			<?php echo $problematica['Problematica']['otros_delitos']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $problematica['Problematica']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $problematica['Problematica']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $problematica['Problematica']['modified_user_id']; ?>
 			&nbsp;
@@ -64,13 +64,13 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Problematica', true), array('action' => 'edit', $problematica['Problematica']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Problematica', true), array('action' => 'delete', $problematica['Problematica']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $problematica['Problematica']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Problematicas', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Problematica', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Albergado', true), array('controller' => 'albergados', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Problematica', true), array('action' => 'edit', $problematica['Problematica']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar Problematica', true), array('action' => 'delete', $problematica['Problematica']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $problematica['Problematica']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Problematicas', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Problematica', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Albergado', true), array('controller' => 'albergados', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

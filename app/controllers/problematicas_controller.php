@@ -2,6 +2,11 @@
 class ProblematicasController extends AppController {
 
 	var $name = 'Problematicas';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Problematica->recursive = 0;

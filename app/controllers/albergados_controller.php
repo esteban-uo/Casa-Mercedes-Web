@@ -4,6 +4,11 @@ class AlbergadosController extends AppController {
 	var $name = 'Albergados';
         var $helpers = array('Html','Javascript', 'Ajax');
 
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
+	
 	function index() {
 		$this->Albergado->recursive = 0;
 		$this->set('albergados', $this->paginate());
@@ -29,7 +34,8 @@ class AlbergadosController extends AppController {
 		}
 		$personas = $this->Albergado->Persona->find('list');
 		$casas = $this->Albergado->Casa->find('list');
-		$this->set(compact('personas', 'casas'));
+		$fotoImagens = $this->Albergado->FotoImagen->find('list');
+		$this->set(compact('personas', 'casas', 'fotoImagens'));
 	}
 
 	function edit($id = null) {
@@ -50,7 +56,8 @@ class AlbergadosController extends AppController {
 		}
 		$personas = $this->Albergado->Persona->find('list');
 		$casas = $this->Albergado->Casa->find('list');
-		$this->set(compact('personas', 'casas'));
+		$fotoImagens = $this->Albergado->FotoImagen->find('list');
+		$this->set(compact('personas', 'casas', 'fotoImagens'));
 	}
 
 	function delete($id = null) {
@@ -64,5 +71,53 @@ class AlbergadosController extends AppController {
 		}
 		$this->Session->setFlash(__('Albergado was not deleted', true));
 		$this->redirect(array('action' => 'index'));
+	}
+	
+	function buscarAlbergadosPorFiltros(){
+		$this->loadModel('Persona');
+		 $parametrosContain = array(
+									'FotoImagen' => array(
+													'Tipoimage' => array ('title'),
+													'url' => array()
+													),
+									'Albergado' => array(
+													'FotoImagen' => array (
+																	'Tipoimage' => array ('title'),
+																	'url' => array()
+																	),
+													),
+									'Documento' => array('id'),
+									'EstadosSalud' => array('id'),
+									'Nacimiento' => array('id'),
+									'Vestimenta' => array('id')
+								);
+		 $this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
+		 Debug($this->params);
+		 if($resultado_minima_edad = $this->Persona->find('all', array(
+												'conditions' =>
+												array(
+													'Persona.edad >=' => $this->params["named"]["edad_minima"],
+													'Persona.edad <=' => $this->params["named"]["edad_maxima"],
+													'Persona.Casa.Id' => $this->params["named"]["casa"],
+													'CONCAT(Persona.primer_nombre," ",Persona.primer_apellido," ",Persona.segundo_apellido)' => $this->params["named"]["nombre_completo"]
+												),
+													'contain' => $parametrosContain
+											)
+			
+									)){
+				Debug($resultado_minima_edad);
+				return $resultado_minima_edad;
+				
+		}else{
+			return $this->Persona->find('first', array(
+												'conditions' => 
+												array(
+													'CONCAT(Persona.primer_nombre," ",Persona.primer_apellido," ",Persona.segundo_apellido)' => $this->params["named"]["nombre_completo"]
+												),
+													'contain' => $parametrosContain
+											)
+			
+									);
+		}
 	}
 }

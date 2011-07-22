@@ -1,7 +1,7 @@
-<div class="escolaridades view">
+﻿<div class="escolaridades view">
 <h2><?php  __('Escolaridad');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Número'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $escolaridad['Escolaridad']['id']; ?>
 			&nbsp;
@@ -36,7 +36,7 @@
 			<?php echo $escolaridad['Escolaridad']['inscrito']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Statusfinal'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Estatus final'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $escolaridad['Escolaridad']['statusfinal']; ?>
 			&nbsp;
@@ -61,17 +61,17 @@
 			<?php echo $escolaridad['Escolaridad']['boleta']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registrado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $escolaridad['Escolaridad']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $escolaridad['Escolaridad']['modified']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified User Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modificado Por'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $escolaridad['Escolaridad']['modified_user_id']; ?>
 			&nbsp;
@@ -79,15 +79,15 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Escolaridad', true), array('action' => 'edit', $escolaridad['Escolaridad']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Escolaridad', true), array('action' => 'delete', $escolaridad['Escolaridad']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $escolaridad['Escolaridad']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Escolaridades', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Escolaridad', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Albergado', true), array('controller' => 'albergados', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Ciclos Escolares', true), array('controller' => 'ciclos_escolares', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Ciclo Escolar', true), array('controller' => 'ciclos_escolares', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Modificar Escolaridad', true), array('action' => 'edit', $escolaridad['Escolaridad']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar Escolaridad', true), array('action' => 'delete', $escolaridad['Escolaridad']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $escolaridad['Escolaridad']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Escolaridades', true), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Escolaridad', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Albergado', true), array('controller' => 'albergados', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ver Ciclos Escolares', true), array('controller' => 'ciclos_escolares', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Ciclo Escolar', true), array('controller' => 'ciclos_escolares', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

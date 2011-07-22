@@ -18,7 +18,7 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Casa'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Html->link($albergado['Casa']['id'], array('controller' => 'casas', 'action' => 'view', $albergado['Casa']['id'])); ?>
+			<?php echo $this->Html->link($albergado['Casa']['direccion'], array('controller' => 'casas', 'action' => 'view', $albergado['Casa']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Fecha Ingreso'); ?></dt>
@@ -46,9 +46,9 @@
 			<?php echo $albergado['Albergado']['averiguacion_previa']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Familiograma Imagen Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Foto Imagen'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $albergado['Albergado']['familiograma_imagen_id']; ?>
+			<?php echo $this->Html->link($albergado['FotoImagen']['id'], array('controller' => 'images', 'action' => 'view', $albergado['FotoImagen']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
@@ -79,6 +79,8 @@
 		<li><?php echo $this->Html->link(__('New Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Casas', true), array('controller' => 'casas', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Casa', true), array('controller' => 'casas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Images', true), array('controller' => 'images', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Foto Imagen', true), array('controller' => 'images', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Datos', true), array('controller' => 'datos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Dato', true), array('controller' => 'datos', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Dependientes', true), array('controller' => 'dependientes', 'action' => 'index')); ?> </li>

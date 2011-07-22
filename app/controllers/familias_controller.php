@@ -2,6 +2,11 @@
 class FamiliasController extends AppController {
 
 	var $name = 'Familias';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Familia->recursive = 0;

@@ -2,6 +2,11 @@
 class GruposController extends AppController {
 
 	var $name = 'Grupos';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Grupo->recursive = 0;
