@@ -167,6 +167,62 @@ $(function(){
 			</ul>
 		</div>
 	</div>
+	<div id="acp_info_ingresos" class="box_info_acp posiciones_r">
+	<h2>Información de Ingresos</h2>
+		<div class="action_info_acp">
+			<ul>
+		<?php if(isset($Albergado['Ingresos']['id'])): // Si hay ficha de Ingresos ?>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'ingresos','action' => 'edit', $Albergado['Ingresos']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'ingresos','action' => 'delete', $Albergado['Ingresos']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
+				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'ingresos','action' => 'view', $Albergado['Ingresos']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+		<?php else: // Si hay ficha de Ingresos ?>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'ingresos','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+		<?php endif; // Si hay ficha de Ingresos ?>
+			</ul>
+		</div>
+	</div>
+	<div id="acp_info_datos" class="box_info_acp posiciones_r">
+	<h2>Datos</h2>
+		<div class="action_info_acp">
+			<ul>
+		<?php if(isset($Albergado['Dato']['id'])): // Si hay ficha de Datos ?>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'datos','action' => 'edit', $Albergado['Dato']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'datos','action' => 'delete', $Albergado['Dato']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
+				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'datos','action' => 'view', $Albergado['Dato']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+		<?php else: // Si hay ficha de Datos ?>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'datos','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+		<?php endif; // Si hay ficha de Datos ?>
+			</ul>
+		</div>
+	</div>
+	<div id="acp_info_datos_albergado" class="box_info_acp posiciones_r">
+	<h2>Datos del Albergado</h2>
+		<div class="action_info_acp">
+			<ul>
+		<?php if(isset($Albergado['DatosAlbergado']['id'])): // Si hay Datos de albergado ?>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'datos_albergados','action' => 'edit', $Albergado['DatosAlbergado']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'datos_albergados','action' => 'delete', $Albergado['DatosAlbergado']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
+				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'datos_albergados','action' => 'view', $Albergado['DatosAlbergado']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+		<?php else:  // Si hay Datos de albergado  ?>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'datos_albergados','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+		<?php endif;  // Si hay Datos de albergado  ?>
+			</ul>
+		</div>
+	</div>
+	<div id="acp_info_datos_escolaridad" class="box_info_acp posiciones_r">
+	<h2>Escolaridad</h2>
+		<div class="action_info_acp">
+			<ul>
+		<?php if(isset($Albergado['Escolaridad']['id'])): // Si hay Datos de escolaridad ?>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'escolaridades','action' => 'edit', $Albergado['Escolaridad']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'escolaridades','action' => 'delete', $Albergado['Escolaridad']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
+				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'escolaridades','action' => 'view', $Albergado['Escolaridad']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+		<?php else:  // Si hay Datos de escolaridad  ?>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'escolaridades','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+		<?php endif;  // Si hay Datos de escolaridad  ?>
+			</ul>
+		</div>
+	</div>
 	<?php endif; // Si es Albergado ?>
 	<div id="acp_info_documentos" class="box_info_acp posiciones_r">
 	<h2>Documentos pertenecientes</h2>

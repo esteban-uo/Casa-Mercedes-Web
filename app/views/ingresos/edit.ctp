@@ -3,8 +3,11 @@
 	<fieldset>
 		<legend><?php __('Modificar Ingreso'); ?></legend>
 	<?php
-		echo $this->Form->input('id');
+	if(isset($pasadoPorParametro)){
+		echo $this->Form->input('albergado_id', array('value'=>$id, 'type' => 'hidden'));
+	}else{
 		echo $this->Form->input('albergado_id');
+	}
 		echo $this->Form->input('fecha');
 		echo $this->Form->input('motivo');
 		echo $this->Form->input('ingreso_egreso');

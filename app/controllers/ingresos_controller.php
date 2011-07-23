@@ -21,7 +21,7 @@ class IngresosController extends AppController {
 		$this->set('ingreso', $this->Ingreso->read(null, $id));
 	}
 
-	function add() {
+	function add($id = null) {
 		if (!empty($this->data)) {
 			$this->Ingreso->create();
 			if ($this->Ingreso->save($this->data)) {
@@ -31,11 +31,15 @@ class IngresosController extends AppController {
 				$this->Session->setFlash(__('Los datos del ingreso no se pudieron guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
+		if($id != null){
+			$this->set("pasadoPorParametro", true);
+			$this->set("id", $id);
+		}
 		$albergados = $this->Ingreso->Albergado->find('list');
 		$this->set(compact('albergados'));
 	}
 
-	function edit($id = null) {
+	function edit($id = null, $idAlbergado = null) {
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('El ingreso no existe o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
@@ -50,6 +54,10 @@ class IngresosController extends AppController {
 		}
 		if (empty($this->data)) {
 			$this->data = $this->Ingreso->read(null, $id);
+		}
+		if($idAlbergado != null){
+			$this->set("pasadoPorParametro", true);
+			$this->set("id", $idAlbergado);
 		}
 		$albergados = $this->Ingreso->Albergado->find('list');
 		$this->set(compact('albergados'));
