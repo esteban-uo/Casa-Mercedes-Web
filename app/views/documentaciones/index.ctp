@@ -2,12 +2,12 @@
 	<h2><?php __('Documentaciones');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('numero');?></th>
-			<th><?php echo $this->Paginator->sort('descripcion');?></th>
-			<th><?php echo $this->Paginator->sort('registrado');?></th>
-			<th><?php echo $this->Paginator->sort('modificado');?></th>
-			<th><?php echo $this->Paginator->sort('modificado_por');?></th>
-			<th class="actions"><?php __('Acciones');?></th>
+			<th><?php echo $this->Paginator->sort('id');?></th>
+			<th><?php echo $this->Paginator->sort('title');?></th>
+			<th><?php echo $this->Paginator->sort('created');?></th>
+			<th><?php echo $this->Paginator->sort('modified');?></th>
+			<th><?php echo $this->Paginator->sort('modified_user_id');?></th>
+			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
 	$i = 0;
@@ -24,9 +24,9 @@
 		<td><?php echo $documentacion['Documentacion']['modified']; ?>&nbsp;</td>
 		<td><?php echo $documentacion['Documentacion']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $documentacion['Documentacion']['id'])); ?>
-			<?php echo $this->Html->link(__('Modificar', true), array('action' => 'edit', $documentacion['Documentacion']['id'])); ?>
-			<?php echo $this->Html->link(__('Eliminar', true), array('action' => 'delete', $documentacion['Documentacion']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $documentacion['Documentacion']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $documentacion['Documentacion']['id'])); ?>
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $documentacion['Documentacion']['id'])); ?>
+			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $documentacion['Documentacion']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $documentacion['Documentacion']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -39,17 +39,17 @@
 	?>	</p>
 
 	<div class="paging">
-		<?php echo $this->Paginator->prev('<< ' . __('Anterior', true), array(), null, array('class'=>'disabled'));?>
+		<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
 	 | 	<?php echo $this->Paginator->numbers();?>
  |
-		<?php echo $this->Paginator->next(__('Siguiente', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
 </div>
 <div class="actions">
-	<h3><?php __('Acciones'); ?></h3>
+	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Agregar Documentacion', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('Ver Documentos', true), array('controller' => 'documentos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Agregar Documento', true), array('controller' => 'documentos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Documentacion', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Documentos', true), array('controller' => 'documentos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Documento', true), array('controller' => 'documentos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

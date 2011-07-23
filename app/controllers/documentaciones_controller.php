@@ -2,11 +2,6 @@
 class DocumentacionesController extends AppController {
 
 	var $name = 'Documentaciones';
-	
-	function beforeFilter() {
-        parent::beforeFilter(); 
-        $this->layout = "panel_control";
-    }
 
 	function index() {
 		$this->Documentacion->recursive = 0;

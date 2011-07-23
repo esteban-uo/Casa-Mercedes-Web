@@ -1,13 +1,8 @@
-﻿<?php
+<?php
 class DocumentosController extends AppController {
 
 	var $name = 'Documentos';
-	
-	function beforeFilter() {
-        parent::beforeFilter(); 
-        $this->layout = "panel_control";
-    }
-	
+
 	function index() {
 		$this->Documento->recursive = 0;
 		$this->set('documentos', $this->paginate());

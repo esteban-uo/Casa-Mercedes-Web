@@ -82,12 +82,18 @@ class PersonasController extends AppController {
 																	'Tipoimage' => array ('title'),
 																	'url' => array()
 																	),
+													'Institucion' => array ('id'),
+													'Familia' => array ('id'),
+													'Social' => array ('id'),
+													'SocioEconomico' => array ('id'),
+													'Problematica' => array ('id'),
 													),
 									'Documento' => array('id'),
 									'EstadosSalud' => array('id'),
 									'Nacimiento' => array('id'),
 									'Vestimenta' => array('id')
 								);
+								
 		 $this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
 		 if($resultado_nombre_completo = $this->Persona->find('first', array(
 												'conditions' => 
