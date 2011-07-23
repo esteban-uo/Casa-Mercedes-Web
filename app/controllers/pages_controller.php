@@ -134,8 +134,8 @@ class PagesController extends AppController {
 				'conditions' => array('Institucion.albergado_id' => $persona['Albergado']['id'])
 			));
 			
-			Debug($socioEconomico);
-			Debug($persona);
+			//Debug($socioEconomico);
+			//Debug($persona);
 			$this->set('persona', $persona);
 			$this->set('institucion', $institucion);
 			$this->set('socioEconomico', $socioEconomico);

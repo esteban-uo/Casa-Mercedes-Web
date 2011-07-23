@@ -1,6 +1,6 @@
 <table width="908" border="1" align="center">
 			    <tr>
-			      <td width="73" rowspan="6" align="center"><img src="logo.png" width="73" height="152" /></td>
+			      <td width="73" rowspan="6" align="center"><img src="../../logo.png" width="73" height="152" /></td>
 			      <td colspan="2" align="center" bgcolor="#0066CC">CASA HOGAR SHULTZ</td>
 			      <td width="192" rowspan="4" align="center"><img src="../../img/Fotografia_de_Usuario/<? echo $persona['FotoImagen']['url']; ?>" width="80" height="120" /></td>
 		        </tr>
