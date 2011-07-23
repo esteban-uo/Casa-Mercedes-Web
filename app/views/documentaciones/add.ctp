@@ -1,9 +1,9 @@
-<div class="documentaciones form">
+﻿<div class="documentaciones form">
 <?php echo $this->Form->create('Documentacion');?>
 	<fieldset>
 		<legend><?php __('Agregar Documentacion'); ?></legend>
 	<?php
-		echo $this->Form->input('descripcion');
+		echo $this->Form->input('title');
 		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
