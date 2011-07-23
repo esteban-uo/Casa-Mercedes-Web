@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class NacimientosController extends AppController {
 
 	var $name = 'Nacimientos';
@@ -15,7 +15,7 @@ class NacimientosController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid nacimiento', true));
+			$this->Session->setFlash(__('El nacimiento no existe o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('nacimiento', $this->Nacimiento->read(null, $id));
@@ -25,10 +25,10 @@ class NacimientosController extends AppController {
 		if (!empty($this->data)) {
 			$this->Nacimiento->create();
 			if ($this->Nacimiento->save($this->data)) {
-				$this->Session->setFlash(__('The nacimiento has been saved', true));
+				$this->Session->setFlash(__('Los datos del nacimiento se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The nacimiento could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos del nacimiento no se pudieron guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 		$personas = $this->Nacimiento->Persona->find('list');
@@ -40,15 +40,15 @@ class NacimientosController extends AppController {
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid nacimiento', true));
+			$this->Session->setFlash(__('El nacimiento no existe o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->Nacimiento->save($this->data)) {
-				$this->Session->setFlash(__('The nacimiento has been saved', true));
+				$this->Session->setFlash(__('Los datos del nacimiento se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The nacimiento could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos del nacimiento no se pudieron guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 		if (empty($this->data)) {
@@ -63,14 +63,14 @@ class NacimientosController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for nacimiento', true));
+			$this->Session->setFlash(__('El número (clave) del nacimiento es inválido.', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Nacimiento->delete($id)) {
-			$this->Session->setFlash(__('Nacimiento deleted', true));
+			$this->Session->setFlash(__('Los datos del nacimiento se eliminaron satisfactoriamente.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Nacimiento was not deleted', true));
+		$this->Session->setFlash(__('Los datos del nacimiento no se pudieron eliminar. Por favor, intenta nuevamente.', true));
 		$this->redirect(array('action' => 'index'));
 	}
 }

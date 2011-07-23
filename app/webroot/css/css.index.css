@@ -529,6 +529,32 @@ div.box_info_acp h2{
 	padding:5px;
 }
 
+/* Login rápido */
+#formulario_rapido {
+	width: 169px;
+    background: none repeat scroll 0 0 black;
+    color: #FFFFFF;
+    position: fixed;
+     right: 15px;
+    top: 0;
+}
+#boton_formulario_rapido {
+    background: url("../img/flecha_abajo.png") no-repeat scroll 144px 12px #00CDDE;
+	border-radius: 10px 10px 10px 0;
+	box-shadow: 0 0 8px #000000;
+    font-family: QuicksandBold;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 28px;
+	padding: 10px 0 0 16px;
+}
+#form_login{
+	padding:5px;
+	font-size:14px;
+}
+#form_login div{
+	 padding: 0 0 12px 7px;
+}
 /* Posiciones */
 .posiciones_fl{
 	float:left;

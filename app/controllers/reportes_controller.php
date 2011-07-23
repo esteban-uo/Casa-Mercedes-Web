@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 class ReportesController extends AppController {
 	var $name = 'Reportes';
 	var $uses = array();
@@ -9,19 +9,18 @@ class ReportesController extends AppController {
     }
 	
 	/**
-	* Genera reportes segun la selección de tipo de reporte y la persona buscada
+	* Genera reportes segun la selecciÃ³n tipo de reporte y la persona buscada
 	*/
 	function index() {
 		$this->layout = "panel_control";
 		Debug($this->data);
-		//TODO ejecuta método para la generación de reporte segun el tipo selecionado
+		//Todo ejecuta mÃ©todo para la generaciÃ³e reporte segun el tipo selecionado
 	}
 
 	function ficha_identificacion() {
 		$this->layout = "reportes";
 		Debug($this->params["named"]);
-		//TODO genera reporte ficha de identificación
-		
+		//TODO genera reporte ficha de identificaciÃ³		
 	}
 	
 	function estudio_social(){

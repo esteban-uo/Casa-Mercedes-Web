@@ -4,6 +4,7 @@
 		<legend><?php __('Add Albergado'); ?></legend>
 	<?php
 		echo $this->Form->input('persona_id');
+		echo $this->Form->input('numero_embarazos');
 		echo $this->Form->input('expediente');
 		echo $this->Form->input('casa_id');
 		echo $this->Form->input('fecha_ingreso');

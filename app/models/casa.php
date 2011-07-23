@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class Casa extends AppModel {
 	var $name = 'Casa';
 	var $displayField = 'direccion';
@@ -6,17 +6,25 @@ class Casa extends AppModel {
 		'direccion' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo de Direccción está vacío, Coloca la dirección de la casa',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+		),		
 		'telefono' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				'message' => 'El campo debe de ser entero',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Telefono está vacío',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

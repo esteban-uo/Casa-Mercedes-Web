@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class PersonasController extends AppController {
 
 	var $name = 'Personas';
@@ -15,7 +15,7 @@ class PersonasController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid persona', true));
+			$this->Session->setFlash(__('La persona no existe o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('persona', $this->Persona->read(null, $id));
@@ -25,25 +25,25 @@ class PersonasController extends AppController {
 		if (!empty($this->data)) {
 			$this->Persona->create();
 			if ($this->Persona->save($this->data)) {
-				$this->Session->setFlash(__('The persona has been saved', true));
+				$this->Session->setFlash(__('Los datos de la persona se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The persona could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la persona no se pudieron guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 	}
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid persona', true));
+			$this->Session->setFlash(__('La persona no existe o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->Persona->save($this->data)) {
-				$this->Session->setFlash(__('The persona has been saved', true));
+				$this->Session->setFlash(__('Los datos de la persona se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The persona could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la persona no se pudieron guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 		if (empty($this->data)) {
@@ -53,14 +53,14 @@ class PersonasController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for persona', true));
+			$this->Session->setFlash(__('El número (clave) de la persona es inválido.', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Persona->delete($id)) {
-			$this->Session->setFlash(__('Persona deleted', true));
+			$this->Session->setFlash(__('Los datos de la persona se eliminaron satisfactoriamente.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Persona was not deleted', true));
+		$this->Session->setFlash(__('Los datos de la persona no se pudieron eliminar. Por favor, intenta nuevamente.', true));
 		$this->redirect(array('action' => 'index'));
 	}
 	
