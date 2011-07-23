@@ -1,12 +1,7 @@
-<?php
+﻿<?php
 class DocumentacionesController extends AppController {
 
 	var $name = 'Documentaciones';
-	
-	function beforeFilter() {
-        parent::beforeFilter(); 
-        $this->layout = "panel_control";
-    }
 
 	function index() {
 		$this->Documentacion->recursive = 0;
@@ -15,7 +10,7 @@ class DocumentacionesController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid documentacion', true));
+			$this->Session->setFlash(__('Los datos de la documentación son inválidos.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('documentacion', $this->Documentacion->read(null, $id));
@@ -25,25 +20,25 @@ class DocumentacionesController extends AppController {
 		if (!empty($this->data)) {
 			$this->Documentacion->create();
 			if ($this->Documentacion->save($this->data)) {
-				$this->Session->setFlash(__('The documentacion has been saved', true));
+				$this->Session->setFlash(__('Los datos de la documentación son correctos y se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The documentacion could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la documentación son incorrectos y no se pudo guardar. Por favor intenta nuevamente.', true));
 			}
 		}
 	}
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid documentacion', true));
+			$this->Session->setFlash(__('Los datos de la documentación son inválidos.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->Documentacion->save($this->data)) {
-				$this->Session->setFlash(__('The documentacion has been saved', true));
+				$this->Session->setFlash(__('Los datos de la documentación son correctos y se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The documentacion could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la documentación son incorrectos y no se pudo guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 		if (empty($this->data)) {
@@ -53,14 +48,14 @@ class DocumentacionesController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for documentacion', true));
+			$this->Session->setFlash(__('El número de la documentación es incorrecto.', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Documentacion->delete($id)) {
-			$this->Session->setFlash(__('Documentacion deleted', true));
+			$this->Session->setFlash(__('Los datos de la documentación han sido eliminados satisfactoriamente.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Documentacion was not deleted', true));
+		$this->Session->setFlash(__('Los datos de la documentación no se pudieron dar de baja. Intenta nuevamente.', true));
 		$this->redirect(array('action' => 'index'));
 	}
 }
