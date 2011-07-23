@@ -2,11 +2,6 @@
 class DocumentacionesController extends AppController {
 
 	var $name = 'Documentaciones';
-	
-	function beforeFilter() {
-        parent::beforeFilter(); 
-        $this->layout = "panel_control";
-    }
 
 	function index() {
 		$this->Documentacion->recursive = 0;
@@ -31,6 +26,8 @@ class DocumentacionesController extends AppController {
 				$this->Session->setFlash(__('The documentacion could not be saved. Please, try again.', true));
 			}
 		}
+		$documentos = $this->Documentacion->Documento->find('list');
+		$this->set(compact('documentos'));
 	}
 
 	function edit($id = null) {
@@ -49,6 +46,8 @@ class DocumentacionesController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Documentacion->read(null, $id);
 		}
+		$documentos = $this->Documentacion->Documento->find('list');
+		$this->set(compact('documentos'));
 	}
 
 	function delete($id = null) {

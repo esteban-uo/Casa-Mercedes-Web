@@ -1,13 +1,8 @@
-﻿<?php
+<?php
 class DocumentosController extends AppController {
 
 	var $name = 'Documentos';
-	
-	function beforeFilter() {
-        parent::beforeFilter(); 
-        $this->layout = "panel_control";
-    }
-	
+
 	function index() {
 		$this->Documento->recursive = 0;
 		$this->set('documentos', $this->paginate());
@@ -31,9 +26,8 @@ class DocumentosController extends AppController {
 				$this->Session->setFlash(__('The documento could not be saved. Please, try again.', true));
 			}
 		}
-		$personas = $this->Documento->Persona->find('list');
 		$documentaciones = $this->Documento->Documentacion->find('list');
-		$this->set(compact('personas', 'documentaciones'));
+		$this->set(compact('documentaciones'));
 	}
 
 	function edit($id = null) {
@@ -52,9 +46,8 @@ class DocumentosController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Documento->read(null, $id);
 		}
-		$personas = $this->Documento->Persona->find('list');
 		$documentaciones = $this->Documento->Documentacion->find('list');
-		$this->set(compact('personas', 'documentaciones'));
+		$this->set(compact('documentaciones'));
 	}
 
 	function delete($id = null) {
