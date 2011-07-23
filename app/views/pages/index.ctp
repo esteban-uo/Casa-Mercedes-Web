@@ -24,7 +24,7 @@ $(function() {
 
 <div id="scroll">
 <div class="section pink" id="section1">
-	<h1 class="title main">Nuestra<br />casa</h1>
+	<h1 class="title main foto_chicas">Nuestra<br />casa</h1>
 	<p id="tagline">
 Somos una Institución de Asistencia Privada, con más de 16 años trabajando por niñas y adolescentes, sus hijas e hijos, en situación de pobreza, vulnerabilidad y riesgo.	</p>
 <p class="especial"> Creemos firmemente que nuestras niñas y adolescentes tienen el derecho de transformar sus vidas proporcionando Atención Integral, Desarrollando Capacidades y Fomentando Oportunidades.</p>
@@ -75,6 +75,6 @@ infantil, proporcionando cuidado y protección integral a las niñas y adolesc
 </div>
 <div id="patrocinadores">
 <h4>Gracias a:</h4>
-<a href="http://www.extend.com.mx" class="extend"></a>
+<a href="http://www.extend.com.mx" class="extend"></a><a href="http://www.campus-party.com.mx/2011/index.html" class="campus posiciones_fl"></a>
 </div>
 </div>

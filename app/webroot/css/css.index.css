@@ -90,7 +90,9 @@
 }
 
 html {
-	background:#a1c5ab;
+	background:-moz-radial-gradient(center, #f0b49e, #eb6077) no-repeat #eb6077;
+	background:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#f0b49e ), to(#eb6077)) no-repeat #eb6077;
+	height:100%;
 	}
 
 
@@ -103,8 +105,8 @@ body{
 
 /*patrocinadores*/
 #patrocinadores{
-	position: absolute;
-	left: 800px;
+	position: fixed;
+	right: 0px;
 	bottom: 20px;
 }
 #patrocinadores h4{
@@ -121,6 +123,13 @@ body{
 	height:70px;
 	behavior: url(../css/PIE.htc);
 	
+}
+.campus{
+	background:url('../img/cp_small.png') no-repeat;
+	display:block;
+	width:150px;
+	height:70px;
+	behavior: url(../css/PIE.htc);	
 }
 /*index*/
 
@@ -172,16 +181,18 @@ h1.title{
 
 #tagline{
 	margin:10px 20px 0px 50px;
- 	width:550px;
+ 	width:500px;
+height:300px;
 	color:#493443;
 	line-height: 50px;
 	text-align: right;
 	display:block;
 	float: left;
 	font-size: 25px;
+
 }
 .especial{	
-	color:#493443;;
+	color:#493443;
 	display: block;
 	padding: 20px 1990px 0px 20px;
 	line-height: 30px;
@@ -210,7 +221,7 @@ h1.title{
 }
 
 .pink{
-    background:#eb6077 url(../img/rosamorado.jpg) repeat-y top right ;
+    background: url(../img/rosamorado.jpg) repeat-y top right ;
 }
 .purple{
     background:#a1c5ab url(../img/azulmorado.jpg) repeat-y top right;
@@ -408,7 +419,8 @@ font-size: 15px;
 
 /*Panel de control*/
 #contenido{
-	width: 1010px;
+	width: 80%;
+	
 
 }
 
@@ -484,7 +496,7 @@ font-size: 15px;
 }
 
 /* 
-* AÒadidos en desarrollo 
+* A√±adidos en desarrollo 
 */
 input.input_style{
 	font-size: 15px;
@@ -523,13 +535,20 @@ img.imagen_infograma_box{
 }
 
 div.box_info_acp {
-	background:#fff;
+
+	border-bottom:solid 1px #fff;
 	padding:5px 5px 28px 5px;
-	margin:20px 0 0 0;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
+	margin:10px 0 10px 0;
 }
+
+div.box_info_acp:hover{
+		background:#fff;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+
+	
+}	
 div.box_info_extra_acp{
 	background:#000;
 	padding:5px;
@@ -544,15 +563,18 @@ div.box_info_acp h2{
     right:0;
     bottom:0;
 
-
 }
 .action_info_acp ul li{
     	list-style:none;
         float:left;
+		
 }
 .action_info_acp ul li a{
         display:block;
-        padding:3px;
+		color:transparent;
+		width:30px;
+		
+		
 }
 
 /* Formateo de Texto */
@@ -564,14 +586,14 @@ div.box_info_acp h2{
 	padding:5px;
 }
 
-/* Login r·pido */
+/* Login r√°pido */
 #formulario_rapido {
 	width: 169px;
     background: none repeat scroll 0 0 #333;
     color: #FFFFFF;
     position: fixed;
      right: 15px;
-    top: 0;
+    top: 1px;
 	border-radius: 10px 10px 10px 0;
 }
 #boton_formulario_rapido {
@@ -641,19 +663,39 @@ div.input input{
 	font-size: 15px;
 		border: none;
 		background: rgba(255,255,255,0.8);
-		width: 300px;
+		width: 145px;
 		margin: 10px 0px;
 		padding: 8px 0px;
 		display: block;
 		border-radius: 10px 10px 10px 0px;
 }
 
+.boton_acp_modificar{
+	background:url('../img/img_edit.png') no-repeat;
+	
+}
+.boton_acp_eliminar{
+	background:url('../img/img_delete.png') no-repeat;
+}
+.boton_acp_info{
+	background:url('../img/img_info.png') no-repeat;
+}
+.boton_acp_ultimousuario{
+	background:url('../img/img_lastuser.png') no-repeat;
+}
+
+.boton_acp_crear{
+	background:url('../img/img_add.png') no-repeat;
+}
 div.input label{
 	color:#fff;
 	font-size: 15px;
 	
 }
 
+.foto_chicas{
+	background:url('../img/foto1.jpg');
+}
 fieldset{
 	border:none;
 }
