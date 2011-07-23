@@ -86,6 +86,74 @@ class albergado extends AppModel {
 			'order' => ''
 		)
 	);
+	
+	var $hasOne = array(
+		'Institucion' => array(
+			'className' => 'Institucion',
+			'foreignKey' => 'albergado_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Familia' => array(
+			'className' => 'Familia',
+			'foreignKey' => 'albergado_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Social' => array(
+			'className' => 'Social',
+			'foreignKey' => 'albergado_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'SocioEconomico' => array(
+			'className' => 'SocioEconomico',
+			'foreignKey' => 'albergado_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Problematica' => array(
+			'className' => 'Problematica',
+			'foreignKey' => 'albergado_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
 
 	var $hasMany = array(
 		'Dato' => array(
@@ -127,73 +195,8 @@ class albergado extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Familia' => array(
-			'className' => 'Familia',
-			'foreignKey' => 'albergado_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
 		'Ingreso' => array(
 			'className' => 'Ingreso',
-			'foreignKey' => 'albergado_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Institucion' => array(
-			'className' => 'Institucion',
-			'foreignKey' => 'albergado_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Problematica' => array(
-			'className' => 'Problematica',
-			'foreignKey' => 'albergado_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Social' => array(
-			'className' => 'Social',
-			'foreignKey' => 'albergado_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'SocioEconomico' => array(
-			'className' => 'SocioEconomico',
 			'foreignKey' => 'albergado_id',
 			'dependent' => false,
 			'conditions' => '',
