@@ -169,19 +169,6 @@ class albergado extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Documentaciones' => array(
-			'className' => 'Documentacion',
-			'foreignKey' => 'albergado_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
 		'Dependiente' => array(
 			'className' => 'Dependiente',
 			'foreignKey' => 'albergado_id',
