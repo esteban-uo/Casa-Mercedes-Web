@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class AlbergadosController extends AppController {
 
 	var $name = 'Albergados';
@@ -16,7 +16,7 @@ class AlbergadosController extends AppController {
         
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid albergado', true));
+			$this->Session->setFlash(__('Los datos del albergado son inválidos.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('albergado', $this->Albergado->read(null, $id));
@@ -25,32 +25,13 @@ class AlbergadosController extends AppController {
 	function add() {
             $this->set('closeModalbox', false);
 		if (!empty($this->data)) {
-                        $this->Albergado->set($this->data);
-                        if($this->Albergado->validates()){
-                            $this->Albergado->create();
-                            echo "
-        <script type='text/javaScript'>
-        alert(\"$this->data\");
-           //status es el contenido del error
-        </script>";
-                            if ($this->Albergado->save($this->data)) {
-                            	$this->Session->setFlash(__('The albergado has been saved', true));
-                                    if (!$this->RequestHandler->isAjax()) {
-                                            $this->redirect(array('action' => 'index'));
-                                    }
-                                    $this->set('closeModalbox', true);
-                            } else {
-                                    $Albergado = $this->Albergado->invalidFields;
-                                    $data = compact('Albergado');
-                                    $this->Session->setFlash(__('The albergado could not be saved. Please, try again.', true));
-                                    $this->set('errors', compact('message','data'));
-                            }
-                        }else{
-                            $Albergado = $this->Albergado->invalidFields;
-                            $data = compact('Albergado');
-                            $this->Session->setFlash(__('The albergado could not be saved. Please, try again.', true));
-                            $this->set('errors', compact('message','data'));
-                        }
+			$this->Albergado->create();
+			if ($this->Albergado->save($this->data)) {
+				$this->Session->setFlash(__('Los datos del albergado son correctos y se han guardado satisfactoriamente.', true));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('Los datos del albergado son incorrectos. Intenta nuevamente.', true));
+			}
 		}
 		$personas = $this->Albergado->Persona->find('list');
 		$casas = $this->Albergado->Casa->find('list');
@@ -61,20 +42,16 @@ class AlbergadosController extends AppController {
        	function edit($id = null) {
             $this->set('closeModalbox', false);
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid albergado', true));
+			$this->Session->setFlash(__('Los datos del albergado son inválidos.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
                     if($this->Albergado->validates()){
 			if ($this->Albergado->save($this->data)) {
-				$this->Session->setFlash(__('The albergado has been saved', true));
-                                if(!$this->RequestHandler->isAjax()){
-                                    $this->redirect(array('action' => 'index'));
-                                }
-                                $this->set('closeModalbox', true);
-
+				$this->Session->setFlash(__('Los datos del albergado son correctos y se han guardado satisfactoriamente.', true));
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The albergado could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos del albergado son incorrectos. Intenta nuevamente.', true));
 			}
                     }
 		}
@@ -89,14 +66,14 @@ class AlbergadosController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for albergado', true));
+			$this->Session->setFlash(__('El número del albergado es incorrecto.', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Albergado->delete($id)) {
-			$this->Session->setFlash(__('Albergado deleted', true));
+			$this->Session->setFlash(__('El albergado ha sido eliminado satisfactoriamente.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Albergado was not deleted', true));
+		$this->Session->setFlash(__('El albergado no se pudo dar de baja. Intenta nuevamente.', true));
 		$this->redirect(array('action' => 'index'));
 	}
 }

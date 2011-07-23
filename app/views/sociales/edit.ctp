@@ -5,7 +5,7 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('albergado_id');
-		echo $this->Form->input('comunicación');
+		echo $this->Form->input('comunicacion', array('label'=>'Comunicación'));
 		echo $this->Form->input('roles');
 		echo $this->Form->input('normas_y_valores');
 		echo $this->Form->input('manejo_autoridad');

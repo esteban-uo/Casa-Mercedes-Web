@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class DatosController extends AppController {
 
 	var $name = 'Datos';
@@ -15,7 +15,7 @@ class DatosController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid dato', true));
+			$this->Session->setFlash(__('Los datos son inválidos.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('dato', $this->Dato->read(null, $id));
@@ -25,10 +25,10 @@ class DatosController extends AppController {
 		if (!empty($this->data)) {
 			$this->Dato->create();
 			if ($this->Dato->save($this->data)) {
-				$this->Session->setFlash(__('The dato has been saved', true));
+				$this->Session->setFlash(__('Los datos son correctos y se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The dato could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos son incorrectos y no se pudo guardar. Por favor intenta nuevamente.', true));
 			}
 		}
 		$albergados = $this->Dato->Albergado->find('list');
@@ -42,10 +42,10 @@ class DatosController extends AppController {
 		}
 		if (!empty($this->data)) {
 			if ($this->Dato->save($this->data)) {
-				$this->Session->setFlash(__('The dato has been saved', true));
+				$this->Session->setFlash(__('Los datos son correctos y se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The dato could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos son incorrectos y no se pudo guardar. Por favor intenta nuevamente.', true));
 			}
 		}
 		if (empty($this->data)) {
@@ -57,14 +57,14 @@ class DatosController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for dato', true));
+			$this->Session->setFlash(__('El número del dato es incorrecto.', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Dato->delete($id)) {
-			$this->Session->setFlash(__('Dato deleted', true));
+			$this->Session->setFlash(__('Los datos han sido eliminados satisfactoriamente.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Dato was not deleted', true));
+		$this->Session->setFlash(__('Los datos no se pudieron dar de baja. Intenta nuevamente.', true));
 		$this->redirect(array('action' => 'index'));
 	}
 }

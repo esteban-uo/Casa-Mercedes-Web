@@ -11,6 +11,7 @@ class PagesController extends AppController {
 	
 	function acp() {
 		if (!empty($this->data)) {
+			Debug($this->data);
 			if($persona = $this->requestAction(
 							array(
 								'controller' => 'personas',
@@ -26,6 +27,7 @@ class PagesController extends AppController {
 									'named' => array('albergado_id' => $persona['Albergado']['id']))
 								);
 				}
+				Debug($persona);
 				
 				$this->set($persona);
 				$this->set('busqueda', true);

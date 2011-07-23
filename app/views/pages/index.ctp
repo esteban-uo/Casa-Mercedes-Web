@@ -13,6 +13,11 @@ $(function() {
 		}, 1000);
 		event.preventDefault();
 	});
+	$("#form_login").hide();
+	$("#boton_formulario_rapido").bind("click", function (){
+		$("#form_login").toggle();
+		
+	});
 });
 
 </script> 
@@ -29,7 +34,17 @@ Somos una Institución de Asistencia Privada, con más de 16 años trabajando
 		<li><a href="#section2">Valores</a></li>
 		<li><a href="#section3">Programas</a></li>
 	</ul>
-<span class="button_login teal"> <?php echo $this->Html->link(__('Login', true), array('controller'=>'users','action' => 'login'));?></span>
+	<div id="formulario_rapido">
+		<div id="boton_formulario_rapido">Iniciar Sesión</div>
+		<div id="form_login">
+		<?php
+			echo $this->Form->create('User', array('action' => 'login'));
+			echo $this->Form->input('username', array("label"=>"Usuario", "class" => ""));
+			echo $this->Form->input('password', array("label"=>"Contraseña", "class" => ""));
+			echo $this->Form->end(array("name"=>"Enviar Consulta", "label"=>"Iniciar sesión", "class" => ""));
+		?>
+		</div>
+	</div>
 </div>
 <div class="section purple" id="section2">
 	<h1 class="title main">Nuestros<br />Valores</h1>
