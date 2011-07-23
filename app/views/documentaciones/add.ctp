@@ -5,7 +5,6 @@
 	<?php
 		echo $this->Form->input('title');
 		echo $this->Form->input('modified_user_id');
-		echo $this->Form->input('Documento');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

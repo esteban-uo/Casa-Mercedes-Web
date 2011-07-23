@@ -46,7 +46,6 @@
 	<tr>
 		<th><?php __('Id'); ?></th>
 		<th><?php __('Persona Id'); ?></th>
-		<th><?php __('Documentacion Id'); ?></th>
 		<th><?php __('Numero Documento'); ?></th>
 		<th><?php __('Tramitada Por Cm'); ?></th>
 		<th><?php __('Created'); ?></th>
@@ -65,7 +64,6 @@
 		<tr<?php echo $class;?>>
 			<td><?php echo $documento['id'];?></td>
 			<td><?php echo $documento['persona_id'];?></td>
-			<td><?php echo $documento['documentacion_id'];?></td>
 			<td><?php echo $documento['numero_documento'];?></td>
 			<td><?php echo $documento['tramitada_por_cm'];?></td>
 			<td><?php echo $documento['created'];?></td>

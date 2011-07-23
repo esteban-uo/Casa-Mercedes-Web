@@ -26,8 +26,9 @@ class DocumentosController extends AppController {
 				$this->Session->setFlash(__('The documento could not be saved. Please, try again.', true));
 			}
 		}
+		$personas = $this->Documento->Persona->find('list');
 		$documentaciones = $this->Documento->Documentacion->find('list');
-		$this->set(compact('documentaciones'));
+		$this->set(compact('personas', 'documentaciones'));
 	}
 
 	function edit($id = null) {
@@ -46,8 +47,9 @@ class DocumentosController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Documento->read(null, $id);
 		}
+		$personas = $this->Documento->Persona->find('list');
 		$documentaciones = $this->Documento->Documentacion->find('list');
-		$this->set(compact('documentaciones'));
+		$this->set(compact('personas', 'documentaciones'));
 	}
 
 	function delete($id = null) {

@@ -4,7 +4,6 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('persona_id');?></th>
-			<th><?php echo $this->Paginator->sort('documentacion_id');?></th>
 			<th><?php echo $this->Paginator->sort('numero_documento');?></th>
 			<th><?php echo $this->Paginator->sort('tramitada_por_cm');?></th>
 			<th><?php echo $this->Paginator->sort('created');?></th>
@@ -22,9 +21,8 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $documento['Documento']['id']; ?>&nbsp;</td>
-		<td><?php echo $documento['Documento']['persona_id']; ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($documento['Documentacion']['title'], array('controller' => 'documentaciones', 'action' => 'view', $documento['Documentacion']['id'])); ?>
+			<?php echo $this->Html->link($documento['Persona']['primer_nombre'], array('controller' => 'personas', 'action' => 'view', $documento['Persona']['id'])); ?>
 		</td>
 		<td><?php echo $documento['Documento']['numero_documento']; ?>&nbsp;</td>
 		<td><?php echo $documento['Documento']['tramitada_por_cm']; ?>&nbsp;</td>
@@ -57,6 +55,8 @@
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Documento', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Documentaciones', true), array('controller' => 'documentaciones', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Documentacion', true), array('controller' => 'documentaciones', 'action' => 'add')); ?> </li>
 	</ul>
