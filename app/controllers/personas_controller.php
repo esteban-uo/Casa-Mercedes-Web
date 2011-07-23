@@ -2,7 +2,7 @@
 class PersonasController extends AppController {
 
 	var $name = 'Personas';
-        var $helpers = array('Html','Javascript', 'Ajax');
+    var $helpers = array('Html','Javascript', 'Ajax');
 	
 	function beforeFilter() {
         parent::beforeFilter(); 

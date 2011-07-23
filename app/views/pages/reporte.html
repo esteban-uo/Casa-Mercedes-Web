@@ -2,29 +2,29 @@
 			    <tr>
 			      <td width="73" rowspan="6" align="center"><img src="logo.png" width="73" height="152" /></td>
 			      <td colspan="2" align="center" bgcolor="#0066CC">CASA HOGAR SHULTZ</td>
-			      <td width="192" rowspan="4" align="center"><img src="../../img/Fotografia_de_Usuario/<? echo $persona['FotoImagen']['url']; ?>" width="80" height="120" /></td>
+			      <td width="192" rowspan="4">Foto</td>
 		        </tr>
 			    <tr>
-			      <td width="176" align="center"></td>
+			      <td width="176" align="center">Consecutivo</td>
 			      <td width="439">&nbsp;</td>
 		        </tr>
 			    <tr>
 			      <td align="center" bgcolor="#0066CC">#Expediente</td>
-			      <td><? echo $persona['Albergado']['expediente']; ?></td>
+			      <td>&nbsp;</td>
 		        </tr>
 			    <tr>
 			      <td align="center" bgcolor="#0066CC">Fecha Ingreso</td>
-			      <td><? echo $persona['Albergado']['fecha_ingreso']; ?></td>
+			      <td>&nbsp;</td>
 		        </tr>
 			    <tr>
 			      <td align="center" bgcolor="#0066CC">Fecha Egreso</td>
-			      <td><? echo $institucion['Institucion']['fecha_egreso']; ?></td>
+			      <td>&nbsp;</td>
 			      <td bgcolor="#0066CC">#Averiguacion</td>
 		        </tr>
 			    <tr>
 			      <td height="23" align="center" bgcolor="#0066CC">Tiempo en CM</td>
-			      <td><? echo $persona['Documento']['tramitada_por_cm']; ?></td>
-			      <td><? echo $persona['Albergado']['averiguacion_previa']; ?></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
 		        </tr>
                 <tr align="center">
                   <td height="23" colspan="4"></td>
@@ -39,13 +39,13 @@
                   <td height="23" colspan="4"><table width="100%" border="0">
                     <tr>
                       <td width="20%" height="33" rowspan="2" bgcolor="#0066CC">Nombre</td>
-                      <td width="30%" rowspan="2"><? echo $persona['Persona']['nombre_completo']; ?></td>
+                      <td width="30%" rowspan="2">&nbsp;</td>
                       <td width="25%" align="center" bgcolor="#0066CC">Edad</td>
                       <td width="25%" align="center" bgcolor="#0066CC">Sexo</td>
                     </tr>
                     <tr>
-                      <td align="center"><? echo $persona['Persona']['edad']; ?></td>
-                      <td width="25%" align="center"><? echo $persona['Persona']['sexo']; ?></td>
+                      <td align="center">&nbsp;</td>
+                      <td width="25%" align="center">&nbsp;</td>
                     </tr>
                   </table></td>
                 </tr>
@@ -60,9 +60,9 @@
                     <td width="34%" align="center" bgcolor="#0066CC">Localidad</td>
                   </tr>
                   <tr>
-                    <td align="center"><? echo $persona['Nacimiento']['fecha_nacimiento']; ?></td>
-                    <td align="center"><? echo $persona['Nacimiento']['Estado']['title']; ?></td>
-                    <td align="center"><? echo $persona['Nacimiento']['Municipio']['title']; ?></td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
                   </tr>
                 </table></td>
                 </tr>
@@ -73,13 +73,13 @@
                   <td height="23" colspan="4"><table width="100%" border="0">
                     <tr>
                       <td bgcolor="#0066CC">Canalizada por</td>
-                      <td rowspan="3"><? echo $socioEconomico['SocioEconomico']['vivienda_id']; ?></td>
-                    </tr>
-                    <tr>
-                      <td><? echo $persona['Albergado']['remitida_por']; ?></td>
+                      <td rowspan="3">&nbsp;</td>
                     </tr>
                     <tr>
                       <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="#0066CC">Tiempo</td>
                     </tr>
                     <tr>
                       <td>&nbsp;</td>
@@ -95,21 +95,25 @@
                       <td width="30%" rowspan="3"><table width="259" border="0">
                         <tr>
                           <td width="141" bgcolor="#0066CC">Embarazo actual</td>
-                          <td width="108" align="right"><? echo $persona['Albergado']['embarazo_actual']; ?></td>
+                          <td width="108" align="right">0</td>
+                        </tr>
+                        <tr>
+                          <td bgcolor="#0066CC">Tiempo de gestacion</td>
+                          <td align="right">0</td>
                         </tr>
                         <tr>
                           <td bgcolor="#0066CC">Embarazos</td>
-                          <td align="right"><? echo $persona['Albergado']['numero_embarazos']; ?></td>
+                          <td align="right">0</td>
                         </tr>
                         <tr>
                           <td bgcolor="#0066CC">Numero de hijos</td>
-                          <td align="right"><? echo $persona['Albergado']['cant_hijos']; ?></td>
+                          <td align="right">0</td>
                         </tr>
                       </table></td>
                       <td width="70%" align="center" bgcolor="#0066CC">Motivo de canalizacion</td>
                     </tr>
                     <tr>
-                      <td align="center">&nbsp;</td>
+                      <td align="center">0</td>
                     </tr>
                     <tr>
                       <td align="center"><table width="100%" border="0">
@@ -119,9 +123,9 @@
                           <td align="center" bgcolor="#0066CC">Peso</td>
                         </tr>
                         <tr>
-                          <td align="center"><? echo $persona['EstadosSalud']['altura']; ?></td>
-                          <td align="center"><? echo $persona['EstadosSalud']['tipo_sangre']; ?></td>
-                          <td align="center"><? echo $persona['EstadosSalud']['peso']; ?></td>
+                          <td align="center">&nbsp;</td>
+                          <td align="center">&nbsp;</td>
+                          <td align="center">&nbsp;</td>
                         </tr>
                       </table></td>
                     </tr>
@@ -148,11 +152,11 @@
                       <td align="center" bgcolor="#0066CC">Abuso</td>
                     </tr>
                     <tr>
-                      <td align="center"><? echo $persona['Albergado']['Problematica'][0]['calle']; ?></td>
-                      <td align="center"><? echo $persona['Albergado']['Problematica'][0]['abandono']; ?></td>
-                      <td align="center"><? echo $persona['Albergado']['Problematica'][0]['omision_de_cuidados']; ?></td>
-                      <td align="center"><? echo $persona['Albergado']['Problematica'][0]['violencia']; ?></td>
-                      <td align="center"><? echo $persona['Albergado']['Problematica'][0]['abuso_sexual']; ?></td>
+                      <td align="center">&nbsp;</td>
+                      <td align="center">&nbsp;</td>
+                      <td align="center">&nbsp;</td>
+                      <td align="center">&nbsp;</td>
+                      <td align="center">&nbsp;</td>
                     </tr>
                   </table></td>
                 </tr>

@@ -80,24 +80,43 @@ class PagesController extends AppController {
 		//$this->loadModel('Estados_salud');
 		$this->loadModel('Documentos');
 		$this->loadModel('SocioEconomico');
+		$this->loadModel('Institucion');
 		
 		 $parametrosContain = array(
 									'FotoImagen' => array(
-													'Tipoimage' => array ('title'),
-													'url' => array()
-													),
-									'Albergado' => array(
-													'FotoImagen' => array (
-																	'Tipoimage' => array ('title'),
-																	'url' => array()
-																	)
-													),
-									'Documento' => array('id'),
-									'EstadosSalud' => array('id'),
-									'Nacimiento' => array('id'),
-									'Vestimenta' => array('id')
+                                                    'Tipoimage' => array ('title'),
+                                                    'url' => array()
+                                                    ),
+                                    'Albergado' => array(
+                                                    'FotoImagen' => array (
+                                                                    'Tipoimage' => array ('title'),
+                                                                    'url' => array()
+                                                                    ),
+                                                    'Institucion' => array ('id'),
+                                                    'Familia' => array ('id'),
+                                                    'Social' => array ('id'),
+                                                    'SocioEconomico' => array ('id'),
+                                                    'Problematica' => array ()
+                                                    ),
+                                    'Documento' => array(
+												'tramitada_por_cm' => array()
+										),
+                                    'EstadosSalud' => array(
+												'peso' => array(),
+												'altura' => array(),
+												'tipo_sangre' => array()
+									),
+                                    'Nacimiento' => array(
+														'fecha_nacimiento' => array(),
+                                                        'Estado' => array ('title'),
+                                                        'Pais' => array ('title'),
+                                                        'Municipio' => array ('title'),
+                                                        'id' => array(),
+                                                         ),
+                                    'Vestimenta' => array('id')
 								);
 		
+         $this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
 		//if(!empty($this->data)){
 			//$id = $this->data['id'];
 			$persona  = $this->Persona->find('first', array(
@@ -111,9 +130,15 @@ class PagesController extends AppController {
 				$socioEconomico = "No hay datos encontrados";
 			}
 			
-			Debug($persona);
+			$institucion = $this->Institucion->find('first', array(
+				'conditions' => array('Institucion.albergado_id' => $persona['Albergado']['id'])
+			));
+			
 			Debug($socioEconomico);
+			Debug($persona);
 			$this->set('persona', $persona);
+			$this->set('institucion', $institucion);
+			$this->set('socioEconomico', $socioEconomico);
 		//}
 	}
 }
