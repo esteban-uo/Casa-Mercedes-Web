@@ -3,7 +3,6 @@ class AlbergadosController extends AppController {
 
 	var $name = 'Albergados';
     var $helpers = array('Html','Javascript', 'Ajax');
-	
 
 	function beforeFilter() {
         parent::beforeFilter(); 
@@ -74,7 +73,7 @@ class AlbergadosController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 	
-	function buscarAlbergadosPorFiltros(){
+	function find(){
 		$this->loadModel('Persona');
 		 $parametrosContain = array(
 									'FotoImagen' => array(
@@ -94,31 +93,34 @@ class AlbergadosController extends AppController {
 								);
 		 $this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
 		 Debug($this->params);
-		 if($resultado_minima_edad = $this->Persona->find('all', array(
+		$edad_max = $this->params["data"]["Albergado"]["edad_maxima"];
+		$edad_min = $this->params["data"]["Albergado"]["edad_minima"];
+		$casa = $this->params["data"]["Albergado"]["casa_id"];
+		$nombre_completo = $this->params["named"]["nombre_completo"];/*
+		if($edad_max == NULL)
+			$edad_max = 99;
+		if($edad_min == NULL)
+			$edad_min = 0;
+		if($casa == NULL)
+			$casa = 3;
+		if($nombre_completo == NULL)
+			$nombre_completo = "Lorem Ipsum Dolor Sit";*/
+		 if($resultados = $this->Persona->find('all', array(
 												'conditions' =>
 												array(
-													'Persona.edad >=' => $this->params["named"]["edad_minima"],
-													'Persona.edad <=' => $this->params["named"]["edad_maxima"],
-													'Persona.Casa.Id' => $this->params["named"]["casa"],
-													'CONCAT(Persona.primer_nombre," ",Persona.primer_apellido," ",Persona.segundo_apellido)' => $this->params["named"]["nombre_completo"]
+													'Persona.edad >=' => (($edad_min == null)? $edad_min = ""),
+													'Persona.edad <=' => $edad_max,
+													'Persona.Casa.Id' => $casa,
+													'Persona.nombre_completo' => $nombre_completo
 												),
 													'contain' => $parametrosContain
 											)
 			
 									)){
-				Debug($resultado_minima_edad);
-				return $resultado_minima_edad;
+				Debug($resultados);
+				return $resultados;
 				
-		}else{
-			return $this->Persona->find('first', array(
-												'conditions' => 
-												array(
-													'CONCAT(Persona.primer_nombre," ",Persona.primer_apellido," ",Persona.segundo_apellido)' => $this->params["named"]["nombre_completo"]
-												),
-													'contain' => $parametrosContain
-											)
-			
-									);
 		}
+		return "No se encontraron resultados";
 	}
 }
