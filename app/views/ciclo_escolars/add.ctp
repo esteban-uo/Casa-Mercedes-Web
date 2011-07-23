@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php __('Registrar Ciclo Escolar'); ?></legend>
 	<?php
-		echo $this->Form->input('Descripcion');
+		echo $this->Form->input('title');
 		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>

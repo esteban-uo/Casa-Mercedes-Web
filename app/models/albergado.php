@@ -152,10 +152,7 @@ class albergado extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)
-	);
-
-	var $hasMany = array(
+		),
 		'Dato' => array(
 			'className' => 'Dato',
 			'foreignKey' => 'albergado_id',
@@ -169,6 +166,22 @@ class albergado extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
+		'DatosAlbergado' => array(
+			'className' => 'DatosAlbergado',
+			'foreignKey' => 'albergado_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
+	var $hasMany = array(
 		'Dependiente' => array(
 			'className' => 'Dependiente',
 			'foreignKey' => 'albergado_id',
