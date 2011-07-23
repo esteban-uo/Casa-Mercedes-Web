@@ -3,34 +3,6 @@ class Persona extends AppModel {
 	var $name = 'Persona';
 	var $displayField = 'primer_nombre';
 	
-	//implementado para busquedas
-	public $actsAs = array('Searchable');
-	
-	public function findByCompleteName($data = array()) {
-	$this->Persona->Behaviors->attach('Containable', array('autoFields' => false));
-		$query = $this->Persona->getQuery('all', array(
-			'conditions' => array('CONCAT(Persona.primer_nombre," ",Persona.primer_apellido," ",Persona.segundo_apellido)' => $this->data["nombre"])
-		));
-		return $query;
-	}
-	
-	public $filterArgs = array(
-		array('name' => 'range_from', 'name_2' => 'range_to',  'type' => 'expression', 'method' => 'makeRangeCondition', 'field' => 'Persona.edad BETWEEN ? AND ?'),
-		array('name' => 'nombre', 'type' => 'subquery', 'method' => 'findByCompleteName'),
-		array('name' => 'casa', 'type' => 'value')
-	);
-	
-	//enable date range searching.
-	public function makeRangeCondition($data, $field = null) {
-		if (is_array($data)) {
-			if (!empty($field['name'])) {
-				return array(0, 99);
-			} else {
-				return $data['range'];
-			}
-		}
-	}
-	
 	var $validate = array(
 		'primer_nombre' => array(
 			'minlength' => array(
