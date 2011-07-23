@@ -137,7 +137,7 @@ class PagesController extends AppController {
 			));
 			
 			//Debug($socioEconomico);
-			//Debug($persona);
+			Debug($persona);
 			$this->set('persona', $persona);
 			$this->set('institucion', $institucion);
 			$this->set('socioEconomico', $socioEconomico);

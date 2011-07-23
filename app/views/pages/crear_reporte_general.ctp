@@ -148,11 +148,11 @@
                       <td align="center" bgcolor="#0066CC">Abuso</td>
                     </tr>
                     <tr>
-                      <td align="center"><? echo $persona['Albergado']['Problematica'][0]['calle']; ?></td>
-                      <td align="center"><? echo $persona['Albergado']['Problematica'][0]['abandono']; ?></td>
-                      <td align="center"><? echo $persona['Albergado']['Problematica'][0]['omision_de_cuidados']; ?></td>
-                      <td align="center"><? echo $persona['Albergado']['Problematica'][0]['violencia']; ?></td>
-                      <td align="center"><? echo $persona['Albergado']['Problematica'][0]['abuso_sexual']; ?></td>
+                      <td align="center"><? echo $persona['Albergado']['Problematica']['calle']; ?></td>
+                      <td align="center"><? echo $persona['Albergado']['Problematica']['abandono']; ?></td>
+                      <td align="center"><? echo $persona['Albergado']['Problematica']['omision_de_cuidados']; ?></td>
+                      <td align="center"><? echo $persona['Albergado']['Problematica']['violencia']; ?></td>
+                      <td align="center"><? echo $persona['Albergado']['Problematica']['abuso_sexual']; ?></td>
                     </tr>
                   </table></td>
                 </tr>
