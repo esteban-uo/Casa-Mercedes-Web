@@ -70,5 +70,50 @@ class PagesController extends AppController {
 					);
 					
 		return $parametros;
-	}	
+	}
+	
+	function crearReporteGeneral($id){
+	
+		//Carga de modelos
+		$this->loadModel('Albergado');
+		$this->loadModel('Persona');
+		//$this->loadModel('Estados_salud');
+		$this->loadModel('Documentos');
+		$this->loadModel('SocioEconomico');
+		
+		 $parametrosContain = array(
+									'FotoImagen' => array(
+													'Tipoimage' => array ('title'),
+													'url' => array()
+													),
+									'Albergado' => array(
+													'FotoImagen' => array (
+																	'Tipoimage' => array ('title'),
+																	'url' => array()
+																	)
+													),
+									'Documento' => array('id'),
+									'EstadosSalud' => array('id'),
+									'Nacimiento' => array('id'),
+									'Vestimenta' => array('id')
+								);
+		
+		//if(!empty($this->data)){
+			//$id = $this->data['id'];
+			$persona  = $this->Persona->find('first', array(
+				'conditions' =>  array('Persona.id' => $id),
+				'contain' => $parametrosContain
+			));
+			
+			if(!$socioEconomico = $this->SocioEconomico->find('first', array(
+				'conditions' => array('SocioEconomico.albergado_id' => $persona['Albergado']['id'])
+			))){
+				$socioEconomico = "No hay datos encontrados";
+			}
+			
+			Debug($persona);
+			Debug($socioEconomico);
+			$this->set('persona', $persona);
+		//}
+	}
 }
