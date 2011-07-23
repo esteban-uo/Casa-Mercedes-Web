@@ -1,7 +1,7 @@
 <div id="ingresar">
 	<h1 class="title"><br />Administraci&oacute;n</h1>
 
-<span class="button_login teal"> <?php echo $this->Html->link(__('Inicio', true), array('action' => 'index'));?></span>
+<span class="button_generic teal"> <?php echo $this->Html->link(__('Inicio', true), array('action' => 'index'));?></span>
 
 <form>
 
