@@ -16,7 +16,7 @@
 		echo $this->Form->input('motivo_baja');
 		echo $this->Form->input('certificado');
 		echo $this->Form->input('boleta');
-		echo $this->Form->input('modified_user_id');
+		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
