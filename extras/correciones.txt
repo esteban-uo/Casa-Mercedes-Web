@@ -1,0 +1,41 @@
+Familiograma para niño (dependiente)
+Permitir imprimir lista de filtro
+Agregar columna: escolaridad al ingresar(escolaridad)
+Tabla reingresos:
+	Log de todos egresos de alguna albergada
+Tabla Estados de Salud
+	Otra enfermedad, cambiar a textbox
+Tabla problematica
+	Otros delitos, cambiar a textbox
+
+Redaccion (remplazar):
+
+Dependientes => Hijas(os)
+Albergados => Albergadas
+
+
+fACP
+
+Ficha de Persona
+	 Al buscar dependiente: 
+	Ficha de Persona (Hijo o hija)
+
+Ficha de Información de Albergado
+	Ficha de canalización
+	(Infograma => Familiograma)
+	(No mostrar familiograma)
+
+Información de Estudio Social
+	Información de Roles Sociales
+
+Información de Ingresos
+	Información de Egresados
+
+Datos
+	Historia de vida
+
+Datos del Albergado
+	Datos Generales
+
+Documentos pertenecientes	
+	Documentos
