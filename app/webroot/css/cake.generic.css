@@ -156,6 +156,13 @@ right: 15px;
 
 /** Layout **/
 
+::-webkit-input-placeholder {
+   color: #eee;
+}
+
+:-moz-placeholder {
+   color: #eee;
+}
 
 #container {
 	text-align: left;

@@ -9,12 +9,11 @@ $(function(){
     });
 });
 </script>
-<p class="parag">Búsqueda de personas por Nombre Completo</p>
 <?php
 	echo $this->Form->create(array('action' => 'acp'));
 ?>
 <?php
-	echo $this->Form->input('Persona.search', array("label"=>false, "class" => "input_style input_buscar", "div"=>array("class"=>"posiciones_fl")));
+	echo $this->Form->input('Persona.search', array("label"=>false,"placeholder" => "Búsqueda de personas por Nombre Completo", "class" => "input_style input_buscar", "div"=>array("class"=>"posiciones_fl")));
 	echo $this->Form->end(array("name"=>"Buscar", "label"=>"Buscar", "class" => "button_form boton_buscar", "div"=>array("class"=>"posiciones_fl")));
 ?>
 <div class="posiciones_cl"></div>
