@@ -9,12 +9,11 @@ $(function(){
     });
 });
 </script>
-<p class="parag">Búsqueda de personas por Nombre Completo</p>
 <?php
 	echo $this->Form->create(array('action' => 'acp'));
 ?>
 <?php
-	echo $this->Form->input('Persona.search', array("label"=>false, "class" => "input_style input_buscar", "div"=>array("class"=>"posiciones_fl")));
+	echo $this->Form->input('Persona.search', array("label"=>false,"placeholder" => "Búsqueda de personas por Nombre Completo", "class" => "input_style input_buscar", "div"=>array("class"=>"posiciones_fl")));
 	echo $this->Form->end(array("name"=>"Buscar", "label"=>"Buscar", "class" => "button_form boton_buscar", "div"=>array("class"=>"posiciones_fl")));
 ?>
 <div class="posiciones_cl"></div>
@@ -118,7 +117,7 @@ $(function(){
 		<?php if(isset($Albergado['Familia']['id'])): // Si hay agregadas Familia ?>
 				<li><?php echo $this->Html->link("Modificar", array('controller'=>'familias','action' => 'edit', $Albergado['Familia']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'familias','action' => 'delete',$Albergado['Familia']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
-				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'familias','action' => 'view', $Albergado['Familia']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'familias','action' => 'view', $Albergado['Familia']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 		<?php else: // Si hay agregadas Familia ?>
 				<li><?php echo $this->Html->link("Crear", array('controller'=>'familias','action' => 'add', $Persona['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 		<?php endif; // Si hay agregadas Familia ?>
@@ -132,7 +131,7 @@ $(function(){
 		<?php if(isset($Albergado['Social']['id'])): // Si hay ficha Social ?>
 				<li><?php echo $this->Html->link("Modificar", array('controller'=>'sociales','action' => 'edit', $Albergado['Social']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'sociales','action' => 'delete',$Albergado['Social']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
-				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'sociales','action' => 'view', $Albergado['Social']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'sociales','action' => 'view', $Albergado['Social']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 		<?php else: // Si hay ficha Social?>
 				<li><?php echo $this->Html->link("Crear", array('controller'=>'sociales','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 		<?php endif; // Si hay ficha Social ?>
@@ -146,7 +145,7 @@ $(function(){
 		<?php if(isset($Albergado['SocioEconomico']['id'])): // Si hay ficha Estudio Social ?>
 				<li><?php echo $this->Html->link("Modificar", array('controller'=>'socio_economicos','action' => 'edit', $Albergado['SocioEconomico']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'socio_economicos','action' => 'delete', $Albergado['SocioEconomico']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
-				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'socio_economicos','action' => 'view', $Albergado['SocioEconomico']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'socio_economicos','action' => 'view', $Albergado['SocioEconomico']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 		<?php else: // Si hay ficha Social?>
 				<li><?php echo $this->Html->link("Crear", array('controller'=>'socio_economicos','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 		<?php endif; // Si hay ficha Social ?>
@@ -160,7 +159,7 @@ $(function(){
 		<?php if(isset($Albergado['Problematica']['id'])): // Si hay ficha de Problematica ?>
 				<li><?php echo $this->Html->link("Modificar", array('controller'=>'problematicas','action' => 'edit', $Albergado['Problematica']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'problematicas','action' => 'delete', $Albergado['Problematica']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
-				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'problematicas','action' => 'view', $Albergado['Problematica']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'problematicas','action' => 'view', $Albergado['Problematica']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 		<?php else: // Si hay ficha de Problematica ?>
 				<li><?php echo $this->Html->link("Crear", array('controller'=>'problematicas','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 		<?php endif; // Si hay ficha de Problematica ?>

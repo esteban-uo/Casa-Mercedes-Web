@@ -47,7 +47,7 @@ Somos una Institución de Asistencia Privada, con más de 16 años trabajando
 	</div>
 </div>
 <div class="section purple" id="section2">
-	<h1 class="title main">Nuestros<br />Valores</h1>
+	<h1 class="title main foto_chicas">Nuestros<br />Valores</h1>
 <div id="valores">	
 <h2 class="subtitle">Misión.</h2>
 <p class="parag">Contribuir a un desarrollo social, coadyuvando a la reducción de los índices de niñas de la calle, explotación sexual y explotación
@@ -58,10 +58,10 @@ infantil, proporcionando cuidado y protección integral a las niñas y adolesc
 
 </div>
 <div class="section blue" id="section3">
-	<h1 class="title main">Nuestros<br />Programas</h1>
+	<h1 class="title main foto_chicas">Nuestros<br />Programas</h1>
 <div id="programas">
 <h2 class="subtitle">Albergue.</h2>
-<p class="parag">Proporcionamos a niñas y jóvenes, en su caso, sus hijas e hijos de toda la república, un hogar seguro y estable en el que encuentran una asistencia integral que les permite iniciar una vida independiente y productiva.</p>
+<p class="parag">Proporcionamos a niñas y jóvenes, en su caso, sus hijas e hijos de toda la república, un hogar seguro y estable en el que encuentran una asistencia integral que les permite iniciar una vida independiente y productiva.</p>
 <h2 class="subtitle">Salud</h2>
 <p class="parag">Nuestro programa de salud incluye: Medicina General y preventiva, ginecología-obstetricia, Neonatología y pediatría, Psicología y Psiquiatría, Prevención y tratamiento de adicciones, y Medicina alternativa.</p>
 <h2 class="subtitle">Estancia Infantil.</h2>
