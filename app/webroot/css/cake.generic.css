@@ -29,36 +29,12 @@
 }
 
 @font-face {
-    font-family: 'QuicksandLightOblique';
-    src: url('../fonts/Quicksand_Light_Oblique-webfont.eot');
-    src: url('../fonts/Quicksand_Light_Oblique-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Light_Oblique-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Light_Oblique-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Light_Oblique-webfont.svg#QuicksandLightOblique') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
     font-family: 'QuicksandBook';
     src: url('../fonts/Quicksand_Book-webfont.eot');
     src: url('../fonts/Quicksand_Book-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/Quicksand_Book-webfont.woff') format('woff'),
          url('../fonts/Quicksand_Book-webfont.ttf') format('truetype'),
          url('../fonts/Quicksand_Book-webfont.svg#QuicksandBook') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'QuicksandBookOblique';
-    src: url('../fonts/Quicksand_Book_Oblique-webfont.eot');
-    src: url('../fonts/Quicksand_Book_Oblique-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Book_Oblique-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Book_Oblique-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Book_Oblique-webfont.svg#QuicksandBookOblique') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -76,42 +52,19 @@
 
 }
 
-@font-face {
-    font-family: 'QuicksandBoldOblique';
-    src: url('../fonts/Quicksand_Bold_Oblique-webfont.eot');
-    src: url('../fonts/Quicksand_Bold_Oblique-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Bold_Oblique-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Bold_Oblique-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Bold_Oblique-webfont.svg#QuicksandBoldOblique') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'QuicksandDash';
-    src: url('../fonts/Quicksand_Dash-webfont.eot');
-    src: url('../fonts/Quicksand_Dash-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Dash-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Dash-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Dash-webfont.svg#QuicksandDash') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
 * {
 	margin:0;
 	padding:0;
 }
 
 /** General Style Info **/
+
 body {
-	background: #003d4c;
+	background:#a1c5ab;
 	color: #fff;
-	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:90%;
 	margin: 0;
+	font-family:QuicksandLight;
 }
 a {
 	color: #003d4c;
@@ -129,31 +82,81 @@ h1, h2, h3, h4 {
 	font-weight: normal;
 	margin-bottom:0.5em;
 }
-h1 {
-	background:#fff;
-	color: #003d4c;
-	font-size: 100%;
+.title_alt{
+	margin: 40px 0px 20px 0px;
+	padding: 5px;
+	background: url('../img/trans1.png');
+	-moz-box-shadow: 0 0 5px #000;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+	behavior: url(../css/PIE.htc);
+	
 }
+h1.title_alt{
+	padding-left: 40px;
+	font-size: 70px;
+	color: #fff;
+	text-shadow: #000 0em 0em 0.2em;
+}
+
 h2 {
-	background:#fff;
-	color: #e32;
-	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
 	font-size: 190%;
 }
 h3 {
-	color: #993;
-	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
 	font-size: 165%;
 }
 h4 {
-	color: #993;
 	font-weight: normal;
 }
 ul, li {
 	margin: 0 12px;
+	list-style:none;
 }
 
+/*botones especiales*/
+.alt{
+	position: fixed;
+	top: 3px;
+	right: 80px;
+	background:#4f2468;
+}
+
+.teal{
+background:#00cdde;
+position: fixed;
+top: 3px;
+right: 15px;
+}
+
+.button_generic a{
+	text-decoration: none;	
+	color: #fff;
+}
+.button_generic {
+
+	padding: 10px;
+	font-family: QuicksandBold;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 0px;
+	border-radius: 10px 10px 10px 0px;
+	-moz-box-shadow: 0 0 8px #493443;
+	-webkit-box-shadow: 0 0 8px #493443;
+	box-shadow: 0 0 8px #000;
+	behavior: url(../css/PIE.htc);
+
+}
+.button_generic:hover{
+		text-shadow: #000 0.1em 0.1em 0.2em;
+	-moz-box-shadow: inset 0 0 5px #000;
+	-webkit-box-shadow: inset 0 0 5px#000;
+	box-shadow: inner 0 0 5px #000;
+
+}
+
+
 /** Layout **/
+
+
 #container {
 	text-align: left;
 }
@@ -179,7 +182,9 @@ ul, li {
 	text-decoration: underline;
 }
 #content{
-	background: #fff;
+	border-top:solid 1px #98a59b;
+	border-bottom:solid 1px #98a59b;
+	background:rgba(255,255,255,0.5);
 	clear: both;
 	color: #333;
 	padding: 10px 20px 40px 20px;
@@ -197,7 +202,8 @@ div.index,
 div.view {
 	float:right;
 	width:76%;
-	border-left:1px solid #666;
+	border-left:1px solid #98a59b;
+	;
 	padding:10px 2%;
 }
 div.actions {
@@ -264,7 +270,6 @@ table td.actions a {
 .cake-sql-log td {
 	padding: 4px 8px;
 	text-align: left;
-	font-family: Monaco, Consolas, "Courier New", monospaced;
 }
 .cake-sql-log caption {
 	color:#fff;
@@ -272,13 +277,12 @@ table td.actions a {
 
 /** Paging **/
 div.paging {
-	background:#fff;
-	color: #ccc;
+	color: #333;
 	margin-top: 1em;
 	clear:both;
 }
 div.paging span.disabled {
-	color: #ddd;
+	color: #999;
 	display: inline;
 }
 div.paging span.current {
@@ -315,13 +319,13 @@ form {
 	width: 95%;
 }
 fieldset {
-	border: 1px solid #ccc;
+	border: 1px solid #98a59b;
+	
 	margin-bottom: 1em;
 	padding: 16px 20px;
 }
 fieldset legend {
-	background:#fff;
-	color: #e32;
+	color: #fff;
 	font-size: 160%;
 	font-weight: bold;
 }
@@ -345,7 +349,7 @@ form div {
 	vertical-align: text-top;
 }
 form .input {
-	color: #444;
+	color: #fff;
 }
 form .required {
 	font-weight: bold;
@@ -368,10 +372,137 @@ label {
 input, textarea {
 	clear: both;
 	font-size: 140%;
-	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
 	padding: 1%;
 	width:98%;
 }
+
+div.input input{
+		border:none;
+		color:#fff;
+		background: rgba(82,98,84,1);
+		clear: both;
+		font-size: 140%;
+		padding: 1%;
+		width:98%;
+		border-radius: 10px 10px 10px 0px;
+		-moz-box-shadow: inset 0 0 5px #000;
+		-webkit-box-shadow: inset 0 0 5px#000;
+		box-shadow: inner 0 0 5px #000;
+}
+.input_buscar{
+	border:none;
+	background: rgba(82,98,84,1);
+	border-radius: 10px 10px 10px 0px;
+	-moz-box-shadow: inset 0 0 5px #000;
+	-webkit-box-shadow: inset 0 0 5px#000;
+	box-shadow: inner 0 0 5px #000;
+	color:#fff;
+}
+
+/* ACP */
+
+#contenido_acp_index ul{
+	margin-left:30px;
+}
+img.imagen_perfil_box{
+	margin:20px 20px 0 0;
+	padding: 5px;
+	background:#ccc;
+}
+img.imagen_infograma_box{
+	margin:0 20px 0 0;
+	padding: 5px;
+	background:#ccc;
+}
+
+div.box_info_acp {
+
+	border-bottom:solid 1px #fff;
+	padding:5px 5px 28px 5px;
+	margin:10px 0 10px 0;
+	width:90%;
+	background:#493443;
+	color:#fff;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 0 0 8px #000;
+	-webkit-box-shadow: 0 0 8px #000;
+	box-shadow: 0 0 8px #000;
+}
+
+div.box_info_acp:hover{
+		background:#fff;
+		color:#493443;
+		
+}	
+div.box_info_extra_acp{
+	background:#000;
+	padding:5px;
+	margin:20px 0 0 0;
+}
+div.box_info_acp h2{
+	margin-bottom:10px;
+}
+
+.action_info_acp{
+    right:0;
+    bottom:0;
+
+}
+.action_info_acp ul li{
+    	list-style:none;
+        float:left;
+		
+}
+.action_info_acp ul li a{
+        display:block;
+		color:transparent;
+		width:27px;
+		height:27px;
+}
+
+#acp_info_extra{
+	background:#a1c5ab;
+	border-radius: 10px 10px 10px 0;
+	padding:10px;
+
+}
+#acp_info_extra a:hover{
+	color:#495963;
+}
+
+#acp_info_extra a{
+	color:#fff;
+}
+
+.boton_acp_modificar{
+	background:url('../img/img_edit.png') no-repeat;
+	
+}
+.boton_acp_eliminar{
+	background:url('../img/img_delete.png') no-repeat;
+}
+.boton_acp_info{
+	background:url('../img/img_info.png') no-repeat;
+}
+.boton_acp_ultimousuario{
+	background:url('../img/img_lastuser.png') no-repeat;
+}
+
+.boton_acp_crear{
+	background:url('../img/img_add.png') no-repeat;
+}
+div.input label{
+	color:#fff;
+	font-size: 15px;
+	
+}
+
+.formateotxt_strong{
+	font-weight:bold;
+}
+
 select {
 	clear: both;
 	font-size: 120%;
@@ -491,10 +622,10 @@ td.actions a {
 	font-weight:normal;
 	padding: 4px 8px;
 	background:#e6e49f;
-	background: -webkit-gradient(linear, left top, left bottom, from(#f1f1d4), to(#e6e49f));
+	background: -webkit-gradient(linear, left top, left bottom, from(#af6fd4), to(#4f2468));
 	background-image: -moz-linear-gradient(top, #f1f1d4, #e6e49f);
-	color:#333;
-	border:1px solid #aaac62;
+	color:#fff;
+	border:1px solid #444;
 	-webkit-border-radius:8px;
 	-moz-border-radius:8px;
 	border-radius:8px;
@@ -506,7 +637,7 @@ input[type=submit]:hover,
 div.actions ul li a:hover,
 td.actions a:hover {
 	background: #f0f09a;
-	background: -webkit-gradient(linear, left top, left bottom, from(#f7f7e1), to(#eeeca9));
+	background: -webkit-gradient(linear, left top, left bottom, from(#bf7fe4), to(#5f3478));
 }
 
 /** Related **/

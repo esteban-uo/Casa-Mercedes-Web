@@ -8,13 +8,13 @@
         </title>
         <?php
         echo $this->Html->meta('icon');
-        echo $this->Html->css('css.index');
+        echo $this->Html->css('cake.generic');
         echo $scripts_for_layout;
         ?>
     </head>
     <body>
-        <h1 class="title panel">Casa mercedes</h1>
-        <span class="button_generic teal"> <?php echo $this->Html->link(__('Inicio', true), array('controller'=>'pages','action' => 'index')); ?></span>
+        <h1 class="title_alt panel">Casa de las Mercedes I.A.P.</h1>
+        <span class="button_generic teal"> <?php echo $this->Html->link(__('Home', true), array('controller'=>'pages','action' => 'index')); ?></span>
         <span class="button_generic alt"> <?php echo $this->Html->link(__('Panel', true), array('controller'=>'pages', 'action' => 'acp')); ?></span>
         <div id="content">
             <div id="contenido">
@@ -42,7 +42,7 @@
         </div>
 	
         <div id="footer">
-            <p><?php echo $this->Html->link(__('Casa Mercedes', true), 'http://www.casamercedes.com'); ?> 2011 todos los derechos | <?php echo $this->Html->link(__('Campus party Mexico', true), 'http://www.campus-party.com.mx'); ?> | <?php echo $this->Html->link(__('Html', true), '#'); ?> & <?php echo $this->Html->link(__('Css', true), '#'); ?> validado</p>
+            <p><?php echo $this->Html->link(__('Casa de las Mercedes', true), 'http://www.casamercedes.com'); ?> 2011 todos los derechos | <?php echo $this->Html->link(__('Campus party Mexico', true), 'http://www.campus-party.com.mx'); ?> | <?php echo $this->Html->link(__('Html', true), '#'); ?> & <?php echo $this->Html->link(__('Css', true), '#'); ?> validado</p>
         </div>
     </body>
 
