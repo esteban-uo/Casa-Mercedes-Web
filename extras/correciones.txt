@@ -1,13 +1,10 @@
 Familiograma para niño (dependiente)
 Permitir imprimir lista de filtro
 
+
+
 Tabla reingresos:
 	Log de todos egresos de alguna albergada
-
-	
-	
-	
-
 
 Redaccion (remplazar):
 
