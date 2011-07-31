@@ -61,7 +61,6 @@
 
 body {
 	background:#a1c5ab;
-	color: #fff;
 	font-size:90%;
 	margin: 0;
 	font-family:QuicksandLight;
@@ -199,7 +198,7 @@ right: 15px;
 }
 #footer {
 	clear: both;
-	padding: 6px 10px;
+	padding: 6px 5px;
 	text-align: right;
 }
 
@@ -332,7 +331,7 @@ fieldset {
 	padding: 16px 20px;
 }
 fieldset legend {
-	color: #fff;
+	color: #333;
 	font-size: 160%;
 	font-weight: bold;
 }
@@ -448,9 +447,62 @@ div.box_info_extra_acp{
 	padding:5px;
 	margin:20px 0 0 0;
 }
+
+.box_info_extra_acp ul li{
+	margin-bottom:5px;
+}
+
+.box_info_extra_acp ul li a{
+	color:#333;
+	text-decoration:none;
+	font-size:15px;	
+}
+
 div.box_info_acp h2{
 	margin-bottom:10px;
 }
+
+.actions_a{
+	margin-left:20%;
+}
+.actions_a li{
+	float:left;
+	margin:10px 5px;
+}
+
+
+div.actions ul li a:hover {
+	text-decoration: underline;
+}
+
+.actions_a ul li a{
+	font-weight:normal;
+	padding: 4px 8px;
+	background:#af6fd4;
+	background: -webkit-gradient(linear, left top, left bottom, from(#af6fd4), to(#4f2468));
+	background-image: -moz-linear-gradient(top, #af6fd4, #4f2468);
+	color:#fff;
+	border:1px solid #444;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+	text-decoration:none;
+	text-shadow: #fff 0px 1px 0px;
+	min-width: 0;
+}
+
+div.actions_a ul li a:hover{
+
+	background: #bf7fe4;
+	background: -webkit-gradient(linear, left top, left bottom, from(#bf7fe4), to(#5f3478));
+		background-image: -moz-linear-gradient(top, #af6fd4, #4f2468);
+	
+}
+
+
+
+
+
 
 .action_info_acp{
     right:0;
@@ -501,7 +553,7 @@ div.box_info_acp h2{
 	background:url('../img/img_add.png') no-repeat;
 }
 div.input label{
-	color:#fff;
+	color:#333;
 	font-size: 15px;
 	
 }
@@ -628,9 +680,9 @@ div.actions ul li a,
 td.actions a {
 	font-weight:normal;
 	padding: 4px 8px;
-	background:#e6e49f;
+	background:#af6fd4;
 	background: -webkit-gradient(linear, left top, left bottom, from(#af6fd4), to(#4f2468));
-	background-image: -moz-linear-gradient(top, #f1f1d4, #e6e49f);
+	background-image: -moz-linear-gradient(top, #af6fd4, #4f2468);
 	color:#fff;
 	border:1px solid #444;
 	-webkit-border-radius:8px;
@@ -643,8 +695,10 @@ td.actions a {
 input[type=submit]:hover,
 div.actions ul li a:hover,
 td.actions a:hover {
-	background: #f0f09a;
+	background: #bf7fe4;
 	background: -webkit-gradient(linear, left top, left bottom, from(#bf7fe4), to(#5f3478));
+		background-image: -moz-linear-gradient(top, #af6fd4, #4f2468);
+	
 }
 
 /** Related **/
