@@ -2128,18 +2128,18 @@ class FormHelper extends AppHelper {
 			break;
 			case 'month':
 				if ($options['monthNames'] === true) {
-					$data['01'] = __('January', true);
-					$data['02'] = __('February', true);
-					$data['03'] = __('March', true);
-					$data['04'] = __('April', true);
-					$data['05'] = __('May', true);
-					$data['06'] = __('June', true);
-					$data['07'] = __('July', true);
-					$data['08'] = __('August', true);
-					$data['09'] = __('September', true);
-					$data['10'] = __('October', true);
-					$data['11'] = __('November', true);
-					$data['12'] = __('December', true);
+					$data['01'] = __('Enero', true);
+					$data['02'] = __('Febrero', true);
+					$data['03'] = __('Marzo', true);
+					$data['04'] = __('Abril', true);
+					$data['05'] = __('Mayo', true);
+					$data['06'] = __('Junio', true);
+					$data['07'] = __('Julio', true);
+					$data['08'] = __('Agosto', true);
+					$data['09'] = __('Septiembre', true);
+					$data['10'] = __('Octubre', true);
+					$data['11'] = __('Noviembre', true);
+					$data['12'] = __('Diciembre', true);
 				} else if (is_array($options['monthNames'])) {
 					$data = $options['monthNames'];
 				} else {

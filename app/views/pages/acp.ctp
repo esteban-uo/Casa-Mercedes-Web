@@ -20,7 +20,7 @@ $(function(){
 <div id="contenido_acp_index" class="parag">
 <?php if($busqueda): // Si buscó persona ?>
 	<div id="acp_info_personas" class="box_info_acp posiciones_r">
-	<h2>Ficha de Persona (<?php if($Albergado["id"]) echo "Albergado"; else echo "Dependiente"; ?>)</h2>
+	<h2>Ficha de Persona (<?php if($Albergado["id"]) echo "Albergada"; else echo "Hijo o hija"; ?>)</h2>
 		<div class="posiciones_fl">
 			<ul>
 				<li>Nombre: <span class="formateotxt_strong"><?php echo $Persona['primer_nombre']; ?></span></li>
@@ -54,38 +54,25 @@ $(function(){
 	</div>
 	<?php if(isset($Albergado["id"])): // Si es Albergado ?>
 	<div id="acp_info_albergado" class="box_info_acp posiciones_r">
-	<h2>Ficha de Información de Albergado</h2>
-		<div class="posiciones_fl">
+	<h2>Ficha de Canalización</h2>
+		<div>
 			<ul>
 				<li>Expediente: <span class="formateotxt_strong"><?php echo $Albergado['expediente']; ?></span></li>
 				<li>Fecha Ingreso: <span class="formateotxt_strong"><?php echo $Albergado['fecha_ingreso']; ?></span></li>
 				<li>Averiguación Previa: <span class="formateotxt_strong"><?php echo $Albergado['averiguacion_previa']; ?></span></li>
 			</ul>
 		</div>
-		<div class="posiciones_fr">
-			<h4>Infograma</h4>
-				<?php
-					echo $this->ImagenesGaleria->obtenerImagen(true,
-																$Albergado["FotoImagen"]["Tipoimage"]["title"],
-																$Albergado["FotoImagen"]["url"],
-																array(
-																	"alt" => $Persona['nombre_completo'],
-																	"class" => "imagen_infograma_box" 
-																));
-				?>
-		</div>
-		<div class="posiciones_cl"></div>
 		<div class="action_info_acp">
 			<ul>
 				<li><?php echo $this->Html->link("Modificar", array('controller'=>'albergados','action' => 'edit', $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
-				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'albergados','action' => 'delete', $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el registro como albergado de %s?', true),$Persona['nombre_completo'])); ?></li>
+				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'albergados','action' => 'delete', $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el registro como albergada de %s?', true),$Persona['nombre_completo'])); ?></li>
 				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'albergados','action' => 'view', $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 				<li><?php echo $this->Html->link('Ult. Editor', array('controller'=>'users','action' => 'view', $Albergado['modified_user_id']), array('class' => 'action_acp_info boton_acp_ultimousuario')); ?></li>
 			</ul>
 		</div>
 	</div>
 	<div id="acp_info_dependientes" class="box_info_acp posiciones_r">
-	<h2>Dependientes de <?php echo $Persona['nombre_completo'] ?></h2>
+	<h2>Hijas(os) de <?php echo $Persona['nombre_completo'] ?></h2>
 		<?php if($Dependiente): // Si hay Dependientes ?>
 		<?php foreach($Dependiente as $llave => $valor): ?>
 		<div class="posiciones_r">
@@ -125,7 +112,7 @@ $(function(){
 		</div>
 	</div>
 	<div id="acp_info_sociales" class="box_info_acp posiciones_r">
-	<h2>Información de Estudio Social</h2>
+	<h2>Información de Roles Sociales</h2>
 		<div class="action_info_acp">
 			<ul>
 		<?php if(isset($Albergado['Social']['id'])): // Si hay ficha Social ?>
@@ -167,7 +154,7 @@ $(function(){
 		</div>
 	</div>
 	<div id="acp_info_ingresos" class="box_info_acp posiciones_r">
-	<h2>Información de Ingresos</h2>
+	<h2>Información de Egresados</h2>
 		<div class="action_info_acp">
 			<ul>
 		<?php if(isset($Albergado['Ingresos']['id'])): // Si hay ficha de Ingresos ?>
@@ -181,7 +168,7 @@ $(function(){
 		</div>
 	</div>
 	<div id="acp_info_datos" class="box_info_acp posiciones_r">
-	<h2>Datos</h2>
+	<h2>Historia de Vida</h2>
 		<div class="action_info_acp">
 			<ul>
 		<?php if(isset($Albergado['Dato']['id'])): // Si hay ficha de Datos ?>
@@ -195,7 +182,7 @@ $(function(){
 		</div>
 	</div>
 	<div id="acp_info_datos_albergado" class="box_info_acp posiciones_r">
-	<h2>Datos del Albergado</h2>
+	<h2>Datos Generales</h2>
 		<div class="action_info_acp">
 			<ul>
 		<?php if(isset($Albergado['DatosAlbergado']['id'])): // Si hay Datos de albergado ?>
@@ -224,7 +211,7 @@ $(function(){
 	</div>
 	<?php endif; // Si es Albergado ?>
 	<div id="acp_info_documentos" class="box_info_acp posiciones_r">
-	<h2>Documentos pertenecientes</h2>
+	<h2>Documentos</h2>
 		<div class="action_info_acp">
 			<ul>
 				<?php if(isset($Documento["id"])): // Si hay documento ?>

@@ -4,31 +4,32 @@ Acciones por hacer (+), Acciones concluidas (-), Comentarios (#)
 
 - Estructura de Base de Datos
 	- Revisar Base de datos con David Rubio por modificaciones (Fijar fecha)
-	+ Incorporar tabla de estados, municipios de Carlos a la base de datos real
+	- Incorporar tabla de estados, municipios de Carlos a la base de datos real
 - Incorporar CakePHP al espacio de trabajo
 - Modelos con sus respectivas relaciones
 - Controladores con scaffolding para el flujo de datos
 	- MockUp gráfico
-	+ Revisar MockUp con David Rubio (Fijar fecha)
+	- Revisar MockUp con David Rubio (Fijar fecha)
 	- Añadir o eliminar metodos CRUD necesarios
 	- Controladores con métodos apropiados CRUD, no scaffolding (aun no completo)
 + Plugin Jquery que convierta un optionbox (con sus valores y opciones) en un input de autocompletado para la busqueda de un valor (que sera la opcion en el optionbox guarde el id (valor del selectbox) y el valor seleccionado dado que este en el select, al seleccionar
 + Plugin Jquery que llame a un método como "add" y renderize en la pantalla la vista "add" de cakephp a través de ajax para agregar algun registro de un modelo y que regrese unicamente el id si fue insertado adecuadamente. ie: Se usara para subir imagenes desde algun otro modelo que lo requiera y asi solo registrar una id foranea.
-+ Vistas de los controladores
-+ HTML y CSS de layout del Panel de Control para Administración de Albergados y Usuarios
+- Vistas de los controladores
+- HTML y CSS de layout del Panel de Control para Administración de Albergados y Usuarios
 	#Definir y enlistar actividades
 + HTML y CSS de vistas
 	#Definir y enlistar actividades
-+ HTML y CSS página princial 
-	+ Maquetar HTML y CSS Layout
-	+ Maquetar HTML y CSSS de vista principal
+- HTML y CSS página princial 
+	- Maquetar HTML y CSS Layout
+	- Maquetar HTML y CSSS de vista principal
 	+ Contenido multimedia (texto, video, imagenes etc)
+	+ Estilo boton Login rapido
 + Revision de contenido multimedia para todo el sitio
 	+ Agregar imagenes necesarias
 	+ Agregar texto necesario
 	+ Videos o animaciones
-+ Controlador para CRUD de imagenes por carpeta (foto,familiografia etc)
-	+ Controlador o plugin (component en cakephp) para gestionar imagenes en la bd (registro) y servidor (almacenar la imagen) con las siguientes funcionalidades: subir (en X carpeta segun el tipo de imagen (foto, familiografia, etc), eliminar imagen o remplazar (editar)
+- Controlador para CRUD de imagenes por carpeta (foto,familiografia etc)
+	- Controlador o plugin (component en cakephp) para gestionar imagenes en la bd (registro) y servidor (almacenar la imagen) con las siguientes funcionalidades: subir (en X carpeta segun el tipo de imagen (foto, familiografia, etc), eliminar imagen o remplazar (editar)
 + Controlador para CRUD de reportes
 	+ Generar controlador de reportes el cual al seleccionar el tipo de reporte y buscar por nombre a un albergado, renderizara un layout diferente del tipo de reporte seleccionado, con sus respectivos valores para Ficha de Identificación y Estudio Social
 + Mejoras Diseño UI con animaciones y detalles

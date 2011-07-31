@@ -207,19 +207,24 @@ class albergado extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		),
+		)
+	);
+	
+	var $hasAndBelongsToMany = array(
 		'Ingreso' => array(
 			'className' => 'Ingreso',
+			'joinTable' => 'albergados_ingresos',
 			'foreignKey' => 'albergado_id',
-			'dependent' => false,
+			'associationForeignKey' => 'ingreso_id',
+			'unique' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
 			'limit' => '',
 			'offset' => '',
-			'exclusive' => '',
 			'finderQuery' => '',
-			'counterQuery' => ''
+			'deleteQuery' => '',
+			'insertQuery' => ''
 		)
 	);
 

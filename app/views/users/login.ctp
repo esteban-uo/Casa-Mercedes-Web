@@ -1,9 +1,7 @@
 ﻿<div id="ingresar">
 	<h1 class="title"><br />Administraci&oacute;n</h1>
 
-<span class="button_generic teal"> <?php echo $this->Html->link(__('Home', true), array('controller'=>'pages','action' => 'index'));?></span>
-<p>TODO: Link al Panel de Control (acceso para todos): <?php echo $this->Html->link(__('Panel de Control', true), array('controller'=>'pages','action' => 'acp'));?></p>
-
+<span class="button_generic teal"> <?php echo $this->Html->link(__('Inicio', true), array('controller'=>'pages','action' => 'index'));?></span>
 <div>
 <?php
 	echo $this->Form->create('User', array('action' => 'login'));
