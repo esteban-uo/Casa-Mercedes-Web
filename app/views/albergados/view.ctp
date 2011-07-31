@@ -68,7 +68,7 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
+<div class="actions_a">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Edit Albergado', true), array('action' => 'edit', $albergado['Albergado']['id'])); ?> </li>
