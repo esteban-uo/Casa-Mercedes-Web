@@ -1,4 +1,5 @@
-﻿<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+﻿<div id="acp_pagina_principal">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
 	$("div.action_info_acp a").hide();
@@ -9,19 +10,18 @@ $(function(){
     });
 });
 </script>
+<h3>Búsqueda de Personas</h3>
 <?php
 	echo $this->Form->create(array('action' => 'acp'));
+	echo $this->Form->input('Persona.search', array("label"=>false,"placeholder" => "Nombre Completo", "class" => "input_style input_buscar", "div"=>array("class"=>"busqueda_acp")));
+	echo $this->Form->end(array("name"=>"Buscar", "label"=>"Buscar", "class" => "button_form boton_buscar", "div"=>array("class"=>"fl")));
 ?>
-<?php
-	echo $this->Form->input('Persona.search', array("label"=>false,"placeholder" => "Búsqueda de personas por Nombre Completo", "class" => "input_style input_buscar", "div"=>array("class"=>"posiciones_fl")));
-	echo $this->Form->end(array("name"=>"Buscar", "label"=>"Buscar", "class" => "button_form boton_buscar", "div"=>array("class"=>"posiciones_fl")));
-?>
-<div class="posiciones_cl"></div>
+<div class="cl"></div>
 <div id="contenido_acp_index" class="parag">
 <?php if($busqueda): // Si buscó persona ?>
 	<div id="acp_info_personas" class="box_info_acp posiciones_r">
 	<h2>Ficha de Persona (<?php if($Albergado["id"]) echo "Albergada"; else echo "Hijo o hija"; ?>)</h2>
-		<div class="posiciones_fl">
+		<div class="fl">
 			<ul>
 				<li>Nombre: <span class="formateotxt_strong"><?php echo $Persona['primer_nombre']; ?></span></li>
 				<?php if($Persona['segundo_nombre']): ?>
@@ -31,7 +31,7 @@ $(function(){
 				<li>Apellido Materno: <span class="formateotxt_strong"><?php echo $Persona['segundo_apellido']; ?></span></li>
 			</ul>
 		</div>
-		<div class="posiciones_fr">
+		<div class="fr">
 				<?php
 					echo $this->ImagenesGaleria->obtenerImagen(true,
 																$FotoImagen["Tipoimage"]["title"],
@@ -42,7 +42,7 @@ $(function(){
 																));
 				?>
 		</div>
-		<div class="posiciones_cl"></div>
+		<div class="cb"></div>
 		<div class="action_info_acp">
 			<ul>
 				<li><?php echo $this->Html->link("Modificar", array('controller'=>'personas','action' => 'edit', $Persona['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
@@ -71,9 +71,9 @@ $(function(){
 			</ul>
 		</div>
 	</div>
-	<div id="acp_info_dependientes" class="box_info_acp posiciones_r">
+	<div id="acp_info_dependientes" class="box_info_acp <?php if(!isset($Dependiente[0]['Dependiente'])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Hijas(os) de <?php echo $Persona['nombre_completo'] ?></h2>
-		<?php if($Dependiente): // Si hay Dependientes ?>
+		<?php if(isset($Dependiente[0]['Dependiente'])): // Si hay Dependientes ?>
 		<?php foreach($Dependiente as $llave => $valor): ?>
 		<div class="posiciones_r">
 			<ul>
@@ -97,7 +97,7 @@ $(function(){
 		</div>
 		<?php endif; // Si hay Dependientes ?>
 	</div>
-	<div id="acp_info_familia" class="box_info_acp posiciones_r">
+	<div id="acp_info_familia" class="box_info_acp <?php if(!isset($Albergado['Familia']['id'])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Información de Familia</h2>
 		<div class="action_info_acp">
 			<ul>
@@ -111,7 +111,7 @@ $(function(){
 			</ul>
 		</div>
 	</div>
-	<div id="acp_info_sociales" class="box_info_acp posiciones_r">
+	<div id="acp_info_sociales" class="box_info_acp <?php if(!isset($Albergado['Social']['id'])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Información de Roles Sociales</h2>
 		<div class="action_info_acp">
 			<ul>
@@ -125,7 +125,7 @@ $(function(){
 			</ul>
 		</div>
 	</div>
-	<div id="acp_info_socio_economicos" class="box_info_acp posiciones_r">
+	<div id="acp_info_socio_economicos" class="box_info_acp <?php if(!isset($Albergado['SocioEconomico']['id'])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Información de Estudio Socio Economico</h2>
 		<div class="action_info_acp">
 			<ul>
@@ -139,7 +139,7 @@ $(function(){
 			</ul>
 		</div>
 	</div>
-	<div id="acp_info_problematica" class="box_info_acp posiciones_r">
+	<div id="acp_info_problematica" class="box_info_acp <?php if(!isset($Albergado['Problematica']['id'])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Información de Problematica</h2>
 		<div class="action_info_acp">
 			<ul>
@@ -153,7 +153,7 @@ $(function(){
 			</ul>
 		</div>
 	</div>
-	<div id="acp_info_ingresos" class="box_info_acp posiciones_r">
+	<div id="acp_info_ingresos" class="box_info_acp <?php if(!isset($Albergado['Ingresos']['id'])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Información de Egresados</h2>
 		<div class="action_info_acp">
 			<ul>
@@ -167,7 +167,7 @@ $(function(){
 			</ul>
 		</div>
 	</div>
-	<div id="acp_info_datos" class="box_info_acp posiciones_r">
+	<div id="acp_info_datos" class="box_info_acp <?php if(!isset($Albergado['Dato']['id'])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Historia de Vida</h2>
 		<div class="action_info_acp">
 			<ul>
@@ -181,7 +181,7 @@ $(function(){
 			</ul>
 		</div>
 	</div>
-	<div id="acp_info_datos_albergado" class="box_info_acp posiciones_r">
+	<div id="acp_info_datos_albergado" class="box_info_acp <?php if(!isset($Albergado['DatosAlbergado']['id'])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Datos Generales</h2>
 		<div class="action_info_acp">
 			<ul>
@@ -195,7 +195,7 @@ $(function(){
 			</ul>
 		</div>
 	</div>
-	<div id="acp_info_datos_escolaridad" class="box_info_acp posiciones_r">
+	<div id="acp_info_datos_escolaridad" class="box_info_acp <?php if(!isset($Albergado['Escolaridad']['id'])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Escolaridad</h2>
 		<div class="action_info_acp">
 			<ul>
@@ -210,7 +210,7 @@ $(function(){
 		</div>
 	</div>
 	<?php endif; // Si es Albergado ?>
-	<div id="acp_info_documentos" class="box_info_acp posiciones_r">
+	<div id="acp_info_documentos" class="box_info_acp <?php if(!isset($Documento["id"])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Documentos</h2>
 		<div class="action_info_acp">
 			<ul>
@@ -224,7 +224,7 @@ $(function(){
 			</ul>
 		</div>
 	</div>
-	<div id="acp_info_estados_salud" class="box_info_acp posiciones_r">
+	<div id="acp_info_estados_salud" class="box_info_acp <?php if(!isset($EstadosSalud["id"])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Ficha de Estado de Salud</h2>
 		<div class="action_info_acp">
 			<ul>
@@ -238,7 +238,7 @@ $(function(){
 			</ul>
 		</div>
 	</div>
-	<div id="acp_info_nacimientos" class="box_info_acp posiciones_r">
+	<div id="acp_info_nacimientos" class="box_info_acp <?php if(!isset($Nacimiento["id"])) echo "box_new_info_acp"; ?>  posiciones_r">
 	<h2>Ficha de Nacimiento</h2>
 		<div class="action_info_acp">
 			<ul>
@@ -252,7 +252,7 @@ $(function(){
 			</ul>
 		</div>
 	</div>
-	<div id="acp_info_vestimenta" class="box_info_acp posiciones_r">
+	<div id="acp_info_vestimenta" class="box_info_acp <?php if(!isset($Vestimenta["id"])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Vestimenta</h2>
 		<div class="action_info_acp">
 			<ul>
@@ -282,4 +282,5 @@ $(function(){
     );
 	?>
 <?php endif; // Si buscó persona ?>
+</div>
 </div>
