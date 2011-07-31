@@ -1,11 +1,13 @@
 Familiograma para niño (dependiente)
 Permitir imprimir lista de filtro
-Agregar columna: escolaridad al ingresar(escolaridad)
+
 Tabla reingresos:
 	Log de todos egresos de alguna albergada
 
 	
 	
+	
+
 
 Redaccion (remplazar):
 
@@ -19,7 +21,7 @@ Tabla Estados de Salud
 Tabla problematica
 	Otros delitos, cambiar a textbox
 
-
+Agregar columna: escolaridad al ingresar(escolaridad)
 
 
 fACP
