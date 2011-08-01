@@ -47,7 +47,6 @@ class ImagesController extends AppController {
 								 'tipoimage_id' => $this->data['Image']['tipoimage_id'],
 								 'modified_user_id' => $this->data['Image']['modified_user_id']
 								));
-				
 			if ($this->Image->save($data2)) 
 			{
 					$id = $this->Image->find('first', array('conditions'=>array('Image.url'=>$this->data['Image']['url']['name'])));
@@ -60,10 +59,8 @@ class ImagesController extends AppController {
 								'modified_user_id' => $this->data['Image']['modified_user_id']
 								 
 								));
-					Debug($data2);
 								
 					$this->Image->save($data2);
-					
 					$this->data['Image']['url']['name'] = $data2['Image']['url'];
 					$this->upload($this->data);
 					$this->Session->setFlash(__('La imagen Guardada Exitosamente', true));
@@ -259,7 +256,7 @@ class ImagesController extends AppController {
 	*/
 	function getExtension($file = null)
 	{
-		$file= str_split($file,strrpos($file, '.')+1);
+		$file= explode(".",$file);
 		return $file[1];
 	}
 	
