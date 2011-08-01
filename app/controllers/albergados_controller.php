@@ -1,14 +1,13 @@
-﻿<?php
+<?php
 class AlbergadosController extends AppController {
 
 	var $name = 'Albergados';
-    var $helpers = array('Html','Javascript', 'Ajax');
 
 	function beforeFilter() {
         parent::beforeFilter(); 
         $this->layout = "panel_control";
     }
-	
+
 	function index() {
 		$this->Albergado->recursive = 0;
 		$this->set('albergados', $this->paginate());
@@ -32,10 +31,12 @@ class AlbergadosController extends AppController {
 				$this->Session->setFlash(__('Los datos del albergado son incorrectos. Intenta nuevamente.', true));
 			}
 		}
+		
 		$personas = $this->Albergado->Persona->find('list');
 		$casas = $this->Albergado->Casa->find('list');
 		$fotoImagens = $this->Albergado->FotoImagen->find('list');
-		$this->set(compact('personas', 'casas', 'fotoImagens'));
+		$ingresos = $this->Albergado->Ingreso->find('list');
+		$this->set(compact('personas', 'casas', 'fotoImagens', 'ingresos'));
 	}
 
 	function edit($id = null) {
@@ -57,19 +58,20 @@ class AlbergadosController extends AppController {
 		$personas = $this->Albergado->Persona->find('list');
 		$casas = $this->Albergado->Casa->find('list');
 		$fotoImagens = $this->Albergado->FotoImagen->find('list');
-		$this->set(compact('personas', 'casas', 'fotoImagens'));
+		$ingresos = $this->Albergado->Ingreso->find('list');
+		$this->set(compact('personas', 'casas', 'fotoImagens', 'ingresos'));
 	}
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('El número del albergado es incorrecto.', true));
+			$this->Session->setFlash(__('Invalid id for albergado', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Albergado->delete($id)) {
-			$this->Session->setFlash(__('El albergado ha sido eliminado satisfactoriamente.', true));
+			$this->Session->setFlash(__('Albergado deleted', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('El albergado no se pudo dar de baja. Intenta nuevamente.', true));
+		$this->Session->setFlash(__('Albergado was not deleted', true));
 		$this->redirect(array('action' => 'index'));
 	}
 	
