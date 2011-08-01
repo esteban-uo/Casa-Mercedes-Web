@@ -2,11 +2,12 @@
 class Persona extends AppModel {
 	var $name = 'Persona';
 	var $displayField = 'primer_nombre';
+	
 	var $validate = array(
 		'primer_nombre' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Nombre está vacío, por favor ingresa el NOMBRE',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -16,7 +17,7 @@ class Persona extends AppModel {
 		'primer_apellido' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Apellido Paterno está vacío, ingresa el primer apellido',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -26,7 +27,7 @@ class Persona extends AppModel {
 		'segundo_apellido' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Apellido Materno está vacío, ingresa el segundo apellido',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -36,7 +37,7 @@ class Persona extends AppModel {
 		'sexo' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Sexo está vacío, Debe contener una M (si es mujer) o una H (si es hombre)',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -56,7 +57,7 @@ class Persona extends AppModel {
 		'foto_imagen_id' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Foto Imagen está vacío, llenalo por favor',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -161,9 +162,9 @@ class Persona extends AppModel {
 	
 	function afterFind($results) {
 		foreach ($results as $key => $val) {
-            if (isset($val['Persona']['segundo_nombre'])) {
+            if (isset($val['Persona']['segundo_nombre']) && isset($val['Persona']['segundo_apellido'])) {
 				$results[$key]['Persona']['nombre_completo'] = $results[$key]['Persona']['primer_nombre'].' '. $results[$key]['Persona']['segundo_nombre'].' '.$results[$key]['Persona']['primer_apellido'].' '.$results[$key]['Persona']['segundo_apellido'];
-            }else{
+            }elseif(isset($val['Persona']['segundo_apellido'])){
 				$results[$key]['Persona']['nombre_completo'] = $results[$key]['Persona']['primer_nombre'].' '.$results[$key]['Persona']['primer_apellido'].' '.$results[$key]['Persona']['segundo_apellido']; 
             }
         }

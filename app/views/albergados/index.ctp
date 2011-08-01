@@ -1,14 +1,10 @@
 <div class="albergados index">
-    <script type="javascript">
-    if($('MB_content') != undefined){
-          location.reload();
-    }
-    </script>
 	<h2><?php __('Albergados');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('persona_id');?></th>
+			<th><?php echo $this->Paginator->sort('numero_embarazos');?></th>
 			<th><?php echo $this->Paginator->sort('expediente');?></th>
 			<th><?php echo $this->Paginator->sort('casa_id');?></th>
 			<th><?php echo $this->Paginator->sort('fecha_ingreso');?></th>
@@ -35,23 +31,27 @@
 		<td>
 			<?php echo $this->Html->link($albergado['Persona']['primer_nombre'], array('controller' => 'personas', 'action' => 'view', $albergado['Persona']['id'])); ?>
 		</td>
+		<td><?php echo $albergado['Albergado']['numero_embarazos']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['expediente']; ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($albergado['Casa']['id'], array('controller' => 'casas', 'action' => 'view', $albergado['Casa']['id'])); ?>
+			<?php echo $this->Html->link($albergado['Casa']['direccion'], array('controller' => 'casas', 'action' => 'view', $albergado['Casa']['id'])); ?>
 		</td>
 		<td><?php echo $albergado['Albergado']['fecha_ingreso']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['embarazo_actual']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['cant_hijos']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['remitida_por']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['averiguacion_previa']; ?>&nbsp;</td>
-		<td><?php echo $albergado['Albergado']['familiograma_imagen_id']; ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($albergado['FotoImagen']['id'], array('controller' => 'images', 'action' => 'view', $albergado['FotoImagen']['id'])); ?>
+		</td>
 		<td><?php echo $albergado['Albergado']['created']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['modified']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $albergado['Albergado']['id']), array('onclick' => 'Modalbox.show(this.href, {title: this.title, width: 400}); return false;')); ?>
-			<?php echo $this->Html->link(__('Modificar', true), array('action' => 'edit', $albergado['Albergado']['id'])); ?>
-			<?php echo $this->Html->link(__('Eliminar', true), array('action' => 'delete', $albergado['Albergado']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $albergado['Albergado']['id'])); ?>
+
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $albergado['Albergado']['id'])); ?>
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $albergado['Albergado']['id'])); ?>
+			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $albergado['Albergado']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $albergado['Albergado']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -64,18 +64,18 @@
 	?>	</p>
 
 	<div class="paging">
-		<?php echo $this->Paginator->prev('<< ' . __('Anterior', true), array(), null, array('class'=>'disabled'));?>
+		<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
 	 | 	<?php echo $this->Paginator->numbers();?>
  |
-		<?php echo $this->Paginator->next(__('Siguiente', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
 </div>
-<div class="actions">
-	<h3><?php __('Acciones'); ?></h3>
+<div class="actions_a">
+	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Agregar Albergado', true), array('action' => 'add'), array('onclick' => 'Modalbox.show(this.href, {title: this.title, width: 400}); return false;')); ?></li>
+		<li><?php echo $this->Html->link(__('Agregar Albergado', true), array('action' => 'add')); ?></li>
 		<li><?php echo $this->Html->link(__('Ver Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Agregar Persona', true), array('controller' => 'personas', 'action' => 'add'),array('onclick' => 'Modalbox.show(this.href, {title: this.title, width: 400}); return false;')); ?> </li>
+		<li><?php echo $this->Html->link(__('Agregar Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('Ver Casas', true), array('controller' => 'casas', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Agregar Casa', true), array('controller' => 'casas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('Ver Datos', true), array('controller' => 'datos', 'action' => 'index')); ?> </li>

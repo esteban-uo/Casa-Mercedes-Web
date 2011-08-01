@@ -1,7 +1,12 @@
-<?php
+﻿<?php
 class SocialesController extends AppController {
 
 	var $name = 'Sociales';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Social->recursive = 0;
@@ -10,7 +15,7 @@ class SocialesController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid social', true));
+			$this->Session->setFlash(__('Los datos de la social no existen o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('social', $this->Social->read(null, $id));
@@ -20,10 +25,10 @@ class SocialesController extends AppController {
 		if (!empty($this->data)) {
 			$this->Social->create();
 			if ($this->Social->save($this->data)) {
-				$this->Session->setFlash(__('The social has been saved', true));
+				$this->Session->setFlash(__('Los datos de la social se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The social could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la social se han guardado satisfactoriamente.', true));
 			}
 		}
 		$albergados = $this->Social->Albergado->find('list');
@@ -32,15 +37,15 @@ class SocialesController extends AppController {
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid social', true));
+			$this->Session->setFlash(__('Los datos de la social no existen o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->Social->save($this->data)) {
-				$this->Session->setFlash(__('The social has been saved', true));
+				$this->Session->setFlash(__('Los datos de la social se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The social could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la social no se pudieron guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 		if (empty($this->data)) {
@@ -52,14 +57,14 @@ class SocialesController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for social', true));
+			$this->Session->setFlash(__('El número (clave) de la social es inválido.', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Social->delete($id)) {
-			$this->Session->setFlash(__('Social deleted', true));
+			$this->Session->setFlash(__('Los datos de la social se eliminaron satisfactoriamente.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Social was not deleted', true));
+		$this->Session->setFlash(__('Los datos de la social no se pudieron eliminar. Por favor, intenta nuevamente.', true));
 		$this->redirect(array('action' => 'index'));
 	}
 }

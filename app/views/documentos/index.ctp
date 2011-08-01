@@ -1,16 +1,15 @@
-﻿<div class="documentos index">
+<div class="documentos index">
 	<h2><?php __('Documentos');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('número');?></th>
+			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('persona_id');?></th>
-			<th><?php echo $this->Paginator->sort('documentación_id');?></th>
-			<th><?php echo $this->Paginator->sort('número_documento');?></th>
+			<th><?php echo $this->Paginator->sort('numero_documento');?></th>
 			<th><?php echo $this->Paginator->sort('tramitada_por_cm');?></th>
-			<th><?php echo $this->Paginator->sort('creada');?></th>
-			<th><?php echo $this->Paginator->sort('modificada');?></th>
-			<th><?php echo $this->Paginator->sort('modificada_por');?></th>
-			<th class="actions"><?php __('Acciones');?></th>
+			<th><?php echo $this->Paginator->sort('created');?></th>
+			<th><?php echo $this->Paginator->sort('modified');?></th>
+			<th><?php echo $this->Paginator->sort('modified_user_id');?></th>
+			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
 	$i = 0;
@@ -23,10 +22,7 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $documento['Documento']['id']; ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($documento['Persona']['nombre_completo'], array('controller' => 'personas', 'action' => 'view', $documento['Persona']['id'])); ?>
-		</td>
-		<td>
-			<?php echo $this->Html->link($documento['Documentacion']['title'], array('controller' => 'documentaciones', 'action' => 'view', $documento['Documentacion']['id'])); ?>
+			<?php echo $this->Html->link($documento['Persona']['primer_nombre'], array('controller' => 'personas', 'action' => 'view', $documento['Persona']['id'])); ?>
 		</td>
 		<td><?php echo $documento['Documento']['numero_documento']; ?>&nbsp;</td>
 		<td><?php echo $documento['Documento']['tramitada_por_cm']; ?>&nbsp;</td>
@@ -34,9 +30,9 @@
 		<td><?php echo $documento['Documento']['modified']; ?>&nbsp;</td>
 		<td><?php echo $documento['Documento']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $documento['Documento']['id'])); ?>
-			<?php echo $this->Html->link(__('Modificar', true), array('action' => 'edit', $documento['Documento']['id'])); ?>
-			<?php echo $this->Html->link(__('Eliminar', true), array('action' => 'delete', $documento['Documento']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $documento['Documento']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $documento['Documento']['id'])); ?>
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $documento['Documento']['id'])); ?>
+			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $documento['Documento']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $documento['Documento']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -49,19 +45,19 @@
 	?>	</p>
 
 	<div class="paging">
-		<?php echo $this->Paginator->prev('<< ' . __('Anterior', true), array(), null, array('class'=>'disabled'));?>
+		<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
 	 | 	<?php echo $this->Paginator->numbers();?>
  |
-		<?php echo $this->Paginator->next(__('Siguiente', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
 </div>
 <div class="actions">
-	<h3><?php __('Acciones'); ?></h3>
+	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Agregar Documento', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('Ver Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Agregar Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('Ver Documentaciones', true), array('controller' => 'documentaciones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Agregar Documentación', true), array('controller' => 'documentaciones', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Documento', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Personas', true), array('controller' => 'personas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Persona', true), array('controller' => 'personas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Documentaciones', true), array('controller' => 'documentaciones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Documentacion', true), array('controller' => 'documentaciones', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

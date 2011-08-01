@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class Escolaridad extends AppModel {
 	var $name = 'Escolaridad';
 	var $displayField = 'ciclo_escolar_id';
@@ -6,7 +6,7 @@ class Escolaridad extends AppModel {
 		'escuela' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Escuela está vacío, por favor llenalo con el nombre de la escuela',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

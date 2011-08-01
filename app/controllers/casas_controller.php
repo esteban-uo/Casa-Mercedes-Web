@@ -2,7 +2,12 @@
 class CasasController extends AppController {
 
 	var $name = 'Casas';
-
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
+	
 	function index() {
 		$this->Casa->recursive = 0;
 		$this->set('casas', $this->paginate());
@@ -10,7 +15,7 @@ class CasasController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid casa', true));
+			$this->Session->setFlash(__('Los datos de la casa son inválidos.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('casa', $this->Casa->read(null, $id));
@@ -20,10 +25,10 @@ class CasasController extends AppController {
 		if (!empty($this->data)) {
 			$this->Casa->create();
 			if ($this->Casa->save($this->data)) {
-				$this->Session->setFlash(__('The casa has been saved', true));
+				$this->Session->setFlash(__('Los datos de la casa son correctos y se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The casa could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la casa son incorrectos. Intenta nuevamente.', true));
 			}
 		}
 		$paises = $this->Casa->Paises->find('list');
@@ -34,15 +39,15 @@ class CasasController extends AppController {
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid casa', true));
+			$this->Session->setFlash(__('Los datos de la casa son inválidos.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->Casa->save($this->data)) {
-				$this->Session->setFlash(__('The casa has been saved', true));
+				$this->Session->setFlash(__('Los datos de la casa son correctos y se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The casa could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la casa son incorrectos y no se pudo guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 		if (empty($this->data)) {
@@ -56,14 +61,14 @@ class CasasController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for casa', true));
+			$this->Session->setFlash(__('El número de la casa es incorrecto.', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Casa->delete($id)) {
-			$this->Session->setFlash(__('Casa deleted', true));
+			$this->Session->setFlash(__('Los datos de la casa han sido eliminados satisfactoriamente.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Casa was not deleted', true));
+		$this->Session->setFlash(__('La casa no se pudo dar de baja. Intenta nuevamente.', true));
 		$this->redirect(array('action' => 'index'));
 	}
 }

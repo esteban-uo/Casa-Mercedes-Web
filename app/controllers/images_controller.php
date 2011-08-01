@@ -1,8 +1,12 @@
-<?php
+﻿<?php
 class ImagesController extends AppController {
 
 	var $name = 'Images';
 	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Image->recursive = 0;
@@ -11,7 +15,7 @@ class ImagesController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Imagen Invalida', true));
+			$this->Session->setFlash(__('Los datos de la imagen no existen o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('image', $this->Image->read(null, $id));
@@ -52,7 +56,10 @@ class ImagesController extends AppController {
 								'modified_user_id' => $this->data['Image']['modified_user_id']
 								 
 								));
+					Debug($data2);
+								
 					$this->Image->save($data2);
+					
 					$this->data['Image']['url']['name'] = $data2['Image']['url'];
 					$this->upload($this->data);
 					$this->Session->setFlash(__('La imagen Guardada Exitosamente', true));
@@ -150,6 +157,8 @@ class ImagesController extends AppController {
 			$folder = Inflector::slug($folder['Tipoimage']['title'],'_');
 			$path = getcwd().'\\img\\'.$folder.'\\'.$image;
 			$path2 = getcwd().'\\img\\'.$folder.'\\'.$miniImage;
+			
+			
 			
 			if(!file_exists($path))
 			{

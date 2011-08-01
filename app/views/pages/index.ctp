@@ -13,13 +13,18 @@ $(function() {
 		}, 1000);
 		event.preventDefault();
 	});
+	$("#form_login").hide();
+	$("#boton_formulario_rapido").bind("click", function (){
+		$("#form_login").toggle();
+		
+	});
 });
 
 </script> 
 
 <div id="scroll">
 <div class="section pink" id="section1">
-	<h1 class="title main">Nuestra<br />casa</h1>
+	<h1 class="title main foto_chicas">Nuestra<br />casa</h1>
 	<p id="tagline">
 Somos una Institución de Asistencia Privada, con más de 16 años trabajando por niñas y adolescentes, sus hijas e hijos, en situación de pobreza, vulnerabilidad y riesgo.	</p>
 <p class="especial"> Creemos firmemente que nuestras niñas y adolescentes tienen el derecho de transformar sus vidas proporcionando Atención Integral, Desarrollando Capacidades y Fomentando Oportunidades.</p>
@@ -29,10 +34,20 @@ Somos una Institución de Asistencia Privada, con más de 16 años trabajando
 		<li><a href="#section2">Valores</a></li>
 		<li><a href="#section3">Programas</a></li>
 	</ul>
-<span class="button_login teal"> <?php echo $this->Html->link(__('Login', true), array('controller'=>'users','action' => 'login'));?></span>
+	<div id="formulario_rapido">
+		<div id="boton_formulario_rapido">Iniciar Sesión</div>
+		<div id="form_login">
+		<?php
+			echo $this->Form->create('User', array('action' => 'login'));
+			echo $this->Form->input('username', array("label"=>"Usuario", "class" => "form_redondo"));
+			echo $this->Form->input('password', array("label"=>"Contraseña", "class" => "form_redondo"));
+			echo $this->Form->end(array("name"=>"Enviar Consulta", "label"=>"Iniciar sesión", "class" => ""));
+		?>
+		</div>
+	</div>
 </div>
 <div class="section purple" id="section2">
-	<h1 class="title main">Nuestros<br />Valores</h1>
+	<h1 class="title main foto_chicas">Nuestros<br />Valores</h1>
 <div id="valores">	
 <h2 class="subtitle">Misión.</h2>
 <p class="parag">Contribuir a un desarrollo social, coadyuvando a la reducción de los índices de niñas de la calle, explotación sexual y explotación
@@ -43,10 +58,10 @@ infantil, proporcionando cuidado y protección integral a las niñas y adolesc
 
 </div>
 <div class="section blue" id="section3">
-	<h1 class="title main">Nuestros<br />Programas</h1>
+	<h1 class="title main foto_chicas">Nuestros<br />Programas</h1>
 <div id="programas">
 <h2 class="subtitle">Albergue.</h2>
-<p class="parag">Proporcionamos a niñas y jóvenes, en su caso, sus hijas e hijos de toda la república, un hogar seguro y estable en el que encuentran una asistencia integral que les permite iniciar una vida independiente y productiva.</p>
+<p class="parag">Proporcionamos a niñas y jóvenes, en su caso, sus hijas e hijos de toda la república, un hogar seguro y estable en el que encuentran una asistencia integral que les permite iniciar una vida independiente y productiva.</p>
 <h2 class="subtitle">Salud</h2>
 <p class="parag">Nuestro programa de salud incluye: Medicina General y preventiva, ginecología-obstetricia, Neonatología y pediatría, Psicología y Psiquiatría, Prevención y tratamiento de adicciones, y Medicina alternativa.</p>
 <h2 class="subtitle">Estancia Infantil.</h2>
@@ -60,6 +75,6 @@ infantil, proporcionando cuidado y protección integral a las niñas y adolesc
 </div>
 <div id="patrocinadores">
 <h4>Gracias a:</h4>
-<a href="http://www.extend.com.mx" class="extend"></a>
+<a href="http://www.extend.com.mx" class="extend"></a><a href="http://www.campus-party.com.mx/2011/index.html" class="campus posiciones_fl"></a>
 </div>
 </div>

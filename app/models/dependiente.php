@@ -1,11 +1,11 @@
-<?php
+﻿<?php
 class Dependiente extends AppModel {
 	var $name = 'Dependiente';
 	var $validate = array(
 		'expediente' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Expediente está vacío, por favor coloca la dirección del documento',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

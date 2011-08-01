@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class EstadosSalud extends AppModel {
 	var $name = 'EstadosSalud';
 	var $useTable = 'estados_salud';
@@ -6,7 +6,7 @@ class EstadosSalud extends AppModel {
 		'tipo_sangre' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Tipo de Sangre está vacío, Ingresa por favor tu tipo de sangre.',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -14,22 +14,22 @@ class EstadosSalud extends AppModel {
 			),
 		),
 		'peso' => array(
-			'minlength' => array(
-				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
 			'decimal' => array(
 				'rule' => array('decimal'),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo Peso debe de ser decimal o entero, Ingresa por favor tu peso.',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+			'minlength' => array(
+				'rule' => array('minlength', 1),
+				'message' => 'El campo Peso está vacío, agrega el peso de la persona.',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),			
 		),
 		'discapacidad' => array(
 			'minlength' => array(
@@ -51,7 +51,7 @@ class EstadosSalud extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'otra_enfermedad_id' => array(
+		'otra_enfermedad' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
@@ -68,13 +68,6 @@ class EstadosSalud extends AppModel {
 		'Persona' => array(
 			'className' => 'Persona',
 			'foreignKey' => 'persona_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'OtraEnfermedad' => array(
-			'className' => 'OtraEnfermedad',
-			'foreignKey' => 'otra_enfermedad_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

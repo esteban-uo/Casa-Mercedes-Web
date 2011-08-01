@@ -1,7 +1,12 @@
-<?php
+﻿<?php
 class TenenciasController extends AppController {
 
 	var $name = 'Tenencias';
+	
+	function beforeFilter() {
+        parent::beforeFilter(); 
+        $this->layout = "panel_control";
+    }
 
 	function index() {
 		$this->Tenencia->recursive = 0;
@@ -10,7 +15,7 @@ class TenenciasController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid tenencia', true));
+			$this->Session->setFlash(__('Los datos de la tenencia no existen o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('tenencia', $this->Tenencia->read(null, $id));
@@ -20,25 +25,25 @@ class TenenciasController extends AppController {
 		if (!empty($this->data)) {
 			$this->Tenencia->create();
 			if ($this->Tenencia->save($this->data)) {
-				$this->Session->setFlash(__('The tenencia has been saved', true));
+				$this->Session->setFlash(__('Los datos de la tenencia se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The tenencia could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la tenencia no se pudieron guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 	}
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid tenencia', true));
+			$this->Session->setFlash(__('Los datos de la tenencia no existen o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->Tenencia->save($this->data)) {
-				$this->Session->setFlash(__('The tenencia has been saved', true));
+				$this->Session->setFlash(__('Los datos de la tenencia se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The tenencia could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos de la tenencia no se pudieron guardar. Por favor, intenta nuevamente.', true));
 			}
 		}
 		if (empty($this->data)) {
@@ -48,14 +53,14 @@ class TenenciasController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for tenencia', true));
+			$this->Session->setFlash(__('El número (clave) de la tenencia es inválido.', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Tenencia->delete($id)) {
-			$this->Session->setFlash(__('Tenencia deleted', true));
+			$this->Session->setFlash(__('Los datos de la tenencia se eliminaron satisfactoriamente.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Tenencia was not deleted', true));
+		$this->Session->setFlash(__('Los datos de la tenencia no se pudieron eliminar. Por favor, intenta nuevamente.', true));
 		$this->redirect(array('action' => 'index'));
 	}
 }
