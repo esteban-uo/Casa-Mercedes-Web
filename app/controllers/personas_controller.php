@@ -88,6 +88,10 @@ class PersonasController extends AppController {
 													'Social' => array ('id'),
 													'SocioEconomico' => array ('id'),
 													'Problematica' => array ('id'),
+													'Ingreso' => array ('id'),
+													'Dato' => array ('id'),
+													'DatosAlbergado' => array ('id'),
+													'Escolaridad' => array ('id')
 													),
 									'Documento' => array('id'),
 									'EstadosSalud' => array('id'),

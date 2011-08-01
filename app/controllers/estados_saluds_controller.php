@@ -32,8 +32,7 @@ class EstadosSaludsController extends AppController {
 			}
 		}
 		$personas = $this->EstadosSalud->Persona->find('list');
-		$otrasEnfermedades = $this->EstadosSalud->OtraEnfermedad->find('list');
-		$this->set(compact('personas', 'otrasEnfermedades'));
+		$this->set(compact('personas'));
 	}
 
 	function edit($id = null) {
@@ -53,8 +52,7 @@ class EstadosSaludsController extends AppController {
 			$this->data = $this->EstadosSalud->read(null, $id);
 		}
 		$personas = $this->EstadosSalud->Persona->find('list');
-		$otraEnfermedads = $this->EstadosSalud->OtraEnfermedad->find('list');
-		$this->set(compact('personas', 'otraEnfermedads'));
+		$this->set(compact('personas'));
 	}
 
 	function delete($id = null) {

@@ -6,7 +6,7 @@
 		echo $this->Form->input('persona_id');
 		echo $this->Form->input('numero_documento');
 		echo $this->Form->input('tramitada_por_cm');
-		echo $this->Form->input('modified_user_id');
+		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 		echo $this->Form->input('Documentacion');
 	?>
 	</fieldset>
