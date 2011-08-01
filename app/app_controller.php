@@ -2,7 +2,7 @@
 
 class AppController extends Controller {
     var $components = array('Session', 'RequestHandler');
-    var $helpers = array('Html', 'Form', 'Session', 'Ajax');
+    var $helpers = array('Html', 'Form', 'Session', 'Ajax', 'Javascript');
 }
 
 ?>

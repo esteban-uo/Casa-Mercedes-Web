@@ -109,5 +109,74 @@ class PagesController extends AppController {
 		$title_for_layout = "Panel de control del Administrador";
 		$this->layout = 'panel_control';
 		$this->set(compact('title_for_layout'));
+		
+	function crearReporteGeneral($id){
+	
+		//Carga de modelos
+		$this->loadModel('Albergado');
+		$this->loadModel('Persona');
+		//$this->loadModel('Estados_salud');
+		$this->loadModel('Documentos');
+		$this->loadModel('SocioEconomico');
+		$this->loadModel('Institucion');
+		
+		 $parametrosContain = array(
+									'FotoImagen' => array(
+                                                    'Tipoimage' => array ('title'),
+                                                    'url' => array()
+                                                    ),
+                                    'Albergado' => array(
+                                                    'FotoImagen' => array (
+                                                                    'Tipoimage' => array ('title'),
+                                                                    'url' => array()
+                                                                    ),
+                                                    'Institucion' => array ('id'),
+                                                    'Familia' => array ('id'),
+                                                    'Social' => array ('id'),
+                                                    'SocioEconomico' => array ('id'),
+                                                    'Problematica' => array ()
+                                                    ),
+                                    'Documento' => array(
+												'tramitada_por_cm' => array()
+										),
+                                    'EstadosSalud' => array(
+												'peso' => array(),
+												'altura' => array(),
+												'tipo_sangre' => array()
+									),
+                                    'Nacimiento' => array(
+														'fecha_nacimiento' => array(),
+                                                        'Estado' => array ('title'),
+                                                        'Pais' => array ('title'),
+                                                        'Municipio' => array ('title'),
+                                                        'id' => array(),
+                                                         ),
+                                    'Vestimenta' => array('id')
+								);
+		
+         $this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
+		//if(!empty($this->data)){
+			//$id = $this->data['id'];
+			$persona  = $this->Persona->find('first', array(
+				'conditions' =>  array('Persona.id' => $id),
+				'contain' => $parametrosContain
+			));
+			
+			if(!$socioEconomico = $this->SocioEconomico->find('first', array(
+				'conditions' => array('SocioEconomico.albergado_id' => $persona['Albergado']['id'])
+			))){
+				$socioEconomico = "No hay datos encontrados";
+			}
+			
+			$institucion = $this->Institucion->find('first', array(
+				'conditions' => array('Institucion.albergado_id' => $persona['Albergado']['id'])
+			));
+			
+			//Debug($socioEconomico);
+			Debug($persona);
+			$this->set('persona', $persona);
+			$this->set('institucion', $institucion);
+			$this->set('socioEconomico', $socioEconomico);
+		//}
 	}
 }

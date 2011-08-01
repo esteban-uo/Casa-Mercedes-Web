@@ -1,10 +1,6 @@
-<div>
-<?php echo $ajax->form('edit', 'post', array(
-        'model'    => 'Albergados',
-        'url'      => array( 'controller' => 'albergados', 'action' => 'edit'),
-        'update'   => 'MB_content',
-        'complete' => 'closeModalbox()'
-        ));?>
+<div class="albergados form">
+<?php echo $form->create('Albergado');
+?>
 	<fieldset>
 		<legend><?php __('Add Albergado'); ?></legend>
 	<?php

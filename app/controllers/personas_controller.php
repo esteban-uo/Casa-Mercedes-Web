@@ -2,12 +2,11 @@
 class PersonasController extends AppController {
 
 	var $name = 'Personas';
-		
+	
 	function beforeFilter() {
         parent::beforeFilter(); 
         $this->layout = "panel_control";
     }
-	
 	function find(){
 		if(!empty($data)){
 		}

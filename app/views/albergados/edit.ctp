@@ -1,5 +1,19 @@
 <div class="albergados form">
-<?php echo $this->Form->create('Albergado');?>
+<?php 
+
+if (isset($closeModalbox) && $closeModalbox) echo "<div id='closeModalbox'></div>";
+
+if( $ajax->isAjax()){
+    echo $ajax->form('edit', 'post', array(
+        'model'    => 'Albergados',
+        'url'      => array( 'controller' => 'albergados', 'action' => 'edit'),
+        'update'   => 'MB_content',
+        'complete' => 'closeModalbox();'
+        ));
+}else{
+    echo $form->create('Albergado');
+}
+?>
 	<fieldset>
 		<legend><?php __('Edit Albergado'); ?></legend>
 	<?php
@@ -20,6 +34,7 @@
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
 </div>
+<!--
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
@@ -53,4 +68,4 @@
 		<li><?php echo $this->Html->link(__('List Ingresos', true), array('controller' => 'ingresos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Ingreso', true), array('controller' => 'ingresos', 'action' => 'add')); ?> </li>
 	</ul>
-</div>
+</div>-->

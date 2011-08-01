@@ -48,7 +48,6 @@
 		<td><?php echo $albergado['Albergado']['modified']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
-
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $albergado['Albergado']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $albergado['Albergado']['id'])); ?>
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $albergado['Albergado']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $albergado['Albergado']['id'])); ?>

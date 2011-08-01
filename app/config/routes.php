@@ -29,3 +29,6 @@
 	Router::connect('/', array('controller' => 'pages', 'action' => 'index'));
 	Router::connect('/acp', array('controller' => 'pages', 'action' => 'acp'));
 	Router::connect('/busqueda', array('controller' => 'pages', 'action' => 'filtros'));
+	Router::connect('/report', array('controller' => 'pages', 'action' => 'crearReporteGeneral'));
+        
+   Router::parseExtensions();

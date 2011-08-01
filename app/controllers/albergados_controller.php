@@ -2,7 +2,7 @@
 class AlbergadosController extends AppController {
 
 	var $name = 'Albergados';
-
+	
 	function beforeFilter() {
         parent::beforeFilter(); 
         $this->layout = "panel_control";
@@ -22,6 +22,7 @@ class AlbergadosController extends AppController {
 	}
 
 	function add() {
+            $this->set('closeModalbox', false);
 		if (!empty($this->data)) {
 			$this->Albergado->create();
 			if ($this->Albergado->save($this->data)) {
@@ -38,19 +39,22 @@ class AlbergadosController extends AppController {
 		$ingresos = $this->Albergado->Ingreso->find('list');
 		$this->set(compact('personas', 'casas', 'fotoImagens', 'ingresos'));
 	}
-
-	function edit($id = null) {
+        
+       	function edit($id = null) {
+            $this->set('closeModalbox', false);
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Los datos del albergado son inválidos.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
+                    if($this->Albergado->validates()){
 			if ($this->Albergado->save($this->data)) {
 				$this->Session->setFlash(__('Los datos del albergado son correctos y se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('Los datos del albergado son incorrectos. Intenta nuevamente.', true));
 			}
+                    }
 		}
 		if (empty($this->data)) {
 			$this->data = $this->Albergado->read(null, $id);
