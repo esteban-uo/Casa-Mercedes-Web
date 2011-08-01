@@ -3,21 +3,25 @@ class ImagesController extends AppController {
 
 	var $name = 'Images';
 	
+	
 	function beforeFilter() {
         parent::beforeFilter(); 
         $this->layout = "panel_control";
+	
     }
 
 	function index() {
 		$this->Image->recursive = 0;
 		$this->set('images', $this->paginate());
 	}
-
+	
+	
 	function view($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Los datos de la imagen no existen o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
+		
 		$this->set('image', $this->Image->read(null, $id));
 	}
 	
@@ -258,5 +262,7 @@ class ImagesController extends AppController {
 		$file= str_split($file,strrpos($file, '.')+1);
 		return $file[1];
 	}
+	
+	
 	
 }
