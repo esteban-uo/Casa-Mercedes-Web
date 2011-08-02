@@ -53,12 +53,14 @@ class AlbergadosController extends AppController {
 			}
 		}
 		if (empty($this->data)) {
+			Debug($this->Albergado->read(null, $id));
 			$this->data = $this->Albergado->read(null, $id);
 		}
 		$personas = $this->Albergado->Persona->find('list');
 		$casas = $this->Albergado->Casa->find('list');
 		$fotoImagens = $this->Albergado->FotoImagen->find('list');
 		$ingresos = $this->Albergado->Ingreso->find('list');
+		Debug($ingresos);
 		$this->set(compact('personas', 'casas', 'fotoImagens', 'ingresos'));
 	}
 

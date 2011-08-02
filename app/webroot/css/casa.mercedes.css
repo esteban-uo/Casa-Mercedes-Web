@@ -820,3 +820,35 @@ div.code-coverage-results span.result-good {
 .cl{
 	clear:left;
 }
+#overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background:#000 no-repeat scroll center center;
+}
+#lightbox {
+	position:absolute;
+	background:#fff;
+	z-index:10;
+}
+#cerrarLightBox{
+	display:block;
+	position:absolute;
+	top:0;
+	right:0;
+}
+#mensajesLightBox{
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:20;
+}
+#mensajesLightBox ul li{
+	background: none repeat scroll 0 0 red;
+    color: #FFFFFF;
+    list-style: none;
+    margin: 10px 0;
+    padding: 10px;
+}
