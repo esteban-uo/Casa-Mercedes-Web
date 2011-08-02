@@ -12,42 +12,6 @@
 }
 
 @font-face {
-    font-family: 'QuicksandLightOblique';
-    src: url('../fonts/Quicksand_Light_Oblique-webfont.eot');
-    src: url('../fonts/Quicksand_Light_Oblique-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Light_Oblique-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Light_Oblique-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Light_Oblique-webfont.svg#QuicksandLightOblique') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'QuicksandBook';
-    src: url('../fonts/Quicksand_Book-webfont.eot');
-    src: url('../fonts/Quicksand_Book-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Book-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Book-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Book-webfont.svg#QuicksandBook') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'QuicksandBookOblique';
-    src: url('../fonts/Quicksand_Book_Oblique-webfont.eot');
-    src: url('../fonts/Quicksand_Book_Oblique-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Book_Oblique-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Book_Oblique-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Book_Oblique-webfont.svg#QuicksandBookOblique') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
     font-family: 'QuicksandBold';
     src: url('../fonts/Quicksand_Bold-webfont.eot');
     src: url('../fonts/Quicksand_Bold-webfont.eot?#iefix') format('embedded-opentype'),
@@ -59,29 +23,6 @@
 
 }
 
-@font-face {
-    font-family: 'QuicksandBoldOblique';
-    src: url('../fonts/Quicksand_Bold_Oblique-webfont.eot');
-    src: url('../fonts/Quicksand_Bold_Oblique-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Bold_Oblique-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Bold_Oblique-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Bold_Oblique-webfont.svg#QuicksandBoldOblique') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'QuicksandDash';
-    src: url('../fonts/Quicksand_Dash-webfont.eot');
-    src: url('../fonts/Quicksand_Dash-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Dash-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Dash-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Dash-webfont.svg#QuicksandDash') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
 
 /*estilos generas*/
 *{
@@ -92,7 +33,10 @@
 html {
 	background:#eb6077;
 	background:-moz-radial-gradient(center, #f0b49e, #eb6077) no-repeat #eb6077;
-	background:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#f0b49e ), to(#eb6077)) no-repeat #eb6077;
+	background:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#f0b49e), to(#eb6077)) no-repeat #eb6077;
+   	background-image: -ms-linear-gradient(top, #f0b49e, #eb6077) no-repeat;
+   	background-image: -o-linear-gradient(top, #f0b49e, #eb6077) no-repeat;
+	behavior: url(../css/PIE.htc);
 
 	}
 
@@ -151,6 +95,7 @@ body{
 		
 }
 h1.title{
+	font-family:QuicksandLight;
 	padding-left: 40px;
 	font-size: 100px;
 	color: #fff;
@@ -330,16 +275,25 @@ right: 15px;
 	width: 800px;
 	height: 210px;
 	margin:0% 5%;
+	column-width: 300px;
+	column-gap:1em;
 	-moz-column-width: 300px; 
 	-webkit-column-width: 300px; 
 	-moz-column-gap: 1em; 
 	-webkit-column-gap: 1em;
 
 }
+
+#valores h2 { 
+	break-before: column;
+	}
+
 #programas{
 	font-size: 13px;
 	width: 800px;
 	margin: 0% 5%;
+	column-width: 300px;
+	column-gap:1em;	
 	-moz-column-width: 300px; 
 	-webkit-column-width: 300px; 
 	-moz-column-gap: 1em; 
@@ -533,10 +487,4 @@ div.input label{
 
 .foto_chicas{
 	background:url('../img/foto1.jpg');
-}
-
-.box_info_extra_acp ul li a{
-	color:#333;
-	text-decoration:none;
-	font-size:15px;	
 }
