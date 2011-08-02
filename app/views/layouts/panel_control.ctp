@@ -3,12 +3,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <title>
-            <?php __('Casa Mercedes - '); ?>
+            <?php __('Casa de las Mercedes - '); ?>
             <?php echo $title_for_layout; ?>
         </title>
         <?php
         echo $this->Html->meta('icon');
-        echo $this->Html->css('cake.generic');
+        echo $this->Html->css('casa.mercedes');
         echo $scripts_for_layout;
         ?>
     </head>
@@ -22,7 +22,8 @@
                     <h2 class="subtitle">Casa</h2>
                     <ul id="act_style">
                         <li><?php echo $this->Html->link(__('Crear Persona', true), array('controller' => 'personas', 'action' => 'add')); ?></li>
-                        <li><?php echo $this->Html->link(__('Enlistar Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?></li>
+                        <li><?php echo $this->Html->link(__('Enlistar Personas', true), array('controller' => 'personas', 'action' => 'index')); ?></li>
+						<li><?php echo $this->Html->link(__('Enlistar Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?></li>
                         <li><?php echo $this->Html->link(__('Enlistar Dependientes', true), array('controller' => 'dependientes', 'action' => 'index')); ?></li>
                     </ul>
                     <h2 class="subtitle">Usuarios</h2>
@@ -32,9 +33,7 @@
                     </ul>
                 </div>
                 <?php echo $this->Session->flash(); ?>
-                <div class="posiciones_fl">
-                    <?php echo $content_for_layout; ?>
-                </div>
+                <?php echo $content_for_layout; ?>
 
             </div>
                 <div class="posiciones_cl bottom"></div>

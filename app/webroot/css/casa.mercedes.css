@@ -1,21 +1,3 @@
-/**
- *
- * Generic CSS for CakePHP
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       cake
- * @subpackage    cake.app.webroot.css
- * @since         CakePHP(tm)
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
- */
-
 @font-face {
     font-family: 'QuicksandLight';
     src: url('../fonts/Quicksand_Light-webfont.eot');
@@ -349,7 +331,6 @@ fieldset fieldset div {
 	margin: 0 20px;
 }
 form div {
-	clear: both;
 	margin-bottom: 1em;
 	padding: .5em;
 	vertical-align: text-top;
@@ -378,7 +359,7 @@ label {
 input, textarea {
 	clear: both;
 	font-size: 140%;
-	padding: 1%;
+	padding: 5px 10px;
 	width:98%;
 }
 
@@ -387,8 +368,8 @@ div.input input{
 		color:#fff;
 		background: rgba(82,98,84,1);
 		clear: both;
+		padding: 5px 10px;
 		font-size: 140%;
-		padding: 1%;
 		width:98%;
 		border-radius: 10px 10px 10px 0px;
 		-moz-box-shadow: inset 0 0 5px #000;
@@ -411,7 +392,7 @@ div.input input{
 	margin-left:30px;
 }
 img.imagen_perfil_box{
-	margin:20px 20px 0 0;
+	margin:0 20px 5px 0;
 	padding: 5px;
 	background:#ccc;
 }
@@ -422,11 +403,11 @@ img.imagen_infograma_box{
 }
 
 div.box_info_acp {
-
+	position:relative;
 	border-bottom:solid 1px #fff;
 	padding:5px 5px 28px 5px;
 	margin:10px 0 10px 0;
-	width:90%;
+	width:100%;
 	background:#493443;
 	color:#fff;
 	-moz-border-radius: 10px;
@@ -460,6 +441,10 @@ div.box_info_extra_acp{
 
 div.box_info_acp h2{
 	margin-bottom:10px;
+}
+
+div.box_new_info_acp{
+background:#444;
 }
 
 .actions_a{
@@ -498,15 +483,10 @@ div.actions_a ul li a:hover{
 		background-image: -moz-linear-gradient(top, #af6fd4, #4f2468);
 	
 }
-
-
-
-
-
-
 .action_info_acp{
     right:0;
     bottom:0;
+	position: absolute;
 
 }
 .action_info_acp ul li{
@@ -813,4 +793,29 @@ div.code-coverage-results span.result-good {
 /** Elements **/
 #url-rewriting-warning {
 	display: none;
+}
+
+/* Añado a Panel de control */
+
+#acp_pagina_principal{
+	float: left;
+    width: 57%;
+	margin-top:15px;
+}
+.busqueda_acp{
+	float:left;
+	width: 76%;
+	margin-right: 14px;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.cb{
+	clear:both;
+}
+.cl{
+	clear:left;
 }
