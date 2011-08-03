@@ -10,3 +10,5 @@
     echo $this->Form->end(array("name"=>"Enviar Consulta", "label"=>"Login", "class" => "button_form"));
 ?>
 </div>
+
+</div>

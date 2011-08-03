@@ -1,104 +1,48 @@
 /*fuentes utilizadas*/
 @font-face {
-    font-family: 'QuicksandLight';
-    src: url('../fonts/Quicksand_Light-webfont.eot');
-    src: url('../fonts/Quicksand_Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Light-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Light-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Light-webfont.svg#QuicksandLight') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'QuicksandLight';
+	src: url('../fonts/Quicksand_Light-webfont.eot');
+	src: url('../fonts/Quicksand_Light-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Quicksand_Light-webfont.woff') format('woff'),
+	url('../fonts/Quicksand_Light-webfont.ttf') format('truetype'),
+	url('../fonts/Quicksand_Light-webfont.svg#QuicksandLight') format('svg');
+	font-weight: normal;
+	font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'QuicksandLightOblique';
-    src: url('../fonts/Quicksand_Light_Oblique-webfont.eot');
-    src: url('../fonts/Quicksand_Light_Oblique-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Light_Oblique-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Light_Oblique-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Light_Oblique-webfont.svg#QuicksandLightOblique') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'QuicksandBold';
+	src: url('../fonts/Quicksand_Bold-webfont.eot');
+	src: url('../fonts/Quicksand_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Quicksand_Bold-webfont.woff') format('woff'),
+	url('../fonts/Quicksand_Bold-webfont.ttf') format('truetype'),
+	url('../fonts/Quicksand_Bold-webfont.svg#QuicksandBold') format('svg');
+	font-weight: normal;
+	font-style: normal;
 
 }
 
-@font-face {
-    font-family: 'QuicksandBook';
-    src: url('../fonts/Quicksand_Book-webfont.eot');
-    src: url('../fonts/Quicksand_Book-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Book-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Book-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Book-webfont.svg#QuicksandBook') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'QuicksandBookOblique';
-    src: url('../fonts/Quicksand_Book_Oblique-webfont.eot');
-    src: url('../fonts/Quicksand_Book_Oblique-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Book_Oblique-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Book_Oblique-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Book_Oblique-webfont.svg#QuicksandBookOblique') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'QuicksandBold';
-    src: url('../fonts/Quicksand_Bold-webfont.eot');
-    src: url('../fonts/Quicksand_Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Bold-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Bold-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Bold-webfont.svg#QuicksandBold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'QuicksandBoldOblique';
-    src: url('../fonts/Quicksand_Bold_Oblique-webfont.eot');
-    src: url('../fonts/Quicksand_Bold_Oblique-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Bold_Oblique-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Bold_Oblique-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Bold_Oblique-webfont.svg#QuicksandBoldOblique') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'QuicksandDash';
-    src: url('../fonts/Quicksand_Dash-webfont.eot');
-    src: url('../fonts/Quicksand_Dash-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Quicksand_Dash-webfont.woff') format('woff'),
-         url('../fonts/Quicksand_Dash-webfont.ttf') format('truetype'),
-         url('../fonts/Quicksand_Dash-webfont.svg#QuicksandDash') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
 
 /*estilos generas*/
 *{
-    margin:0;
-    padding:0;
+	margin:0;
+	padding:0;
 }
 
 html {
 	background:#eb6077;
 	background:-moz-radial-gradient(center, #f0b49e, #eb6077) no-repeat #eb6077;
-	background:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#f0b49e ), to(#eb6077)) no-repeat #eb6077;
+	background:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#f0b49e), to(#eb6077)) no-repeat #eb6077;
+	background-image: -ms-linear-gradient(top, #f0b49e, #eb6077) no-repeat;
+	background-image: -o-linear-gradient(top, #f0b49e, #eb6077) no-repeat;
+	behavior: url(../css/PIE.htc);
 
-	}
+}
 
 
 body{
-    font-family:QuicksandLight, sans-serif;
+	font-family:QuicksandLight, sans-serif;
 	height: 100%;
 
 }
@@ -109,12 +53,15 @@ body{
 	position: fixed;
 	right: 0px;
 	bottom: 20px;
+	behavior: url(../css/PIE.htc);
+
 }
 #patrocinadores h4{
 	color: #fff;
 	font-size: 20px;
 	text-shadow: #000 0.1em 0.1em 0.2em;
-	
+	behavior: url(../css/PIE.htc);
+
 }
 
 .extend{
@@ -123,14 +70,14 @@ body{
 	width: 190px;
 	height:70px;
 	behavior: url(../css/PIE.htc);
-	
+
 }
 .campus{
 	background:url('../img/cp_small.png') no-repeat;
 	display:block;
 	width:150px;
 	height:70px;
-	behavior: url(../css/PIE.htc);	
+	behavior: url(../css/PIE.htc);
 }
 /*index*/
 
@@ -142,20 +89,21 @@ body{
 	-webkit-box-shadow: 0 0 5px #000;
 	box-shadow: 0 0 5px #000;
 	behavior: url(../css/PIE.htc);
-	
+
 }
 
 .main{
 	padding-right: 2400px;
 	text-align: right;
-		
+
 }
 h1.title{
+	font-family:QuicksandLight;
 	padding-left: 40px;
 	font-size: 100px;
 	color: #fff;
 	text-shadow: #000 0em 0em 0.2em;
-	
+
 }
 .title_alt{
 	margin: 40px 0px 20px 0px;
@@ -165,7 +113,7 @@ h1.title{
 	-webkit-box-shadow: 0 0 5px #000;
 	box-shadow: 0 0 5px #000;
 	behavior: url(../css/PIE.htc);
-	
+
 }
 h1.title_alt{
 	padding-left: 40px;
@@ -175,31 +123,25 @@ h1.title_alt{
 }
 
 #scroll{
-	    width:9000px;
-	    position:absolute;
-	    top:0px;
-	    left:0px;
-	    bottom:0px;
-		height: 100%;
+	width:9000px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	height: 100%;
 }
 .section{
-    margin:0px;
-    bottom:0px;
-    width:3000px;
-    float:left;
-    height:100%;
+	margin:0px;
+	bottom:0px;
+	width:3000px;
+	float:left;
+	height:100%;
 }
-
-/**.section p{
-    margin:20px 0px 0px 50px;
-    width:600px;
-   
-}**/
 
 #tagline{
 	margin:10px 20px 0px 50px;
- 	width:500px;
-height:300px;
+	width:500px;
+	height:300px;
 	color:#493443;
 	line-height: 50px;
 	text-align: right;
@@ -208,12 +150,12 @@ height:300px;
 	font-size: 25px;
 
 }
-.especial{	
+.especial{
 	color:#493443;
 	display: block;
 	padding: 20px 1990px 0px 20px;
 	line-height: 30px;
-	}
+}
 .casa{
 	position: fixed;
 	top: 195px;
@@ -235,57 +177,57 @@ height:300px;
 	background: url('../img/button_next.png') 0px 0px no-repeat;
 }
 .button_section1:hover{
-		background: url('../img/button_next.png') 0px -75px no-repeat;
+	background: url('../img/button_next.png') 0px -75px no-repeat;
 }
 
 .pink{
-    background: url(../img/rosamorado.jpg) repeat-y top right ;
+	background: url(../img/rosamorado.jpg) repeat-y top right ;
 }
 .purple{
-    background:#a1c5ab url(../img/azulmorado.jpg) repeat-y top right;
+	background:#a1c5ab url(../img/azulmorado.jpg) repeat-y top right;
 }
 
 .blue{
-    background:#f0e2be ;
+	background:#f0e2be ;
 }
 
 #nav{
 	position: fixed;
 	right: 10px;
 	top: 40px;
-	
+
 }
 
 .section ul{
-    list-style:none;
-    margin:20px 0px 0px 550px;
+	list-style:none;
+	margin:20px 0px 0px 550px;
 }
 
 #nav li{
-    font-size: 15px;
-    color: #000;
-    padding:5px;
-    margin:5px;
-    	   text-align: right;
+	font-size: 15px;
+	color: #000;
+	padding:5px;
+	margin:5px;
+	text-align: right;
 }
 
 #nav li a{
-	    color:#fff;
-	    text-decoration: none;
+	color:#fff;
+	text-decoration: none;
 
-	
+
 }
 
 #nav li a:hover{
-	    color:#493443;
-	    text-decoration: none;
-		padding: 10px;
-		background:#f6edb6;
-		-moz-border-radius: 10px 10px 10px 10px;
-		-webkit-border-radius: 10px 10px 10px 0px;
-		border-radius: 10px 10px 10px 0px;	
-		behavior: url(../css/PIE.htc);
-		
+	color:#493443;
+	text-decoration: none;
+	padding: 10px;
+	background:#f6edb6;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 0px;
+	border-radius: 10px 10px 10px 0px;
+	behavior: url(../css/PIE.htc);
+
 }
 .alt{
 	position: fixed;
@@ -295,14 +237,14 @@ height:300px;
 }
 
 .teal{
-background:#00cdde;
-position: fixed;
-top: 3px;
-right: 15px;
+	background:#00cdde;
+	position: fixed;
+	top: 3px;
+	right: 15px;
 }
 
 .button_generic a{
-	text-decoration: none;	
+	text-decoration: none;
 	color: #fff;
 }
 .button_generic {
@@ -319,10 +261,11 @@ right: 15px;
 
 }
 .button_generic:hover{
-		text-shadow: #000 0.1em 0.1em 0.2em;
+	text-shadow: #000 0.1em 0.1em 0.2em;
 	-moz-box-shadow: inset 0 0 5px #000;
 	-webkit-box-shadow: inset 0 0 5px#000;
 	box-shadow: inner 0 0 5px #000;
+	behavior: url(../css/PIE.htc);
 
 }
 
@@ -330,21 +273,34 @@ right: 15px;
 	width: 800px;
 	height: 210px;
 	margin:0% 5%;
-	-moz-column-width: 300px; 
-	-webkit-column-width: 300px; 
-	-moz-column-gap: 1em; 
+	column-width: 300px;
+	column-gap:1em;
+	-moz-column-width: 300px;
+	-webkit-column-width: 300px;
+	-moz-column-gap: 1em;
 	-webkit-column-gap: 1em;
+	behavior: url(../css/PIE.htc);
 
 }
+
+#valores h2 {
+	break-before: column;
+	behavior: url(../css/PIE.htc);
+
+}
+
 #programas{
 	font-size: 13px;
 	width: 800px;
 	margin: 0% 5%;
-	-moz-column-width: 300px; 
-	-webkit-column-width: 300px; 
-	-moz-column-gap: 1em; 
+	column-width: 300px;
+	column-gap:1em;
+	-moz-column-width: 300px;
+	-webkit-column-width: 300px;
+	-moz-column-gap: 1em;
 	-webkit-column-gap: 1em;
-	
+	behavior: url(../css/PIE.htc);
+
 }
 
 .subtitle{
@@ -353,11 +309,11 @@ right: 15px;
 .parag{
 	color:#493443;
 	line-height: 25px;
-	
+
 }
 .espacio_vacio{
 	height:100px;
-	
+
 }
 #footer {
 	font-size: 10px;
@@ -371,6 +327,8 @@ right: 15px;
 	height: 10px;
 	padding-left: 5%;
 	background: url('../img/trans1.png');
+	behavior: url(../css/PIE.htc);
+
 }
 
 #footer a{
@@ -387,17 +345,19 @@ right: 15px;
 
 #ingresar form{
 	background:rgba(255,255,255,0.7);
-width: 300px;
-margin: 0 auto;
-padding:20px 50px;
+	width: 300px;
+	margin: 0 auto;
+	padding:20px 50px;
 	border-radius: 10px 10px 10px 0px;
 	-moz-box-shadow: 0 0 8px #000;
 	-webkit-box-shadow: 0 0 8px #000;
 	box-shadow: 0 0 8px #000;
+	behavior: url(../css/PIE.htc);
+
 }
 
 #ingresar label{
-	
+
 	color: #333;
 	font-size: 20px;
 }
@@ -407,7 +367,7 @@ padding:20px 50px;
 	-moz-box-shadow: inset 0 0 5px #000;
 	-webkit-box-shadow: inset 0 0 5px #000;
 	box-shadow: inner 0 0 5px #000;
-font-size: 15px;
+	font-size: 15px;
 	border: none;
 	width: 300px;
 	margin: 10px 0px;
@@ -415,6 +375,8 @@ font-size: 15px;
 	display: block;
 	border-radius: 10px 10px 10px 0px;
 	color:#eee;
+	behavior: url(../css/PIE.htc);
+
 }
 #ingresar .input_style:focus {
 	border: solid 1px #333;
@@ -423,7 +385,7 @@ font-size: 15px;
 .button_form{
 	border: none;
 	color: #fff;
-	text-decoration: none;	
+	text-decoration: none;
 	padding: 10px;
 	background:#4f2468;
 	font-family: QuicksandBold;
@@ -433,6 +395,8 @@ font-size: 15px;
 	-moz-box-shadow: 0 0 8px #000;
 	-webkit-box-shadow: 0 0 8px #000;
 	box-shadow: 0 0 8px #000;
+	behavior: url(../css/PIE.htc);
+
 }
 
 .button_form:hover{
@@ -441,39 +405,44 @@ font-size: 15px;
 	-moz-box-shadow: inset 0 0 5px #000;
 	-webkit-box-shadow: inset 0 0 5px #000;
 	box-shadow: inner 0 0 5px #000;
+	behavior: url(../css/PIE.htc);
+
 
 }
 
- /*
- Añadidos en desarrollo 
+/*
+Añadidos en desarrollo
 */
 
 /* Login rápido */
 #formulario_rapido {
 	width: 169px;
-    background: none repeat scroll 0 0 #333;
-    color: #FFFFFF;
-    position: fixed;
-     right: 15px;
-    top: 1px;
+	background: none repeat scroll 0 0 #333;
+	color: #FFFFFF;
+	position: fixed;
+	right: 15px;
+	top: 1px;
 	border-radius: 10px 10px 10px 0;
+	behavior: url(../css/PIE.htc);
+
 }
 #boton_formulario_rapido {
-text-indent: 20px;
-    background: url("../img/img_down.png") no-repeat scroll 14px 10px #493443;
+	text-indent: 20px;
+	background: url("../img/img_down.png") no-repeat scroll 14px 10px #493443;
 	border-radius: 10px 10px 10px 0;
 	box-shadow: 0 0 8px #000000;
-    font-family: QuicksandBold;
-    color: #FFFFFF;
-    cursor: pointer;
-    height: 28px;
+	font-family: QuicksandBold;
+	color: #FFFFFF;
+	cursor: pointer;
+	height: 28px;
 	padding: 10px 0 0 16px;
 }
 #boton_formulario_rapido:hover{
-		text-shadow: #000 0.1em 0.1em 0.2em;
+	text-shadow: #000 0.1em 0.1em 0.2em;
 	-moz-box-shadow: inset 0 0 5px #493443;
 	-webkit-box-shadow: inset 0 0 5px #493443;
 	box-shadow: inner 0 0 5px #000;
+	behavior: url(../css/PIE.htc);
 
 }
 
@@ -490,6 +459,8 @@ text-indent: 20px;
 	-moz-box-shadow: inset 0 0 5px #000;
 	-webkit-box-shadow: inset 0 0 5px#000;
 	box-shadow: inner 0 0 5px #000;
+	behavior: url(../css/PIE.htc);
+
 }
 
 .form_redondo:focus{
@@ -503,7 +474,7 @@ text-indent: 20px;
 	font-size:14px;
 }
 #form_login div{
-	 padding: 0 0 12px 7px;
+	padding: 0 0 12px 7px;
 }
 /* Posiciones */
 .posiciones_fl{
@@ -528,15 +499,9 @@ text-indent: 20px;
 div.input label{
 	color:#fff;
 	font-size: 15px;
-	
+
 }
 
 .foto_chicas{
 	background:url('../img/foto1.jpg');
-}
-
-.box_info_extra_acp ul li a{
-	color:#333;
-	text-decoration:none;
-	font-size:15px;	
 }
