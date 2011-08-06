@@ -1,6 +1,8 @@
-﻿<?php
+<?php
 class Ingreso extends AppModel {
 	var $name = 'Ingreso';
+	//The Associations below have been created with all possible keys, those that are not needed can be removed
+	
 	var $validate = array(
 		'fecha' => array(
 			'minlength' => array(
@@ -31,15 +33,23 @@ class Ingreso extends AppModel {
 			),
 		),
 	);
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
-	var $belongsTo = array(
+	var $hasAndBelongsToMany = array(
 		'Albergado' => array(
 			'className' => 'Albergado',
-			'foreignKey' => 'albergado_id',
+			'joinTable' => 'albergados_ingresos',
+			'foreignKey' => 'ingreso_id',
+			'associationForeignKey' => 'albergado_id',
+			'unique' => true,
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
 		)
 	);
+
 }

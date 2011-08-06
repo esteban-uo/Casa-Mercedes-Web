@@ -2,12 +2,12 @@
 class AlbergadosController extends AppController {
 
 	var $name = 'Albergados';
-
+	
 	function beforeFilter() {
         parent::beforeFilter(); 
         $this->layout = "panel_control";
     }
-	
+
 	function index() {
 		$this->Albergado->recursive = 0;
 		$this->set('albergados', $this->paginate());
@@ -15,7 +15,7 @@ class AlbergadosController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid albergado', true));
+			$this->Session->setFlash(__('Los datos del albergado son inválidos.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('albergado', $this->Albergado->read(null, $id));
@@ -25,29 +25,31 @@ class AlbergadosController extends AppController {
 		if (!empty($this->data)) {
 			$this->Albergado->create();
 			if ($this->Albergado->save($this->data)) {
-				$this->Session->setFlash(__('The albergado has been saved', true));
+				$this->Session->setFlash(__('Los datos del albergado son correctos y se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The albergado could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos del albergado son incorrectos. Intenta nuevamente.', true));
 			}
 		}
+		
 		$personas = $this->Albergado->Persona->find('list');
 		$casas = $this->Albergado->Casa->find('list');
 		$fotoImagens = $this->Albergado->FotoImagen->find('list');
-		$this->set(compact('personas', 'casas', 'fotoImagens'));
+		$ingresos = $this->Albergado->Ingreso->find('list');
+		$this->set(compact('personas', 'casas', 'fotoImagens', 'ingresos'));
 	}
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid albergado', true));
+			$this->Session->setFlash(__('Los datos del albergado son inválidos.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->Albergado->save($this->data)) {
-				$this->Session->setFlash(__('The albergado has been saved', true));
+				$this->Session->setFlash(__('Los datos del albergado son correctos y se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The albergado could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos del albergado son incorrectos. Intenta nuevamente.', true));
 			}
 		}
 		if (empty($this->data)) {
@@ -56,7 +58,8 @@ class AlbergadosController extends AppController {
 		$personas = $this->Albergado->Persona->find('list');
 		$casas = $this->Albergado->Casa->find('list');
 		$fotoImagens = $this->Albergado->FotoImagen->find('list');
-		$this->set(compact('personas', 'casas', 'fotoImagens'));
+		$ingresos = $this->Albergado->Ingreso->find('list');
+		$this->set(compact('personas', 'casas', 'fotoImagens', 'ingresos'));
 	}
 
 	function delete($id = null) {

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class DependientesController extends AppController {
 
 	var $name = 'Dependientes';
@@ -15,7 +15,7 @@ class DependientesController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid dependiente', true));
+			$this->Session->setFlash(__('Los datos del dependiente son inválidos.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('dependiente', $this->Dependiente->read(null, $id));
@@ -25,10 +25,10 @@ class DependientesController extends AppController {
 		if (!empty($this->data)) {
 			$this->Dependiente->create();
 			if ($this->Dependiente->save($this->data)) {
-				$this->Session->setFlash(__('The dependiente has been saved', true));
+				$this->Session->setFlash(__('Los datos del dependiente son correctos y se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The dependiente could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos del dependiente son incorrectos. Por favor, Intenta nuevamente.', true));
 			}
 		}
 		$personas = $this->Dependiente->Persona->find('list');
@@ -38,15 +38,15 @@ class DependientesController extends AppController {
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid dependiente', true));
+			$this->Session->setFlash(__('Los datos del dependiente son inválidos.', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
 			if ($this->Dependiente->save($this->data)) {
-				$this->Session->setFlash(__('The dependiente has been saved', true));
+				$this->Session->setFlash(__('Los datos del dependiente son correctos y se han guardado satisfactoriamente.', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The dependiente could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('Los datos del dependiente son incorrectos y no se pudo guardar. Por favor intenta nuevamente.', true));
 			}
 		}
 		if (empty($this->data)) {
@@ -59,14 +59,14 @@ class DependientesController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for dependiente', true));
+			$this->Session->setFlash(__('El número del dependiente es incorrecto.', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Dependiente->delete($id)) {
-			$this->Session->setFlash(__('Dependiente deleted', true));
+			$this->Session->setFlash(__('Los datos del dependiente han sido eliminados satisfactoriamente.', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Dependiente was not deleted', true));
+		$this->Session->setFlash(__('Los datos del dependiente no se pudieron dar de baja. Intenta nuevamente.', true));
 		$this->redirect(array('action' => 'index'));
 	}
 	

@@ -4,6 +4,7 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('persona_id');?></th>
+			<th><?php echo $this->Paginator->sort('numero_embarazos');?></th>
 			<th><?php echo $this->Paginator->sort('expediente');?></th>
 			<th><?php echo $this->Paginator->sort('casa_id');?></th>
 			<th><?php echo $this->Paginator->sort('fecha_ingreso');?></th>
@@ -30,6 +31,7 @@
 		<td>
 			<?php echo $this->Html->link($albergado['Persona']['primer_nombre'], array('controller' => 'personas', 'action' => 'view', $albergado['Persona']['id'])); ?>
 		</td>
+		<td><?php echo $albergado['Albergado']['numero_embarazos']; ?>&nbsp;</td>
 		<td><?php echo $albergado['Albergado']['expediente']; ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($albergado['Casa']['direccion'], array('controller' => 'casas', 'action' => 'view', $albergado['Casa']['id'])); ?>
@@ -67,7 +69,7 @@
 		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
 </div>
-<div class="actions">
+<div class="actions_a">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Albergado', true), array('action' => 'add')); ?></li>
@@ -77,23 +79,25 @@
 		<li><?php echo $this->Html->link(__('New Casa', true), array('controller' => 'casas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Images', true), array('controller' => 'images', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Foto Imagen', true), array('controller' => 'images', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Datos', true), array('controller' => 'datos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Dato', true), array('controller' => 'datos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Dependientes', true), array('controller' => 'dependientes', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Dependiente', true), array('controller' => 'dependientes', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Escolaridades', true), array('controller' => 'escolaridades', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Escolaridad', true), array('controller' => 'escolaridades', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Familias', true), array('controller' => 'familias', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Familia', true), array('controller' => 'familias', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Ingresos', true), array('controller' => 'ingresos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Ingreso', true), array('controller' => 'ingresos', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Instituciones', true), array('controller' => 'instituciones', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Institucion', true), array('controller' => 'instituciones', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Problematicas', true), array('controller' => 'problematicas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Problematica', true), array('controller' => 'problematicas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Familias', true), array('controller' => 'familias', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Familia', true), array('controller' => 'familias', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Sociales', true), array('controller' => 'sociales', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Social', true), array('controller' => 'sociales', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Socio Economicos', true), array('controller' => 'socio_economicos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Socio Economico', true), array('controller' => 'socio_economicos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Problematicas', true), array('controller' => 'problematicas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Problematica', true), array('controller' => 'problematicas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Datos', true), array('controller' => 'datos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Dato', true), array('controller' => 'datos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Datos Albergados', true), array('controller' => 'datos_albergados', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Datos Albergado', true), array('controller' => 'datos_albergados', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Dependientes', true), array('controller' => 'dependientes', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Dependiente', true), array('controller' => 'dependientes', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Escolaridades', true), array('controller' => 'escolaridades', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Escolaridad', true), array('controller' => 'escolaridades', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Ingresos', true), array('controller' => 'ingresos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Ingreso', true), array('controller' => 'ingresos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
