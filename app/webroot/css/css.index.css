@@ -36,7 +36,7 @@ html {
 	background:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#f0b49e), to(#eb6077)) no-repeat #eb6077;
 	background-image: -ms-linear-gradient(top, #f0b49e, #eb6077) no-repeat;
 	background-image: -o-linear-gradient(top, #f0b49e, #eb6077) no-repeat;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 
@@ -53,14 +53,14 @@ body{
 	position: fixed;
 	right: 0px;
 	bottom: 20px;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 #patrocinadores h4{
 	color: #fff;
 	font-size: 20px;
 	text-shadow: #000 0.1em 0.1em 0.2em;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 
@@ -69,7 +69,7 @@ body{
 	display: block;
 	width: 190px;
 	height:70px;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 .campus{
@@ -77,18 +77,18 @@ body{
 	display:block;
 	width:150px;
 	height:70px;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 }
 /*index*/
 
 .title{
 	margin: 40px 0px 20px 0px;
 	padding: 5px;
-	background: url('../img/trans1.png');
+	background-image: url('../img/trans1.png');
 	-moz-box-shadow: 0 0 5px #000;
 	-webkit-box-shadow: 0 0 5px #000;
 	box-shadow: 0 0 5px #000;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 
@@ -112,7 +112,7 @@ h1.title{
 	-moz-box-shadow: 0 0 5px #000;
 	-webkit-box-shadow: 0 0 5px #000;
 	box-shadow: 0 0 5px #000;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 h1.title_alt{
@@ -226,7 +226,7 @@ h1.title_alt{
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 0px;
 	border-radius: 10px 10px 10px 0px;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 .alt{
@@ -257,7 +257,7 @@ h1.title_alt{
 	-moz-box-shadow: 0 0 8px #493443;
 	-webkit-box-shadow: 0 0 8px #493443;
 	box-shadow: 0 0 8px #000;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 .button_generic:hover{
@@ -265,7 +265,7 @@ h1.title_alt{
 	-moz-box-shadow: inset 0 0 5px #000;
 	-webkit-box-shadow: inset 0 0 5px#000;
 	box-shadow: inner 0 0 5px #000;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 
@@ -279,13 +279,13 @@ h1.title_alt{
 	-webkit-column-width: 300px;
 	-moz-column-gap: 1em;
 	-webkit-column-gap: 1em;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 
 #valores h2 {
 	break-before: column;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 
@@ -299,7 +299,7 @@ h1.title_alt{
 	-webkit-column-width: 300px;
 	-moz-column-gap: 1em;
 	-webkit-column-gap: 1em;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 
@@ -327,7 +327,7 @@ h1.title_alt{
 	height: 10px;
 	padding-left: 5%;
 	background: url('../img/trans1.png');
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 
@@ -344,6 +344,7 @@ h1.title_alt{
 /*Formularios*/
 
 #ingresar form{
+	background:rgb(255,255,255);
 	background:rgba(255,255,255,0.7);
 	width: 300px;
 	margin: 0 auto;
@@ -352,7 +353,7 @@ h1.title_alt{
 	-moz-box-shadow: 0 0 8px #000;
 	-webkit-box-shadow: 0 0 8px #000;
 	box-shadow: 0 0 8px #000;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 
@@ -375,7 +376,7 @@ h1.title_alt{
 	display: block;
 	border-radius: 10px 10px 10px 0px;
 	color:#eee;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 #ingresar .input_style:focus {
@@ -395,7 +396,7 @@ h1.title_alt{
 	-moz-box-shadow: 0 0 8px #000;
 	-webkit-box-shadow: 0 0 8px #000;
 	box-shadow: 0 0 8px #000;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 
@@ -405,7 +406,7 @@ h1.title_alt{
 	-moz-box-shadow: inset 0 0 5px #000;
 	-webkit-box-shadow: inset 0 0 5px #000;
 	box-shadow: inner 0 0 5px #000;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 
 }
@@ -423,7 +424,7 @@ Añadidos en desarrollo
 	right: 15px;
 	top: 1px;
 	border-radius: 10px 10px 10px 0;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 #boton_formulario_rapido {
@@ -442,7 +443,7 @@ Añadidos en desarrollo
 	-moz-box-shadow: inset 0 0 5px #493443;
 	-webkit-box-shadow: inset 0 0 5px #493443;
 	box-shadow: inner 0 0 5px #000;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 
@@ -459,7 +460,7 @@ Añadidos en desarrollo
 	-moz-box-shadow: inset 0 0 5px #000;
 	-webkit-box-shadow: inset 0 0 5px#000;
 	box-shadow: inner 0 0 5px #000;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
 
 }
 
