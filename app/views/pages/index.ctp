@@ -1,4 +1,5 @@
-﻿<script type="text/javascript">
+﻿
+<script type="text/javascript">
 $(function() {
 	$('#nav a, .button_section1').bind('click',function(event){
 		var $anchor = $(this);
