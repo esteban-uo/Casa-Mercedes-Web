@@ -51,7 +51,7 @@ class EstadosSalud extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'otra_enfermedad_id' => array(
+		'otra_enfermedad' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
 				//'message' => 'Your custom message here',
@@ -68,13 +68,6 @@ class EstadosSalud extends AppModel {
 		'Persona' => array(
 			'className' => 'Persona',
 			'foreignKey' => 'persona_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'OtraEnfermedad' => array(
-			'className' => 'OtraEnfermedad',
-			'foreignKey' => 'otra_enfermedad_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

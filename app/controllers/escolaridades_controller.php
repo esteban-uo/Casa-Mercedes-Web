@@ -32,8 +32,8 @@ class EscolaridadesController extends AppController {
 			}
 		}
 		$albergados = $this->Escolaridad->Albergado->find('list');
-		$cicloEscolars = $this->Escolaridad->CicloEscolar->find('list');
-		$this->set(compact('albergados', 'cicloEscolars'));
+		$ciclosEscolares = $this->Escolaridad->CicloEscolar->find('list');
+		$this->set(compact('albergados', 'ciclosEscolares'));
 	}
 
 	function edit($id = null) {

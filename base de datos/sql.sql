@@ -1,11 +1,11 @@
 ﻿-- phpMyAdmin SQL Dump
--- version 3.2.4
+-- version 3.3.9
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-07-2011 a las 14:04:44
--- Versión del servidor: 5.1.41
--- Versión de PHP: 5.3.1
+-- Tiempo de generación: 02-08-2011 a las 21:10:01
+-- Versión del servidor: 5.5.8
+-- Versión de PHP: 5.3.5
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -50,6 +50,26 @@ INSERT INTO `albergados` (`id`, `persona_id`, `numero_embarazos`, `expediente`, 
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `albergados_ingresos`
+--
+
+CREATE TABLE IF NOT EXISTS `albergados_ingresos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `albergado_id` int(11) DEFAULT NULL,
+  `ingreso_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Volcar la base de datos para la tabla `albergados_ingresos`
+--
+
+INSERT INTO `albergados_ingresos` (`id`, `albergado_id`, `ingreso_id`) VALUES
+(1, 3, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `casas`
 --
 
@@ -89,14 +109,15 @@ CREATE TABLE IF NOT EXISTS `ciclos_escolares` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Volcar la base de datos para la tabla `ciclos_escolares`
 --
 
 INSERT INTO `ciclos_escolares` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, NULL, '2011-07-18 22:05:15', '2011-07-18 22:05:15', 4);
+(1, '2008', '2011-07-18 22:05:15', '2011-07-23 10:25:48', 4),
+(2, '0211', '2011-07-23 10:00:22', '2011-07-23 10:26:15', 4);
 
 -- --------------------------------------------------------
 
@@ -183,14 +204,12 @@ CREATE TABLE IF NOT EXISTS `dependientes` (
   PRIMARY KEY (`id`),
   KEY `FK_dependientes` (`persona_id`),
   KEY `FK_dependientesAlbergados` (`albergado_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Volcar la base de datos para la tabla `dependientes`
 --
 
-INSERT INTO `dependientes` (`id`, `persona_id`, `albergado_id`, `expediente`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 4, 3, 'algo D:', '2011-07-14 12:14:38', '2011-07-16 15:01:57', 4);
 
 -- --------------------------------------------------------
 
@@ -225,14 +244,33 @@ CREATE TABLE IF NOT EXISTS `documentaciones` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Volcar la base de datos para la tabla `documentaciones`
 --
 
 INSERT INTO `documentaciones` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, NULL, '2011-07-16 17:37:40', '2011-07-16 17:37:40', 4);
+(3, 'algo', '2011-07-23 06:28:25', '2011-07-23 06:28:25', NULL),
+(4, 'Documentacion 2', '2011-07-23 07:08:24', '2011-07-23 07:08:24', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `documentaciones_documentos`
+--
+
+CREATE TABLE IF NOT EXISTS `documentaciones_documentos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `documento_id` int(11) NOT NULL,
+  `documentacion_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Volcar la base de datos para la tabla `documentaciones_documentos`
+--
+
 
 -- --------------------------------------------------------
 
@@ -243,23 +281,19 @@ INSERT INTO `documentaciones` (`id`, `title`, `created`, `modified`, `modified_u
 CREATE TABLE IF NOT EXISTS `documentos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `persona_id` int(11) DEFAULT NULL,
-  `documentacion_id` int(11) DEFAULT NULL,
   `numero_documento` varchar(50) DEFAULT NULL,
   `tramitada_por_cm` tinyint(1) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_documentos` (`documentacion_id`),
   KEY `FK_documentosPersonas` (`persona_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Volcar la base de datos para la tabla `documentos`
 --
 
-INSERT INTO `documentos` (`id`, `persona_id`, `documentacion_id`, `numero_documento`, `tramitada_por_cm`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 3, NULL, NULL, 1, '2011-07-16 12:57:16', '2011-07-16 12:57:16', 4);
 
 -- --------------------------------------------------------
 
@@ -272,6 +306,7 @@ CREATE TABLE IF NOT EXISTS `escolaridades` (
   `albergado_id` int(11) DEFAULT NULL,
   `ciclo_escolar_id` int(11) DEFAULT NULL,
   `escuela` varchar(50) DEFAULT NULL,
+  `escolaridad_al_ingresar` varchar(50) DEFAULT NULL,
   `escolaridad` varchar(50) DEFAULT NULL,
   `grado` varchar(25) DEFAULT NULL,
   `inscrito` varchar(25) DEFAULT NULL,
@@ -286,12 +321,14 @@ CREATE TABLE IF NOT EXISTS `escolaridades` (
   PRIMARY KEY (`id`),
   KEY `FK_escolaridads` (`ciclo_escolar_id`),
   KEY `FK_escolaridadesAlbergado` (`albergado_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `escolaridades`
 --
 
+INSERT INTO `escolaridades` (`id`, `albergado_id`, `ciclo_escolar_id`, `escuela`, `escolaridad_al_ingresar`, `escolaridad`, `grado`, `inscrito`, `statusfinal`, `fecha_baja`, `motivo_baja`, `certificado`, `boleta`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 3, NULL, 'asdsadsa', NULL, 'asdsad', 'sads', 'adsadsadsa', NULL, '2011-07-23', 'sadsad', 'sadsa', 'dsadas', '2011-07-23 10:22:48', '2011-07-23 10:22:48', 4);
 
 -- --------------------------------------------------------
 
@@ -363,12 +400,11 @@ CREATE TABLE IF NOT EXISTS `estados_salud` (
   `lesiones_fisicas` tinyint(1) DEFAULT NULL,
   `discapacidad` tinyint(1) DEFAULT NULL,
   `enfermedades_cronicas` tinyint(1) DEFAULT NULL,
-  `otra_enfermedad_id` int(11) DEFAULT NULL,
+  `otra_enfermedad` text,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_estados_salud` (`otra_enfermedad_id`),
   KEY `FK_estados_saludPersonas` (`persona_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -444,7 +480,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_images` (`tipoimage_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=60 ;
 
 --
 -- Volcar la base de datos para la tabla `images`
@@ -453,7 +489,61 @@ CREATE TABLE IF NOT EXISTS `images` (
 INSERT INTO `images` (`id`, `url`, `tipoimage_id`, `created`, `modified`, `modified_user_id`) VALUES
 (2, 'asdasda', NULL, '2011-07-13 14:11:19', '2011-07-13 14:11:19', NULL),
 (4, '49.jpg', 1, '2011-07-14 08:27:01', '2011-07-14 08:27:01', 4),
-(5, '0955.jpg', 1, '2011-07-16 11:56:35', '2011-07-16 11:56:35', 4);
+(5, '0955.jpg', 1, '2011-07-16 11:56:35', '2011-07-16 11:56:35', 4),
+(6, '3626.jpg', 1, '2011-07-23 19:46:06', '2011-07-23 19:46:06', 4),
+(7, '7167.jpg', 1, '2011-07-31 22:51:53', '2011-07-31 22:51:53', 4),
+(8, '5438.jpg', 3, '2011-07-31 22:59:30', '2011-07-31 22:59:30', 4),
+(9, '6949.jp', 3, '2011-08-01 04:17:43', '2011-08-01 04:17:43', 4),
+(10, '40510.jp', 1, '2011-08-01 04:18:53', '2011-08-01 04:18:53', 4),
+(11, '44111.jpg', 4, '2011-08-01 05:04:18', '2011-08-01 05:04:19', 4),
+(12, '43012.jp', 4, '2011-08-01 05:05:43', '2011-08-01 05:05:43', 4),
+(13, '51413.jpg', 4, '2011-08-01 05:17:02', '2011-08-01 05:17:03', 4),
+(14, '00314.jpg', 4, '2011-08-01 05:19:11', '2011-08-01 05:19:11', 4),
+(15, '65815.jpg', 4, '2011-08-01 05:20:34', '2011-08-01 05:20:34', 4),
+(16, '95816.jp', 1, '2011-08-01 05:25:19', '2011-08-01 05:25:20', 4),
+(17, '54417.jpg', 1, '2011-08-01 05:27:04', '2011-08-01 05:27:04', 4),
+(18, '42218.jpg', 4, '2011-08-01 05:27:49', '2011-08-01 05:27:49', 4),
+(19, '27119.jpg', 1, '2011-08-01 05:33:58', '2011-08-01 05:33:58', 4),
+(20, '40320.jp', 3, '2011-08-01 05:35:09', '2011-08-01 05:35:09', 4),
+(21, '53121.jp', 4, '2011-08-01 14:39:23', '2011-08-01 14:39:23', 4),
+(22, '44722.png', 3, '2011-08-01 14:45:30', '2011-08-01 14:45:30', 4),
+(23, '60723.jp', 4, '2011-08-01 14:47:14', '2011-08-01 14:47:14', NULL),
+(24, '08724.jp', 4, '2011-08-01 14:48:08', '2011-08-01 14:48:08', 4),
+(25, '55125.jp', 4, '2011-08-01 15:20:49', '2011-08-01 15:20:50', 4),
+(26, '26126.png', 4, '2011-08-01 15:21:32', '2011-08-01 15:21:32', 4),
+(27, '38627.png', 4, '2011-08-01 15:29:03', '2011-08-01 15:29:04', 4),
+(28, '37228.png', 1, '2011-08-01 15:30:58', '2011-08-01 15:30:58', 4),
+(29, '52229.png', 4, '2011-08-01 15:35:55', '2011-08-01 15:35:55', 4),
+(30, '30830.png', 4, '2011-08-01 15:39:57', '2011-08-01 15:39:57', 4),
+(31, '07131.png', 4, '2011-08-01 15:42:07', '2011-08-01 15:42:07', 4),
+(32, '02432.png', 4, '2011-08-01 15:44:38', '2011-08-01 15:44:39', 4),
+(33, '37633.png', 4, '2011-08-01 15:54:19', '2011-08-01 15:54:19', 4),
+(34, '11834.png', 1, '2011-08-01 15:56:20', '2011-08-01 15:56:20', 4),
+(35, '24635.png', 4, '2011-08-01 16:06:45', '2011-08-01 16:06:45', 4),
+(36, '19036.png', 4, '2011-08-01 16:09:12', '2011-08-01 16:09:12', 4),
+(37, '71437.png', 4, '2011-08-01 16:23:57', '2011-08-01 16:23:58', 4),
+(38, '94438.png', 4, '2011-08-01 16:40:06', '2011-08-01 16:40:07', 4),
+(39, '57539.png', 4, '2011-08-01 16:40:50', '2011-08-01 16:40:51', 4),
+(40, '56540.png', 4, '2011-08-01 16:44:47', '2011-08-01 16:44:48', 4),
+(41, '33841.png', 4, '2011-08-01 16:47:54', '2011-08-01 16:47:54', 4),
+(42, '95042.png', 4, '2011-08-01 16:54:39', '2011-08-01 16:54:39', 4),
+(43, '69243.png', 4, '2011-08-01 16:56:11', '2011-08-01 16:56:11', 4),
+(44, '58344.png', 4, '2011-08-01 16:57:26', '2011-08-01 16:57:26', 4),
+(45, '21045.png', 4, '2011-08-01 17:01:41', '2011-08-01 17:01:41', 4),
+(46, '17746.png', 4, '2011-08-01 17:03:05', '2011-08-01 17:03:05', 4),
+(47, '28547.png', 4, '2011-08-01 17:05:32', '2011-08-01 17:05:33', 4),
+(48, '66048.png', 4, '2011-08-01 17:31:22', '2011-08-01 17:31:23', 4),
+(49, '02849.png', 4, '2011-08-01 17:41:46', '2011-08-01 17:41:46', 4),
+(50, '07150.png', 4, '2011-08-01 17:44:07', '2011-08-01 17:44:07', 4),
+(51, '41451.png', 4, '2011-08-01 17:57:01', '2011-08-01 17:57:01', 4),
+(52, '34352.png', 4, '2011-08-01 18:04:52', '2011-08-01 18:04:52', 4),
+(53, '77653.png', 1, '2011-08-01 21:52:57', '2011-08-01 21:52:57', 4),
+(54, '79754.png', 1, '2011-08-01 21:55:22', '2011-08-01 21:55:22', 4),
+(55, '11555.png', 4, '2011-08-01 22:00:37', '2011-08-01 22:00:37', 4),
+(56, '16756.png', 4, '2011-08-01 22:06:32', '2011-08-01 22:06:33', 4),
+(57, '71957.png', 4, '2011-08-01 22:43:03', '2011-08-01 22:43:03', 4),
+(58, '10658.png', 1, '2011-08-02 18:08:27', '2011-08-02 18:08:27', 4),
+(59, '49359.png', 1, '2011-08-02 18:25:00', '2011-08-02 18:25:00', 4);
 
 -- --------------------------------------------------------
 
@@ -463,21 +553,22 @@ INSERT INTO `images` (`id`, `url`, `tipoimage_id`, `created`, `modified`, `modif
 
 CREATE TABLE IF NOT EXISTS `ingresos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `albergado_id` int(11) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   `motivo` varchar(250) DEFAULT NULL,
   `ingreso_egreso` varchar(10) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_ingresos` (`albergado_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Volcar la base de datos para la tabla `ingresos`
 --
 
+INSERT INTO `ingresos` (`id`, `fecha`, `motivo`, `ingreso_egreso`, `created`, `modified`, `modified_user_id`) VALUES
+(1, '2011-07-31', 'aaaa', 'aaa', '2011-07-31 01:17:58', '2011-07-31 01:17:58', 4),
+(2, '2011-08-02', 'Un motivo', 'Algo', '2011-08-02 17:16:01', '2011-08-02 17:16:01', 4);
 
 -- --------------------------------------------------------
 
@@ -496,12 +587,14 @@ CREATE TABLE IF NOT EXISTS `instituciones` (
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_instituciones` (`albergado_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `instituciones`
 --
 
+INSERT INTO `instituciones` (`id`, `albergado_id`, `institucion`, `fecha_ingreso`, `fecha_egreso`, `created`, `modified`, `modified_user_id`) VALUES
+(1, 3, 'aaaaa', '2011-07-22', '2011-07-22', '2011-07-22 18:35:53', '2011-07-22 18:35:53', 4);
 
 -- --------------------------------------------------------
 
@@ -3075,15 +3168,17 @@ CREATE TABLE IF NOT EXISTS `personas` (
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_personas` (`foto_imagen_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Volcar la base de datos para la tabla `personas`
 --
 
 INSERT INTO `personas` (`id`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `sexo`, `status`, `fecha_ingreso`, `foto_imagen_id`, `created`, `modified`, `modified_user_id`) VALUES
-(3, 'Lorem', 'Ipsum', 'Dolor', 'Sit', 'm', 'Algo', '2011-07-13', 4, '2011-07-13 15:51:08', '2011-07-14 08:27:35', 4),
-(4, 'Loremsito', '', 'Dolorsito', 'Sitito', 'f', '', '2011-07-14', 4, '2011-07-14 12:13:08', '2011-07-14 12:13:08', 4);
+(3, 'Lorem', 'Ipsum', 'Dolor', 'Sit', 'm', 'Algo', '2011-07-13', 8, '2011-07-13 15:51:08', '2011-07-31 23:03:23', 4),
+(4, 'Loremsito', '', 'Dolorsito', 'Sitito', 'f', '', '2011-07-14', 4, '2011-07-14 12:13:08', '2011-07-14 12:13:08', 4),
+(6, 'asdads', 'dsadsadsa', 'dsadsadas', 'dsa', 'm', 'asd', '2011-07-21', 4, '2011-07-21 20:20:59', '2011-07-21 20:20:59', 4),
+(7, 'Fulano', '', 'Pancracio', 'Merengano', 'M', '', '2011-08-01', 55, '2011-08-01 22:01:33', '2011-08-01 22:01:33', 4);
 
 -- --------------------------------------------------------
 
@@ -3210,15 +3305,17 @@ CREATE TABLE IF NOT EXISTS `tipoimages` (
   `modified` datetime DEFAULT NULL,
   `modified_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Volcar la base de datos para la tabla `tipoimages`
 --
 
 INSERT INTO `tipoimages` (`id`, `title`, `created`, `modified`, `modified_user_id`) VALUES
-(1, 'Fotografia de Usuario', '2011-07-14 08:04:13', '2011-07-14 08:04:13', 4),
-(2, 'Familiograma', '2011-07-16 11:56:00', '2011-07-16 11:56:00', 4);
+(1, 'Fotografia', '2011-07-14 08:04:13', '2011-07-14 08:04:13', 4),
+(2, 'Familiograma', '2011-07-16 11:56:00', '2011-07-16 11:56:00', 4),
+(3, 'Otra', '2011-07-31 22:59:01', '2011-07-31 22:59:01', 5),
+(4, 'pruebas', '2011-08-01 04:18:28', '2011-08-01 04:18:28', 5);
 
 -- --------------------------------------------------------
 
@@ -3358,7 +3455,6 @@ ALTER TABLE `dependientes`
 -- Filtros para la tabla `documentos`
 --
 ALTER TABLE `documentos`
-  ADD CONSTRAINT `FK_documentos` FOREIGN KEY (`documentacion_id`) REFERENCES `documentaciones` (`id`),
   ADD CONSTRAINT `FK_documentosPersonas` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id`);
 
 --
@@ -3372,7 +3468,6 @@ ALTER TABLE `escolaridades`
 -- Filtros para la tabla `estados_salud`
 --
 ALTER TABLE `estados_salud`
-  ADD CONSTRAINT `FK_estados_salud` FOREIGN KEY (`otra_enfermedad_id`) REFERENCES `otras_enfermedades` (`id`),
   ADD CONSTRAINT `FK_estados_saludPersonas` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id`);
 
 --
@@ -3386,12 +3481,6 @@ ALTER TABLE `familias`
 --
 ALTER TABLE `images`
   ADD CONSTRAINT `FK_images` FOREIGN KEY (`tipoimage_id`) REFERENCES `tipoimages` (`id`);
-
---
--- Filtros para la tabla `ingresos`
---
-ALTER TABLE `ingresos`
-  ADD CONSTRAINT `FK_ingresos` FOREIGN KEY (`albergado_id`) REFERENCES `albergados` (`id`);
 
 --
 -- Filtros para la tabla `instituciones`

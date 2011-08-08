@@ -86,73 +86,8 @@ class albergado extends AppModel {
 			'order' => ''
 		)
 	);
-
-	var $hasMany = array(
-		'Dato' => array(
-			'className' => 'Dato',
-			'foreignKey' => 'albergado_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Dependiente' => array(
-			'className' => 'Dependiente',
-			'foreignKey' => 'albergado_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Escolaridad' => array(
-			'className' => 'Escolaridad',
-			'foreignKey' => 'albergado_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Familia' => array(
-			'className' => 'Familia',
-			'foreignKey' => 'albergado_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Ingreso' => array(
-			'className' => 'Ingreso',
-			'foreignKey' => 'albergado_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
+	
+	var $hasOne = array(
 		'Institucion' => array(
 			'className' => 'Institucion',
 			'foreignKey' => 'albergado_id',
@@ -166,8 +101,8 @@ class albergado extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-		'Problematica' => array(
-			'className' => 'Problematica',
+		'Familia' => array(
+			'className' => 'Familia',
 			'foreignKey' => 'albergado_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -204,6 +139,92 @@ class albergado extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+		),
+		'Problematica' => array(
+			'className' => 'Problematica',
+			'foreignKey' => 'albergado_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Dato' => array(
+			'className' => 'Dato',
+			'foreignKey' => 'albergado_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'DatosAlbergado' => array(
+			'className' => 'DatosAlbergado',
+			'foreignKey' => 'albergado_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
+	var $hasMany = array(
+		'Dependiente' => array(
+			'className' => 'Dependiente',
+			'foreignKey' => 'albergado_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Escolaridad' => array(
+			'className' => 'Escolaridad',
+			'foreignKey' => 'albergado_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+	
+	var $hasAndBelongsToMany = array(
+		'Ingreso' => array(
+			'className' => 'Ingreso',
+			'joinTable' => 'albergados_ingresos',
+			'foreignKey' => 'albergado_id',
+			'associationForeignKey' => 'ingreso_id',
+			'unique' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
 		)
 	);
 
