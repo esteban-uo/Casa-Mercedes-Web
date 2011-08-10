@@ -12,6 +12,7 @@ class ZonasController extends AppController {
 		$this->Zona->recursive = 0;
 		$this->set('zonas', $this->paginate());
 	}
+	
 
 	function view($id = null) {
 		if (!$id) {
@@ -63,4 +64,6 @@ class ZonasController extends AppController {
 		$this->Session->setFlash(__('Los datos de la zona no se pudieron eliminar. Por favor, intenta nuevamente.', true));
 		$this->redirect(array('action' => 'index'));
 	}
+	
+	
 }
