@@ -20,6 +20,7 @@ class ReportesController extends AppController {
 
 	function ficha_identificacion() {
 		$this->layout = "reportes";
+		Debug($this->params["named"]['id']);
 		//TODO genera reporte ficha de identificació		
 	}
 	
@@ -33,7 +34,7 @@ class ReportesController extends AppController {
 		
 		require_once ('vendors/dompdf/dompdf_config.inc.php'); 
 		
-		$content =  file_get_contents($this->obtenerRuta($this->params["named"]['ruta']));
+		$content =  file_get_contents($this->obtenerRuta($this->params["named"]['ruta'], $this->params["named"]['id']));
 		
 		
 		$dompdf = new DOMPDF();
@@ -44,12 +45,9 @@ class ReportesController extends AppController {
 		
 	}
 	
-	function obtenerRuta($Text)
-	{
-		$ruta = explode('X',$Text);
-		
-		return Router::url('/', true) . 'reportes/'.$ruta[0].'/id:'.$ruta[1];
-	
+	function obtenerRuta($ruta, $id)
+	{	
+		return Router::url('/', true) . 'reportes/'.$ruta.'/id:'.$id;
 	}
 	
 	
