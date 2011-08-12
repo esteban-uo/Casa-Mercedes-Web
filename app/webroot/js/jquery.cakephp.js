@@ -1,4 +1,8 @@
-(function( $ ){
+/**
+*	@author darknavi esteban.uscanga@tekiotl.com
+*	Plugin para modelos en cakephp y su rapido acceso con otro modelos entre vistas a traves de ajax
+*/
+(function($){
   $.fn.cakephp = function(parametros, callback) {
 		var eDOM = this;
 		eDOM.hide();
