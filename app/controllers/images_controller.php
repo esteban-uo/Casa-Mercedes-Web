@@ -32,14 +32,12 @@ class ImagesController extends AppController {
 		@Description: Esta Funcion  agrega un registro a la tabla images de la base de datos, demas de subir la imagen respectiva junto con una copia en miniatura al servidor.
 	*/
 	function add() {
-	
+		if(isset($this->params["named"]["ajax"])) $this->layout = "ajax_layout";
+		
 		$tipoimages = $this->Image->Tipoimage->find('list');
 		$this->set(compact('tipoimages'));
 
 		if (!empty($this->data)) {
-		
-			
-			
 				$this->Image->create();
 						$data2 = array('Image'=>
 								array(
@@ -63,7 +61,8 @@ class ImagesController extends AppController {
 					$this->Image->save($data2);
 					$this->data['Image']['url']['name'] = $data2['Image']['url'];
 					$this->upload($this->data);
-					$this->Session->setFlash(__('La imagen Guardada Exitosamente', true));
+					$this->Session->setFlash(__('La imagen Guardada Exitosamente ', true));
+					$this->Session->setFlash('<input type="hidden" value="'.($this->Image->id).'" />', 'default', array('class' => 'idMensajeUltimo'), 'id');
 					$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('La imagen no pudo Guardarse. Porfavor, intente de nuevo.', true));

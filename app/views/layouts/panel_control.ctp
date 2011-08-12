@@ -34,8 +34,8 @@
                     </ul>
                 </div>
                 <?php echo $this->Session->flash(); ?>
+				<?php echo $this->Session->flash("id"); ?>
                 <?php echo $content_for_layout; ?>
-
             </div>
                 <div class="posiciones_cl bottom"></div>
 	
