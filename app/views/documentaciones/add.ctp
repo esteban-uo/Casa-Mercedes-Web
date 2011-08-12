@@ -3,6 +3,7 @@
 	<fieldset>
 		<legend><?php __('Add Documentacion'); ?></legend>
 	<?php
+		echo $this->Form->input('title', array("label"=>"Descripción"));
 		echo $this->Form->input('title');
 		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>

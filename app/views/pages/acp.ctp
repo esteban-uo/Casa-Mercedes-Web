@@ -268,8 +268,8 @@ $(function(){
 	</div>
 	<div id="acp_info_extra" class="box_info_extra_acp">
 		<ul>
-			<li><?php echo $this->Html->link(__('Generar Reporte de Ficha de Identificación', true), array('controller'=>'reportes','action' => 'ficha_identificacion', 'id'=> $Persona['id'])); ?></li>
-			<li><?php echo $this->Html->link(__('Generar Reporte de Estudio Social', true), array('controller'=>'reportes','action' => 'estudio_social', 'id'=> $Persona['id'])); ?></li>
+			<li><?php echo $this->Html->link(__('Generar Reporte de Ficha de Identificación', true), array('controller'=>'reportes','action' => 'convertPdf', 'ruta'=> 'ficha_identificacionX'.$Persona['id'])); ?></li>
+			<li><?php echo $this->Html->link(__('Generar Reporte de Estudio Social', true), array('controller'=>'reportes','action' => 'convertPdf', 'ruta'=> 'estudio_socialX'.$Persona['id'])); ?></li>
 		</ul>
 	</div>
 <?php else: // Si buscó persona ?>

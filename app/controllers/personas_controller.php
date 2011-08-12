@@ -11,7 +11,6 @@ class PersonasController extends AppController {
 	function index() {
 		$this->Persona->recursive = 0;
 		$this->set('personas', $this->paginate());
-		Debug($this->Persona->find('first'));
 	}
 
 	function view($id = null) {

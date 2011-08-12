@@ -4,7 +4,7 @@
 		<legend><?php __('Agregar Tipo de Imagen'); ?></legend>
 	<?php
 		echo $this->Form->input('title', array("label"=>"Descripción"));
-		echo $this->Form->input('modified_user_id', array("type"=>"text"));
+		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Agregar', true));?>
