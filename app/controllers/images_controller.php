@@ -3,21 +3,25 @@ class ImagesController extends AppController {
 
 	var $name = 'Images';
 	
+	
 	function beforeFilter() {
         parent::beforeFilter(); 
         $this->layout = "panel_control";
+	
     }
 
 	function index() {
 		$this->Image->recursive = 0;
 		$this->set('images', $this->paginate());
 	}
-
+	
+	
 	function view($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Los datos de la imagen no existen o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
+		
 		$this->set('image', $this->Image->read(null, $id));
 	}
 	
@@ -43,7 +47,6 @@ class ImagesController extends AppController {
 								 'tipoimage_id' => $this->data['Image']['tipoimage_id'],
 								 'modified_user_id' => $this->data['Image']['modified_user_id']
 								));
-				
 			if ($this->Image->save($data2)) 
 			{
 					$id = $this->Image->find('first', array('conditions'=>array('Image.url'=>$this->data['Image']['url']['name'])));
@@ -56,10 +59,8 @@ class ImagesController extends AppController {
 								'modified_user_id' => $this->data['Image']['modified_user_id']
 								 
 								));
-					Debug($data2);
 								
 					$this->Image->save($data2);
-					
 					$this->data['Image']['url']['name'] = $data2['Image']['url'];
 					$this->upload($this->data);
 					$this->Session->setFlash(__('La imagen Guardada Exitosamente', true));
@@ -255,8 +256,10 @@ class ImagesController extends AppController {
 	*/
 	function getExtension($file = null)
 	{
-		$file= str_split($file,strrpos($file, '.')+1);
+		$file= explode(".",$file);
 		return $file[1];
 	}
+	
+	
 	
 }

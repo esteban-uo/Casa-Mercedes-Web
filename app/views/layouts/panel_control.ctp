@@ -6,6 +6,7 @@
             <?php __('Casa de las Mercedes - '); ?>
             <?php echo $title_for_layout; ?>
         </title>
+		
         <?php
         echo $this->Html->meta('icon');
         echo $this->Html->css('casa.mercedes');

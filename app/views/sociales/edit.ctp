@@ -1,10 +1,11 @@
-﻿<div class="sociales form">
+<div class="sociales form">
 <?php echo $this->Form->create('Social');?>
 	<fieldset>
 		<legend><?php __('Modificar Social'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('albergado_id');
+		echo $this->Form->input('comunicacion', array("label"=>"Comunicación"));
 		echo $this->Form->input('comunicacion', array('label'=>'Comunicación'));
 		echo $this->Form->input('roles');
 		echo $this->Form->input('normas_y_valores');
