@@ -187,9 +187,18 @@ class PersonasController extends AppController {
 																					 )
 							);
 		$this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
-					
-		if($this->params["named"]["edad"] != null){
-			//$condiciones += array("edad"=>$this->params["named"]["edad"]);
+		
+		$tiempo = "";
+		if($this->params["named"]["edad"]["anos"] != null){
+			$tiempo = "-".($this->params["named"]["edad"]["anos"])." year";
+		}if($this->params["named"]["edad"]["meses"] != null){
+			$tiempo .= " ".( ($this->params["named"]["edad"]["meses"]) - date('m') )." month";
+		}if($tiempo != ""){
+			$operadorFecha = ($this->params["named"]["edad"]["condicion"] == null)? "=" : $this->params["named"]["edad"]["condicion"];
+			$tiempo .= " -".(date('d')-1)." day";
+			$fecha_condicion = date('Y-m-d', strtotime($tiempo));
+			Debug($fecha_condicion);
+			$condiciones += array("Nacimiento.fecha_nacimiento ".$operadorFecha => $fecha_condicion);
 		}if($this->params["named"]["casa"] != null){
 			$condiciones += array("Albergado.casa_id"=>$this->params["named"]["casa"]);
 		}

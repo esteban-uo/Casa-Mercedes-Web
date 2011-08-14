@@ -10,7 +10,7 @@ class PagesController extends AppController {
 	}
 	
 	function acp() {
-		if (!empty($this->data) || isset($this->params["named"])) {
+		if (!empty($this->data) || !empty($this->params["named"])) {
 			
 			if($persona = $this->requestAction(
 							array(
