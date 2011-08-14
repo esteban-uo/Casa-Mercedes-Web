@@ -2,6 +2,7 @@
 class ReportesController extends AppController {
 	var $name = 'Reportes';
 	var $uses = array();
+	var $helpers = array('Html', 'Session', 'ImagenesGaleria');
 	
 	
 	function beforeFilter() {
@@ -20,8 +21,14 @@ class ReportesController extends AppController {
 
 	function ficha_identificacion() {
 		$this->layout = "reportes";
-		Debug($this->params["named"]['id']);
-		//TODO genera reporte ficha de identificació		
+		$persona = $this->requestAction(
+							array(
+								'controller' => 'personas',
+								'action' => 'fichaIdentificacionPorId',
+								'named' => array('id' => $this->params["named"]['id'])
+							));	
+		//Debug($persona);
+		$this->set($persona);
 	}
 	
 	function estudio_social(){

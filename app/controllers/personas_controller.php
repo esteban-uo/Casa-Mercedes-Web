@@ -48,6 +48,7 @@ class PersonasController extends AppController {
 		}
 		if (empty($this->data)) {
 			$this->data = $this->Persona->read(null, $id);
+			$this->set("imagen_id", $this->data["FotoImagen"]["id"]);
 		}
 	}
 
@@ -119,5 +120,54 @@ class PersonasController extends AppController {
 			
 									);
 		}
+	}
+	
+	function fichaIdentificacionPorId(){
+		$parametrosContain = array(
+							'FotoImagen' => array(
+																				'Tipoimage' => array ('title'),
+																				'url' => array()
+																				),
+																'Albergado' => array(
+																				'FotoImagen' => array (
+																								'Tipoimage' => array ('title'),
+																								'url' => array()
+																								),
+																				'Institucion' => array ('fecha_egreso'),
+																				'Familia' => array ('id'),
+																				'Social' => array ('id'),
+																				'SocioEconomico' => array (
+																								'id' => array(),
+																								'Vivienda' => array('title'),
+																				),
+																				'Problematica' => array (
+																									'calle',
+																									'abandono', 'omision_de_cuidados', 'violencia',
+																									'abuso_sexual'
+																								)
+																				),
+																'Documento' => array(
+							'tramitada_por_cm' => array()
+							),
+																'EstadosSalud' => array(
+							'peso' => array(),
+							'altura' => array(),
+							'tipo_sangre' => array()
+							),
+																'Nacimiento' => array(
+																					'fecha_nacimiento' => array(),
+																					'Estado' => array ('title'),
+																					'Municipio' => array ('title'),
+																					 ),
+																'Vestimenta' => array('id')
+							);
+					$this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
+					
+					$persona = $this->Persona->find('first', array(
+											'conditions' => array('Persona.id' => $this->params["named"]["id"]),
+											'contain' => $parametrosContain
+											));
+					return $persona;
+													
 	}
 }

@@ -847,6 +847,5 @@
 			<?php echo $content_for_layout; ?>
 
 		</div>
-		<?php echo $this->element('sql_dump'); ?>
    </body>
 </html>

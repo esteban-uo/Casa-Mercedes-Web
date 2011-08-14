@@ -1,4 +1,22 @@
-﻿<div class="personas form">
+﻿<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.form.js"></script>
+<script type="text/javascript" src="../../js/jquery.cakephp.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#PersonaFotoImagenId").cakephp({
+										"controlador" : "images",
+										"accion" : "edit/<?php echo $imagen_id; ?>",
+										"claseAccion" : "",
+										"eMensajeValidacionError" : ".error-message",
+										"eMensajeControlador" : "#flashMessage",
+										"eMensajeInputId" : "#idMessage",
+										"label" : "Subir Imagen",
+										"mensajeCorrecto" : "<p>Ok</p>",
+										"rutaJs" : "../../"
+										});
+});
+</script>
+<div class="personas form">
 <?php echo $this->Form->create('Persona');?>
 	<fieldset>
 		<legend><?php __('Modificar Persona'); ?></legend>
