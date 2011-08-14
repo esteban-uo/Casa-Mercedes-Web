@@ -91,9 +91,10 @@
                     </tr>
                   </table></td>
                 </tr>
-                <td height="23" colspan="4"></td>
-                </tr>
-                <tr>
+				<tr>
+					<td height="23" colspan="4"></td>
+				</tr>
+				<tr>
                     <td height="23" colspan="4"><table width="100%" border="0">
                     <tr>
                       <td width="30%" rowspan="3"><table width="259" border="0">
@@ -131,7 +132,7 @@
                     </tr>
                     </table></td>
                 </tr>
-                <tr align="center">
+				<tr align="center">
                   <td height="23" colspan="4"><table width="100%" border="0">
                     <tr>
                       <td width="30%" align="center" bgcolor="#0066CC">Otros</td>
@@ -142,7 +143,8 @@
                 <tr align="center">
                   <td height="23" colspan="4" bgcolor="#0066CC">Problematica</td>
                 </tr>
-                <tr align="center">
+                
+				<tr align="center">
                   <td height="23" colspan="4"><table width="100%" border="0">
                     <tr>
                       <td align="center" bgcolor="#0066CC">Calle</td>
@@ -160,7 +162,7 @@
                     </tr>
                   </table></td>
                 </tr>
-                <tr align="center">
+				<tr align="center">
                   
                   <td height="23" colspan="4"></td>
                 </tr>
@@ -186,7 +188,7 @@
                     </tr>
                   </table></td>
                 </tr>
-                <tr align="center">
+				<tr align="center">
                   <td height="23" colspan="4"><table width="100%" border="0">
                     <tr>
                       <td height="55" colspan="3">Boletas escolares</td>

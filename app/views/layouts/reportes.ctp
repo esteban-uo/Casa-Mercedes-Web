@@ -12,8 +12,7 @@
            echo $scripts_for_layout;
 
        ?>
-	   
-	   <style>
+	   <style type="text/css">
 		@font-face {
 				font-family: 'QuicksandLight';
 				src: url('../fonts/Quicksand_Light-webfont.eot');
@@ -835,7 +834,6 @@
 			.cl{
 				clear:left;
 			}
-				   
 	   </style>
 </head>
        <body>

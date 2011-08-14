@@ -402,7 +402,7 @@ img.imagen_infograma_box{
 	background:#ccc;
 }
 
-div.box_info_acp {
+div.box_info_acp, div.box_info_filtros {
 	position:relative;
 	border-bottom:solid 1px #fff;
 	padding:5px 5px 28px 5px;
@@ -798,7 +798,7 @@ div.code-coverage-results span.result-good {
 
 /* Añado a Panel de control */
 
-#acp_pagina_principal{
+#acp_pagina_principal, #acp_filtros{
 	float: left;
     width: 57%;
 	margin-top:15px;

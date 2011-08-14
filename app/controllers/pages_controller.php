@@ -10,13 +10,13 @@ class PagesController extends AppController {
 	}
 	
 	function acp() {
-		if (!empty($this->data)) {
+		if (!empty($this->data) || isset($this->params["named"])) {
 			
 			if($persona = $this->requestAction(
 							array(
 								'controller' => 'personas',
 								'action' => 'buscarPersonaPorNombreCompleto',
-								'named' => array('nombre_completo' => $this->data["Persona"]["search"])
+								'named' => array('nombre_completo' => (!empty($this->data))? $this->data["Persona"]["search"] : $this->params["named"]["nombre_completo"])
 							)
 				)){
 				if($persona['Albergado']['id']){
@@ -40,6 +40,22 @@ class PagesController extends AppController {
 				$this->set('busqueda', false);
 		}
 		$title_for_layout = "Panel de control del Administrador";
+		$this->layout = 'panel_control';
+		$this->set(compact('title_for_layout'));
+	}
+	
+	function filtros(){
+		if (!empty($this->data)) {
+			$Personas = $this->requestAction(
+							array(
+								'controller' => 'personas',
+								'action' => 'buscarPersonasPorFiltros',
+								'named' => $this->data["Persona"]
+							));
+			$this->set(compact('Personas'));
+		}
+		
+		$title_for_layout = "Panel de control del Administrador - Filtros";
 		$this->layout = 'panel_control';
 		$this->set(compact('title_for_layout'));
 	}

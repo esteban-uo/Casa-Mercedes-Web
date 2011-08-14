@@ -170,4 +170,37 @@ class PersonasController extends AppController {
 					return $persona;
 													
 	}
+	
+	function buscarPersonasPorFiltros(){
+		$condiciones = array();
+		$parametrosContain = array(
+																'Albergado' => array(
+																				'Casa'=> array ('id','direccion'),
+																				'expediente' => array(),
+																				'fecha_ingreso' => array(),
+																				'averiguacion_previa' => array()
+																				),
+																'Nacimiento' => array(
+																					'fecha_nacimiento' => array(),
+																					'Estado' => array ('title'),
+																					'Municipio' => array ('title'),
+																					 )
+							);
+		$this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
+					
+		if($this->params["named"]["edad"] != null){
+			//$condiciones += array("edad"=>$this->params["named"]["edad"]);
+		}if($this->params["named"]["casa"] != null){
+			$condiciones += array("Albergado.casa_id"=>$this->params["named"]["casa"]);
+		}
+		if(count($condiciones) > 0){
+			return $this->Persona->find('all', array(
+														'conditions' => $condiciones,
+														'contain' => $parametrosContain
+													)
+											);
+		}else{
+			return null;
+		}
+	}
 }

@@ -27,7 +27,6 @@ class ReportesController extends AppController {
 								'action' => 'fichaIdentificacionPorId',
 								'named' => array('id' => $this->params["named"]['id'])
 							));	
-		//Debug($persona);
 		$this->set($persona);
 	}
 	
