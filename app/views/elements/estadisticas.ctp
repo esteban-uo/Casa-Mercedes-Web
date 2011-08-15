@@ -12,8 +12,8 @@ $arreglo = $this->requestAction(array(
 ?>
 <h3>Estádisticas Generales</h3>
 <ul>
-	<li>Total de Albergados: <span class="formateotxt_strong"><?php echo $arreglo['totalAlbergados']; ?></span></li>
-	<li>Total de Dependientes: <span class="formateotxt_strong"><?php echo $arreglo['totalDependientes']; ?></span></li>
+	<li>Total de Albergadas: <span class="formateotxt_strong"><?php echo $arreglo['totalAlbergados']; ?></span></li>
+	<li>Total de Hijas(os): <span class="formateotxt_strong"><?php echo $arreglo['totalDependientes']; ?></span></li>
 </ul>
 
 <h3>Últimos Albergados añadidos</h3>
