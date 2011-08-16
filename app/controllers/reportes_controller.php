@@ -32,7 +32,14 @@ class ReportesController extends AppController {
 	
 	function estudio_social(){
 		$this->layout = "reportes";
-		//TODO genera reporte estudio_social
+		$this->layout = "reportes";
+		$persona = $this->requestAction(
+							array(
+								'controller' => 'personas',
+								'action' => 'estudioSocialPorId',
+								'named' => array('id' => $this->params["named"]['id'])
+							));
+		Debug($persona);
 	}
 	
 	function convertPdf()

@@ -129,6 +129,7 @@ class PersonasController extends AppController {
 																				'url' => array()
 																				),
 																'Albergado' => array(
+																				'averiguacion_previa' => array(),
 																				'FotoImagen' => array (
 																								'Tipoimage' => array ('title'),
 																								'url' => array()
@@ -170,6 +171,45 @@ class PersonasController extends AppController {
 					return $persona;
 													
 	}
+
+	function estudioSocialPorId(){
+		$parametrosContain = array(
+																'Albergado' => array(
+																				'expediente' => array(),
+																				'averiguacion_previa' => array(),
+																				'cant_hijos' => array(),
+																				'SocioEconomico' => array (
+																						'ha_trabajado' => array(),
+																						'tiempo_de_trabajo' => array(),
+																						'ultimo_trabajo' => array(),
+																						'tiempo' => array(),
+																						'nivel_economico' => array(),
+																						'sueldo' => array(),
+																						'ultimo_trabajo' => array(),
+																						'Zona' => array('title'),
+																						'Vivienda' => array('title'),
+																						'Construccion' => array('title'),
+																						'Tenencia' => array('title'),
+																						'Distribucion' => array ('title')
+																					),
+																				'Familia' => array (),
+																				'Social' => array(
+																						'comunicacion' => array(),
+																						'normas_y_valores' => array(),
+																						'roles' => array(),
+																						'manejo_autoridad' => array()
+																						
+																					),
+																				'Dato' => array(),
+																				)
+							);
+		$this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
+		$persona = $this->Persona->find('first', array(
+													'conditions' => array('Persona.id' => $this->params["named"]["id"]),
+													'contain' => $parametrosContain
+		));
+		return $persona;
+	}
 	
 	function buscarPersonasPorFiltros(){
 		$condiciones = array();
@@ -192,13 +232,14 @@ class PersonasController extends AppController {
 		if($this->params["named"]["edad"]["anos"] != null){
 			$tiempo = "-".($this->params["named"]["edad"]["anos"])." year";
 		}if($this->params["named"]["edad"]["meses"] != null){
-			$tiempo .= " ".( ($this->params["named"]["edad"]["meses"]) - date('m') )." month";
+			$tiempo .= " -".( ($this->params["named"]["edad"]["meses"]) )." month";
 		}if($tiempo != ""){
 			$operadorFecha = ($this->params["named"]["edad"]["condicion"] == null)? "=" : $this->params["named"]["edad"]["condicion"];
-			$tiempo .= " -".(date('d')-1)." day";
+			//$tiempo .= " -".(date('d')-1)." day";
 			$fecha_condicion = date('Y-m-d', strtotime($tiempo));
-			Debug($fecha_condicion);
+			
 			$condiciones += array("Nacimiento.fecha_nacimiento ".$operadorFecha => $fecha_condicion);
+			Debug($condiciones);
 		}if($this->params["named"]["casa"] != null){
 			$condiciones += array("Albergado.casa_id"=>$this->params["named"]["casa"]);
 		}
@@ -212,4 +253,9 @@ class PersonasController extends AppController {
 			return null;
 		}
 	}
+	
+	function obtenerEdadPorNacimiento($tiempo){
+		Debug(explode($tiempo,"-"));
+	} 
+	
 }

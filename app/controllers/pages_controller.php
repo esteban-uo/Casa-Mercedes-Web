@@ -3,58 +3,58 @@ class PagesController extends AppController {
 	var $name = 'Pages';
 	var $helpers = array('Html', 'Session', 'ImagenesGaleria');
 	var $uses = array();
-	
+
 	function index() {
 		$title_for_layout = "Página principal";
 		$this->set(compact('title_for_layout'));
 	}
-	
+
 	function acp() {
 		if (!empty($this->data) || !empty($this->params["named"])) {
-			
+				
 			if($persona = $this->requestAction(
-							array(
+			array(
 								'controller' => 'personas',
 								'action' => 'buscarPersonaPorNombreCompleto',
 								'named' => array('nombre_completo' => (!empty($this->data))? $this->data["Persona"]["search"] : $this->params["named"]["nombre_completo"])
-							)
-				)){
+			)
+			)){
 				if($persona['Albergado']['id']){
 					$Dependiente = $this->requestAction(
-								array(
+					array(
 									'controller' => 'dependientes',
 									'action' => 'obtenerDependientesPorAlbergadoId',
 									'named' => array('albergado_id' => $persona['Albergado']['id']))
-								);
+					);
 				}
-			
-				
+					
+
 				$this->set($persona);
 				$this->set('busqueda', true);
 				$this->set(compact('Dependiente'));
-				
+
 			}else{
 				$this->set('busqueda', false);
 			}
 		}else{
-				$this->set('busqueda', false);
+			$this->set('busqueda', false);
 		}
 		$title_for_layout = "Panel de control del Administrador";
 		$this->layout = 'panel_control';
 		$this->set(compact('title_for_layout'));
 	}
-	
+
 	function filtros(){
 		if (!empty($this->data)) {
 			$Personas = $this->requestAction(
-							array(
+			array(
 								'controller' => 'personas',
 								'action' => 'buscarPersonasPorFiltros',
 								'named' => $this->data["Persona"]
-							));
+			));
 			$this->set(compact('Personas'));
 		}
-		
+
 		$title_for_layout = "Panel de control del Administrador - Filtros";
 		$this->layout = 'panel_control';
 		$this->set(compact('title_for_layout'));
@@ -67,26 +67,26 @@ class PagesController extends AppController {
 																			'fields' => array('id', 'persona_id'),
 																			'limit' => '5',
 																			'order' => array('Albergados.created')
-																			)
-															);
+		)
+		);
 		foreach($albergados as $key => $value){
 			$albergados[$key]['Albergados']['nombre_completo'] = $this->requestAction(array(
 																	'controller' => 'personas',
 																	'action' => 'buscarNombreCompletoPersonaPorid',
 																	'named' => array(
 																		'persona_id' => $albergados[$key]['Albergados']['persona_id']
-																		)
-																	)
-																);
+			)
+			)
+			);
 		}
-		
+
 		$parametros = array (
 						"totalAlbergados" => $this->Albergados->find('count'),
 						"listaAlbergados" => $albergados,
 						"totalDependientes" => $this->Dependientes->find('count'),
-						
-					);
-					
+
+		);
+			
 		return $parametros;
-	}	
+	}
 }
