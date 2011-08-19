@@ -242,13 +242,13 @@ class PersonasController extends AppController {
 		}if($tiempo != ""){
 			$operadorFecha = ($this->params["named"]["edad"]["condicion"] == null)? "=" : $this->params["named"]["edad"]["condicion"];
 			$fecha_condicion = date('Y-m-d', strtotime($tiempo));
-			
 			$condiciones += array("Nacimiento.fecha_nacimiento ".$operadorFecha => $fecha_condicion);
-			Debug($condiciones);
 		}if($this->params["named"]["casa"] != null){
 			$this->Persona->Albergado->Casa->recursive = -1;
 			$resultadoCasa = $this->Persona->Albergado->Casa->find("first", array('conditions' => array("Casa.direccion"=>$this->params["named"]["casa"]), "fields" => array("Casa.id")));
-			$condiciones += array("Albergado.casa_id"=>$resultadoCasa["Casa"]["id"]);
+			if($resultadoCasa != null){
+				$condiciones += array("Albergado.casa_id"=>$resultadoCasa["Casa"]["id"]);
+			}
 		}
 		if(count($condiciones) > 0){
 			return $this->Persona->find('all', array(
