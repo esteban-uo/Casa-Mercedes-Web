@@ -130,6 +130,12 @@ class PersonasController extends AppController {
 																				),
 																'Albergado' => array(
 																				'averiguacion_previa' => array(),
+																				'expediente' => array(),
+																				'fecha_ingreso' => array(),
+																				'remitida_por' => array(),
+																				'embarazo_actual' => array(),
+																				'numero_embarazos' => array(),
+																				'cant_hijos' => array(),
 																				'FotoImagen' => array (
 																								'Tipoimage' => array ('title'),
 																								'url' => array()
