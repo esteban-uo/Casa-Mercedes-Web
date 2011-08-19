@@ -15,6 +15,7 @@
 <div class="cl"></div>
 <?php if(isset($Personas)): ?>
 	<?php if($Personas != null): ?>
+	<p><?php echo $Mensaje; ?></p>
 	<?php foreach($Personas as $Persona): ?>
 		<div class="box_info_filtros">
 			<h3><?php echo $Persona['Persona']['nombre_completo']; ?></h3>
