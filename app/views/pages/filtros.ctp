@@ -1,5 +1,5 @@
 ﻿<div id="acp_filtros">
-<h1>Búsqueda Avanzada</h1>
+<h1>Búsqueda por filtros</h1>
 <?php
 	echo $this->Form->create(array('action' => 'filtros'));
 	echo $this->Form->select('Persona.edad.condicion', array(
@@ -31,10 +31,11 @@
 				<li>No. Averiguación Previa: <span class="formateotxt_strong"><?php echo $Persona['Albergado']['averiguacion_previa']; ?></span></li>
 			</ul>
 			<div class="cl"></div>
-			<p>
-				<?php
-				echo $this->Html->link('Ver Información Completa', array('controller'=>'pages','action' => 'acp', "nombre_completo" => $Persona['Persona']['nombre_completo']), array("class"=>"link_verInfopersona")); ?>
-			</p>
+			<ul>
+				<li><?php echo $this->Html->link('Ver Información Completa', array('controller'=>'pages','action' => 'acp', "nombre_completo" => $Persona['Persona']['nombre_completo']), array("class"=>"link_verInfopersona")); ?></li>
+				<li><?php echo $this->Html->link('Reporte de Ficha de Identificación', array('controller'=>'reportes','action' => 'convertPdf', 'ruta'=> 'ficha_identificacion', 'id' => $Persona['Persona']['id']), array("class"=>"link_verInfopersona")); ?></li>
+				<li><?php echo $this->Html->link('Reporte de Estudio Social', array('controller'=>'reportes','action' => 'convertPdf', 'ruta'=> 'estudio_social', 'id'=> $Persona['Persona']['id']), array("class"=>"link_verInfopersona")); ?></li>
+			</ul>
 		</div>
 	<?php endforeach;?>
 	<?php else:?>

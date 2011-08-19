@@ -219,6 +219,12 @@ class PersonasController extends AppController {
 	
 	function buscarPersonasPorFiltros(){
 		$condiciones = array();
+		$arregloComparacion =  array(
+								"<" => "Mayor a",
+								">" => "Menor a",
+								"=" => "Igual a"
+								);
+		
 		$parametrosContain = array(
 																'Albergado' => array(
 																				'Casa'=> array ('id','direccion'),
@@ -238,10 +244,10 @@ class PersonasController extends AppController {
 		$busqueda = "";
 		if($this->params["named"]["edad"]["anos"] != null){
 			$tiempo = "-".($this->params["named"]["edad"]["anos"])." year";
-			$busqueda .= $this->params["named"]["edad"]["anos"]." años ";
+			$busqueda .= "Años: ".$this->params["named"]["edad"]["anos"].", ";
 		}if($this->params["named"]["edad"]["meses"] != null){
 			$tiempo .= " -".( ($this->params["named"]["edad"]["meses"]))." month";
-			$busqueda .= ($this->params["named"]["edad"]["meses"])." meses ";
+			$busqueda .= "Meses: ".($this->params["named"]["edad"]["meses"]).", ";
 		}if($tiempo != ""){
 			$operadorFecha = ($this->params["named"]["edad"]["condicion"] == null)? "=" : $this->params["named"]["edad"]["condicion"];
 			$fecha_condicion = date('Y-m-d', strtotime($tiempo));
@@ -249,18 +255,19 @@ class PersonasController extends AppController {
 		}if($this->params["named"]["casa"] != null){
 			$this->Persona->Albergado->Casa->recursive = -1;
 			$resultadoCasa = $this->Persona->Albergado->Casa->find("first", array('conditions' => array("Casa.direccion"=>$this->params["named"]["casa"]), "fields" => array("Casa.id")));
+			$busqueda .= "Casa: ".($this->params["named"]["casa"]).".";
+			
 			if($resultadoCasa != null){
 				$condiciones += array("Albergado.casa_id"=>$resultadoCasa["Casa"]["id"]);
 			}
 		}
 		if(count($condiciones) > 0){
-			return $this->Persona->find('all', array(
+			$personas = $this->Persona->find('all', array(
 														'conditions' => $condiciones,
 														'contain' => $parametrosContain,
-														'recursive' => 1, 
 													)
 											);
-			return array("Mensaje"=>$busqueda,"Personas"=>$persona);
+			return array("Mensaje"=>"Busqueda: ".$arregloComparacion[$operadorFecha].": ".$busqueda,"Personas"=>$personas);
 		}else{
 			return null;
 		}
