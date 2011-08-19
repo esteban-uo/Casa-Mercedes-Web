@@ -46,13 +46,15 @@ class PagesController extends AppController {
 
 	function filtros(){
 		if (!empty($this->data)) {
-			$Personas = $this->requestAction(
-			array(
+			$resultado = $this->requestAction(
+							array(
 								'controller' => 'personas',
 								'action' => 'buscarPersonasPorFiltros',
 								'named' => $this->data["Persona"]
-			));
+							));
+			$Personas = $resultado["Personas"];
 			$this->set(compact('Personas'));
+			$this->set("Mensaje", $resultado["Mensaje"]);
 		}
 
 		$title_for_layout = "Panel de control del Administrador - Filtros";

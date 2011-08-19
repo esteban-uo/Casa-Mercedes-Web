@@ -235,10 +235,13 @@ class PersonasController extends AppController {
 		$this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
 		
 		$tiempo = "";
+		$busqueda = "";
 		if($this->params["named"]["edad"]["anos"] != null){
 			$tiempo = "-".($this->params["named"]["edad"]["anos"])." year";
+			$busqueda .= $this->params["named"]["edad"]["anos"]." años ";
 		}if($this->params["named"]["edad"]["meses"] != null){
-			$tiempo .= " -".( ($this->params["named"]["edad"]["meses"]) )." month";
+			$tiempo .= " -".( ($this->params["named"]["edad"]["meses"]))." month";
+			$busqueda .= ($this->params["named"]["edad"]["meses"])." meses ";
 		}if($tiempo != ""){
 			$operadorFecha = ($this->params["named"]["edad"]["condicion"] == null)? "=" : $this->params["named"]["edad"]["condicion"];
 			$fecha_condicion = date('Y-m-d', strtotime($tiempo));
@@ -253,9 +256,11 @@ class PersonasController extends AppController {
 		if(count($condiciones) > 0){
 			return $this->Persona->find('all', array(
 														'conditions' => $condiciones,
-														'contain' => $parametrosContain
+														'contain' => $parametrosContain,
+														'recursive' => 1, 
 													)
 											);
+			return array("Mensaje"=>$busqueda,"Personas"=>$persona);
 		}else{
 			return null;
 		}
