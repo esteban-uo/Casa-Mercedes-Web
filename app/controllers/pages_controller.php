@@ -74,7 +74,6 @@ class PagesController extends AppController {
 								'named' => $this->Session->read("tmpBusquedaFiltros")
 							));
 		$Personas = $resultado["Personas"];
-		//Debug($Personas);
 		$this->set(compact('Personas'));
 		$this->render('export_xls','export_xls');
 	}
