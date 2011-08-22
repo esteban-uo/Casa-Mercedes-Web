@@ -55,6 +55,7 @@ class PagesController extends AppController {
 								'action' => 'buscarPersonasPorFiltros',
 								'named' => $this->data["Persona"]
 							));
+			$this->Session->write("tmpBusquedaFiltros", $this->data["Persona"]);
 			$Personas = $resultado["Personas"];
 			$this->set(compact('Personas'));
 			$this->set("Mensaje", $resultado["Mensaje"]);
@@ -64,7 +65,20 @@ class PagesController extends AppController {
 		$this->layout = 'panel_control';
 		$this->set(compact('title_for_layout'));
 	}
-
+	
+	function generarExcelFiltro(){
+		$resultado = $this->requestAction(
+							array(
+								'controller' => 'personas',
+								'action' => 'buscarPersonasPorFiltros',
+								'named' => $this->Session->read("tmpBusquedaFiltros")
+							));
+		$Personas = $resultado["Personas"];
+		//Debug($Personas);
+		$this->set(compact('Personas'));
+		$this->render('export_xls','export_xls');
+	}
+	
 	function obtenerEstadisticasPrincipales(){
 		$this->loadModel('Albergados');
 		$this->loadModel('Dependientes');

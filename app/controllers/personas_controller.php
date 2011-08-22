@@ -169,33 +169,33 @@ class PersonasController extends AppController {
 	function fichaIdentificacionPorId(){
 		$parametrosContain = array(
 							'FotoImagen' => array(
-																				'Tipoimage' => array ('title'),
-																				'url' => array()
-																				),
-																'Albergado' => array(
-																				'averiguacion_previa' => array(),
-																				'expediente' => array(),
-																				'fecha_ingreso' => array(),
-																				'remitida_por' => array(),
-																				'embarazo_actual' => array(),
-																				'numero_embarazos' => array(),
-																				'cant_hijos' => array(),
-																				'FotoImagen' => array (
-																								'Tipoimage' => array ('title'),
-																								'url' => array()
-																								),
-																				'Institucion' => array ('fecha_egreso'),
-																				'Familia' => array ('id'),
-																				'Social' => array ('id'),
-																				'SocioEconomico' => array (
-																								'id' => array(),
-																								'Vivienda' => array('title'),
-																				),
-																				'Problematica' => array (
-																									'calle',
-																									'abandono', 'omision_de_cuidados', 'violencia',
-																									'abuso_sexual'
-																								)
+												'Tipoimage' => array ('title'),
+												'url' => array()
+												),
+								'Albergado' => array(
+												'averiguacion_previa' => array(),
+												'expediente' => array(),
+												'fecha_ingreso' => array(),
+												'remitida_por' => array(),
+												'embarazo_actual' => array(),
+												'numero_embarazos' => array(),
+												'cant_hijos' => array(),
+												'FotoImagen' => array (
+																'Tipoimage' => array ('title'),
+																'url' => array()
+																),
+												'Institucion' => array ('fecha_egreso'),
+												'Familia' => array ('id'),
+												'Social' => array ('id'),
+												'SocioEconomico' => array (
+																'id' => array(),
+																'Vivienda' => array('title'),
+												),
+												'Problematica' => array (
+																	'calle',
+																	'abandono', 'omision_de_cuidados', 'violencia',
+																	'abuso_sexual'
+																)
 																				),
 																'Documento' => array(
 							'tramitada_por_cm' => array()
@@ -224,35 +224,35 @@ class PersonasController extends AppController {
 
 	function estudioSocialPorId(){
 		$parametrosContain = array(
-																'Albergado' => array(
-																				'expediente' => array(),
-																				'averiguacion_previa' => array(),
-																				'cant_hijos' => array(),
-																				'SocioEconomico' => array (
-																						'ha_trabajado' => array(),
-																						'tiempo_de_trabajo' => array(),
-																						'ultimo_trabajo' => array(),
-																						'tiempo' => array(),
-																						'nivel_economico' => array(),
-																						'sueldo' => array(),
-																						'ultimo_trabajo' => array(),
-																						'Zona' => array('title'),
-																						'Vivienda' => array('title'),
-																						'Construccion' => array('title'),
-																						'Tenencia' => array('title'),
-																						'Distribucion' => array ('title')
-																					),
-																				'Familia' => array (),
-																				'Social' => array(
-																						'comunicacion' => array(),
-																						'normas_y_valores' => array(),
-																						'roles' => array(),
-																						'manejo_autoridad' => array()
-																						
-																					),
-																				'Dato' => array(),
-																				'DatosAlbergado' => array(),
-																				)
+								'Albergado' => array(
+												'expediente' => array(),
+												'averiguacion_previa' => array(),
+												'cant_hijos' => array(),
+												'SocioEconomico' => array (
+														'ha_trabajado' => array(),
+														'tiempo_de_trabajo' => array(),
+														'ultimo_trabajo' => array(),
+														'tiempo' => array(),
+														'nivel_economico' => array(),
+														'sueldo' => array(),
+														'ultimo_trabajo' => array(),
+														'Zona' => array('title'),
+														'Vivienda' => array('title'),
+														'Construccion' => array('title'),
+														'Tenencia' => array('title'),
+														'Distribucion' => array ('title')
+													),
+												'Familia' => array (),
+												'Social' => array(
+														'comunicacion' => array(),
+														'normas_y_valores' => array(),
+														'roles' => array(),
+														'manejo_autoridad' => array()
+														
+													),
+												'Dato' => array(),
+												'DatosAlbergado' => array(),
+												)
 							);
 		$this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
 		$persona = $this->Persona->find('first', array(
@@ -271,17 +271,17 @@ class PersonasController extends AppController {
 								);
 		
 		$parametrosContain = array(
-																'Albergado' => array(
-																				'Casa'=> array ('id','direccion'),
-																				'expediente' => array(),
-																				'fecha_ingreso' => array(),
-																				'averiguacion_previa' => array()
-																				),
-																'Nacimiento' => array(
-																					'fecha_nacimiento' => array(),
-																					'Estado' => array ('title'),
-																					'Municipio' => array ('title'),
-																					 )
+								'Albergado' => array(
+												'Casa'=> array ('id','direccion'),
+												'expediente' => array(),
+												'fecha_ingreso' => array(),
+												'averiguacion_previa' => array()
+												),
+								'Nacimiento' => array(
+													'fecha_nacimiento' => array(),
+													'Estado' => array ('title'),
+													'Municipio' => array ('title'),
+													 )
 							);
 		$this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
 		
