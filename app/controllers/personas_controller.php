@@ -251,6 +251,7 @@ class PersonasController extends AppController {
 																						
 																					),
 																				'Dato' => array(),
+																				'DatosAlbergado' => array(),
 																				)
 							);
 		$this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
