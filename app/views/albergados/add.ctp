@@ -1,9 +1,15 @@
 <div class="albergados form">
+<?php
+?>
 <?php echo $this->Form->create('Albergado');?>
 	<fieldset>
 		<legend><?php __('Add Albergado'); ?></legend>
 	<?php
-		echo $this->Form->input('persona_id');
+		if(isset($this->params["named"]["personaId"])){
+			echo $this->Form->input('persona_id', array('value'=> $this->params["named"]["personaId"], 'type' => 'hidden'));
+		}else{
+			echo $this->Form->input('persona_id');
+		}
 		echo $this->Form->input('numero_embarazos');
 		echo $this->Form->input('expediente');
 		echo $this->Form->input('casa_id');

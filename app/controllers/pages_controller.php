@@ -11,7 +11,14 @@ class PagesController extends AppController {
 
 	function acp() {
 		if (!empty($this->data) || !empty($this->params["named"])) {
-				
+			if(isset($this->params["named"]["persona_id"])){
+				$persona = $this->requestAction(
+					array(
+										'controller' => 'personas',
+										'action' => 'buscarPersonaPorId',
+										'named' => array('persona_id' => $this->params["named"]["persona_id"])
+					));
+			}else{
 			if($persona = $this->requestAction(
 			array(
 								'controller' => 'personas',
@@ -19,23 +26,19 @@ class PagesController extends AppController {
 								'named' => array('nombre_completo' => (!empty($this->data))? $this->data["Persona"]["search"] : $this->params["named"]["nombre_completo"])
 			)
 			)){
-				if($persona['Albergado']['id']){
+			}
+			}
+			if($persona['Albergado']['id']){
 					$Dependiente = $this->requestAction(
 					array(
 									'controller' => 'dependientes',
 									'action' => 'obtenerDependientesPorAlbergadoId',
 									'named' => array('albergado_id' => $persona['Albergado']['id']))
 					);
-				}
-					
-
-				$this->set($persona);
-				$this->set('busqueda', true);
-				$this->set(compact('Dependiente'));
-
-			}else{
-				$this->set('busqueda', false);
 			}
+			$this->set($persona);
+			$this->set('busqueda', true);
+			$this->set(compact('Dependiente'));
 		}else{
 			$this->set('busqueda', false);
 		}
@@ -68,9 +71,10 @@ class PagesController extends AppController {
 		$albergados = $this->Albergados->find('all', array(
 																			'fields' => array('id', 'persona_id'),
 																			'limit' => '5',
-																			'order' => array('Albergados.created')
+																			'order' => array('Albergados.created' => 'desc')
 		)
 		);
+		
 		foreach($albergados as $key => $value){
 			$albergados[$key]['Albergados']['nombre_completo'] = $this->requestAction(array(
 																	'controller' => 'personas',

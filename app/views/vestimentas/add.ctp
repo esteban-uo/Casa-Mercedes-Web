@@ -3,7 +3,11 @@
 	<fieldset>
 		<legend><?php __('Agregar Vestimenta'); ?></legend>
 	<?php
-		echo $this->Form->input('persona_id');
+		if(isset($this->params["named"]["personaId"])){
+			echo $this->Form->input('persona_id', array('value'=> $this->params["named"]["personaId"], 'type' => 'hidden'));
+		}else{
+			echo $this->Form->input('persona_id');
+		}
 		echo $this->Form->input('talla');
 		echo $this->Form->input('calzado');
 		echo $this->Form->input('brazier');

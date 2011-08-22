@@ -4,7 +4,11 @@
 		<legend><?php __('Modificar Problematica'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('albergado_id');
+		if(isset($this->params["named"]["albergadoId"])){
+			echo $this->Form->input('albergado_id', array('value'=> $this->params["named"]["albergadoId"], 'type' => 'hidden'));
+		}else{
+			echo $this->Form->input('albergado_id');
+		}
 		echo $this->Form->input('calle');
 		echo $this->Form->input('abandono');
 		echo $this->Form->input('situacion_socieconomica');

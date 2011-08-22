@@ -1,20 +1,21 @@
 <div class="personas index">
 	<h2><?php __('Personas Registradas');?></h2>
+	
+	<ul class="acciones_orden">
+		<li>Ordenar por:</li>
+			<ul>
+				<li><?php echo $this->Paginator->sort('Fecha de creacion', 'created');?></li>
+				<li><?php echo $this->Paginator->sort('Ultima edicion','modified');?></li>
+			</ul>
+	</ul>
+	
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('primer_nombre');?></th>
 			<th><?php echo $this->Paginator->sort('segundo_nombre');?></th>
 			<th><?php echo $this->Paginator->sort('primer_apellido');?></th>
 			<th><?php echo $this->Paginator->sort('segundo_apellido');?></th>
-			<th><?php echo $this->Paginator->sort('sexo');?></th>
-			<th><?php echo $this->Paginator->sort('status');?></th>
-			<th><?php echo $this->Paginator->sort('fecha_ingreso');?></th>
-			<th><?php echo $this->Paginator->sort('foto_imagen_id');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
-			<th><?php echo $this->Paginator->sort('modified');?></th>
-			<th><?php echo $this->Paginator->sort('modified_user_id');?></th>
-			<th class="actions"><?php __('Actions');?></th>
+			<th class="actions"><?php __('Acciones');?></th>
 	</tr>
 	<?php
 	$i = 0;
@@ -25,19 +26,12 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $persona['Persona']['id']; ?>&nbsp;</td>
 		<td><?php echo $persona['Persona']['primer_nombre']; ?>&nbsp;</td>
 		<td><?php echo $persona['Persona']['segundo_nombre']; ?>&nbsp;</td>
 		<td><?php echo $persona['Persona']['primer_apellido']; ?>&nbsp;</td>
 		<td><?php echo $persona['Persona']['segundo_apellido']; ?>&nbsp;</td>
-		<td><?php echo $persona['Persona']['sexo']; ?>&nbsp;</td>
-		<td><?php echo $persona['Persona']['status']; ?>&nbsp;</td>
-		<td><?php echo $persona['Persona']['fecha_ingreso']; ?>&nbsp;</td>
-		<td><?php echo $persona['Persona']['foto_imagen_id']; ?>&nbsp;</td>
-		<td><?php echo $persona['Persona']['created']; ?>&nbsp;</td>
-		<td><?php echo $persona['Persona']['modified']; ?>&nbsp;</td>
-		<td><?php echo $persona['Persona']['modified_user_id']; ?>&nbsp;</td>
 		<td class="actions">
+			<?php if(!isset($persona['Albergado']['id'])) echo $this->Html->link(__('Crear Albergado', true), array('controller'=>'albergados','action' => 'add', "personaId"=>$persona['Persona']['id'])); ?>
 			<?php echo $this->Html->link(__('Ver', true), array('action' => 'view', $persona['Persona']['id'])); ?>
 			<?php echo $this->Html->link(__('Modificar', true), array('action' => 'edit', $persona['Persona']['id'])); ?>
 			<?php echo $this->Html->link(__('Eliminar', true), array('action' => 'delete', $persona['Persona']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $persona['Persona']['id'])); ?>

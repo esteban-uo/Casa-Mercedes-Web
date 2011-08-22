@@ -24,8 +24,6 @@
                     <ul id="act_style">
                         <li><?php echo $this->Html->link(__('Crear Persona', true), array('controller' => 'personas', 'action' => 'add')); ?></li>
                         <li><?php echo $this->Html->link(__('Enlistar Personas', true), array('controller' => 'personas', 'action' => 'index')); ?></li>
-						<li><?php echo $this->Html->link(__('Enlistar Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?></li>
-                        <li><?php echo $this->Html->link(__('Enlistar Dependientes', true), array('controller' => 'dependientes', 'action' => 'index')); ?></li>
 						<li><?php echo $this->Html->link(__('Filtros', true), array('controller' => 'pages', 'action' => 'filtros')); ?></li>
                     </ul>
                     <h2 class="subtitle">Usuarios</h2>

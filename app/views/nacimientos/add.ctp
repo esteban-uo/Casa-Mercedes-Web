@@ -3,8 +3,12 @@
 	<fieldset>
 		<legend><?php __('Agregar Nacimiento'); ?></legend>
 	<?php
-		echo $this->Form->input('persona_id');
-		echo $this->Form->input('fecha_nacimiento');
+		if(isset($this->params["named"]["personaId"])){
+			echo $this->Form->input('persona_id', array('value'=> $this->params["named"]["personaId"], 'type' => 'hidden'));
+		}else{
+			echo $this->Form->input('persona_id');
+		}
+		echo $this->Form->input('fecha_nacimiento', array('minYear' =>date('Y') - 50,'maxYear' => date('Y')));
 		echo $this->Form->input('pais_id');
 		echo $this->Form->input('estado_id');
 		echo $this->Form->input('municipio_id');

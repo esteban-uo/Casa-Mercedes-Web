@@ -2,6 +2,11 @@
 class PersonasController extends AppController {
 
 	var $name = 'Personas';
+	var $paginate = array(
+		'order' => array(
+			'Persona.created' => 'desc'
+		)
+	);
 	
 	function beforeFilter() {
         parent::beforeFilter(); 
@@ -120,6 +125,45 @@ class PersonasController extends AppController {
 			
 									);
 		}
+	}
+	
+	function buscarPersonaPorId(){
+		 $parametrosContain = array(
+									'FotoImagen' => array(
+													'Tipoimage' => array ('title'),
+													'url' => array()
+													),
+									'Albergado' => array(
+													'FotoImagen' => array (
+																	'Tipoimage' => array ('title'),
+																	'url' => array()
+																	),
+													'Institucion' => array ('id'),
+													'Familia' => array ('id'),
+													'Social' => array ('id'),
+													'SocioEconomico' => array ('id'),
+													'Problematica' => array ('id'),
+													'Ingreso' => array ('id'),
+													'Dato' => array ('id'),
+													'DatosAlbergado' => array ('id'),
+													'Escolaridad' => array ('id')
+													),
+									'Documento' => array('id'),
+									'EstadosSalud' => array('id'),
+									'Nacimiento' => array('id'),
+									'Vestimenta' => array('id')
+								);
+								
+		$this->Persona->Behaviors->attach('Containable', array('recursive' => true, 'notices' => true));
+
+		return $this->Persona->find('first', array(
+												'conditions' => array("Persona.id"=>$this->params["named"]["persona_id"]),
+												'contain' => $parametrosContain,
+												'recursive' => 3
+											)
+			
+									);
+		
 	}
 	
 	function fichaIdentificacionPorId(){
@@ -272,9 +316,4 @@ class PersonasController extends AppController {
 			return null;
 		}
 	}
-	
-	function obtenerEdadPorNacimiento($tiempo){
-		Debug(explode($tiempo,"-"));
-	} 
-	
 }

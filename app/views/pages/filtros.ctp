@@ -32,7 +32,7 @@
 			</ul>
 			<div class="cl"></div>
 			<ul>
-				<li><?php echo $this->Html->link('Ver Información Completa', array('controller'=>'pages','action' => 'acp', "nombre_completo" => $Persona['Persona']['nombre_completo']), array("class"=>"link_verInfopersona")); ?></li>
+				<li><?php echo $this->Html->link('Ver Información Completa', array('controller'=>'pages','action' => 'acp', "persona_id" => $Persona['Persona']['id']), array("class"=>"link_verInfopersona")); ?></li>
 				<li><?php echo $this->Html->link('Reporte de Ficha de Identificación', array('controller'=>'reportes','action' => 'convertPdf', 'ruta'=> 'ficha_identificacion', 'id' => $Persona['Persona']['id']), array("class"=>"link_verInfopersona")); ?></li>
 				<li><?php echo $this->Html->link('Reporte de Estudio Social', array('controller'=>'reportes','action' => 'convertPdf', 'ruta'=> 'estudio_social', 'id'=> $Persona['Persona']['id']), array("class"=>"link_verInfopersona")); ?></li>
 			</ul>

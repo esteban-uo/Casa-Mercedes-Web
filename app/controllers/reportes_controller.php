@@ -40,6 +40,7 @@ class ReportesController extends AppController {
 								'named' => array('id' => $this->params["named"]['id'])
 							));
 		Debug($persona);
+		$this->set($persona);
 	}
 	
 	function convertPdf()

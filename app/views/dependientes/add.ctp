@@ -4,7 +4,11 @@
 		<legend><?php __('Add Dependiente'); ?></legend>
 	<?php
 		echo $this->Form->input('persona_id');
-		echo $this->Form->input('albergado_id');
+		if(isset($this->params["named"]["albergadoId"])){
+			echo $this->Form->input('albergado_id', array('value'=> $this->params["named"]["albergadoId"], 'type' => 'hidden'));
+		}else{
+			echo $this->Form->input('albergado_id');
+		}
 		echo $this->Form->input('expediente');
 		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>

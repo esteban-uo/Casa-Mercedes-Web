@@ -19,6 +19,6 @@ $arreglo = $this->requestAction(array(
 <h3>Últimas Albergadas añadidos</h3>
 <ul>
 	<?php foreach($arreglo['listaAlbergados'] as $key => $values): ?>
-	<li>Nombre: <span class="formateotxt_strong"><?php echo $this->Html->link($arreglo['listaAlbergados'][$key]['Albergados']['nombre_completo'], array('controller'=>'albergados','action' => 'view', $arreglo['listaAlbergados'][$key]['Albergados']['id'])); ?></span></li>
+	<li>Nombre: <span class="formateotxt_strong"><?php echo $this->Html->link($arreglo['listaAlbergados'][$key]['Albergados']['nombre_completo'], array('controller'=>'pages','action' => 'acp', "persona_id"=>$arreglo['listaAlbergados'][$key]['Albergados']['id'])); ?></span></li>
 	<?php endforeach; ?>
 </ul>
