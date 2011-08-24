@@ -44,6 +44,15 @@ class ReportesController extends AppController {
 	
 	function convertPdf()
 	{
+		ob_clean();
+		$this->render(false);
+		require_once ('vendors/html2pdf/html2pdf.class.php');
+		$html2pdf = new HTML2PDF('P','A4','fr');
+		$content =  file_get_contents($this->obtenerRuta($this->params["named"]['ruta'], $this->params["named"]['id']));
+		$html2pdf->WriteHTML($content);
+		ob_clean();
+		$html2pdf->Output('exemple.pdf');
+		/*
 		
 		require_once ('vendors/dompdf/dompdf_config.inc.php'); 
 		
@@ -55,6 +64,7 @@ class ReportesController extends AppController {
 		$dompdf->set_paper("a4", "landscape" );
 		$dompdf->render();
 		$dompdf->stream('Reporte_'.date('d_M_Y').'.pdf');
+		*/
 		
 	}
 	

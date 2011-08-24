@@ -1,14 +1,9 @@
-﻿<table width="908" border="1" align="center">
+<table width="908" border="1" align="center">
 			    <tr>
-			      <td width="73" rowspan="6" align="center"><img src="../../img/img_logo1.png" width="73" height="152" /></td>
+				
+			      <td width="73" rowspan="6" align="center"><img src="<?php echo Router::url('/', true)?>img/img_logo1.png" width="73" height="152" /></td>
 			      <td colspan="2" align="center" bgcolor="#0066CC">CASA HOGAR SHULTZ</td>
-			      <td width="192" rowspan="4" align="center"><?php echo $this->ImagenesGaleria->obtenerImagen(false,
-																$FotoImagen["Tipoimage"]["title"],
-																$FotoImagen["url"],
-																array(
-																	"alt" => $Persona['nombre_completo'],
-																	"height" => "170px",
-																)); ?></td>
+			      <td width="192" rowspan="4" align="center"><img src="http://localhost/Casa-Mercedes-Web/img/pruebas/35261.jpg" alt="Lorem Ipsum Dolor Sit" height="170px" /></td>
 		        </tr>
 			    <tr>
 		        </tr>
