@@ -48,7 +48,7 @@
                       <td width="25%" align="center" bgcolor="#0066CC">Sexo</td>
                     </tr>
                     <tr>
-                      <td align="center"><? echo $Nacimiento['fecha_nacimiento']; // Edad Dada segun la fecha de nacimiento ?></td>
+                      <td align="center"><?php echo $this->HerramientasCalculos->obtenerEdadYDM($Nacimiento['fecha_nacimiento'],"-"); ?></td>
                       <td width="25%" align="center"><? echo $Persona['sexo']; ?></td>
                     </tr>
                   </table></td>

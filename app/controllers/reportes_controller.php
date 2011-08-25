@@ -2,7 +2,7 @@
 class ReportesController extends AppController {
 	var $name = 'Reportes';
 	var $uses = array();
-	var $helpers = array('Html', 'Session', 'ImagenesGaleria');
+	var $helpers = array('Html', 'Session', 'ImagenesGaleria', 'HerramientasCalculos');
 	
 	
 	function beforeFilter() {
