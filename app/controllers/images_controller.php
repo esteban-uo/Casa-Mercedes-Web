@@ -83,6 +83,7 @@ class ImagesController extends AppController {
 		ademas de eliminar la imagen  antigua del registro modificado y subir una nueva imagen al servidor.
 	*/
 	function edit($id = null) {
+		if(isset($this->params["named"]["ajax"])) $this->layout = "ajax_layout";
 		$tipoimages = $this->Image->Tipoimage->find('list');
 		$this->set(compact('tipoimages'));
 		
@@ -99,6 +100,7 @@ class ImagesController extends AppController {
 				if($this->upload($this->data)== 1){
 					
 						$this->Session->setFlash(__('La imagen Guardada Exitosamente', true));
+						$this->Session->setFlash('<input type="hidden" value="'.($this->Image->id).'" />', 'default', array('class' => 'idMensajeUltimo'), 'id');
 						$this->redirect(array('action' => 'index'));
 					 
 				}else {
