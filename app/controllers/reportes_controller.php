@@ -2,6 +2,7 @@
 class ReportesController extends AppController {
 	var $name = 'Reportes';
 	var $uses = array();
+	var $helpers = array('Html', 'Session', 'ImagenesGaleria');
 	
 	
 	function beforeFilter() {
@@ -20,20 +21,42 @@ class ReportesController extends AppController {
 
 	function ficha_identificacion() {
 		$this->layout = "reportes";
-		//TODO genera reporte ficha de identificació		
+		$persona = $this->requestAction(
+							array(
+								'controller' => 'personas',
+								'action' => 'fichaIdentificacionPorId',
+								'named' => array('id' => $this->params["named"]['id'])
+							));	
+		$this->set($persona);
 	}
 	
 	function estudio_social(){
 		$this->layout = "reportes";
-		//TODO genera reporte estudio_social
+		$this->layout = "reportes";
+		$persona = $this->requestAction(
+							array(
+								'controller' => 'personas',
+								'action' => 'estudioSocialPorId',
+								'named' => array('id' => $this->params["named"]['id'])
+							));
+		Debug($persona);
 	}
 	
 	function convertPdf()
 	{
+		ob_clean();
+		$this->render(false);
+		require_once ('vendors/html2pdf/html2pdf.class.php');
+		$html2pdf = new HTML2PDF('P','A4','fr');
+		$content =  file_get_contents($this->obtenerRuta($this->params["named"]['ruta'], $this->params["named"]['id']));
+		$html2pdf->WriteHTML($content);
+		ob_clean();
+		$html2pdf->Output('exemple.pdf');
+		/*
 		
 		require_once ('vendors/dompdf/dompdf_config.inc.php'); 
 		
-		$content =  file_get_contents($this->obtenerRuta($this->params["named"]['ruta']));
+		$content =  file_get_contents($this->obtenerRuta($this->params["named"]['ruta'], $this->params["named"]['id']));
 		
 		
 		$dompdf = new DOMPDF();
@@ -41,15 +64,13 @@ class ReportesController extends AppController {
 		$dompdf->set_paper("a4", "landscape" );
 		$dompdf->render();
 		$dompdf->stream('Reporte_'.date('d_M_Y').'.pdf');
+		*/
 		
 	}
 	
-	function obtenerRuta($Text)
-	{
-		$ruta = explode('X',$Text);
-		
-		return Router::url('/', true) . 'reportes/'.$ruta[0].'/id:'.$ruta[1];
-	
+	function obtenerRuta($ruta, $id)
+	{	
+		return Router::url('/', true) . 'reportes/'.$ruta.'/id:'.$id;
 	}
 	
 	

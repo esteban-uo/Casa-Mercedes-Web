@@ -402,7 +402,12 @@ img.imagen_infograma_box{
 	background:#ccc;
 }
 
-div.box_info_acp {
+.link_verInfopersona{
+	color:#000;
+	 margin: 0 0 0 22px;
+}
+
+div.box_info_acp, div.box_info_filtros {
 	position:relative;
 	border-bottom:solid 1px #fff;
 	padding:5px 5px 28px 5px;
@@ -798,7 +803,7 @@ div.code-coverage-results span.result-good {
 
 /* Añado a Panel de control */
 
-#acp_pagina_principal{
+#acp_pagina_principal, #acp_filtros{
 	float: left;
     width: 57%;
 	margin-top:15px;
@@ -807,6 +812,9 @@ div.code-coverage-results span.result-good {
 	float:left;
 	width: 76%;
 	margin-right: 14px;
+}
+.select_condicion{
+	margin: 15px 0 0;
 }
 .fl{
 	float:left;
