@@ -26,7 +26,7 @@ class AlbergadosController extends AppController {
 			$this->Albergado->create();
 			if ($this->Albergado->save($this->data)) {
 				$this->Session->setFlash(__('Los datos del albergado son correctos y se han guardado satisfactoriamente.', true));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller'=>'pages','action' => 'acp'));
 			} else {
 				$this->Session->setFlash(__('Los datos del albergado son incorrectos. Intenta nuevamente.', true));
 			}

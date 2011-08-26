@@ -13,6 +13,8 @@ $(function(){
 										"label" : "Subir Imagen",
 										"mensajeCorrecto" : "<p>Ok</p>",
 										"rutaJs" : "../"
+										}, function (data){
+											console.log(data);
 										});
 });
 </script>

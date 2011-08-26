@@ -4,7 +4,11 @@
 		<legend><?php __('Edit Albergado'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('persona_id');
+		if(isset($this->params["named"]["personaId"])){
+			echo $this->Form->input('persona_id', array('value'=> $this->params["named"]["personaId"], 'type' => 'hidden'));
+		}else{
+			echo $this->Form->input('persona_id');
+		}
 		echo $this->Form->input('numero_embarazos');
 		echo $this->Form->input('expediente');
 		echo $this->Form->input('casa_id');

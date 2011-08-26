@@ -17,7 +17,7 @@
 		        </tr>
 			    <tr>
 			      <td align="center" bgcolor="#0066CC">Fecha Egreso</td>
-			      <td><? echo $Albergado['Institucion']['fecha_egreso']; ?></td>
+			      <td><? //echo $Albergado['Institucion']['fecha_egreso']; ?></td>
 			      <td bgcolor="#0066CC">#Averiguacion</td>
 		        </tr>
 			    <tr>
@@ -43,7 +43,7 @@
                       <td width="25%" align="center" bgcolor="#0066CC">Sexo</td>
                     </tr>
                     <tr>
-                      <td align="center"><? echo $Nacimiento['fecha_nacimiento']; // Edad Dada segun la fecha de nacimiento ?></td>
+                      <td align="center"><?php echo $this->HerramientasCalculos->obtenerEdadYDM($Nacimiento['fecha_nacimiento'],"-"); ?></td>
                       <td width="25%" align="center"><? echo $Persona['sexo']; ?></td>
                     </tr>
                   </table></td>
@@ -72,7 +72,7 @@
                   <td height="23" colspan="4"><table width="100%" border="0">
                     <tr>
                       <td bgcolor="#0066CC">Canalizada por</td>
-                      <td rowspan="3"><? echo $Albergado['SocioEconomico']['Vivienda']['title']; ?></td>
+                      <td rowspan="3">Domicilio anterior</td>
                     </tr>
                     <tr>
                       <td><? echo $Albergado['remitida_por']; ?></td>
@@ -82,7 +82,7 @@
                     </tr>
                     <tr>
                       <td>&nbsp;</td>
-                      <td bgcolor="#0066CC">Domicilio anterior</td>
+                      <td bgcolor="#0066CC">Domicilio anterior ANS</td>
                     </tr>
                   </table></td>
                 </tr>
@@ -127,14 +127,6 @@
                     </tr>
                     </table></td>
                 </tr>
-				<tr align="center">
-                  <td height="23" colspan="4"><table width="100%" border="0">
-                    <tr>
-                      <td width="30%" align="center" bgcolor="#0066CC">Otros</td>
-                      <td width="70%">&nbsp;</td>
-                    </tr>
-                  </table></td>
-                </tr>
                 <tr align="center">
                   <td height="23" colspan="4" bgcolor="#0066CC">Problematica</td>
                 </tr>
@@ -149,17 +141,21 @@
                       <td align="center" bgcolor="#0066CC">Abuso</td>
                     </tr>
                     <tr>
-                      <td align="center"><? echo $Albergado['Problematica']['calle']; ?></td>
-                      <td align="center"><? echo $Albergado['Problematica']['abandono']; ?></td>
-                      <td align="center"><? echo $Albergado['Problematica']['omision_de_cuidados']; ?></td>
-                      <td align="center"><? echo $Albergado['Problematica']['violencia']; ?></td>
-                      <td align="center"><? echo $Albergado['Problematica']['abuso_sexual']; ?></td>
+                      <td align="center"><? echo ($Albergado['Problematica']['calle'])? "Sí":"No"; ?></td>
+                      <td align="center"><? echo ($Albergado['Problematica']['abandono'])? "Sí":"No"; ?></td>
+                      <td align="center"><? echo ($Albergado['Problematica']['omision_de_cuidados'])? "Sí":"No"; ?></td>
+                      <td align="center"><? echo ($Albergado['Problematica']['violencia'])? "Sí":"No"; ?></td>
+                      <td align="center"><? echo ($Albergado['Problematica']['abuso_sexual'])? "Sí":"No"; ?></td>
                     </tr>
                   </table></td>
                 </tr>
 				<tr align="center">
-                  
-                  <td height="23" colspan="4"></td>
+                  <td height="23" colspan="4"><table width="100%" border="0">
+                    <tr>
+                      <td width="30%" align="center" bgcolor="#0066CC">Otros</td>
+                      <td width="70%">Otros delitos<? if($Albergado['Problematica']['otros_delitos'] != null) echo $Albergado['Problematica']['otros_delitos'];  ?></td>
+                    </tr>
+                  </table></td>
                 </tr>
                 <tr align="center">
                   <td height="23" colspan="4">&nbsp;</td>

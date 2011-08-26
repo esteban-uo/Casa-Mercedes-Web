@@ -2,7 +2,7 @@
 class ReportesController extends AppController {
 	var $name = 'Reportes';
 	var $uses = array();
-	var $helpers = array('Html', 'Session', 'ImagenesGaleria');
+	var $helpers = array('Html', 'Session', 'ImagenesGaleria', 'HerramientasCalculos');
 	
 	
 	function beforeFilter() {
@@ -40,6 +40,7 @@ class ReportesController extends AppController {
 								'named' => array('id' => $this->params["named"]['id'])
 							));
 		Debug($persona);
+		$this->set($persona);
 	}
 	
 	function convertPdf()

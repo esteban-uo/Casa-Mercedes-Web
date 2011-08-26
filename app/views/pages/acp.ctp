@@ -64,7 +64,7 @@ $(function(){
 		</div>
 		<div class="action_info_acp">
 			<ul>
-				<li><?php echo $this->Html->link("Modificar", array('controller'=>'albergados','action' => 'edit', $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'albergados','action' => 'edit', $Albergado['id'], 'personaId'=>$Persona['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'albergados','action' => 'delete', $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el registro como albergada de %s?', true),$Persona['nombre_completo'])); ?></li>
 				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'albergados','action' => 'view', $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 				<li><?php echo $this->Html->link('Ult. Editor', array('controller'=>'users','action' => 'view', $Albergado['modified_user_id']), array('class' => 'action_acp_info boton_acp_ultimousuario')); ?></li>
@@ -79,34 +79,32 @@ $(function(){
 			<ul>
 				<li><span class="formateotxt_strong"><?php echo $Dependiente[$llave]['Persona']['nombre_completo']; ?></span></li>
 			</ul>
-			<div class="action_info_acp">
+			<div class="action_info_dependientes_acp">
 				<ul>
-					<li><?php echo $this->Html->link("Modificar", array('controller'=>'dependientes','action' => 'edit', $Dependiente[$llave]['Dependiente']['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
-					<li><?php echo $this->Html->link("Eliminar", array('controller'=>'dependientes','action' => 'delete', $Dependiente[$llave]['Dependiente']['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el registro como albergado de %s?', true),$Persona['nombre_completo'])); ?></li>
-					<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'dependientes','action' => 'view', $Dependiente[$llave]['Dependiente']['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
-					<li><?php echo $this->Html->link('Ult. Editor', array('controller'=>'users','action' => 'view', $Dependiente[$llave]['Dependiente']['modified_user_id']), array('class' => 'action_acp_info boton_acp_ultimousuario')); ?></li>
+					<li><?php echo $this->Html->link("Modificar", array('controller'=>'dependientes','action' => 'edit', $Dependiente[$llave]['Dependiente']['id'], "albergadoId"=>$Albergado['id'])); ?></li>
+					<li><?php echo $this->Html->link("Quitar como Hijo(a)", array('controller'=>'dependientes','action' => 'delete', $Dependiente[$llave]['Dependiente']['id']), array(), sprintf(__('¿Eliminar el registro como albergado de %s?', true),$Persona['nombre_completo'])); ?></li>
+					<li><?php echo $this->Html->link("Información Completa", array('controller'=>'pages','action' => 'acp', "persona_id"=>$Dependiente[$llave]['Persona']['id'])); ?></li>
 				</ul>
 			</div>
 		</div>
 		<?php endforeach; ?>
-		<?php else: // Si hay Dependientes ?>
+		<?php endif; // Si hay Dependientes ?>
 		<div class="action_info_acp">
 			<ul>
-				<li><?php echo $this->Html->link("Crear", array('controller'=>'dependientes','action' => 'add', $Persona['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'dependientes','action' => 'add', "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 			</ul>
 		</div>
-		<?php endif; // Si hay Dependientes ?>
 	</div>
 	<div id="acp_info_familia" class="box_info_acp <?php if(!isset($Albergado['Familia']['id'])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Información de Familia</h2>
 		<div class="action_info_acp">
 			<ul>
 		<?php if(isset($Albergado['Familia']['id'])): // Si hay agregadas Familia ?>
-				<li><?php echo $this->Html->link("Modificar", array('controller'=>'familias','action' => 'edit', $Albergado['Familia']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'familias','action' => 'edit', $Albergado['Familia']['id'], "albergadoId" => $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'familias','action' => 'delete',$Albergado['Familia']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
 				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'familias','action' => 'view', $Albergado['Familia']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 		<?php else: // Si hay agregadas Familia ?>
-				<li><?php echo $this->Html->link("Crear", array('controller'=>'familias','action' => 'add', $Persona['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'familias','action' => 'add', "albergadoId" => $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 		<?php endif; // Si hay agregadas Familia ?>
 			</ul>
 		</div>
@@ -116,11 +114,11 @@ $(function(){
 		<div class="action_info_acp">
 			<ul>
 		<?php if(isset($Albergado['Social']['id'])): // Si hay ficha Social ?>
-				<li><?php echo $this->Html->link("Modificar", array('controller'=>'sociales','action' => 'edit', $Albergado['Social']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'sociales','action' => 'edit', $Albergado['Social']['id'], "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'sociales','action' => 'delete',$Albergado['Social']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
 				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'sociales','action' => 'view', $Albergado['Social']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 		<?php else: // Si hay ficha Social?>
-				<li><?php echo $this->Html->link("Crear", array('controller'=>'sociales','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'sociales','action' => 'add', "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 		<?php endif; // Si hay ficha Social ?>
 			</ul>
 		</div>
@@ -130,11 +128,11 @@ $(function(){
 		<div class="action_info_acp">
 			<ul>
 		<?php if(isset($Albergado['SocioEconomico']['id'])): // Si hay ficha Estudio Social ?>
-				<li><?php echo $this->Html->link("Modificar", array('controller'=>'socio_economicos','action' => 'edit', $Albergado['SocioEconomico']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'socio_economicos','action' => 'edit', $Albergado['SocioEconomico']['id'], "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'socio_economicos','action' => 'delete', $Albergado['SocioEconomico']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
 				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'socio_economicos','action' => 'view', $Albergado['SocioEconomico']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 		<?php else: // Si hay ficha Social?>
-				<li><?php echo $this->Html->link("Crear", array('controller'=>'socio_economicos','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'socio_economicos','action' => 'add', "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 		<?php endif; // Si hay ficha Social ?>
 			</ul>
 		</div>
@@ -144,25 +142,25 @@ $(function(){
 		<div class="action_info_acp">
 			<ul>
 		<?php if(isset($Albergado['Problematica']['id'])): // Si hay ficha de Problematica ?>
-				<li><?php echo $this->Html->link("Modificar", array('controller'=>'problematicas','action' => 'edit', $Albergado['Problematica']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'problematicas','action' => 'edit', $Albergado['Problematica']['id'], "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'problematicas','action' => 'delete', $Albergado['Problematica']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
 				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'problematicas','action' => 'view', $Albergado['Problematica']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 		<?php else: // Si hay ficha de Problematica ?>
-				<li><?php echo $this->Html->link("Crear", array('controller'=>'problematicas','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'problematicas','action' => 'add', "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 		<?php endif; // Si hay ficha de Problematica ?>
 			</ul>
 		</div>
 	</div>
 	<div id="acp_info_ingresos" class="box_info_acp <?php if(!isset($Albergado['Ingresos']['id'])) echo "box_new_info_acp"; ?> posiciones_r">
-	<h2>Información de Egresados</h2>
+	<h2>Información de Egresos</h2>
 		<div class="action_info_acp">
 			<ul>
 		<?php if(isset($Albergado['Ingresos']['id'])): // Si hay ficha de Ingresos ?>
-				<li><?php echo $this->Html->link("Modificar", array('controller'=>'ingresos','action' => 'edit', $Albergado['Ingresos']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'ingresos','action' => 'edit', $Albergado['Ingresos']['id'], "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'ingresos','action' => 'delete', $Albergado['Ingresos']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
-				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'ingresos','action' => 'view', $Albergado['Ingresos']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'ingresos','action' => 'view', $Albergado['Ingresos']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 		<?php else: // Si hay ficha de Ingresos ?>
-				<li><?php echo $this->Html->link("Crear", array('controller'=>'ingresos','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'ingresos','action' => 'add', "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 		<?php endif; // Si hay ficha de Ingresos ?>
 			</ul>
 		</div>
@@ -172,11 +170,11 @@ $(function(){
 		<div class="action_info_acp">
 			<ul>
 		<?php if(isset($Albergado['Dato']['id'])): // Si hay ficha de Datos ?>
-				<li><?php echo $this->Html->link("Modificar", array('controller'=>'datos','action' => 'edit', $Albergado['Dato']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'datos','action' => 'edit', $Albergado['Dato']['id'], "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'datos','action' => 'delete', $Albergado['Dato']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
-				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'datos','action' => 'view', $Albergado['Dato']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'datos','action' => 'view', $Albergado['Dato']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 		<?php else: // Si hay ficha de Datos ?>
-				<li><?php echo $this->Html->link("Crear", array('controller'=>'datos','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'datos','action' => 'add', "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 		<?php endif; // Si hay ficha de Datos ?>
 			</ul>
 		</div>
@@ -186,25 +184,26 @@ $(function(){
 		<div class="action_info_acp">
 			<ul>
 		<?php if(isset($Albergado['DatosAlbergado']['id'])): // Si hay Datos de albergado ?>
-				<li><?php echo $this->Html->link("Modificar", array('controller'=>'datos_albergados','action' => 'edit', $Albergado['DatosAlbergado']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'datos_albergados','action' => 'edit', $Albergado['DatosAlbergado']['id'], "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'datos_albergados','action' => 'delete', $Albergado['DatosAlbergado']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
-				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'datos_albergados','action' => 'view', $Albergado['DatosAlbergado']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'datos_albergados','action' => 'view', $Albergado['DatosAlbergado']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 		<?php else:  // Si hay Datos de albergado  ?>
-				<li><?php echo $this->Html->link("Crear", array('controller'=>'datos_albergados','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'datos_albergados','action' => 'add', "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 		<?php endif;  // Si hay Datos de albergado  ?>
 			</ul>
 		</div>
 	</div>
 	<div id="acp_info_datos_escolaridad" class="box_info_acp <?php if(!isset($Albergado['Escolaridad']['id'])) echo "box_new_info_acp"; ?> posiciones_r">
 	<h2>Escolaridad</h2>
+	<?php Debug($Albergado['Escolaridad']); ?>
 		<div class="action_info_acp">
 			<ul>
 		<?php if(isset($Albergado['Escolaridad']['id'])): // Si hay Datos de escolaridad ?>
-				<li><?php echo $this->Html->link("Modificar", array('controller'=>'escolaridades','action' => 'edit', $Albergado['Escolaridad']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'escolaridades','action' => 'edit', $Albergado['Escolaridad']['id'], "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'escolaridades','action' => 'delete', $Albergado['Escolaridad']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
-				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'escolaridades','action' => 'view', $Albergado['Escolaridad']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'escolaridades','action' => 'view', $Albergado['Escolaridad']['id'], $Albergado['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 		<?php else:  // Si hay Datos de escolaridad  ?>
-				<li><?php echo $this->Html->link("Crear", array('controller'=>'escolaridades','action' => 'add', $Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'escolaridades','action' => 'add', "albergadoId"=>$Albergado['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 		<?php endif;  // Si hay Datos de escolaridad  ?>
 			</ul>
 		</div>
@@ -215,11 +214,11 @@ $(function(){
 		<div class="action_info_acp">
 			<ul>
 				<?php if(isset($Documento["id"])): // Si hay documento ?>
-				<li><?php echo $this->Html->link("Modificar", array('controller'=>'documentos','action' => 'edit', $Documento['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'documentos','action' => 'edit', $Documento['id'], "personaId"=>$Persona['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'documentos','action' => 'delete', $Documento['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el documento de %s?', true),$Persona['nombre_completo'])); ?></li>
 				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'documentos','action' => 'view', $Documento['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 				<?php else: // Si hay documento?>
-				<li><?php echo $this->Html->link("Crear", array('controller'=>'documentos','action' => 'add', $Persona['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'documentos','action' => 'add', "personaId"=>$Persona['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 				<?php endif; // Si hay documento ?>
 			</ul>
 		</div>
@@ -229,11 +228,11 @@ $(function(){
 		<div class="action_info_acp">
 			<ul>
 				<?php if(isset($EstadosSalud["id"])): // Si hay Estado de Salud ?>
-				<li><?php echo $this->Html->link("Modificar", array('controller'=>'estados_saluds','action' => 'edit',$EstadosSalud['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'estados_saluds','action' => 'edit',$EstadosSalud['id'], "personaId"=>$Persona['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'estados_saluds','action' => 'delete', $EstadosSalud['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el Estado de Salud de %s?', true),$Persona['nombre_completo'])); ?></li>
 				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'estados_saluds','action' => 'view', $EstadosSalud['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 				<?php else: // Si hay Estado de Salud ?>
-				<li><?php echo $this->Html->link("Crear", array('controller'=>'estados_saluds','action' => 'add', $Persona['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'estados_saluds','action' => 'add', "personaId"=>$Persona['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 				<?php endif; // Si hay Estado de Salud  ?>
 			</ul>
 		</div>
@@ -243,11 +242,11 @@ $(function(){
 		<div class="action_info_acp">
 			<ul>
 				<?php if(isset($Nacimiento["id"])): // Si hay Nacimiento ?>
-				<li><?php echo $this->Html->link("Modificar", array('controller'=>'nacimientos','action' => 'edit',$Nacimiento['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'nacimientos','action' => 'edit',$Nacimiento['id'], "personaId"=>$Persona['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'nacimientos','action' => 'delete', $Nacimiento['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar el nacimiento de %s?', true),$Persona['nombre_completo'])); ?></li>
 				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'nacimientos','action' => 'view', $Nacimiento['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 				<?php else: // Si hay Estado de Salud ?>
-				<li><?php echo $this->Html->link("Crear", array('controller'=>'nacimientos','action' => 'add', $Persona['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'nacimientos','action' => 'add', "personaId"=>$Persona['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 				<?php endif; // Si hay Estado de Salud  ?>
 			</ul>
 		</div>
@@ -257,11 +256,11 @@ $(function(){
 		<div class="action_info_acp">
 			<ul>
 				<?php if(isset($Vestimenta["id"])): // Si hay Vestimenta ?>
-				<li><?php echo $this->Html->link("Modificar", array('controller'=>'vestimentas','action' => 'edit',$Vestimenta['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
+				<li><?php echo $this->Html->link("Modificar", array('controller'=>'vestimentas','action' => 'edit',$Vestimenta['id'], "personaId"=>$Persona['id']), array('class' => 'action_acp_info boton_acp_modificar')); ?></li>
 				<li><?php echo $this->Html->link("Eliminar", array('controller'=>'vestimentas','action' => 'delete', $Vestimenta['id']), array('class' => 'action_acp_info boton_acp_eliminar'), sprintf(__('¿Eliminar la vestimenta de %s?', true),$Persona['nombre_completo'])); ?></li>
 				<li><?php echo $this->Html->link("Inf. Completa", array('controller'=>'vestimentas','action' => 'view', $Vestimenta['id']), array('class' => 'action_acp_info boton_acp_info')); ?></li>
 				<?php else: // Si hay Estado de Salud ?>
-				<li><?php echo $this->Html->link("Crear", array('controller'=>'vestimentas','action' => 'add', $Persona['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
+				<li><?php echo $this->Html->link("Crear", array('controller'=>'vestimentas','action' => 'add', "personaId"=>$Persona['id']), array('class' => 'action_acp_info boton_acp_crear')); ?></li>
 				<?php endif; // Si hay Estado de Salud  ?>
 			</ul>
 		</div>

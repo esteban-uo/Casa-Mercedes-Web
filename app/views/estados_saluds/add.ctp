@@ -3,7 +3,11 @@
 	<fieldset>
 		<legend><?php __('Add Estados Salud'); ?></legend>
 	<?php
-		echo $this->Form->input('persona_id');
+		if(isset($this->params["named"]["personaId"])){
+			echo $this->Form->input('persona_id', array('value'=> $this->params["named"]["personaId"], 'type' => 'hidden'));
+		}else{
+			echo $this->Form->input('persona_id');
+		}
 		echo $this->Form->input('tipo_sangre');
 		echo $this->Form->input('peso');
 		echo $this->Form->input('altura');
