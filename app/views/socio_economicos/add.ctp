@@ -3,7 +3,12 @@
 	<fieldset>
 		<legend><?php __('Agregar Socio Económico'); ?></legend>
 	<?php
-		echo $this->Form->input('albergado_id');
+		echo $this->Form->input('id');
+		if(isset($this->params["named"]["albergadoId"])){
+			echo $this->Form->input('albergado_id', array('value'=> $this->params["named"]["albergadoId"], 'type' => 'hidden'));
+		}else{
+			echo $this->Form->input('albergado_id');
+		}
 		echo $this->Form->input('poblacion_indigena', array("label"=>"Población Indigena"));
 		echo $this->Form->input('ha_trabajado');
 		echo $this->Form->input('tiempo_de_trabajo');

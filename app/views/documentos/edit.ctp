@@ -4,7 +4,11 @@
 		<legend><?php __('Edit Documento'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('persona_id');
+		if(isset($this->params["named"]["personaId"])){
+			echo $this->Form->input('persona_id', array('value'=> $this->params["named"]["personaId"], 'type' => 'hidden'));
+		}else{
+			echo $this->Form->input('persona_id');
+		}
 		echo $this->Form->input('numero_documento');
 		echo $this->Form->input('tramitada_por_cm');
 		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));

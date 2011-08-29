@@ -4,7 +4,11 @@
 		<legend><?php __('Edit Escolaridad'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('albergado_id');
+		if(isset($this->params["named"]["albergadoId"])){
+			echo $this->Form->input('albergado_id', array('value'=> $this->params["named"]["albergadoId"], 'type' => 'hidden'));
+		}else{
+			echo $this->Form->input('albergado_id');
+		}
 		echo $this->Form->input('ciclo_escolar_id');
 		echo $this->Form->input('escuela');
 		echo $this->Form->input('escolaridad_al_ingresar');

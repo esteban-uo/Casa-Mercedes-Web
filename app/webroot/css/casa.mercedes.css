@@ -402,7 +402,12 @@ img.imagen_infograma_box{
 	background:#ccc;
 }
 
-div.box_info_acp {
+.link_verInfopersona{
+	color:#000;
+	 margin: 0 0 0 22px;
+}
+
+div.box_info_acp, div.box_info_filtros {
 	position:relative;
 	border-bottom:solid 1px #fff;
 	padding:5px 5px 28px 5px;
@@ -657,7 +662,8 @@ div.actions ul li a:hover {
 
 input[type=submit],
 div.actions ul li a,
-td.actions a {
+td.actions a,
+.botonAccion{
 	font-weight:normal;
 	padding: 4px 8px;
 	background:#af6fd4;
@@ -797,7 +803,7 @@ div.code-coverage-results span.result-good {
 
 /* Añado a Panel de control */
 
-#acp_pagina_principal{
+#acp_pagina_principal, #acp_filtros{
 	float: left;
     width: 57%;
 	margin-top:15px;
@@ -806,6 +812,9 @@ div.code-coverage-results span.result-good {
 	float:left;
 	width: 76%;
 	margin-right: 14px;
+}
+.select_condicion{
+	margin: 15px 0 0;
 }
 .fl{
 	float:left;
@@ -818,4 +827,39 @@ div.code-coverage-results span.result-good {
 }
 .cl{
 	clear:left;
+}
+#overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background:#000 no-repeat scroll center center;
+}
+#lightbox {
+	position:absolute;
+	background:#fff;
+	z-index:10;
+}
+#cerrarLightBox{
+	display:block;
+	position:absolute;
+	top:0;
+	right:0;
+}
+#mensajesLightBox{
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:20;
+}
+#mensajesLightBox ul li{
+	background: none repeat scroll 0 0 red;
+    color: #FFFFFF;
+    list-style: none;
+    margin: 10px 0;
+    padding: 10px;
+}
+.acciones_orden{
+	margin:5px;
 }

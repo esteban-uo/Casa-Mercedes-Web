@@ -3,21 +3,25 @@ class ImagesController extends AppController {
 
 	var $name = 'Images';
 	
+	
 	function beforeFilter() {
         parent::beforeFilter(); 
         $this->layout = "panel_control";
+	
     }
 
 	function index() {
 		$this->Image->recursive = 0;
 		$this->set('images', $this->paginate());
 	}
-
+	
+	
 	function view($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Los datos de la imagen no existen o es inválido.', true));
 			$this->redirect(array('action' => 'index'));
 		}
+		
 		$this->set('image', $this->Image->read(null, $id));
 	}
 	
@@ -28,14 +32,12 @@ class ImagesController extends AppController {
 		@Description: Esta Funcion  agrega un registro a la tabla images de la base de datos, demas de subir la imagen respectiva junto con una copia en miniatura al servidor.
 	*/
 	function add() {
-	
+		if(isset($this->params["named"]["ajax"])) $this->layout = "ajax_layout";
+		
 		$tipoimages = $this->Image->Tipoimage->find('list');
 		$this->set(compact('tipoimages'));
 
 		if (!empty($this->data)) {
-		
-			
-			
 				$this->Image->create();
 						$data2 = array('Image'=>
 								array(
@@ -43,7 +45,6 @@ class ImagesController extends AppController {
 								 'tipoimage_id' => $this->data['Image']['tipoimage_id'],
 								 'modified_user_id' => $this->data['Image']['modified_user_id']
 								));
-				
 			if ($this->Image->save($data2)) 
 			{
 					$id = $this->Image->find('first', array('conditions'=>array('Image.url'=>$this->data['Image']['url']['name'])));
@@ -56,13 +57,12 @@ class ImagesController extends AppController {
 								'modified_user_id' => $this->data['Image']['modified_user_id']
 								 
 								));
-					Debug($data2);
 								
 					$this->Image->save($data2);
-					
 					$this->data['Image']['url']['name'] = $data2['Image']['url'];
 					$this->upload($this->data);
-					$this->Session->setFlash(__('La imagen Guardada Exitosamente', true));
+					$this->Session->setFlash(__('La imagen Guardada Exitosamente ', true));
+					$this->Session->setFlash('<input type="hidden" value="'.($this->Image->id).'" />', 'default', array('class' => 'idMensajeUltimo'), 'id');
 					$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('La imagen no pudo Guardarse. Porfavor, intente de nuevo.', true));
@@ -83,6 +83,7 @@ class ImagesController extends AppController {
 		ademas de eliminar la imagen  antigua del registro modificado y subir una nueva imagen al servidor.
 	*/
 	function edit($id = null) {
+		if(isset($this->params["named"]["ajax"])) $this->layout = "ajax_layout";
 		$tipoimages = $this->Image->Tipoimage->find('list');
 		$this->set(compact('tipoimages'));
 		
@@ -99,6 +100,7 @@ class ImagesController extends AppController {
 				if($this->upload($this->data)== 1){
 					
 						$this->Session->setFlash(__('La imagen Guardada Exitosamente', true));
+						$this->Session->setFlash('<input type="hidden" value="'.($this->Image->id).'" />', 'default', array('class' => 'idMensajeUltimo'), 'id');
 						$this->redirect(array('action' => 'index'));
 					 
 				}else {
@@ -255,8 +257,10 @@ class ImagesController extends AppController {
 	*/
 	function getExtension($file = null)
 	{
-		$file= str_split($file,strrpos($file, '.')+1);
+		$file= explode(".",$file);
 		return $file[1];
 	}
+	
+	
 	
 }

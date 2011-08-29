@@ -1,4 +1,24 @@
-﻿<div class="personas form">
+﻿<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.form.js"></script>
+<script type="text/javascript" src="../js/jquery.cakephp.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#PersonaFotoImagenId").cakephp({
+										"controlador" : "images",
+										"accion" : "add",
+										"claseAccion" : "",
+										"eMensajeValidacionError" : ".error-message",
+										"eMensajeControlador" : "#flashMessage",
+										"eMensajeInputId" : "#idMessage",
+										"label" : "Subir Imagen",
+										"mensajeCorrecto" : "<p>Ok</p>",
+										"rutaJs" : "../"
+										}, function (data){
+											console.log(data);
+										});
+});
+</script>
+<div class="personas form">
 <?php echo $this->Form->create('Persona');?>
 	<fieldset>
 		<legend><?php __('Agregar Persona: Datos de la Persona'); ?></legend>
@@ -10,7 +30,7 @@
 		echo $this->Form->input('sexo');
 		echo $this->Form->input('status', array("label"=>"Situación en la que se encuentra", "class" => "input_gen"));
 		echo $this->Form->input('fecha_ingreso', array("label"=>"Fecha de ingreso", "class" => "input_gen"));
-		echo $this->Form->input('foto_imagen_id', array("type"=>"text", "class" => "input_gen"));
+		echo $this->Form->input('foto_imagen_id', array("type"=>"text", "div"=>array("class"=>"")));
 		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), "class" => "input_gen", 'type' => 'hidden'));
 	?>
 	</fieldset>

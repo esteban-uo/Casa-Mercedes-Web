@@ -5,7 +5,17 @@ class Image extends AppModel {
 		'url' => array(
 			'minlength' => array(
 				'rule' => array('minlength', 1),
-				//'message' => 'Your custom message here',
+				'message' => 'No has subido alguna imagen',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'modified_user_id' => array(
+			'minlength' => array(
+				'rule' => array('minlength', 1),
+				'message' => 'Escribe el id del usuario',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

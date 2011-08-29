@@ -6,6 +6,7 @@
             <?php __('Casa de las Mercedes - '); ?>
             <?php echo $title_for_layout; ?>
         </title>
+		
         <?php
         echo $this->Html->meta('icon');
         echo $this->Html->css('casa.mercedes');
@@ -23,8 +24,7 @@
                     <ul id="act_style">
                         <li><?php echo $this->Html->link(__('Crear Persona', true), array('controller' => 'personas', 'action' => 'add')); ?></li>
                         <li><?php echo $this->Html->link(__('Enlistar Personas', true), array('controller' => 'personas', 'action' => 'index')); ?></li>
-						<li><?php echo $this->Html->link(__('Enlistar Albergados', true), array('controller' => 'albergados', 'action' => 'index')); ?></li>
-                        <li><?php echo $this->Html->link(__('Enlistar Dependientes', true), array('controller' => 'dependientes', 'action' => 'index')); ?></li>
+						<li><?php echo $this->Html->link(__('Filtros', true), array('controller' => 'pages', 'action' => 'filtros')); ?></li>
                     </ul>
                     <h2 class="subtitle">Usuarios</h2>
                     <ul id="rep_style">
@@ -33,8 +33,8 @@
                     </ul>
                 </div>
                 <?php echo $this->Session->flash(); ?>
+				<?php echo $this->Session->flash("id"); ?>
                 <?php echo $content_for_layout; ?>
-
             </div>
                 <div class="posiciones_cl bottom"></div>
 	

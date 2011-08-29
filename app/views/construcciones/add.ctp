@@ -1,9 +1,9 @@
-<div class="construcciones form">
+﻿<div class="construcciones form">
 <?php echo $this->Form->create('Construccion');?>
 	<fieldset>
 		<legend><?php __('Agregar Construccion'); ?></legend>
 	<?php
-		echo $this->Form->input('Descripcion');
+		echo $this->Form->input('title', array("label"=>"Descripción"));
 		echo $this->Form->input('modified_user_id', array('value'=>Configure::read('id.usuario.prueba'), 'type' => 'hidden'));
 	?>
 	</fieldset>
