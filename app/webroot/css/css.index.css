@@ -31,13 +31,13 @@
 }
 
 html {
-	background:#eb6077;
-	background:-moz-radial-gradient(center, #f0b49e, #eb6077) no-repeat #eb6077;
-	background:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#f0b49e), to(#eb6077)) no-repeat #eb6077;
-	background-image: -ms-linear-gradient(top, #f0b49e, #eb6077) no-repeat;
-	background-image: -o-linear-gradient(top, #f0b49e, #eb6077) no-repeat;
-	behavior: url(../css/PIE.htc);
-
+	background:url('img/backback.png');
+	background-color:#FFDDE9;
+	background:-moz-radial-gradient(center, #FFeefa, #FFDDE9) no-repeat #FFDDE9;
+	background:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#FFeefa), to(#FFDDE9)) no-repeat #FFDDE9;
+	background-image: -ms-linear-gradient(top, #FFeefa, #FFDDE9) no-repeat;
+	background-image: -o-linear-gradient(top, #FFeefa, #FFDDE9) no-repeat;
+	behavior: url(PIE.php);
 }
 
 
@@ -53,15 +53,12 @@ body{
 	position: fixed;
 	right: 0px;
 	bottom: 20px;
-	behavior: url(../css/PIE.htc);
-
+	behavior: url(PIE.php);
 }
 #patrocinadores h4{
-	color: #fff;
+	color:#680444;
 	font-size: 20px;
-	text-shadow: #000 0.1em 0.1em 0.2em;
-	behavior: url(../css/PIE.htc);
-
+	behavior: url(PIE.php);
 }
 
 .extend{
@@ -69,7 +66,8 @@ body{
 	display: block;
 	width: 190px;
 	height:70px;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 
 }
 .campus{
@@ -77,18 +75,24 @@ body{
 	display:block;
 	width:150px;
 	height:70px;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 }
 /*index*/
 
 .title{
 	margin: 40px 0px 20px 0px;
 	padding: 5px;
-	background: url('../img/trans1.png');
+	background-image: url('../img/trans1.png');
 	-moz-box-shadow: 0 0 5px #000;
 	-webkit-box-shadow: 0 0 5px #000;
 	box-shadow: 0 0 5px #000;
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
+	background: url('../img/back-trans.png');
+	-moz-box-shadow: 0 0 5px #000;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+	behavior: url(PIE.php);
 
 }
 
@@ -108,11 +112,12 @@ h1.title{
 .title_alt{
 	margin: 40px 0px 20px 0px;
 	padding: 5px;
-	background: url('../img/trans1.png');
+	background: url('../img/back-trans.png');
 	-moz-box-shadow: 0 0 5px #000;
 	-webkit-box-shadow: 0 0 5px #000;
 	box-shadow: 0 0 5px #000;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 
 }
 h1.title_alt{
@@ -142,7 +147,7 @@ h1.title_alt{
 	margin:10px 20px 0px 50px;
 	width:500px;
 	height:300px;
-	color:#493443;
+	color:#680444;
 	line-height: 50px;
 	text-align: right;
 	display:block;
@@ -184,7 +189,7 @@ h1.title_alt{
 	background: url(../img/rosamorado.jpg) repeat-y top right ;
 }
 .purple{
-	background:#a1c5ab url(../img/azulmorado.jpg) repeat-y top right;
+	background:#CFEFEB url(../img/azulmorado.jpg) repeat-y top right;
 }
 
 .blue{
@@ -207,26 +212,35 @@ h1.title_alt{
 	font-size: 15px;
 	color: #000;
 	padding:5px;
-	margin:5px;
+	margin:15px;
+	
 	text-align: right;
 }
 
 #nav li a{
-	color:#fff;
+	
+	color:#1F578B;
 	text-decoration: none;
+	background:#CCdef4;
+	padding:10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 0px;
+	border-radius: 10px 10px 10px 0px;
 
-
+	behavior: url(PIE.php);
+	
 }
 
 #nav li a:hover{
-	color:#493443;
+	color:#0F477B;
 	text-decoration: none;
 	padding: 10px;
 	background:#f6edb6;
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 0px;
 	border-radius: 10px 10px 10px 0px;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 
 }
 .alt{
@@ -234,14 +248,18 @@ h1.title_alt{
 	top: 3px;
 	right: 80px;
 	background:#4f2468;
-}
+	behavior: url(PIE.php);
+	}
 
 .teal{
 	background:#00cdde;
-	position: fixed;
+	position: absolute;
 	top: 3px;
 	right: 15px;
-}
+	behavior: url(PIE.php);
+	}
+
+
 
 .button_generic a{
 	text-decoration: none;
@@ -257,7 +275,8 @@ h1.title_alt{
 	-moz-box-shadow: 0 0 8px #493443;
 	-webkit-box-shadow: 0 0 8px #493443;
 	box-shadow: 0 0 8px #000;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 
 }
 .button_generic:hover{
@@ -265,11 +284,13 @@ h1.title_alt{
 	-moz-box-shadow: inset 0 0 5px #000;
 	-webkit-box-shadow: inset 0 0 5px#000;
 	box-shadow: inner 0 0 5px #000;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 
 }
 
 #valores{
+	
 	width: 800px;
 	height: 210px;
 	margin:0% 5%;
@@ -279,13 +300,19 @@ h1.title_alt{
 	-webkit-column-width: 300px;
 	-moz-column-gap: 1em;
 	-webkit-column-gap: 1em;
-	behavior: url(../css/PIE.htc);
 
+	behavior: url(PIE.php);
+
+}
+
+#valores p{
+	color:#1F578B;
 }
 
 #valores h2 {
 	break-before: column;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 
 }
 
@@ -299,25 +326,29 @@ h1.title_alt{
 	-webkit-column-width: 300px;
 	-moz-column-gap: 1em;
 	-webkit-column-gap: 1em;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 
 }
 
 .subtitle{
-	color: #fff;
+	color:#0F477B;
 }
 .parag{
 	color:#493443;
 	line-height: 25px;
 
 }
+
+
+
 .espacio_vacio{
 	height:100px;
 
 }
 #footer {
-	font-size: 10px;
-	color: #aaa;
+	font-size: 12px;
+	color: #222;
 	clear: both;
 	padding: 6px 10px;
 	text-align: left;
@@ -327,7 +358,9 @@ h1.title_alt{
 	height: 10px;
 	padding-left: 5%;
 	background: url('../img/trans1.png');
-	behavior: url(../css/PIE.htc);
+	behavior: url(PIE.htc);
+	background: url('../img/back-trans.png');
+	behavior: url(PIE.php);
 
 }
 
@@ -343,8 +376,19 @@ h1.title_alt{
 
 /*Formularios*/
 
+#ingresar{
+	text-align:center;
+}
+
+#ingresar h1{
+	text-align:left;
+	}
+	
 #ingresar form{
+	background:rgb(255,255,255);
 	background:rgba(255,255,255,0.7);
+	background:rgba(254,254,254,0.7);
+	background:#fff;
 	width: 300px;
 	margin: 0 auto;
 	padding:20px 50px;
@@ -352,12 +396,14 @@ h1.title_alt{
 	-moz-box-shadow: 0 0 8px #000;
 	-webkit-box-shadow: 0 0 8px #000;
 	box-shadow: 0 0 8px #000;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
+	text-align:left;
 
 }
 
 #ingresar label{
-
+	text-align:left;
 	color: #333;
 	font-size: 20px;
 }
@@ -375,7 +421,8 @@ h1.title_alt{
 	display: block;
 	border-radius: 10px 10px 10px 0px;
 	color:#eee;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 
 }
 #ingresar .input_style:focus {
@@ -395,7 +442,8 @@ h1.title_alt{
 	-moz-box-shadow: 0 0 8px #000;
 	-webkit-box-shadow: 0 0 8px #000;
 	box-shadow: 0 0 8px #000;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 
 }
 
@@ -405,7 +453,8 @@ h1.title_alt{
 	-moz-box-shadow: inset 0 0 5px #000;
 	-webkit-box-shadow: inset 0 0 5px #000;
 	box-shadow: inner 0 0 5px #000;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 
 
 }
@@ -423,12 +472,13 @@ Añadidos en desarrollo
 	right: 15px;
 	top: 1px;
 	border-radius: 10px 10px 10px 0;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 
 }
 #boton_formulario_rapido {
 	text-indent: 20px;
-	background: url("../img/img_down.png") no-repeat scroll 14px 10px #493443;
+	background: url("../img/img_down-trans.png") no-repeat scroll 14px 10px #493443;
 	border-radius: 10px 10px 10px 0;
 	box-shadow: 0 0 8px #000000;
 	font-family: QuicksandBold;
@@ -436,13 +486,16 @@ Añadidos en desarrollo
 	cursor: pointer;
 	height: 28px;
 	padding: 10px 0 0 16px;
-}
+	behavior: url(PIE.php);
+
+	}
 #boton_formulario_rapido:hover{
 	text-shadow: #000 0.1em 0.1em 0.2em;
 	-moz-box-shadow: inset 0 0 5px #493443;
 	-webkit-box-shadow: inset 0 0 5px #493443;
 	box-shadow: inner 0 0 5px #000;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 
 }
 
@@ -457,14 +510,15 @@ Añadidos en desarrollo
 	display: block;
 	border-radius: 10px 10px 10px 0px;
 	-moz-box-shadow: inset 0 0 5px #000;
-	-webkit-box-shadow: inset 0 0 5px#000;
+	-webkit-box-shadow: inset 0 0 5px #000;
 	box-shadow: inner 0 0 5px #000;
-	behavior: url(../css/PIE.htc);
+
+	behavior: url(PIE.php);
 
 }
 
 .form_redondo:focus{
-	border: solid 1px #333;
+	border: solid 1px #444;
 }
 
 
