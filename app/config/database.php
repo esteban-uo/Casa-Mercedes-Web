@@ -65,7 +65,7 @@
  * schema =>
  * For Postgres and DB2, specifies which schema you would like to use the tables in. Postgres defaults to
  * 'public', DB2 defaults to empty.
- *
+ // *
  * encoding =>
  * For MySQL, MySQLi, Postgres and DB2, specifies the character encoding to use when connecting to the
  * database.  Uses database default.

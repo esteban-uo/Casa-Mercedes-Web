@@ -1,5 +1,5 @@
 ﻿<div id="ingresar">
-	<h1 class="title"><br />Administraci&oacute;n</h1>
+	<h1 class="title foto_chicas">Administraci&oacute;n</h1>
 
 <span class="button_generic teal"> <?php echo $this->Html->link(__('Inicio', true), array('controller'=>'pages','action' => 'index'));?></span>
 <div>
