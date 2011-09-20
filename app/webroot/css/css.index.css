@@ -31,11 +31,12 @@
 }
 
 html {
-	background-color:#eb6077;
-	background:-moz-radial-gradient(center, #f0b49e, #eb6077) no-repeat #eb6077;
-	background:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#f0b49e), to(#eb6077)) no-repeat #eb6077;
-	background-image: -ms-linear-gradient(top, #f0b49e, #eb6077) no-repeat;
-	background-image: -o-linear-gradient(top, #f0b49e, #eb6077) no-repeat;
+	background:url('img/backback.png');
+	background-color:#FFDDE9;
+	background:-moz-radial-gradient(center, #FFeefa, #FFDDE9) no-repeat #FFDDE9;
+	background:-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#FFeefa), to(#FFDDE9)) no-repeat #FFDDE9;
+	background-image: -ms-linear-gradient(top, #FFeefa, #FFDDE9) no-repeat;
+	background-image: -o-linear-gradient(top, #FFeefa, #FFDDE9) no-repeat;
 	behavior: url(PIE.php);
 }
 
@@ -55,9 +56,8 @@ body{
 	behavior: url(PIE.php);
 }
 #patrocinadores h4{
-	color: #fff;
+	color:#680444;
 	font-size: 20px;
-	text-shadow: #000 0.1em 0.1em 0.2em;
 	behavior: url(PIE.php);
 }
 
@@ -147,7 +147,7 @@ h1.title_alt{
 	margin:10px 20px 0px 50px;
 	width:500px;
 	height:300px;
-	color:#493443;
+	color:#680444;
 	line-height: 50px;
 	text-align: right;
 	display:block;
@@ -189,7 +189,7 @@ h1.title_alt{
 	background: url(../img/rosamorado.jpg) repeat-y top right ;
 }
 .purple{
-	background:#a1c5ab url(../img/azulmorado.jpg) repeat-y top right;
+	background:#CFEFEB url(../img/azulmorado.jpg) repeat-y top right;
 }
 
 .blue{
@@ -212,19 +212,27 @@ h1.title_alt{
 	font-size: 15px;
 	color: #000;
 	padding:5px;
-	margin:5px;
+	margin:15px;
+	
 	text-align: right;
 }
 
 #nav li a{
-	color:#fff;
+	
+	color:#1F578B;
 	text-decoration: none;
+	background:#CCdef4;
+	padding:10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 0px;
+	border-radius: 10px 10px 10px 0px;
 
-
+	behavior: url(PIE.php);
+	
 }
 
 #nav li a:hover{
-	color:#493443;
+	color:#0F477B;
 	text-decoration: none;
 	padding: 10px;
 	background:#f6edb6;
@@ -282,6 +290,7 @@ h1.title_alt{
 }
 
 #valores{
+	
 	width: 800px;
 	height: 210px;
 	margin:0% 5%;
@@ -294,6 +303,10 @@ h1.title_alt{
 
 	behavior: url(PIE.php);
 
+}
+
+#valores p{
+	color:#1F578B;
 }
 
 #valores h2 {
@@ -319,20 +332,23 @@ h1.title_alt{
 }
 
 .subtitle{
-	color: #fff;
+	color:#0F477B;
 }
 .parag{
 	color:#493443;
 	line-height: 25px;
 
 }
+
+
+
 .espacio_vacio{
 	height:100px;
 
 }
 #footer {
-	font-size: 10px;
-	color: #aaa;
+	font-size: 12px;
+	color: #222;
 	clear: both;
 	padding: 6px 10px;
 	text-align: left;
